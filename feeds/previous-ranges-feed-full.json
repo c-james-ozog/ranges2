@@ -1,8 +1,6 @@
 [
   {
     "symbol": "CCK26",
-    "commodity": "Cocoa",
-    "month": "May",
     "previousDailyRanges": [
       "204",
       "225",
@@ -12,19 +10,10 @@
       "298",
       "230",
       "264"
-    ],
-    "historicVol": "45.8%",
-    "impliedVol": "24.0%",
-    "impliedTarget": "48",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "KCK26",
-    "commodity": "Coffee",
-    "month": "May",
     "previousDailyRanges": [
       "10.45",
       "12.85",
@@ -34,19 +23,10 @@
       "25.9",
       "28.75",
       "19.95"
-    ],
-    "historicVol": "35.0%",
-    "impliedVol": "27.0%",
-    "impliedTarget": "5",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "HGK26",
-    "commodity": "Copper",
-    "month": "May",
     "previousDailyRanges": [
       "0.1835",
       "0.1025",
@@ -56,19 +36,10 @@
       "0.258",
       "0.3505",
       "0.459"
-    ],
-    "historicVol": "26.7%",
-    "impliedVol": "20.0%",
-    "impliedTarget": "0.0725",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZCN26",
-    "commodity": "Corn",
-    "month": "Jul",
     "previousDailyRanges": [
       "5.75",
       "6.5",
@@ -78,19 +49,10 @@
       "22",
       "16.5",
       "19.75"
-    ],
-    "historicVol": "16.6%",
-    "impliedVol": "22.0%",
-    "impliedTarget": "6.25",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZCZ26",
-    "commodity": "Corn",
-    "month": "Dec",
     "previousDailyRanges": [
       "6.75",
       "6.25",
@@ -100,19 +62,10 @@
       "21",
       "15.25",
       "19"
-    ],
-    "historicVol": "14.4%",
-    "impliedVol": "22.0%",
-    "impliedTarget": "6.5",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "CTK26",
-    "commodity": "Cotton",
-    "month": "May",
     "previousDailyRanges": [
       "1.67",
       "1.17",
@@ -122,19 +75,10 @@
       "3.53",
       "2.11",
       "4.17"
-    ],
-    "historicVol": "17.4%",
-    "impliedVol": "21.0%",
-    "impliedTarget": "0.97",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "CLM26",
-    "commodity": "Crude Oil WTI",
-    "month": "Jun",
     "previousDailyRanges": [
       "11.78",
       "5.48",
@@ -144,19 +88,10 @@
       "13.21",
       "16.53",
       "11.71"
-    ],
-    "historicVol": "76.7%",
-    "impliedVol": "31.0%",
-    "impliedTarget": "1.76",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "GFK26",
-    "commodity": "Feeder Cattle",
-    "month": "May",
     "previousDailyRanges": [
       "5.025",
       "4.7",
@@ -166,19 +101,10 @@
       "22.35",
       "10.725",
       "14.85"
-    ],
-    "historicVol": "14.9%",
-    "impliedVol": "18.0%",
-    "impliedTarget": "4.2",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "GCJ26",
-    "commodity": "Gold",
-    "month": "Apr",
     "previousDailyRanges": [
       "112.2",
       "68.3",
@@ -188,19 +114,10 @@
       "440.9",
       "768.7",
       "388.5"
-    ],
-    "historicVol": "39.9%",
-    "impliedVol": "17.0%",
-    "impliedTarget": "51.4",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "KEN26",
-    "commodity": "Hard Red Wheat",
-    "month": "Jul",
     "previousDailyRanges": [
       "15",
       "13.5",
@@ -210,19 +127,10 @@
       "37.5",
       "42.5",
       "35.5"
-    ],
-    "historicVol": "28.1%",
-    "impliedVol": "23.0%",
-    "impliedTarget": "8.75",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "HEM26",
-    "commodity": "Lean Hogs",
-    "month": "Jun",
     "previousDailyRanges": [
       "2.75",
       "1.1",
@@ -232,19 +140,10 @@
       "3.5",
       "4.15",
       "2.55"
-    ],
-    "historicVol": "18.7%",
-    "impliedVol": "20.0%",
-    "impliedTarget": "1.3",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "LEJ26",
-    "commodity": "Live Cattle",
-    "month": "Apr",
     "previousDailyRanges": [
       "2.2",
       "1.25",
@@ -254,19 +153,10 @@
       "11.35",
       "3.8",
       "6.875"
-    ],
-    "historicVol": "9.0%",
-    "impliedVol": "17.0%",
-    "impliedTarget": "2.675",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "NQM26",
-    "commodity": "Nasdaq 100 E-Mini",
-    "month": "Jun",
     "previousDailyRanges": [
       "902",
       "510",
@@ -276,19 +166,10 @@
       "1459.75",
       "990.5",
       "719"
-    ],
-    "historicVol": "23.6%",
-    "impliedVol": "19.0%",
-    "impliedTarget": "302.25",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "NGM26",
-    "commodity": "Natural Gas",
-    "month": "Jun",
     "previousDailyRanges": [
       "0.136",
       "0.117",
@@ -298,19 +179,10 @@
       "0.282",
       "0.405",
       "0.407"
-    ],
-    "historicVol": "38.1%",
-    "impliedVol": "44.0%",
-    "impliedTarget": "0.078",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZRN26",
-    "commodity": "Rice",
-    "month": "Jul",
     "previousDailyRanges": [
       "12.5",
       "14.5",
@@ -320,19 +192,10 @@
       "47",
       "45.5",
       "24"
-    ],
-    "historicVol": "1636.6%",
-    "impliedVol": "18.0%",
-    "impliedTarget": "0",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ESM26",
-    "commodity": "S&P 500 E-Mini",
-    "month": "Jun",
     "previousDailyRanges": [
       "195",
       "100.75",
@@ -342,19 +205,10 @@
       "300.5",
       "264.5",
       "165.25"
-    ],
-    "historicVol": "19.6%",
-    "impliedVol": "16.0%",
-    "impliedTarget": "69.25",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "SIM26",
-    "commodity": "Silver",
-    "month": "Jun",
     "previousDailyRanges": [
       "4.15",
       "3.65",
@@ -364,19 +218,10 @@
       "9.4",
       "15.435",
       "12.45"
-    ],
-    "historicVol": "57.9%",
-    "impliedVol": "24.0%",
-    "impliedTarget": "1.145",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZMN26",
-    "commodity": "Soybean Meal",
-    "month": "Jul",
     "previousDailyRanges": [
       "3",
       "5.1",
@@ -386,19 +231,10 @@
       "9.5",
       "14.1",
       "15.7"
-    ],
-    "historicVol": "22.8%",
-    "impliedVol": "20.0%",
-    "impliedTarget": "4",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZLN26",
-    "commodity": "Soybean Oil",
-    "month": "Jul",
     "previousDailyRanges": [
       "1.75",
       "1.14",
@@ -408,19 +244,10 @@
       "3.41",
       "3.06",
       "4.79"
-    ],
-    "historicVol": "30.8%",
-    "impliedVol": "21.0%",
-    "impliedTarget": "0.89",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZSN26",
-    "commodity": "Soybeans",
-    "month": "Jul",
     "previousDailyRanges": [
       "21.75",
       "15",
@@ -430,19 +257,10 @@
       "26.75",
       "24.75",
       "91"
-    ],
-    "historicVol": "22.8%",
-    "impliedVol": "19.0%",
-    "impliedTarget": "14",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZSX26",
-    "commodity": "Soybeans",
-    "month": "Nov",
     "previousDailyRanges": [
       "17.75",
       "13.25",
@@ -452,19 +270,10 @@
       "24",
       "20.25",
       "56.25"
-    ],
-    "historicVol": "15.4%",
-    "impliedVol": "19.0%",
-    "impliedTarget": "13.75",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "DXM26",
-    "commodity": "US Dollar",
-    "month": "Jun",
     "previousDailyRanges": [
       "0.68",
       "0.595",
@@ -474,19 +283,10 @@
       "1.405",
       "1.47",
       "1.255"
-    ],
-    "historicVol": "7.6%",
-    "impliedVol": "10.0%",
-    "impliedTarget": "0.62",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   },
   {
     "symbol": "ZWN26",
-    "commodity": "Wheat",
-    "month": "Jul",
     "previousDailyRanges": [
       "12.5",
       "12.25",
@@ -496,13 +296,6 @@
       "31.5",
       "36",
       "28"
-    ],
-    "historicVol": "25.2%",
-    "impliedVol": "22.0%",
-    "impliedTarget": "8",
-    "asOf": "2026-04-09T21:50:10Z",
-    "isStale": false,
-    "source": "yahoo",
-    "overrideApplied": false
+    ]
   }
 ]
