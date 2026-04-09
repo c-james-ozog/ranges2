@@ -1,0 +1,623 @@
+[
+  {
+    "symbol": "CCK26",
+    "commodity": "Cocoa",
+    "month": "May",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "3206",
+      "low": "3101",
+      "range": "105",
+      "target": "144",
+      "achievement": "72.9%"
+    },
+    "weekly": {
+      "high": "3357",
+      "low": "2992",
+      "range": "365",
+      "target": "326",
+      "achievement": "112.0%"
+    },
+    "historicVol": "45.8%",
+    "impliedVol": "24.0%",
+    "impliedTarget": "48",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "KCK26",
+    "commodity": "Coffee",
+    "month": "May",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "296.9",
+      "low": "289.75",
+      "range": "7.15",
+      "target": "9.85",
+      "achievement": "72.6%"
+    },
+    "weekly": {
+      "high": "301.5",
+      "low": "284.3",
+      "range": "17.2",
+      "target": "23.2",
+      "achievement": "74.1%"
+    },
+    "historicVol": "35.0%",
+    "impliedVol": "27.0%",
+    "impliedTarget": "5",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "HGK26",
+    "commodity": "Copper",
+    "month": "May",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "5.778",
+      "low": "5.6915",
+      "range": "0.0865",
+      "target": "0.1745",
+      "achievement": "49.6%"
+    },
+    "weekly": {
+      "high": "5.786",
+      "low": "5.513",
+      "range": "0.273",
+      "target": "0.3475",
+      "achievement": "78.6%"
+    },
+    "historicVol": "26.7%",
+    "impliedVol": "20.0%",
+    "impliedTarget": "0.0725",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZCN26",
+    "commodity": "Corn",
+    "month": "Jul",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "460.5",
+      "low": "453.25",
+      "range": "7.25",
+      "target": "9",
+      "achievement": "80.6%"
+    },
+    "weekly": {
+      "high": "471.5",
+      "low": "452.75",
+      "range": "18.75",
+      "target": "23.25",
+      "achievement": "80.6%"
+    },
+    "historicVol": "16.6%",
+    "impliedVol": "22.0%",
+    "impliedTarget": "6.25",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZCZ26",
+    "commodity": "Corn",
+    "month": "Dec",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "478.5",
+      "low": "472.25",
+      "range": "6.25",
+      "target": "8.5",
+      "achievement": "73.5%"
+    },
+    "weekly": {
+      "high": "486.75",
+      "low": "469.5",
+      "range": "17.25",
+      "target": "21.25",
+      "achievement": "81.2%"
+    },
+    "historicVol": "14.4%",
+    "impliedVol": "22.0%",
+    "impliedTarget": "6.5",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "CTK26",
+    "commodity": "Cotton",
+    "month": "May",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "73.34",
+      "low": "70.85",
+      "range": "2.49",
+      "target": "1.33",
+      "achievement": "187.2%"
+    },
+    "weekly": {
+      "high": "73.34",
+      "low": "69.97",
+      "range": "3.37",
+      "target": "2.99",
+      "achievement": "112.7%"
+    },
+    "historicVol": "17.4%",
+    "impliedVol": "21.0%",
+    "impliedTarget": "0.97",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "CLM26",
+    "commodity": "Crude Oil WTI",
+    "month": "Jun",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "92.89",
+      "low": "88.16",
+      "range": "4.73",
+      "target": "7.07",
+      "achievement": "66.9%"
+    },
+    "weekly": {
+      "high": "101.17",
+      "low": "83.8",
+      "range": "17.37",
+      "target": "18.46",
+      "achievement": "94.1%"
+    },
+    "historicVol": "76.7%",
+    "impliedVol": "31.0%",
+    "impliedTarget": "1.76",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "GFK26",
+    "commodity": "Feeder Cattle",
+    "month": "May",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "370.775",
+      "low": "366.8",
+      "range": "3.975",
+      "target": "5.35",
+      "achievement": "74.3%"
+    },
+    "weekly": {
+      "high": "372.625",
+      "low": "363.425",
+      "range": "9.2",
+      "target": "16.825",
+      "achievement": "54.7%"
+    },
+    "historicVol": "14.9%",
+    "impliedVol": "18.0%",
+    "impliedTarget": "4.2",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "GCJ26",
+    "commodity": "Gold",
+    "month": "Apr",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "4799.1",
+      "low": "4711",
+      "range": "88.1",
+      "target": "170.2",
+      "achievement": "51.8%"
+    },
+    "weekly": {
+      "high": "4851",
+      "low": "4558.9",
+      "range": "292.1",
+      "target": "456.4",
+      "achievement": "64.0%"
+    },
+    "historicVol": "39.9%",
+    "impliedVol": "17.0%",
+    "impliedTarget": "51.4",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "KEN26",
+    "commodity": "Hard Red Wheat",
+    "month": "Jul",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "621.5",
+      "low": "600.75",
+      "range": "20.75",
+      "target": "20",
+      "achievement": "103.8%"
+    },
+    "weekly": {
+      "high": "640.25",
+      "low": "600.75",
+      "range": "39.5",
+      "target": "46.75",
+      "achievement": "84.5%"
+    },
+    "historicVol": "28.1%",
+    "impliedVol": "23.0%",
+    "impliedTarget": "8.75",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "HEM26",
+    "commodity": "Lean Hogs",
+    "month": "Jun",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "104.9",
+      "low": "103.65",
+      "range": "1.25",
+      "target": "1.55",
+      "achievement": "80.6%"
+    },
+    "weekly": {
+      "high": "107.85",
+      "low": "103.65",
+      "range": "4.2",
+      "target": "3.325",
+      "achievement": "126.3%"
+    },
+    "historicVol": "18.7%",
+    "impliedVol": "20.0%",
+    "impliedTarget": "1.3",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "LEJ26",
+    "commodity": "Live Cattle",
+    "month": "Apr",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "249.95",
+      "low": "248.175",
+      "range": "1.775",
+      "target": "2.5",
+      "achievement": "71.0%"
+    },
+    "weekly": {
+      "high": "249.95",
+      "low": "241.95",
+      "range": "8",
+      "target": "8.675",
+      "achievement": "92.2%"
+    },
+    "historicVol": "9.0%",
+    "impliedVol": "17.0%",
+    "impliedTarget": "2.675",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "NQM26",
+    "commodity": "Nasdaq 100 E-Mini",
+    "month": "Jun",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "25269.75",
+      "low": "24953",
+      "range": "316.75",
+      "target": "571.75",
+      "achievement": "55.4%"
+    },
+    "weekly": {
+      "high": "25269.75",
+      "low": "23666",
+      "range": "1603.75",
+      "target": "1104.5",
+      "achievement": "145.2%"
+    },
+    "historicVol": "23.6%",
+    "impliedVol": "19.0%",
+    "impliedTarget": "302.25",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "NGM26",
+    "commodity": "Natural Gas",
+    "month": "Jun",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "2.879",
+      "low": "2.796",
+      "range": "0.083",
+      "target": "0.149",
+      "achievement": "55.7%"
+    },
+    "weekly": {
+      "high": "3.006",
+      "low": "2.796",
+      "range": "0.21",
+      "target": "0.399",
+      "achievement": "52.6%"
+    },
+    "historicVol": "38.1%",
+    "impliedVol": "44.0%",
+    "impliedTarget": "0.078",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZRN26",
+    "commodity": "Rice",
+    "month": "Jul",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "11.5",
+      "low": "11.5",
+      "range": "0",
+      "target": "15.5",
+      "achievement": "0.0%"
+    },
+    "weekly": {
+      "high": "1165",
+      "low": "11.5",
+      "range": "1153.5",
+      "target": "46.5",
+      "achievement": "2480.6%"
+    },
+    "historicVol": "1636.6%",
+    "impliedVol": "18.0%",
+    "impliedTarget": "0",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ESM26",
+    "commodity": "S&P 500 E-Mini",
+    "month": "Jun",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "6876",
+      "low": "6792.5",
+      "range": "83.5",
+      "target": "131.75",
+      "achievement": "63.4%"
+    },
+    "weekly": {
+      "high": "6876",
+      "low": "6503.75",
+      "range": "372.25",
+      "target": "263",
+      "achievement": "141.5%"
+    },
+    "historicVol": "19.6%",
+    "impliedVol": "16.0%",
+    "impliedTarget": "69.25",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "SIM26",
+    "commodity": "Silver",
+    "month": "Jun",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "77",
+      "low": "73.3",
+      "range": "3.7",
+      "target": "5.045",
+      "achievement": "73.3%"
+    },
+    "weekly": {
+      "high": "78",
+      "low": "69.9",
+      "range": "8.1",
+      "target": "11.92",
+      "achievement": "68.0%"
+    },
+    "historicVol": "57.9%",
+    "impliedVol": "24.0%",
+    "impliedTarget": "1.145",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZMN26",
+    "commodity": "Soybean Meal",
+    "month": "Jul",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "317.4",
+      "low": "311.8",
+      "range": "5.6",
+      "target": "6.2",
+      "achievement": "90.3%"
+    },
+    "weekly": {
+      "high": "317.4",
+      "low": "310.7",
+      "range": "6.7",
+      "target": "12.9",
+      "achievement": "51.9%"
+    },
+    "historicVol": "22.8%",
+    "impliedVol": "20.0%",
+    "impliedTarget": "4",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZLN26",
+    "commodity": "Soybean Oil",
+    "month": "Jul",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "68.42",
+      "low": "67.19",
+      "range": "1.23",
+      "target": "1.84",
+      "achievement": "66.8%"
+    },
+    "weekly": {
+      "high": "70.12",
+      "low": "65.9",
+      "range": "4.22",
+      "target": "4.3",
+      "achievement": "98.1%"
+    },
+    "historicVol": "30.8%",
+    "impliedVol": "21.0%",
+    "impliedTarget": "0.89",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZSN26",
+    "commodity": "Soybeans",
+    "month": "Jul",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "1186",
+      "low": "1176",
+      "range": "10",
+      "target": "20",
+      "achievement": "50.0%"
+    },
+    "weekly": {
+      "high": "1190",
+      "low": "1156.75",
+      "range": "33.25",
+      "target": "52",
+      "achievement": "63.9%"
+    },
+    "historicVol": "22.8%",
+    "impliedVol": "19.0%",
+    "impliedTarget": "14",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZSX26",
+    "commodity": "Soybeans",
+    "month": "Nov",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "1159",
+      "low": "1149.75",
+      "range": "9.25",
+      "target": "16",
+      "achievement": "57.8%"
+    },
+    "weekly": {
+      "high": "1161.75",
+      "low": "1135",
+      "range": "26.75",
+      "target": "36",
+      "achievement": "74.3%"
+    },
+    "historicVol": "15.4%",
+    "impliedVol": "19.0%",
+    "impliedTarget": "13.75",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "DXM26",
+    "commodity": "US Dollar",
+    "month": "Jun",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "98.96",
+      "low": "98.405",
+      "range": "0.555",
+      "target": "0.715",
+      "achievement": "77.6%"
+    },
+    "weekly": {
+      "high": "100.2",
+      "low": "98.295",
+      "range": "1.905",
+      "target": "1.335",
+      "achievement": "142.7%"
+    },
+    "historicVol": "7.6%",
+    "impliedVol": "10.0%",
+    "impliedTarget": "0.62",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  },
+  {
+    "symbol": "ZWN26",
+    "commodity": "Wheat",
+    "month": "Jul",
+    "date": "2026-04-09",
+    "daily": {
+      "high": "598.75",
+      "low": "580",
+      "range": "18.75",
+      "target": "17",
+      "achievement": "110.3%"
+    },
+    "weekly": {
+      "high": "620.25",
+      "low": "580",
+      "range": "40.25",
+      "target": "42",
+      "achievement": "95.8%"
+    },
+    "historicVol": "25.2%",
+    "impliedVol": "22.0%",
+    "impliedTarget": "8",
+    "asOf": "2026-04-09T21:41:31Z",
+    "isStale": false,
+    "source": "yahoo",
+    "overrideApplied": false
+  }
+]

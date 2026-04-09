@@ -1,7 +1,10 @@
 {
-  "builtAt": "",
-  "status": "init",
-  "successCount": 0,
+  "builtAt": "2026-04-09T21:41:31Z",
+  "contractCount": 23,
+  "successCount": 23,
   "errorCount": 0,
-  "version": "v2.1"
+  "status": "ok",
+  "historyRange": "6mo",
+  "historicLookbackDays": 20,
+  "hasOverrides": false
 }

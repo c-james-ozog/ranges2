@@ -1,0 +1,140 @@
+[
+  {
+    "symbol": "CCK26",
+    "commodity": "Cocoa",
+    "month": "May",
+    "historyUrl": "history/CCK26.json"
+  },
+  {
+    "symbol": "KCK26",
+    "commodity": "Coffee",
+    "month": "May",
+    "historyUrl": "history/KCK26.json"
+  },
+  {
+    "symbol": "HGK26",
+    "commodity": "Copper",
+    "month": "May",
+    "historyUrl": "history/HGK26.json"
+  },
+  {
+    "symbol": "ZCN26",
+    "commodity": "Corn",
+    "month": "Jul",
+    "historyUrl": "history/ZCN26.json"
+  },
+  {
+    "symbol": "ZCZ26",
+    "commodity": "Corn",
+    "month": "Dec",
+    "historyUrl": "history/ZCZ26.json"
+  },
+  {
+    "symbol": "CTK26",
+    "commodity": "Cotton",
+    "month": "May",
+    "historyUrl": "history/CTK26.json"
+  },
+  {
+    "symbol": "CLM26",
+    "commodity": "Crude Oil WTI",
+    "month": "Jun",
+    "historyUrl": "history/CLM26.json"
+  },
+  {
+    "symbol": "GFK26",
+    "commodity": "Feeder Cattle",
+    "month": "May",
+    "historyUrl": "history/GFK26.json"
+  },
+  {
+    "symbol": "GCJ26",
+    "commodity": "Gold",
+    "month": "Apr",
+    "historyUrl": "history/GCJ26.json"
+  },
+  {
+    "symbol": "KEN26",
+    "commodity": "Hard Red Wheat",
+    "month": "Jul",
+    "historyUrl": "history/KEN26.json"
+  },
+  {
+    "symbol": "HEM26",
+    "commodity": "Lean Hogs",
+    "month": "Jun",
+    "historyUrl": "history/HEM26.json"
+  },
+  {
+    "symbol": "LEJ26",
+    "commodity": "Live Cattle",
+    "month": "Apr",
+    "historyUrl": "history/LEJ26.json"
+  },
+  {
+    "symbol": "NQM26",
+    "commodity": "Nasdaq 100 E-Mini",
+    "month": "Jun",
+    "historyUrl": "history/NQM26.json"
+  },
+  {
+    "symbol": "NGM26",
+    "commodity": "Natural Gas",
+    "month": "Jun",
+    "historyUrl": "history/NGM26.json"
+  },
+  {
+    "symbol": "ZRN26",
+    "commodity": "Rice",
+    "month": "Jul",
+    "historyUrl": "history/ZRN26.json"
+  },
+  {
+    "symbol": "ESM26",
+    "commodity": "S&P 500 E-Mini",
+    "month": "Jun",
+    "historyUrl": "history/ESM26.json"
+  },
+  {
+    "symbol": "SIM26",
+    "commodity": "Silver",
+    "month": "Jun",
+    "historyUrl": "history/SIM26.json"
+  },
+  {
+    "symbol": "ZMN26",
+    "commodity": "Soybean Meal",
+    "month": "Jul",
+    "historyUrl": "history/ZMN26.json"
+  },
+  {
+    "symbol": "ZLN26",
+    "commodity": "Soybean Oil",
+    "month": "Jul",
+    "historyUrl": "history/ZLN26.json"
+  },
+  {
+    "symbol": "ZSN26",
+    "commodity": "Soybeans",
+    "month": "Jul",
+    "historyUrl": "history/ZSN26.json"
+  },
+  {
+    "symbol": "ZSX26",
+    "commodity": "Soybeans",
+    "month": "Nov",
+    "historyUrl": "history/ZSX26.json"
+  },
+  {
+    "symbol": "DXM26",
+    "commodity": "US Dollar",
+    "month": "Jun",
+    "historyUrl": "history/DXM26.json"
+  },
+  {
+    "symbol": "ZWN26",
+    "commodity": "Wheat",
+    "month": "Jul",
+    "historyUrl": "history/ZWN26.json"
+  }
+]
