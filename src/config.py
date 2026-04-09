@@ -1,14 +1,73 @@
+from pathlib import Path
+
 CONTRACTS = [
+    {"commodity": "Cocoa", "symbol": "CCK26.NYB", "base_symbol": "CCK26", "month": "May"},
+    {"commodity": "Coffee", "symbol": "KCK26.NYB", "base_symbol": "KCK26", "month": "May"},
+    {"commodity": "Copper", "symbol": "HGK26.CMX", "base_symbol": "HGK26", "month": "May"},
     {"commodity": "Corn", "symbol": "ZCN26.CBT", "base_symbol": "ZCN26", "month": "Jul"},
     {"commodity": "Corn", "symbol": "ZCZ26.CBT", "base_symbol": "ZCZ26", "month": "Dec"},
+    {"commodity": "Cotton", "symbol": "CTK26.NYB", "base_symbol": "CTK26", "month": "May"},
     {"commodity": "Crude Oil WTI", "symbol": "CLM26.NYM", "base_symbol": "CLM26", "month": "Jun"},
+    {"commodity": "Feeder Cattle", "symbol": "GFK26.CME", "base_symbol": "GFK26", "month": "May"},
     {"commodity": "Gold", "symbol": "GCJ26.CMX", "base_symbol": "GCJ26", "month": "Apr"},
-    {"commodity": "S&P 500 E-Mini", "symbol": "ESM26.CME", "base_symbol": "ESM26", "month": "Jun"}
+    {"commodity": "Hard Red Wheat", "symbol": "KEN26.CBT", "base_symbol": "KEN26", "month": "Jul"},
+    {"commodity": "Lean Hogs", "symbol": "HEM26.CME", "base_symbol": "HEM26", "month": "Jun"},
+    {"commodity": "Live Cattle", "symbol": "LEJ26.CME", "base_symbol": "LEJ26", "month": "Apr"},
+    {"commodity": "Nasdaq 100 E-Mini", "symbol": "NQM26.CME", "base_symbol": "NQM26", "month": "Jun"},
+    {"commodity": "Natural Gas", "symbol": "NGM26.NYM", "base_symbol": "NGM26", "month": "Jun"},
+    {"commodity": "Rice", "symbol": "ZRN26.CBT", "base_symbol": "ZRN26", "month": "Jul"},
+    {"commodity": "S&P 500 E-Mini", "symbol": "ESM26.CME", "base_symbol": "ESM26", "month": "Jun"},
+    {"commodity": "Silver", "symbol": "SIM26.CMX", "base_symbol": "SIM26", "month": "Jun"},
+    {"commodity": "Soybean Meal", "symbol": "ZMN26.CBT", "base_symbol": "ZMN26", "month": "Jul"},
+    {"commodity": "Soybean Oil", "symbol": "ZLN26.CBT", "base_symbol": "ZLN26", "month": "Jul"},
+    {"commodity": "Soybeans", "symbol": "ZSN26.CBT", "base_symbol": "ZSN26", "month": "Jul"},
+    {"commodity": "Soybeans", "symbol": "ZSX26.CBT", "base_symbol": "ZSX26", "month": "Nov"},
+    {"commodity": "US Dollar", "symbol": "DXM26.NYB", "base_symbol": "DXM26", "month": "Jun"},
+    {"commodity": "Wheat", "symbol": "ZWN26.CBT", "base_symbol": "ZWN26", "month": "Jul"},
 ]
 
 TICK_SIZES = {
-    "Corn": 0.25,
-    "Crude Oil WTI": 0.01,
-    "Gold": 0.1,
-    "S&P 500 E-Mini": 0.25
+    "Cocoa": 1, "Coffee": 0.05, "Copper": 0.0005, "Corn": 0.25,
+    "Cotton": 0.01, "Crude Oil WTI": 0.01, "Feeder Cattle": 0.025,
+    "Gold": 0.1, "Hard Red Wheat": 0.25, "Lean Hogs": 0.025,
+    "Live Cattle": 0.025, "Nasdaq 100 E-Mini": 0.25, "Natural Gas": 0.001,
+    "Rice": 0.5, "S&P 500 E-Mini": 0.25, "Silver": 0.005,
+    "Soybean Meal": 0.1, "Soybean Oil": 0.01, "Soybeans": 0.25,
+    "US Dollar": 0.005, "Wheat": 0.25,
+}
+
+# Default placeholders until you wire exact option-based target formulas.
+DEFAULT_IMPLIED_VOL = {
+    "Cocoa": 24.0,
+    "Coffee": 27.0,
+    "Copper": 20.0,
+    "Corn": 22.0,
+    "Cotton": 21.0,
+    "Crude Oil WTI": 31.0,
+    "Feeder Cattle": 18.0,
+    "Gold": 17.0,
+    "Hard Red Wheat": 23.0,
+    "Lean Hogs": 20.0,
+    "Live Cattle": 17.0,
+    "Nasdaq 100 E-Mini": 19.0,
+    "Natural Gas": 44.0,
+    "Rice": 18.0,
+    "S&P 500 E-Mini": 16.0,
+    "Silver": 24.0,
+    "Soybean Meal": 20.0,
+    "Soybean Oil": 21.0,
+    "Soybeans": 19.0,
+    "US Dollar": 10.0,
+    "Wheat": 22.0,
+}
+
+SETTINGS = {
+    "history_range": "6mo",
+    "history_interval": "1d",
+    "historic_lookback_days": 20,
+    "previous_daily_count": 3,
+    "previous_weekly_count": 3,
+    "cache_dir": Path("feeds/cache"),
+    "history_dir": Path("feeds/history"),
+    "overrides_file": Path("overrides.json"),
 }
