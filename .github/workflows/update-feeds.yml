@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
 
       - name: Run build
-        run: python src/build_feeds.py
+        run: python -m src.build_feeds
 
       - name: Commit feeds
         run: |
