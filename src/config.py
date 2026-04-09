@@ -1,3 +1,5 @@
+from pathlib import Path
+
 CONTRACTS = [
     {"commodity": "Cocoa", "symbol": "CCK26.NYB", "base_symbol": "CCK26", "month": "May"},
     {"commodity": "Coffee", "symbol": "KCK26.NYB", "base_symbol": "KCK26", "month": "May"},
