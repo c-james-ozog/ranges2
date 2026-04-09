@@ -1,219 +1,142 @@
-from __future__ import annotations
-
+from pathlib import Path
 import json
 import time
-from copy import deepcopy
-from datetime import datetime, timezone
-from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
-from src.config import CONTRACTS, SETTINGS
-from src.scraper import build_history_rows, fetch_yahoo_history, latest_summary
-
-
-def read_json(path: Path, default):
-    if path.exists():
-        return json.loads(path.read_text(encoding="utf-8"))
-    return default
+from src.config import CONTRACTS
+from src.scraper import fetch_yahoo_history, parse_rows
 
 
-def write_json(path: Path, payload):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+def build_history(rows, contract):
+    history_rows = []
 
+    for r in rows:
+        date = datetime.fromtimestamp(r["timestamp"], tz=ZoneInfo("America/Chicago")).strftime("%Y-%m-%d")
 
-def now_iso() -> str:
-    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+        daily_range = r["high"] - r["low"]
 
+        # TEMP placeholder logic (you will refine later)
+        daily_target = daily_range
+        daily_achievement = (daily_range / daily_target * 100) if daily_target else 0
 
-def build_contract_lookup():
-    return {c["base_symbol"]: c for c in CONTRACTS}
+        history_rows.append({
+            "date": date,
+            "dailyTarget": f"{round(daily_target, 2)}",
+            "dailyRange": f"{round(daily_range, 2)}",
+            "dailyHigh": f"{round(r['high'], 2)}",
+            "dailyLow": f"{round(r['low'], 2)}",
+            "dailyAchievement": f"{round(daily_achievement, 1)}%",
+            "historicVol": "",
+            "impliedVol": "",
+            "weeklyRange": "",
+            "weeklyHigh": "",
+            "weeklyLow": "",
+            "weeklyAchievement": "",
+            "weeklyTarget": ""
+        })
 
-
-def apply_overrides(base_symbol: str, payload: dict, overrides: dict):
-    contract_overrides = deepcopy(overrides.get(base_symbol, {}))
-    if not contract_overrides:
-        payload["overrideApplied"] = False
-        return payload
-    for key, value in contract_overrides.items():
-        if key in {"note", "expiresAt"}:
-            continue
-        payload[key] = value
-    payload["overrideApplied"] = True
-    if "note" in contract_overrides:
-        payload["overrideNote"] = contract_overrides["note"]
-    if "expiresAt" in contract_overrides:
-        payload["overrideExpiresAt"] = contract_overrides["expiresAt"]
-    return payload
+    return history_rows
 
 
 def main():
     out = Path("feeds")
-    out.mkdir(exist_ok=True)
-    SETTINGS["cache_dir"].mkdir(parents=True, exist_ok=True)
-    SETTINGS["history_dir"].mkdir(parents=True, exist_ok=True)
+    history_dir = out / "history"
 
-    built_at = now_iso()
-    overrides = read_json(SETTINGS["overrides_file"], {})
-    contract_lookup = build_contract_lookup()
+    out.mkdir(exist_ok=True)
+    history_dir.mkdir(exist_ok=True)
 
     daily_feed = []
     weekly_feed = []
     previous_ranges_feed = []
-    overview_feed = []
     errors = []
     history_index = []
 
-    for contract in CONTRACTS:
-        base_symbol = contract["base_symbol"]
-        cache_path = SETTINGS["cache_dir"] / f"{base_symbol}.json"
-        history_path = SETTINGS["history_dir"] / f"{base_symbol}.json"
+    # ✅ Central Time timestamp
+    now_ct = datetime.now(ZoneInfo("America/Chicago")).isoformat()
 
+    for contract in CONTRACTS:
         try:
             rows = fetch_yahoo_history(contract["symbol"])
-            history_rows = build_history_rows(rows, contract["commodity"])
-            summary = latest_summary(history_rows)
-            stale = False
-            source = "yahoo"
-            cache_payload = {
-                "contract": contract,
-                "summary": summary,
-                "history": history_rows,
-                "asOf": built_at,
-                "isStale": False,
-                "source": source,
-            }
-            write_json(cache_path, cache_payload)
-            print("OK", contract["symbol"])
-        except Exception as exc:
-            cached = read_json(cache_path, None)
-            if not cached:
-                errors.append({"symbol": contract["symbol"], "error": str(exc), "usedCache": False})
-                print("ERR", contract["symbol"], exc)
-                time.sleep(0.5)
-                continue
-            contract = cached["contract"]
-            summary = cached["summary"]
-            history_rows = cached["history"]
-            stale = True
-            source = "cache"
-            errors.append({"symbol": contract["symbol"], "error": str(exc), "usedCache": True})
-            print("CACHE", contract["symbol"], exc)
+            parsed = parse_rows(rows, contract["commodity"])
 
-        daily_payload = {
-            "symbol": base_symbol,
-            "commodity": contract["commodity"],
-            "month": contract["month"],
-            "dailyHigh": summary["dailyHigh"],
-            "dailyLow": summary["dailyLow"],
-            "dailyRange": summary["dailyRange"],
-            "dailyTarget": summary["dailyTarget"],
-            "dailyAchievement": summary["dailyAchievement"],
-            "asOf": built_at,
-            "isStale": stale,
-            "source": source,
-        }
-        weekly_payload = {
-            "symbol": base_symbol,
-            "commodity": contract["commodity"],
-            "month": contract["month"],
-            "weeklyHigh": summary["weeklyHigh"],
-            "weeklyLow": summary["weeklyLow"],
-            "weeklyRange": summary["weeklyRange"],
-            "weeklyTarget": summary["weeklyTarget"],
-            "weeklyAchievement": summary["weeklyAchievement"],
-            "asOf": built_at,
-            "isStale": stale,
-            "source": source,
-        }
-        previous_payload = {
-            "symbol": base_symbol,
-            "commodity": contract["commodity"],
-            "month": contract["month"],
-            "previousDailyRanges": summary["previousDailyRanges"],
-            "previousWeeklyRanges": summary["previousWeeklyRanges"],
-            "historicVol": summary["historicVol"],
-            "impliedVol": summary["impliedVol"],
-            "impliedTarget": summary["impliedTarget"],
-            "asOf": built_at,
-            "isStale": stale,
-            "source": source,
-        }
-        overview_payload = {
-            "symbol": base_symbol,
-            "commodity": contract["commodity"],
-            "month": contract["month"],
-            "date": summary["date"],
-            "daily": {
-                "high": summary["dailyHigh"],
-                "low": summary["dailyLow"],
-                "range": summary["dailyRange"],
-                "target": summary["dailyTarget"],
-                "achievement": summary["dailyAchievement"],
-            },
-            "weekly": {
-                "high": summary["weeklyHigh"],
-                "low": summary["weeklyLow"],
-                "range": summary["weeklyRange"],
-                "target": summary["weeklyTarget"],
-                "achievement": summary["weeklyAchievement"],
-            },
-            "historicVol": summary["historicVol"],
-            "impliedVol": summary["impliedVol"],
-            "impliedTarget": summary["impliedTarget"],
-            "asOf": built_at,
-            "isStale": stale,
-            "source": source,
-        }
+            clean = contract["base_symbol"]
 
-        daily_payload = apply_overrides(base_symbol, daily_payload, overrides)
-        weekly_payload = apply_overrides(base_symbol, weekly_payload, overrides)
-        previous_payload = apply_overrides(base_symbol, previous_payload, overrides)
-        overview_payload = apply_overrides(base_symbol, overview_payload, overrides)
+            # ---------- DAILY ----------
+            daily_feed.append({
+                "symbol": clean,
+                "dailyHigh": parsed["dailyHigh"],
+                "dailyLow": parsed["dailyLow"],
+                "asOf": now_ct,
+                "isStale": False
+            })
 
-        daily_feed.append(daily_payload)
-        weekly_feed.append(weekly_payload)
-        previous_ranges_feed.append(previous_payload)
-        overview_feed.append(overview_payload)
+            # ---------- WEEKLY ----------
+            weekly_feed.append({
+                "symbol": clean,
+                "weeklyHigh": parsed["weeklyHigh"],
+                "weeklyLow": parsed["weeklyLow"],
+                "asOf": now_ct,
+                "isStale": False
+            })
 
-        history_doc = {
-            "symbol": base_symbol,
-            "commodity": contract["commodity"],
-            "month": contract["month"],
-            "asOf": built_at,
-            "isStale": stale,
-            "source": source,
-            "rows": history_rows,
-        }
-        history_doc = apply_overrides(base_symbol, history_doc, overrides)
-        write_json(history_path, history_doc)
-        history_index.append(
-            {
-                "symbol": base_symbol,
+            # ---------- PREVIOUS ----------
+            previous_ranges_feed.append({
+                "symbol": clean,
+                "previousDailyRanges": parsed["previousDailyRanges"],
+                "previousWeeklyRanges": parsed["previousWeeklyRanges"]
+            })
+
+            # ---------- HISTORY ----------
+            history_rows = build_history(rows, contract)
+
+            history_payload = {
+                "symbol": clean,
                 "commodity": contract["commodity"],
                 "month": contract["month"],
-                "historyUrl": f"history/{base_symbol}.json",
+                "updatedAt": now_ct,
+                "rows": history_rows
             }
-        )
+
+            (history_dir / f"{clean}.json").write_text(
+                json.dumps(history_payload, indent=2),
+                encoding="utf-8"
+            )
+
+            history_index.append(clean)
+
+            print("OK", contract["symbol"])
+
+        except Exception as exc:
+            errors.append({
+                "symbol": contract["symbol"],
+                "error": str(exc)
+            })
+            print("ERR", contract["symbol"], exc)
+
         time.sleep(0.5)
 
+    # ---------- WRITE MAIN FEEDS ----------
+    (out / "daily-feed-full.json").write_text(json.dumps(daily_feed, indent=2))
+    (out / "weekly-feed-full.json").write_text(json.dumps(weekly_feed, indent=2))
+    (out / "previous-ranges-feed-full.json").write_text(json.dumps(previous_ranges_feed, indent=2))
+    (out / "errors.json").write_text(json.dumps(errors, indent=2))
+
+    # ---------- META ----------
     meta = {
-        "builtAt": built_at,
-        "contractCount": len(CONTRACTS),
-        "successCount": len(overview_feed),
+        "builtAt": now_ct,
+        "status": "ok" if not errors else "partial",
+        "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "status": "ok" if not errors else ("partial" if overview_feed else "error"),
-        "historyRange": SETTINGS["history_range"],
-        "historicLookbackDays": SETTINGS["historic_lookback_days"],
-        "hasOverrides": bool(overrides),
+        "version": "v2.1"
     }
 
-    write_json(out / "daily-feed-full.json", daily_feed)
-    write_json(out / "weekly-feed-full.json", weekly_feed)
-    write_json(out / "previous-ranges-feed-full.json", previous_ranges_feed)
-    write_json(out / "overview-feed-full.json", overview_feed)
-    write_json(out / "history-index.json", history_index)
-    write_json(out / "errors.json", errors)
-    write_json(out / "meta.json", meta)
+    (out / "meta.json").write_text(json.dumps(meta, indent=2))
+
+    # ---------- HISTORY INDEX ----------
+    (history_dir / "index.json").write_text(json.dumps({
+        "contracts": history_index
+    }, indent=2))
 
 
 if __name__ == "__main__":
