@@ -7,16 +7,11 @@ from zoneinfo import ZoneInfo
 from src.config import CONTRACTS
 from src.scraper import fetch_yahoo_history, parse_rows
 
-
 def build_history(rows, contract):
     history_rows = []
-
     for r in rows:
         date = datetime.fromtimestamp(r["timestamp"], tz=ZoneInfo("America/Chicago")).strftime("%Y-%m-%d")
-
         daily_range = r["high"] - r["low"]
-
-        # TEMP placeholder logic (you will refine later)
         daily_target = daily_range
         daily_achievement = (daily_range / daily_target * 100) if daily_target else 0
 
@@ -35,14 +30,11 @@ def build_history(rows, contract):
             "weeklyAchievement": "",
             "weeklyTarget": ""
         })
-
     return history_rows
-
 
 def main():
     out = Path("feeds")
     history_dir = out / "history"
-
     out.mkdir(exist_ok=True)
     history_dir.mkdir(exist_ok=True)
 
@@ -52,17 +44,14 @@ def main():
     errors = []
     history_index = []
 
-    # ✅ Central Time timestamp
     now_ct = datetime.now(ZoneInfo("America/Chicago")).isoformat()
 
     for contract in CONTRACTS:
         try:
             rows = fetch_yahoo_history(contract["symbol"])
             parsed = parse_rows(rows, contract["commodity"])
-
             clean = contract["base_symbol"]
 
-            # ---------- DAILY ----------
             daily_feed.append({
                 "symbol": clean,
                 "dailyHigh": parsed["dailyHigh"],
@@ -71,7 +60,6 @@ def main():
                 "isStale": False
             })
 
-            # ---------- WEEKLY ----------
             weekly_feed.append({
                 "symbol": clean,
                 "weeklyHigh": parsed["weeklyHigh"],
@@ -80,16 +68,13 @@ def main():
                 "isStale": False
             })
 
-            # ---------- PREVIOUS ----------
             previous_ranges_feed.append({
                 "symbol": clean,
                 "previousDailyRanges": parsed["previousDailyRanges"],
                 "previousWeeklyRanges": parsed["previousWeeklyRanges"]
             })
 
-            # ---------- HISTORY ----------
             history_rows = build_history(rows, contract)
-
             history_payload = {
                 "symbol": clean,
                 "commodity": contract["commodity"],
@@ -104,25 +89,19 @@ def main():
             )
 
             history_index.append(clean)
-
             print("OK", contract["symbol"])
 
         except Exception as exc:
-            errors.append({
-                "symbol": contract["symbol"],
-                "error": str(exc)
-            })
+            errors.append({"symbol": contract["symbol"], "error": str(exc)})
             print("ERR", contract["symbol"], exc)
 
         time.sleep(0.5)
 
-    # ---------- WRITE MAIN FEEDS ----------
-    (out / "daily-feed-full.json").write_text(json.dumps(daily_feed, indent=2))
-    (out / "weekly-feed-full.json").write_text(json.dumps(weekly_feed, indent=2))
-    (out / "previous-ranges-feed-full.json").write_text(json.dumps(previous_ranges_feed, indent=2))
-    (out / "errors.json").write_text(json.dumps(errors, indent=2))
+    (out / "daily-feed-full.json").write_text(json.dumps(daily_feed, indent=2), encoding="utf-8")
+    (out / "weekly-feed-full.json").write_text(json.dumps(weekly_feed, indent=2), encoding="utf-8")
+    (out / "previous-ranges-feed-full.json").write_text(json.dumps(previous_ranges_feed, indent=2), encoding="utf-8")
+    (out / "errors.json").write_text(json.dumps(errors, indent=2), encoding="utf-8")
 
-    # ---------- META ----------
     meta = {
         "builtAt": now_ct,
         "status": "ok" if not errors else "partial",
@@ -130,14 +109,12 @@ def main():
         "errorCount": len(errors),
         "version": "v2.1"
     }
+    (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
-    (out / "meta.json").write_text(json.dumps(meta, indent=2))
-
-    # ---------- HISTORY INDEX ----------
-    (history_dir / "index.json").write_text(json.dumps({
-        "contracts": history_index
-    }, indent=2))
-
+    (history_dir / "index.json").write_text(
+        json.dumps({"contracts": history_index}, indent=2),
+        encoding="utf-8"
+    )
 
 if __name__ == "__main__":
     main()
