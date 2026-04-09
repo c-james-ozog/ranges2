@@ -1,5 +1,3 @@
-from pathlib import Path
-
 CONTRACTS = [
     {"commodity": "Cocoa", "symbol": "CCK26.NYB", "base_symbol": "CCK26", "month": "May"},
     {"commodity": "Coffee", "symbol": "KCK26.NYB", "base_symbol": "KCK26", "month": "May"},
@@ -34,31 +32,6 @@ TICK_SIZES = {
     "Rice": 0.5, "S&P 500 E-Mini": 0.25, "Silver": 0.005,
     "Soybean Meal": 0.1, "Soybean Oil": 0.01, "Soybeans": 0.25,
     "US Dollar": 0.005, "Wheat": 0.25,
-}
-
-# Default placeholders until you wire exact option-based target formulas.
-DEFAULT_IMPLIED_VOL = {
-    "Cocoa": 24.0,
-    "Coffee": 27.0,
-    "Copper": 20.0,
-    "Corn": 22.0,
-    "Cotton": 21.0,
-    "Crude Oil WTI": 31.0,
-    "Feeder Cattle": 18.0,
-    "Gold": 17.0,
-    "Hard Red Wheat": 23.0,
-    "Lean Hogs": 20.0,
-    "Live Cattle": 17.0,
-    "Nasdaq 100 E-Mini": 19.0,
-    "Natural Gas": 44.0,
-    "Rice": 18.0,
-    "S&P 500 E-Mini": 16.0,
-    "Silver": 24.0,
-    "Soybean Meal": 20.0,
-    "Soybean Oil": 21.0,
-    "Soybeans": 19.0,
-    "US Dollar": 10.0,
-    "Wheat": 22.0,
 }
 
 SETTINGS = {
