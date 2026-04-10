@@ -2,8 +2,23 @@
   "symbol": "ZCN26",
   "commodity": "Corn",
   "month": "Jul",
-  "updatedAt": "2026-04-09T17:21:59.013292-05:00",
+  "updatedAt": "2026-04-09T22:37:59.169680-05:00",
   "rows": [
+    {
+      "date": "2026-04-09",
+      "dailyTarget": "6.5",
+      "dailyRange": "1.75",
+      "dailyHigh": "456.25",
+      "dailyLow": "454.5",
+      "dailyAchievement": "26.9%",
+      "historicVol": "21.3%",
+      "impliedVol": "",
+      "weeklyRange": "13",
+      "weeklyHigh": "465.75",
+      "weeklyLow": "452.75",
+      "weeklyAchievement": "67.0%",
+      "weeklyTarget": "19.5"
+    },
     {
       "date": "2026-04-08",
       "dailyTarget": "6",

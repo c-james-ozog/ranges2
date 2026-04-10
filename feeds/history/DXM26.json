@@ -2,8 +2,23 @@
   "symbol": "DXM26",
   "commodity": "US Dollar",
   "month": "Jun",
-  "updatedAt": "2026-04-09T17:21:59.013292-05:00",
+  "updatedAt": "2026-04-09T22:37:59.169680-05:00",
   "rows": [
+    {
+      "date": "2026-04-09",
+      "dailyTarget": "0.61",
+      "dailyRange": "0.08",
+      "dailyHigh": "98.72",
+      "dailyLow": "98.64",
+      "dailyAchievement": "13.1%",
+      "historicVol": "13.3%",
+      "impliedVol": "",
+      "weeklyRange": "1.905",
+      "weeklyHigh": "100.2",
+      "weeklyLow": "98.295",
+      "weeklyAchievement": "135.6%",
+      "weeklyTarget": "1.405"
+    },
     {
       "date": "2026-04-08",
       "dailyTarget": "0.56",

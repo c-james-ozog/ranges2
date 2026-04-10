@@ -2,8 +2,23 @@
   "symbol": "ZWN26",
   "commodity": "Wheat",
   "month": "Jul",
-  "updatedAt": "2026-04-09T17:21:59.013292-05:00",
+  "updatedAt": "2026-04-09T22:37:59.169680-05:00",
   "rows": [
+    {
+      "date": "2026-04-09",
+      "dailyTarget": "14.5",
+      "dailyRange": "4",
+      "dailyHigh": "586.5",
+      "dailyLow": "582.5",
+      "dailyAchievement": "27.6%",
+      "historicVol": "25.4%",
+      "impliedVol": "",
+      "weeklyRange": "31.5",
+      "weeklyHigh": "611.5",
+      "weeklyLow": "580",
+      "weeklyAchievement": "104.1%",
+      "weeklyTarget": "30.25"
+    },
     {
       "date": "2026-04-08",
       "dailyTarget": "12",
