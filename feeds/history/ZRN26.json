@@ -2,21 +2,21 @@
   "symbol": "ZRN26",
   "commodity": "Rice",
   "month": "Jul",
-  "updatedAt": "2026-04-09T22:37:59.169680-05:00",
+  "updatedAt": "2026-04-10T11:17:21.439421-05:00",
   "rows": [
     {
       "date": "2026-04-09",
       "dailyTarget": "15.5",
       "dailyRange": "0",
       "dailyHigh": "11.5",
-      "dailyLow": "11.5",
-      "dailyAchievement": "0.1%",
-      "historicVol": "0.1%",
+      "dailyLow": "11",
+      "dailyAchievement": "0.6%",
+      "historicVol": "0.6%",
       "impliedVol": "",
-      "weeklyRange": "1146.5",
+      "weeklyRange": "1147",
       "weeklyHigh": "1158",
-      "weeklyLow": "11.5",
-      "weeklyAchievement": "3659.6%",
+      "weeklyLow": "11",
+      "weeklyAchievement": "3659.9%",
       "weeklyTarget": "31.5"
     },
     {
@@ -661,8 +661,8 @@
       "weeklyRange": "26.5",
       "weeklyHigh": "1186.5",
       "weeklyLow": "1160",
-      "weeklyAchievement": "83.7%",
-      "weeklyTarget": "31.5"
+      "weeklyAchievement": "100.0%",
+      "weeklyTarget": "26.5"
     },
     {
       "date": "2026-02-04",
@@ -791,7 +791,7 @@
       "dailyHigh": "1149.5",
       "dailyLow": "1140",
       "dailyAchievement": "475.0%",
-      "historicVol": "351.9%",
+      "historicVol": "",
       "impliedVol": "",
       "weeklyRange": "42",
       "weeklyHigh": "1149.5",
@@ -883,11 +883,11 @@
       "dailyAchievement": "",
       "historicVol": "",
       "impliedVol": "",
-      "weeklyRange": "39",
-      "weeklyHigh": "1120.5",
-      "weeklyLow": "1081.5",
-      "weeklyAchievement": "100.0%",
-      "weeklyTarget": "39"
+      "weeklyRange": "",
+      "weeklyHigh": "",
+      "weeklyLow": "",
+      "weeklyAchievement": "",
+      "weeklyTarget": ""
     },
     {
       "date": "2026-01-13",
@@ -925,21 +925,6 @@
       "dailyRange": "0",
       "dailyHigh": "1082",
       "dailyLow": "1082",
-      "dailyAchievement": "",
-      "historicVol": "",
-      "impliedVol": "",
-      "weeklyRange": "",
-      "weeklyHigh": "",
-      "weeklyLow": "",
-      "weeklyAchievement": "",
-      "weeklyTarget": ""
-    },
-    {
-      "date": "2026-01-08",
-      "dailyTarget": "0",
-      "dailyRange": "0",
-      "dailyHigh": "1081.5",
-      "dailyLow": "1081.5",
       "dailyAchievement": "",
       "historicVol": "",
       "impliedVol": "",
