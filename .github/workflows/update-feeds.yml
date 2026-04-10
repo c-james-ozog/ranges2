@@ -1,33 +1,54 @@
 name: Update Feeds
 
 on:
-  schedule:
-    - cron: "11 0 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "15 23 * * 1-5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-feeds
+  cancel-in-progress: false
 
 jobs:
-  build:
+  update-feeds:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Run build
-        run: python -m src.build_feeds
-
-      - name: Commit feeds
+      - name: Prepare folders
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          mkdir -p feeds
+          mkdir -p feeds/history
+          mkdir -p feeds/cache
+
+      - name: Run feed build
+        env:
+          TZ: America/Chicago
+        run: |
+          python build_feeds.py
+
+      - name: Commit updated feeds
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add feeds/
-          git commit -m "update feeds" || echo "no changes"
+
+          if git diff --cached --quiet; then
+            echo "No feed changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update feeds"
           git push
