@@ -2,16 +2,16 @@
   "symbol": "CLM26",
   "commodity": "Crude Oil WTI",
   "month": "Jun",
-  "updatedAt": "2026-04-10T14:15:45.833203-05:00",
+  "updatedAt": "2026-04-10T14:36:10.616274-05:00",
   "rows": [
     {
-      "date": "2026-04-09",
+      "date": "2026-04-10",
       "dailyHigh": "91.8",
-      "dailyLow": "88.88",
-      "dailyRange": "2.92",
-      "fullAchievement": "6.48",
-      "nextDailyTarget": "5.18",
-      "historicVol": "43.4%",
+      "dailyLow": "88.8",
+      "dailyRange": "3",
+      "fullAchievement": "6.5",
+      "nextDailyTarget": "5.2",
+      "historicVol": "44.6%",
       "impliedVol": "",
       "weeklyHigh": "101.17",
       "weeklyLow": "83.8",
@@ -19,12 +19,12 @@
       "weeklyFullAchievement": "14.95",
       "nextWeeklyTarget": "11.96",
       "dailyTarget": "5.86",
-      "dailyAchievement": "49.8%",
+      "dailyAchievement": "51.2%",
       "weeklyTarget": "12.56",
       "weeklyAchievement": "138.3%"
     },
     {
-      "date": "2026-04-08",
+      "date": "2026-04-09",
       "dailyHigh": "92.89",
       "dailyLow": "88.16",
       "dailyRange": "4.73",
@@ -43,7 +43,7 @@
       "weeklyAchievement": "132.1%"
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "dailyHigh": "95.58",
       "dailyLow": "83.8",
       "dailyRange": "11.78",
@@ -62,7 +62,7 @@
       "weeklyAchievement": "151.0%"
     },
     {
-      "date": "2026-04-06",
+      "date": "2026-04-07",
       "dailyHigh": "101.17",
       "dailyLow": "95.69",
       "dailyRange": "5.48",
@@ -81,7 +81,7 @@
       "weeklyAchievement": "123.2%"
     },
     {
-      "date": "2026-04-05",
+      "date": "2026-04-06",
       "dailyHigh": "100.91",
       "dailyLow": "95.57",
       "dailyRange": "5.34",
@@ -100,7 +100,7 @@
       "weeklyAchievement": "123.8%"
     },
     {
-      "date": "2026-04-01",
+      "date": "2026-04-02",
       "dailyHigh": "98.49",
       "dailyLow": "88.7",
       "dailyRange": "9.79",
@@ -119,7 +119,7 @@
       "weeklyAchievement": "99.0%"
     },
     {
-      "date": "2026-03-31",
+      "date": "2026-04-01",
       "dailyHigh": "94.81",
       "dailyLow": "88.7",
       "dailyRange": "6.11",
@@ -138,7 +138,7 @@
       "weeklyAchievement": "101.8%"
     },
     {
-      "date": "2026-03-30",
+      "date": "2026-03-31",
       "dailyHigh": "99.65",
       "dailyLow": "92.3",
       "dailyRange": "7.35",
@@ -157,7 +157,7 @@
       "weeklyAchievement": "111.1%"
     },
     {
-      "date": "2026-03-29",
+      "date": "2026-03-30",
       "dailyHigh": "98.26",
       "dailyLow": "93.7",
       "dailyRange": "4.56",
@@ -176,7 +176,7 @@
       "weeklyAchievement": "93.6%"
     },
     {
-      "date": "2026-03-26",
+      "date": "2026-03-27",
       "dailyHigh": "95.6",
       "dailyLow": "88.91",
       "dailyRange": "6.69",
@@ -195,7 +195,7 @@
       "weeklyAchievement": "109.1%"
     },
     {
-      "date": "2026-03-25",
+      "date": "2026-03-26",
       "dailyHigh": "91.93",
       "dailyLow": "86.44",
       "dailyRange": "5.49",
@@ -214,7 +214,7 @@
       "weeklyAchievement": "102.2%"
     },
     {
-      "date": "2026-03-24",
+      "date": "2026-03-25",
       "dailyHigh": "88.88",
       "dailyLow": "84.23",
       "dailyRange": "4.65",
@@ -233,7 +233,7 @@
       "weeklyAchievement": "92.4%"
     },
     {
-      "date": "2026-03-23",
+      "date": "2026-03-24",
       "dailyHigh": "90.53",
       "dailyLow": "84.16",
       "dailyRange": "6.37",
@@ -252,7 +252,7 @@
       "weeklyAchievement": "84.6%"
     },
     {
-      "date": "2026-03-22",
+      "date": "2026-03-23",
       "dailyHigh": "98.17",
       "dailyLow": "81.64",
       "dailyRange": "16.53",
@@ -271,7 +271,7 @@
       "weeklyAchievement": "113.6%"
     },
     {
-      "date": "2026-03-19",
+      "date": "2026-03-20",
       "dailyHigh": "95.4",
       "dailyLow": "89.68",
       "dailyRange": "5.72",
@@ -290,7 +290,7 @@
       "weeklyAchievement": "66.5%"
     },
     {
-      "date": "2026-03-18",
+      "date": "2026-03-19",
       "dailyHigh": "97.27",
       "dailyLow": "89.41",
       "dailyRange": "7.86",
@@ -309,7 +309,7 @@
       "weeklyAchievement": "64.3%"
     },
     {
-      "date": "2026-03-17",
+      "date": "2026-03-18",
       "dailyHigh": "96.2",
       "dailyLow": "88.2",
       "dailyRange": "8",
@@ -328,7 +328,7 @@
       "weeklyAchievement": "71.0%"
     },
     {
-      "date": "2026-03-16",
+      "date": "2026-03-17",
       "dailyHigh": "93.27",
       "dailyLow": "89.02",
       "dailyRange": "4.25",
@@ -347,7 +347,7 @@
       "weeklyAchievement": "94.7%"
     },
     {
-      "date": "2026-03-15",
+      "date": "2026-03-16",
       "dailyHigh": "94.98",
       "dailyLow": "88.06",
       "dailyRange": "6.92",
@@ -366,7 +366,7 @@
       "weeklyAchievement": "163.5%"
     },
     {
-      "date": "2026-03-12",
+      "date": "2026-03-13",
       "dailyHigh": "92.66",
       "dailyLow": "87.76",
       "dailyRange": "4.9",
@@ -385,7 +385,7 @@
       "weeklyAchievement": "253.1%"
     },
     {
-      "date": "2026-03-11",
+      "date": "2026-03-12",
       "dailyHigh": "91.81",
       "dailyLow": "84.49",
       "dailyRange": "7.32",
@@ -404,7 +404,7 @@
       "weeklyAchievement": "250.7%"
     },
     {
-      "date": "2026-03-10",
+      "date": "2026-03-11",
       "dailyHigh": "84.55",
       "dailyLow": "78.26",
       "dailyRange": "6.29",
@@ -423,7 +423,7 @@
       "weeklyAchievement": "242.8%"
     },
     {
-      "date": "2026-03-09",
+      "date": "2026-03-10",
       "dailyHigh": "83.95",
       "dailyLow": "73.56",
       "dailyRange": "10.39",
@@ -442,7 +442,7 @@
       "weeklyAchievement": "253.7%"
     },
     {
-      "date": "2026-03-08",
+      "date": "2026-03-09",
       "dailyHigh": "104.34",
       "dailyLow": "75.6",
       "dailyRange": "28.74",
@@ -461,7 +461,7 @@
       "weeklyAchievement": "566.1%"
     },
     {
-      "date": "2026-03-05",
+      "date": "2026-03-06",
       "dailyHigh": "82.95",
       "dailyLow": "73.56",
       "dailyRange": "9.39",
@@ -480,7 +480,7 @@
       "weeklyAchievement": "277.5%"
     },
     {
-      "date": "2026-03-04",
+      "date": "2026-03-05",
       "dailyHigh": "76.14",
       "dailyLow": "71.95",
       "dailyRange": "4.19",
@@ -499,7 +499,7 @@
       "weeklyAchievement": "252.4%"
     },
     {
-      "date": "2026-03-03",
+      "date": "2026-03-04",
       "dailyHigh": "73.95",
       "dailyLow": "70.5",
       "dailyRange": "3.45",
@@ -518,7 +518,7 @@
       "weeklyAchievement": "214.6%"
     },
     {
-      "date": "2026-03-02",
+      "date": "2026-03-03",
       "dailyHigh": "74.8",
       "dailyLow": "69.07",
       "dailyRange": "5.73",
@@ -537,7 +537,7 @@
       "weeklyAchievement": "234.6%"
     },
     {
-      "date": "2026-03-01",
+      "date": "2026-03-02",
       "dailyHigh": "73",
       "dailyLow": "68.38",
       "dailyRange": "4.62",
@@ -556,7 +556,7 @@
       "weeklyAchievement": "290.5%"
     },
     {
-      "date": "2026-02-26",
+      "date": "2026-02-27",
       "dailyHigh": "67.27",
       "dailyLow": "64.53",
       "dailyRange": "2.74",
@@ -575,7 +575,7 @@
       "weeklyAchievement": "123.0%"
     },
     {
-      "date": "2026-02-25",
+      "date": "2026-02-26",
       "dailyHigh": "66.27",
       "dailyLow": "63.47",
       "dailyRange": "2.8",
@@ -594,7 +594,7 @@
       "weeklyAchievement": "138.4%"
     },
     {
-      "date": "2026-02-24",
+      "date": "2026-02-25",
       "dailyHigh": "66.25",
       "dailyLow": "64.89",
       "dailyRange": "1.36",
@@ -613,7 +613,7 @@
       "weeklyAchievement": "68.9%"
     },
     {
-      "date": "2026-02-23",
+      "date": "2026-02-24",
       "dailyHigh": "66.68",
       "dailyLow": "65.28",
       "dailyRange": "1.4",
@@ -632,7 +632,7 @@
       "weeklyAchievement": "142.1%"
     },
     {
-      "date": "2026-02-22",
+      "date": "2026-02-23",
       "dailyHigh": "66.67",
       "dailyLow": "64.94",
       "dailyRange": "1.73",
@@ -651,7 +651,7 @@
       "weeklyAchievement": "150.1%"
     },
     {
-      "date": "2026-02-19",
+      "date": "2026-02-20",
       "dailyHigh": "66.42",
       "dailyLow": "65.31",
       "dailyRange": "1.11",
@@ -670,7 +670,7 @@
       "weeklyAchievement": "141.0%"
     },
     {
-      "date": "2026-02-18",
+      "date": "2026-02-19",
       "dailyHigh": "66.29",
       "dailyLow": "64.35",
       "dailyRange": "1.94",
@@ -689,7 +689,7 @@
       "weeklyAchievement": "161.5%"
     },
     {
-      "date": "2026-02-17",
+      "date": "2026-02-18",
       "dailyHigh": "64.84",
       "dailyLow": "61.82",
       "dailyRange": "3.02",
@@ -708,7 +708,7 @@
       "weeklyAchievement": "103.2%"
     },
     {
-      "date": "2026-02-16",
+      "date": "2026-02-17",
       "dailyHigh": "63.52",
       "dailyLow": "61.43",
       "dailyRange": "2.09",
@@ -727,7 +727,7 @@
       "weeklyAchievement": "105.3%"
     },
     {
-      "date": "2026-02-12",
+      "date": "2026-02-13",
       "dailyHigh": "62.67",
       "dailyLow": "61.67",
       "dailyRange": "1",
@@ -746,7 +746,7 @@
       "weeklyAchievement": "90.3%"
     },
     {
-      "date": "2026-02-11",
+      "date": "2026-02-12",
       "dailyHigh": "64.45",
       "dailyLow": "61.87",
       "dailyRange": "2.58",
@@ -765,7 +765,7 @@
       "weeklyAchievement": "107.3%"
     },
     {
-      "date": "2026-02-10",
+      "date": "2026-02-11",
       "dailyHigh": "65.03",
       "dailyLow": "63.64",
       "dailyRange": "1.39",
@@ -784,7 +784,7 @@
       "weeklyAchievement": "122.3%"
     },
     {
-      "date": "2026-02-09",
+      "date": "2026-02-10",
       "dailyHigh": "64.05",
       "dailyLow": "63.15",
       "dailyRange": "0.9",
@@ -803,7 +803,7 @@
       "weeklyAchievement": "84.5%"
     },
     {
-      "date": "2026-02-08",
+      "date": "2026-02-09",
       "dailyHigh": "64.13",
       "dailyLow": "62.03",
       "dailyRange": "2.1",
@@ -822,7 +822,7 @@
       "weeklyAchievement": "132.3%"
     },
     {
-      "date": "2026-02-05",
+      "date": "2026-02-06",
       "dailyHigh": "63.63",
       "dailyLow": "61.52",
       "dailyRange": "2.11",
@@ -841,7 +841,7 @@
       "weeklyAchievement": "124.9%"
     },
     {
-      "date": "2026-02-04",
+      "date": "2026-02-05",
       "dailyHigh": "63.59",
       "dailyLow": "61.78",
       "dailyRange": "1.81",
@@ -860,7 +860,7 @@
       "weeklyAchievement": "143.0%"
     },
     {
-      "date": "2026-02-03",
+      "date": "2026-02-04",
       "dailyHigh": "64.3",
       "dailyLow": "61.86",
       "dailyRange": "2.44",
@@ -879,7 +879,7 @@
       "weeklyAchievement": "163.0%"
     },
     {
-      "date": "2026-02-02",
+      "date": "2026-02-03",
       "dailyHigh": "62.98",
       "dailyLow": "60.08",
       "dailyRange": "2.9",
@@ -898,7 +898,7 @@
       "weeklyAchievement": "159.3%"
     },
     {
-      "date": "2026-02-01",
+      "date": "2026-02-02",
       "dailyHigh": "63.34",
       "dailyLow": "60.39",
       "dailyRange": "2.95",
@@ -917,7 +917,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-29",
+      "date": "2026-01-30",
       "dailyHigh": "64.67",
       "dailyLow": "62.46",
       "dailyRange": "2.21",
@@ -936,7 +936,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-28",
+      "date": "2026-01-29",
       "dailyHigh": "64.97",
       "dailyLow": "62.22",
       "dailyRange": "2.75",
@@ -955,7 +955,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-27",
+      "date": "2026-01-28",
       "dailyHigh": "62.52",
       "dailyLow": "61.31",
       "dailyRange": "1.21",
@@ -974,7 +974,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-26",
+      "date": "2026-01-27",
       "dailyHigh": "61.75",
       "dailyLow": "59.7",
       "dailyRange": "2.05",
@@ -993,7 +993,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-25",
+      "date": "2026-01-26",
       "dailyHigh": "61",
       "dailyLow": "59.89",
       "dailyRange": "1.11",
@@ -1012,7 +1012,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-22",
+      "date": "2026-01-23",
       "dailyHigh": "60.65",
       "dailyLow": "59.13",
       "dailyRange": "1.52",
@@ -1031,7 +1031,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-21",
+      "date": "2026-01-22",
       "dailyHigh": "60.2",
       "dailyLow": "58.64",
       "dailyRange": "1.56",
@@ -1050,7 +1050,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-20",
+      "date": "2026-01-21",
       "dailyHigh": "60.24",
       "dailyLow": "58.75",
       "dailyRange": "1.49",
@@ -1069,7 +1069,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-19",
+      "date": "2026-01-20",
       "dailyHigh": "59.75",
       "dailyLow": "58.17",
       "dailyRange": "1.58",
@@ -1088,7 +1088,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-15",
+      "date": "2026-01-16",
       "dailyHigh": "59.53",
       "dailyLow": "58.46",
       "dailyRange": "1.07",
@@ -1107,7 +1107,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-14",
+      "date": "2026-01-15",
       "dailyHigh": "60.39",
       "dailyLow": "58.4",
       "dailyRange": "1.99",
@@ -1126,7 +1126,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-13",
+      "date": "2026-01-14",
       "dailyHigh": "61.42",
       "dailyLow": "58.77",
       "dailyRange": "2.65",
@@ -1145,7 +1145,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-12",
+      "date": "2026-01-13",
       "dailyHigh": "60.36",
       "dailyLow": "58.83",
       "dailyRange": "1.53",
@@ -1164,7 +1164,7 @@
       "weeklyAchievement": ""
     },
     {
-      "date": "2026-01-11",
+      "date": "2026-01-12",
       "dailyHigh": "59.2",
       "dailyLow": "58.01",
       "dailyRange": "1.19",
