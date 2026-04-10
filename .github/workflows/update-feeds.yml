@@ -26,6 +26,12 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Show repo files
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 3 -type f | sort
+
       - name: Prepare folders
         run: |
           mkdir -p feeds
@@ -36,7 +42,14 @@ jobs:
         env:
           TZ: America/Chicago
         run: |
-          python build_feeds.py
+          if [ -f build_feeds.py ]; then
+            python build_feeds.py
+          elif [ -f src/build_feeds.py ]; then
+            python src/build_feeds.py
+          else
+            echo "Could not find build_feeds.py"
+            exit 1
+          fi
 
       - name: Commit updated feeds
         run: |
