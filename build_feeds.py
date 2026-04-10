@@ -40,62 +40,91 @@ def historic_vol_str(current_range: float, lookback_rows: list, tick: float) -> 
     return f"{round((current_range / avg_range) * 100, 1)}%"
 
 
-def compute_daily_target(rows: list, i: int, tick: float):
-    prev3 = rows[i + 1:i + 4]
-    if len(prev3) < 3:
-        return None
-
-    prev3_ranges = [
-        round_to_tick(x["high"] - x["low"], tick)
-        for x in prev3
-    ]
-    target_raw = (sum(prev3_ranges) / 3) * 0.8
-    return round_to_tick(target_raw, tick)
+def compute_daily_range(row: dict, tick: float) -> float:
+    high = round_to_tick(row["high"], tick)
+    low = round_to_tick(row["low"], tick)
+    return round_to_tick(high - low, tick)
 
 
 def compute_weekly_block(rows: list, start_idx: int, tick: float):
+    """
+    Rolling 5-trading-day block starting at start_idx.
+    rows are expected newest -> oldest.
+    """
     block = rows[start_idx:start_idx + 5]
     if len(block) < 5:
         return None
 
-    weekly_high_raw = max(x["high"] for x in block)
-    weekly_low_raw = min(x["low"] for x in block)
-
-    weekly_high = round_to_tick(weekly_high_raw, tick)
-    weekly_low = round_to_tick(weekly_low_raw, tick)
-    weekly_range = round_to_tick(weekly_high - weekly_low, tick)
+    high = round_to_tick(max(x["high"] for x in block), tick)
+    low = round_to_tick(min(x["low"] for x in block), tick)
+    rng = round_to_tick(high - low, tick)
 
     return {
-        "high": weekly_high,
-        "low": weekly_low,
-        "range": weekly_range,
+        "high": high,
+        "low": low,
+        "range": rng,
     }
 
 
-def compute_weekly_target(rows: list, i: int, tick: float):
-    prior_ranges = []
-    for start in (i + 5, i + 10, i + 15):
+def compute_daily_full_achievement(rows: list, i: int, tick: float):
+    """
+    Full achievement = average of current day range + previous 2 trading-day ranges.
+    Since rows are newest -> oldest, that is rows[i], rows[i+1], rows[i+2].
+    """
+    window = rows[i:i + 3]
+    if len(window) < 3:
+        return None
+
+    ranges = [compute_daily_range(x, tick) for x in window]
+    avg = sum(ranges) / 3
+    return round_to_tick(avg, tick)
+
+
+def compute_next_daily_target(rows: list, i: int, tick: float):
+    """
+    Next target = 80% of full achievement.
+    """
+    full_achievement = compute_daily_full_achievement(rows, i, tick)
+    if full_achievement is None:
+        return None
+    return round_to_tick(full_achievement * 0.8, tick)
+
+
+def compute_weekly_full_achievement(rows: list, i: int, tick: float):
+    """
+    Weekly full achievement = average of current rolling weekly range
+    plus the next 2 older rolling weekly ranges.
+    """
+    ranges = []
+    for start in (i, i + 5, i + 10):
         block = compute_weekly_block(rows, start, tick)
         if block is None:
             return None
-        prior_ranges.append(block["range"])
+        ranges.append(block["range"])
 
-    target_raw = (sum(prior_ranges) / 3) * 0.8
-    return round_to_tick(target_raw, tick)
+    avg = sum(ranges) / 3
+    return round_to_tick(avg, tick)
+
+
+def compute_next_weekly_target(rows: list, i: int, tick: float):
+    full_achievement = compute_weekly_full_achievement(rows, i, tick)
+    if full_achievement is None:
+        return None
+    return round_to_tick(full_achievement * 0.8, tick)
 
 
 def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
     history_rows = []
 
+    # First pass: calculate row-local values and forward-looking next targets
     for i, r in enumerate(rows):
         daily_high = round_to_tick(r["high"], tick)
         daily_low = round_to_tick(r["low"], tick)
         daily_range = round_to_tick(daily_high - daily_low, tick)
 
-        daily_target_value = compute_daily_target(rows, i, tick)
-        daily_target = format_tick(daily_target_value, tick) if daily_target_value is not None else ""
-        daily_achievement = pct_str(daily_range, daily_target_value) if daily_target_value else ""
+        full_achievement_value = compute_daily_full_achievement(rows, i, tick)
+        next_daily_target_value = compute_next_daily_target(rows, i, tick)
 
         hist_vol = historic_vol_str(daily_range, rows[i + 1:i + 21], tick)
 
@@ -105,83 +134,80 @@ def build_history(rows: list, contract: dict) -> list:
             weekly_low = weekly_block["low"]
             weekly_range = weekly_block["range"]
 
-            weekly_target_value = compute_weekly_target(rows, i, tick)
-            weekly_target = format_tick(weekly_target_value, tick) if weekly_target_value is not None else ""
-            weekly_achievement = pct_str(weekly_range, weekly_target_value) if weekly_target_value else ""
+            weekly_full_achievement_value = compute_weekly_full_achievement(rows, i, tick)
+            next_weekly_target_value = compute_next_weekly_target(rows, i, tick)
         else:
             weekly_high = None
             weekly_low = None
             weekly_range = None
-            weekly_target = ""
-            weekly_achievement = ""
+            weekly_full_achievement_value = None
+            next_weekly_target_value = None
 
         history_rows.append({
             "date": chicago_date_from_ts(r["timestamp"]),
-            "dailyTarget": daily_target,
-            "dailyRange": format_tick(daily_range, tick),
             "dailyHigh": format_tick(daily_high, tick),
             "dailyLow": format_tick(daily_low, tick),
-            "dailyAchievement": daily_achievement,
+            "dailyRange": format_tick(daily_range, tick),
+            "fullAchievement": format_tick(full_achievement_value, tick) if full_achievement_value is not None else "",
+            "fullAchievementValue": full_achievement_value,
+            "nextDailyTarget": format_tick(next_daily_target_value, tick) if next_daily_target_value is not None else "",
+            "nextDailyTargetValue": next_daily_target_value,
             "historicVol": hist_vol,
             "impliedVol": "",
-            "weeklyRange": format_tick(weekly_range, tick) if weekly_range is not None else "",
             "weeklyHigh": format_tick(weekly_high, tick) if weekly_high is not None else "",
             "weeklyLow": format_tick(weekly_low, tick) if weekly_low is not None else "",
-            "weeklyAchievement": weekly_achievement,
-            "weeklyTarget": weekly_target,
+            "weeklyRange": format_tick(weekly_range, tick) if weekly_range is not None else "",
+            "weeklyFullAchievement": format_tick(weekly_full_achievement_value, tick) if weekly_full_achievement_value is not None else "",
+            "weeklyFullAchievementValue": weekly_full_achievement_value,
+            "nextWeeklyTarget": format_tick(next_weekly_target_value, tick) if next_weekly_target_value is not None else "",
+            "nextWeeklyTargetValue": next_weekly_target_value,
         })
+
+    # Second pass: current targets come from prior row's next targets
+    for i, row in enumerate(history_rows):
+        prev_row = history_rows[i + 1] if i + 1 < len(history_rows) else None
+
+        daily_target_value = prev_row["nextDailyTargetValue"] if prev_row else None
+        weekly_target_value = prev_row["nextWeeklyTargetValue"] if prev_row else None
+
+        daily_range_value = row["dailyRange"]
+        weekly_range_value = row["weeklyRange"]
+
+        daily_range_num = float(daily_range_value) if daily_range_value else None
+        weekly_range_num = float(weekly_range_value) if weekly_range_value else None
+
+        row["dailyTarget"] = format_tick(daily_target_value, tick) if daily_target_value is not None else ""
+        row["dailyAchievement"] = pct_str(daily_range_num, daily_target_value) if daily_range_num is not None and daily_target_value else ""
+
+        row["weeklyTarget"] = format_tick(weekly_target_value, tick) if weekly_target_value is not None else ""
+        row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
+
+        # remove internal numeric helpers from final JSON
+        del row["fullAchievementValue"]
+        del row["nextDailyTargetValue"]
+        del row["weeklyFullAchievementValue"]
+        del row["nextWeeklyTargetValue"]
 
     return history_rows
 
 
-def compute_next_daily_target_from_history_rows(history_rows: list, idx: int, tick: float) -> str:
-    if idx + 2 >= len(history_rows):
-        return ""
-
-    r0 = history_rows[idx]
-    r1 = history_rows[idx + 1]
-    r2 = history_rows[idx + 2]
-
-    d0 = round_to_tick(float(r0["dailyRange"]), tick)
-    d1 = round_to_tick(float(r1["dailyRange"]), tick)
-    d2 = round_to_tick(float(r2["dailyRange"]), tick)
-
-    avg = (d0 + d1 + d2) / 3
-    next_target = round_to_tick(avg * 0.8, tick)
-    return format_tick(next_target, tick)
-
-
 def build_overview_rows_from_history(history_payload: dict) -> list:
-    symbol = history_payload["symbol"]
-    commodity = history_payload["commodity"]
-    month = history_payload["month"]
     rows = history_payload["rows"]
-    tick = TICK_SIZES[commodity]
-
     overview_rows = []
 
-    for idx, row in enumerate(rows):
-        next_target = compute_next_daily_target_from_history_rows(rows, idx, tick)
-        next_target_subtext = ""
-        if idx + 2 < len(rows):
-            next_target_subtext = ", ".join([
-                rows[idx]["dailyRange"],
-                rows[idx + 1]["dailyRange"],
-                rows[idx + 2]["dailyRange"],
-            ])
-
+    for row in rows:
         overview_rows.append({
             "date": row["date"],
-            "symbol": symbol,
-            "commodity": commodity,
-            "month": month,
+            "symbol": history_payload["symbol"],
+            "commodity": history_payload["commodity"],
+            "month": history_payload["month"],
             "dailyTarget": row["dailyTarget"],
             "dailyRange": row["dailyRange"],
             "dailyHigh": row["dailyHigh"],
             "dailyLow": row["dailyLow"],
             "dailyAchievement": row["dailyAchievement"],
-            "nextDailyTarget": next_target,
-            "nextDailyTargetSubtext": next_target_subtext,
+            "fullAchievement": row["fullAchievement"],
+            "nextDailyTarget": row["nextDailyTarget"],
             "historicVol": row["historicVol"],
             "impliedVol": row["impliedVol"],
             "weeklyRange": row["weeklyRange"],
@@ -219,6 +245,7 @@ def main():
             tick = TICK_SIZES[contract["commodity"]]
 
             history_rows = build_history(rows, contract)
+
             history_payload = {
                 "symbol": clean,
                 "commodity": contract["commodity"],
@@ -236,6 +263,7 @@ def main():
             all_overview_rows.extend(overview_rows)
 
             latest_row = history_rows[0] if history_rows else {}
+
             daily_feed.append({
                 "symbol": clean,
                 "dailyHigh": latest_row.get("dailyHigh", ""),
@@ -253,12 +281,11 @@ def main():
             })
 
             previous_daily_ranges = []
-            previous_weekly_ranges = []
-
             for x in history_rows[1:4]:
                 if x.get("dailyRange"):
                     previous_daily_ranges.append(x["dailyRange"])
 
+            previous_weekly_ranges = []
             for start in (5, 10, 15):
                 block = compute_weekly_block(rows, start, tick)
                 if block is not None:
@@ -301,7 +328,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v2.2-overview-feed",
+        "version": "v2.3-overview-feed",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
