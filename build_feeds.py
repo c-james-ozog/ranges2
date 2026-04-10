@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 from src.config import CONTRACTS, TICK_SIZES
@@ -16,7 +16,8 @@ HOME_ORDER = [
 
 
 def chicago_date_from_ts(ts: int) -> str:
-    return datetime.fromtimestamp(ts, tz=ZoneInfo("America/Chicago")).strftime("%Y-%m-%d")
+    dt = datetime.fromtimestamp(ts, tz=ZoneInfo("America/Chicago"))
+    return (dt + timedelta(days=1)).strftime("%Y-%m-%d")
 
 
 def pct_str(numerator: float, denominator: float) -> str:
@@ -47,10 +48,6 @@ def compute_daily_range(row: dict, tick: float) -> float:
 
 
 def compute_weekly_block(rows: list, start_idx: int, tick: float):
-    """
-    Rolling 5-trading-day block starting at start_idx.
-    rows are expected newest -> oldest.
-    """
     block = rows[start_idx:start_idx + 5]
     if len(block) < 5:
         return None
@@ -67,10 +64,6 @@ def compute_weekly_block(rows: list, start_idx: int, tick: float):
 
 
 def compute_daily_full_achievement(rows: list, i: int, tick: float):
-    """
-    Full achievement = average of current day range + previous 2 trading-day ranges.
-    Since rows are newest -> oldest, that is rows[i], rows[i+1], rows[i+2].
-    """
     window = rows[i:i + 3]
     if len(window) < 3:
         return None
@@ -81,9 +74,6 @@ def compute_daily_full_achievement(rows: list, i: int, tick: float):
 
 
 def compute_next_daily_target(rows: list, i: int, tick: float):
-    """
-    Next target = 80% of full achievement.
-    """
     full_achievement = compute_daily_full_achievement(rows, i, tick)
     if full_achievement is None:
         return None
@@ -91,10 +81,6 @@ def compute_next_daily_target(rows: list, i: int, tick: float):
 
 
 def compute_weekly_full_achievement(rows: list, i: int, tick: float):
-    """
-    Weekly full achievement = average of current rolling weekly range
-    plus the next 2 older rolling weekly ranges.
-    """
     ranges = []
     for start in (i, i + 5, i + 10):
         block = compute_weekly_block(rows, start, tick)
@@ -117,7 +103,6 @@ def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
     history_rows = []
 
-    # First pass: calculate row-local values and forward-looking next targets
     for i, r in enumerate(rows):
         daily_high = round_to_tick(r["high"], tick)
         daily_low = round_to_tick(r["low"], tick)
@@ -163,7 +148,6 @@ def build_history(rows: list, contract: dict) -> list:
             "nextWeeklyTargetValue": next_weekly_target_value,
         })
 
-    # Second pass: current targets come from prior row's next targets
     for i, row in enumerate(history_rows):
         prev_row = history_rows[i + 1] if i + 1 < len(history_rows) else None
 
@@ -182,7 +166,6 @@ def build_history(rows: list, contract: dict) -> list:
         row["weeklyTarget"] = format_tick(weekly_target_value, tick) if weekly_target_value is not None else ""
         row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
 
-        # remove internal numeric helpers from final JSON
         del row["fullAchievementValue"]
         del row["nextDailyTargetValue"]
         del row["weeklyFullAchievementValue"]
@@ -328,7 +311,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v2.3-overview-feed",
+        "version": "v2.4-date-shift",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
