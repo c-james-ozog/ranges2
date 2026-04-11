@@ -14,19 +14,18 @@ HOME_ORDER = [
     "SIM26", "ZMN26", "ZLN26", "ZSN26", "ZSX26", "DXM26", "ZWN26",
 ]
 
-# CME-recognized U.S. holiday dates for 2026 used for week-break handling.
-# Official CME holiday/trading-hours materials indicate these holidays affect trading schedules. 
+# Used only for week separators in history output
 CME_HOLIDAYS_2026 = {
-    "2026-01-01",  # New Year's Day
-    "2026-01-19",  # Martin Luther King Jr. Day
-    "2026-02-16",  # Presidents Day
-    "2026-04-03",  # Good Friday
-    "2026-05-25",  # Memorial Day
-    "2026-06-19",  # Juneteenth
-    "2026-07-03",  # Independence Day observed
-    "2026-09-07",  # Labor Day
-    "2026-11-26",  # Thanksgiving
-    "2026-12-25",  # Christmas Day
+    "2026-01-01",
+    "2026-01-19",
+    "2026-02-16",
+    "2026-04-03",
+    "2026-05-25",
+    "2026-06-19",
+    "2026-07-03",
+    "2026-09-07",
+    "2026-11-26",
+    "2026-12-25",
 }
 
 
@@ -47,46 +46,6 @@ def compute_daily_range(row: dict, tick: float) -> float:
     return round_to_tick(high - low, tick)
 
 
-def historic_vol_16_rule_str(rows: list, i: int, tick: float) -> str:
-    """
-    16% rule with 3-day average movement:
-    average the current day plus next 2 older trading-day ranges,
-    then convert that average movement into volatility percent by treating
-    1% daily move as 16% historical vol.
-
-    So:
-      hv_pct = (avg_movement_pct_of_price) * 16
-
-    where avg_movement_pct_of_price = avg_range / avg_price * 100
-    and avg_price is the average of the 3 daily midpoints.
-    """
-    window = rows[i:i + 3]
-    if len(window) < 3:
-        return ""
-
-    ranges = []
-    mids = []
-
-    for r in window:
-        high = round_to_tick(r["high"], tick)
-        low = round_to_tick(r["low"], tick)
-        rng = round_to_tick(high - low, tick)
-        mid = (high + low) / 2
-
-        ranges.append(rng)
-        mids.append(mid)
-
-    avg_range = sum(ranges) / 3
-    avg_price = sum(mids) / 3
-
-    if avg_price == 0:
-        return ""
-
-    avg_move_pct = (avg_range / avg_price) * 100.0
-    hv_pct = avg_move_pct * 16.0
-    return f"{round(hv_pct, 1)}%"
-
-
 def compute_weekly_block(rows: list, start_idx: int, tick: float):
     block = rows[start_idx:start_idx + 5]
     if len(block) < 5:
@@ -104,6 +63,10 @@ def compute_weekly_block(rows: list, start_idx: int, tick: float):
 
 
 def compute_daily_full_achievement(rows: list, i: int, tick: float):
+    """
+    Average of current day range + next 2 older trading-day ranges.
+    rows are newest -> oldest.
+    """
     window = rows[i:i + 3]
     if len(window) < 3:
         return None
@@ -139,12 +102,19 @@ def compute_next_weekly_target(rows: list, i: int, tick: float):
     return round_to_tick(full_achievement * 0.8, tick)
 
 
+def historic_vol_str_from_target(daily_target_value: float, current_range: float) -> str:
+    """
+    Historic volatility:
+    (100% achievement target / current day's range) * 16
+    Rounded to 1 decimal place.
+    """
+    if not daily_target_value or not current_range:
+        return ""
+    hv = (daily_target_value / current_range) * 16
+    return f"{round(hv, 1)}%"
+
+
 def has_market_closed_gap(prev_date_str: str, curr_date_str: str) -> bool:
-    """
-    True when there is at least one non-trading day between two consecutive rows,
-    including weekends and CME holiday dates.
-    Rows are in descending order, so prev_date_str is newer than curr_date_str.
-    """
     try:
         prev_d = date.fromisoformat(prev_date_str)
         curr_d = date.fromisoformat(curr_date_str)
@@ -165,6 +135,7 @@ def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
     history_rows = []
 
+    # First pass: row-local values and forward-looking next targets
     for i, r in enumerate(rows):
         daily_high = round_to_tick(r["high"], tick)
         daily_low = round_to_tick(r["low"], tick)
@@ -173,14 +144,11 @@ def build_history(rows: list, contract: dict) -> list:
         full_achievement_value = compute_daily_full_achievement(rows, i, tick)
         next_daily_target_value = compute_next_daily_target(rows, i, tick)
 
-        hist_vol = historic_vol_16_rule_str(rows, i, tick)
-
         weekly_block = compute_weekly_block(rows, i, tick)
         if weekly_block is not None:
             weekly_high = weekly_block["high"]
             weekly_low = weekly_block["low"]
             weekly_range = weekly_block["range"]
-
             weekly_full_achievement_value = compute_weekly_full_achievement(rows, i, tick)
             next_weekly_target_value = compute_next_weekly_target(rows, i, tick)
         else:
@@ -199,7 +167,7 @@ def build_history(rows: list, contract: dict) -> list:
             "fullAchievementValue": full_achievement_value,
             "nextDailyTarget": format_tick(next_daily_target_value, tick) if next_daily_target_value is not None else "",
             "nextDailyTargetValue": next_daily_target_value,
-            "historicVol": hist_vol,
+            "historicVol": "",
             "impliedVol": "",
             "weeklyHigh": format_tick(weekly_high, tick) if weekly_high is not None else "",
             "weeklyLow": format_tick(weekly_low, tick) if weekly_low is not None else "",
@@ -211,20 +179,19 @@ def build_history(rows: list, contract: dict) -> list:
             "sectionBreak": False,
         })
 
+    # Second pass: today's target comes from prior row's next target
     for i, row in enumerate(history_rows):
         prev_row = history_rows[i + 1] if i + 1 < len(history_rows) else None
 
         daily_target_value = prev_row["nextDailyTargetValue"] if prev_row else None
         weekly_target_value = prev_row["nextWeeklyTargetValue"] if prev_row else None
 
-        daily_range_value = row["dailyRange"]
-        weekly_range_value = row["weeklyRange"]
-
-        daily_range_num = float(daily_range_value) if daily_range_value else None
-        weekly_range_num = float(weekly_range_value) if weekly_range_value else None
+        daily_range_num = float(row["dailyRange"]) if row["dailyRange"] else None
+        weekly_range_num = float(row["weeklyRange"]) if row["weeklyRange"] else None
 
         row["dailyTarget"] = format_tick(daily_target_value, tick) if daily_target_value is not None else ""
         row["dailyAchievement"] = pct_str(daily_range_num, daily_target_value) if daily_range_num is not None and daily_target_value else ""
+        row["historicVol"] = historic_vol_str_from_target(daily_target_value, daily_range_num) if daily_range_num is not None and daily_target_value else ""
 
         row["weeklyTarget"] = format_tick(weekly_target_value, tick) if weekly_target_value is not None else ""
         row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
@@ -379,7 +346,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v2.5-style-holiday-hv16",
+        "version": "v2.6-black-hv-target",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
