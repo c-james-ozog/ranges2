@@ -36,6 +36,30 @@ TICK_SIZES = {
     "US Dollar": 0.005, "Wheat": 0.25,
 }
 
+PRICE_DIVISORS = {
+    "Corn": 100,
+    "Soybeans": 100,
+    "Soybean Meal": 1,      # quoted in $/ton already
+    "Soybean Oil": 1,       # quoted in cents/lb but ranges match
+    "Wheat": 100,
+    "Hard Red Wheat": 100,
+    "Rice": 100,
+    "Coffee": 1,
+    "Cocoa": 1,
+    "Cotton": 1,
+    "Crude Oil WTI": 1,
+    "Natural Gas": 1,
+    "Gold": 1,
+    "Silver": 1,
+    "Copper": 1,
+    "Feeder Cattle": 1,
+    "Lean Hogs": 1,
+    "Live Cattle": 1,
+    "Nasdaq 100 E-Mini": 1,
+    "S&P 500 E-Mini": 1,
+    "US Dollar": 1,
+}
+
 SETTINGS = {
     "history_range": "6mo",
     "history_interval": "1d",
