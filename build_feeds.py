@@ -4,7 +4,7 @@ import time
 from datetime import datetime, timedelta, date
 from zoneinfo import ZoneInfo
 
-from src.config import CONTRACTS, TICK_SIZES
+from src.config import CONTRACTS, TICK_SIZES, PRICE_DIVISORS
 from src.scraper import fetch_yahoo_history, round_to_tick, format_tick
 
 
@@ -50,27 +50,16 @@ def compute_weekly_block(rows: list, start_idx: int, tick: float):
     block = rows[start_idx:start_idx + 5]
     if len(block) < 5:
         return None
-
     high = round_to_tick(max(x["high"] for x in block), tick)
     low = round_to_tick(min(x["low"] for x in block), tick)
     rng = round_to_tick(high - low, tick)
-
-    return {
-        "high": high,
-        "low": low,
-        "range": rng,
-    }
+    return {"high": high, "low": low, "range": rng}
 
 
 def compute_daily_full_achievement(rows: list, i: int, tick: float):
-    """
-    Average of current day range + next 2 older trading-day ranges.
-    rows are newest -> oldest.
-    """
     window = rows[i:i + 3]
     if len(window) < 3:
         return None
-
     ranges = [compute_daily_range(x, tick) for x in window]
     avg = sum(ranges) / 3
     return round_to_tick(avg, tick)
@@ -90,7 +79,6 @@ def compute_weekly_full_achievement(rows: list, i: int, tick: float):
         if block is None:
             return None
         ranges.append(block["range"])
-
     avg = sum(ranges) / 3
     return round_to_tick(avg, tick)
 
@@ -103,6 +91,22 @@ def compute_next_weekly_target(rows: list, i: int, tick: float):
 
 
 def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float = 1.0) -> str:
+    """
+    Historic Vol formula:
+      1. Average the ranges of the current day and the 2 prior trading days (3-day avg)
+      2. Multiply by 0.80 (80% achievement target)
+      3. Divide by the closing price of the current day (in dollars)
+      4. Multiply by 16
+    Expressed as a percentage rounded to 1 decimal place.
+
+    rows are sorted newest -> oldest:
+      rows[i]   = current day
+      rows[i+1] = prior day
+      rows[i+2] = two days prior
+
+    price_divisor: divide close AND ranges by this to convert cents -> dollars
+                   (e.g. 100 for grain contracts like Corn, Soybeans, Wheat)
+    """
     window = rows[i:i + 3]
     if len(window) < 3:
         return ""
@@ -111,13 +115,17 @@ def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float =
     if not close_price:
         return ""
 
-    # Convert close to dollars if commodity is quoted in cents (grains)
-    close_price = close_price / price_divisor
+    # Both close and ranges are in the same units (cents for grains),
+    # so dividing both by price_divisor cancels out — ratio is unit-independent.
+    # We keep the division explicit for clarity and correctness.
+    close_dollars = close_price / price_divisor
 
     ranges = [compute_daily_range(x, tick) for x in window]
     avg_range = sum(ranges) / 3
-    target_range = avg_range * 0.80
-    hv = (target_range / close_price) * 16
+    avg_range_dollars = avg_range / price_divisor
+
+    target_range = avg_range_dollars * 0.80
+    hv = (target_range / close_dollars) * 16
     return f"{round(hv, 1)}%"
 
 
@@ -127,22 +135,21 @@ def has_market_closed_gap(prev_date_str: str, curr_date_str: str) -> bool:
         curr_d = date.fromisoformat(curr_date_str)
     except ValueError:
         return False
-
     d = curr_d + timedelta(days=1)
     while d < prev_d:
         iso = d.isoformat()
         if d.weekday() >= 5 or iso in CME_HOLIDAYS_2026:
             return True
         d += timedelta(days=1)
-
     return False
 
 
 def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
+    price_divisor = PRICE_DIVISORS.get(contract["commodity"], 1)
     history_rows = []
 
-    # First pass: row-local values and forward-looking next targets
+    # First pass: row-local values
     for i, r in enumerate(rows):
         daily_high = round_to_tick(r["high"], tick)
         daily_low = round_to_tick(r["low"], tick)
@@ -165,8 +172,7 @@ def build_history(rows: list, contract: dict) -> list:
             weekly_full_achievement_value = None
             next_weekly_target_value = None
 
-        # Compute new Historic Vol using current row's close price
-        historic_vol = compute_historic_vol(rows, i, tick)
+        historic_vol = compute_historic_vol(rows, i, tick, price_divisor)
 
         history_rows.append({
             "date": chicago_date_from_ts(r["timestamp"]),
@@ -221,7 +227,6 @@ def build_history(rows: list, contract: dict) -> list:
 def build_overview_rows_from_history(history_payload: dict) -> list:
     rows = history_payload["rows"]
     overview_rows = []
-
     for row in rows:
         overview_rows.append({
             "date": row["date"],
@@ -243,7 +248,6 @@ def build_overview_rows_from_history(history_payload: dict) -> list:
             "weeklyAchievement": row["weeklyAchievement"],
             "weeklyTarget": row["weeklyTarget"],
         })
-
     return overview_rows
 
 
