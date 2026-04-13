@@ -18,10 +18,15 @@ def fetch_yahoo_history(symbol: str):
     result = data["chart"]["result"][0]
     quote = result["indicators"]["quote"][0]
     rows = []
-    for ts, high, low in zip(result.get("timestamp", []), quote.get("high", []), quote.get("low", [])):
-        if high is None or low is None:
+    for ts, high, low, close in zip(
+        result.get("timestamp", []),
+        quote.get("high", []),
+        quote.get("low", []),
+        quote.get("close", []),
+    ):
+        if high is None or low is None or close is None:
             continue
-        rows.append({"timestamp": ts, "high": float(high), "low": float(low)})
+        rows.append({"timestamp": ts, "high": float(high), "low": float(low), "close": float(close)})
     rows.sort(key=lambda x: x["timestamp"], reverse=True)
     return rows
 
