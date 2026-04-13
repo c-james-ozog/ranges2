@@ -102,15 +102,32 @@ def compute_next_weekly_target(rows: list, i: int, tick: float):
     return round_to_tick(full_achievement * 0.8, tick)
 
 
-def historic_vol_str_from_target(daily_target_value: float, current_range: float) -> str:
+def compute_historic_vol(rows: list, i: int, tick: float) -> str:
     """
-    Historic volatility:
-    (100% achievement target / current day's range) * 16
-    Rounded to 1 decimal place.
+    New Historic Vol formula:
+      1. Average the current day's range and the 2 prior trading days' ranges (3-day avg)
+      2. Multiply by 0.80 (80% achievement)
+      3. Divide by the closing price of the current day (rows[i])
+      4. Multiply by 16
+      Result expressed as a percentage rounded to 1 decimal place.
+
+    rows are sorted newest -> oldest, so:
+      rows[i]   = current day
+      rows[i+1] = prior day
+      rows[i+2] = two days prior
     """
-    if not daily_target_value or not current_range:
+    window = rows[i:i + 3]
+    if len(window) < 3:
         return ""
-    hv = (daily_target_value / current_range) * 16
+
+    close_price = window[0].get("close")
+    if not close_price:
+        return ""
+
+    ranges = [compute_daily_range(x, tick) for x in window]
+    avg_range = sum(ranges) / 3
+    target_range = avg_range * 0.80
+    hv = (target_range / close_price) * 16
     return f"{round(hv, 1)}%"
 
 
@@ -158,6 +175,9 @@ def build_history(rows: list, contract: dict) -> list:
             weekly_full_achievement_value = None
             next_weekly_target_value = None
 
+        # Compute new Historic Vol using current row's close price
+        historic_vol = compute_historic_vol(rows, i, tick)
+
         history_rows.append({
             "date": chicago_date_from_ts(r["timestamp"]),
             "dailyHigh": format_tick(daily_high, tick),
@@ -167,7 +187,7 @@ def build_history(rows: list, contract: dict) -> list:
             "fullAchievementValue": full_achievement_value,
             "nextDailyTarget": format_tick(next_daily_target_value, tick) if next_daily_target_value is not None else "",
             "nextDailyTargetValue": next_daily_target_value,
-            "historicVol": "",
+            "historicVol": historic_vol,
             "impliedVol": "",
             "weeklyHigh": format_tick(weekly_high, tick) if weekly_high is not None else "",
             "weeklyLow": format_tick(weekly_low, tick) if weekly_low is not None else "",
@@ -191,7 +211,6 @@ def build_history(rows: list, contract: dict) -> list:
 
         row["dailyTarget"] = format_tick(daily_target_value, tick) if daily_target_value is not None else ""
         row["dailyAchievement"] = pct_str(daily_range_num, daily_target_value) if daily_range_num is not None and daily_target_value else ""
-        row["historicVol"] = historic_vol_str_from_target(daily_target_value, daily_range_num) if daily_range_num is not None and daily_target_value else ""
 
         row["weeklyTarget"] = format_tick(weekly_target_value, tick) if weekly_target_value is not None else ""
         row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
@@ -346,7 +365,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v2.6-black-hv-target",
+        "version": "v2.7-hv-close-price",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
