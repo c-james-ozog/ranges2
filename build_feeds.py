@@ -76,6 +76,75 @@ def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float =
     return f"{round(hv, 1)}%"
 
 
+def compute_implied_vol_trends(history_rows: list) -> list:
+    """
+    For each row (newest first), compute impliedVolTrend:
+      - direction: "up", "down", or "" (no change or no data)
+      - count: number of consecutive days in that direction
+
+    rows are newest -> oldest, so we walk forward in time (reversed).
+    """
+    # Work oldest to newest to build consecutive counts
+    reversed_rows = list(reversed(history_rows))
+    trends = [""] * len(reversed_rows)
+
+    for i, row in enumerate(reversed_rows):
+        iv_str = row.get("impliedVol", "")
+        if not iv_str:
+            trends[i] = ""
+            continue
+
+        try:
+            iv = float(iv_str.replace("%", ""))
+        except ValueError:
+            trends[i] = ""
+            continue
+
+        if i == 0:
+            trends[i] = ""
+            continue
+
+        # Find previous row with implied vol
+        prev_iv = None
+        for j in range(i - 1, -1, -1):
+            prev_str = reversed_rows[j].get("impliedVol", "")
+            if prev_str:
+                try:
+                    prev_iv = float(prev_str.replace("%", ""))
+                    break
+                except ValueError:
+                    continue
+
+        if prev_iv is None:
+            trends[i] = ""
+            continue
+
+        if iv > prev_iv:
+            direction = "up"
+        elif iv < prev_iv:
+            direction = "down"
+        else:
+            trends[i] = ""
+            continue
+
+        # Count consecutive days in this direction
+        count = 1
+        for j in range(i - 1, -1, -1):
+            prev_trend = trends[j]
+            if not prev_trend:
+                break
+            prev_dir = prev_trend.split("|")[0]
+            if prev_dir == direction:
+                count += 1
+            else:
+                break
+
+        trends[i] = direction + "|" + str(count)
+
+    # Reverse back to newest-first order
+    return list(reversed(trends))
+
+
 def get_week_monday(date_str: str) -> str:
     d = date.fromisoformat(date_str)
     monday = d - timedelta(days=d.weekday())
@@ -95,7 +164,6 @@ def is_last_trading_day_of_week(date_str: str) -> bool:
 
 
 def compute_weekly_ranges(dated_rows: list, tick: float) -> dict:
-    """Cumulative weekly high/low/range for every date."""
     weeks: dict = {}
     for r in dated_rows:
         monday = get_week_monday(r["date"])
@@ -121,7 +189,6 @@ def compute_weekly_ranges(dated_rows: list, tick: float) -> dict:
 
 
 def compute_completed_weekly_ranges(dated_rows: list, tick: float) -> list:
-    """Returns list of completed weekly ranges ordered newest first."""
     weeks: dict = {}
     for r in dated_rows:
         monday = get_week_monday(r["date"])
@@ -146,38 +213,18 @@ def compute_completed_weekly_ranges(dated_rows: list, tick: float) -> list:
 
 
 def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
-    """
-    For every date, compute:
-      weeklyTarget    = avg of 3 prior completed weeks' ranges (current week's target)
-      nextWeeklyTarget = avg of current + 2 prior completed weeks' ranges (next week's target)
-                         only populated on the last trading day of the week
-
-    Returns dict keyed by date string -> {"weeklyTarget": ..., "nextWeeklyTarget": ...}
-    """
     completed = compute_completed_weekly_ranges(dated_rows, tick)
 
-    # For each completed week i:
-    #   nextWeeklyTarget = avg of completed[i], [i+1], [i+2]  (used as target for week i+1... wait)
-    #   weeklyTarget for week N = avg of completed weeks N-1, N-2, N-3
-    #   nextWeeklyTarget for week N's last day = avg of completed weeks N, N-1, N-2
-
-    # Map monday -> weeklyTarget (avg of prior 3 completed weeks)
     weekly_target_by_monday = {}
     for i, week in enumerate(completed):
         if i + 2 < len(completed):
-            # completed is newest-first, so i+1 and i+2 are older weeks
-            # weeklyTarget for the week AFTER completed[i] = avg of completed[i], [i+1], [i+2]
             ranges = [completed[i]["range"], completed[i+1]["range"], completed[i+2]["range"]]
             avg = sum(ranges) / 3
             target = round_to_tick(avg, tick)
-            # This target applies to the week whose monday comes AFTER completed[i]["monday"]
             next_monday_d = date.fromisoformat(completed[i]["monday"]) + timedelta(weeks=1)
             next_monday = next_monday_d.isoformat()
             weekly_target_by_monday[next_monday] = target
 
-    # nextWeeklyTarget for last trading day of week N
-    # = avg of completed[N], [N-1], [N-2] = same as weeklyTarget for week N+1
-    # So nextWeeklyTarget on week N's last day = weeklyTarget_by_monday of week N+1
     next_weekly_target_by_last_day = {}
     for week in completed:
         next_monday_d = date.fromisoformat(week["monday"]) + timedelta(weeks=1)
@@ -185,12 +232,11 @@ def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
         if next_monday in weekly_target_by_monday:
             next_weekly_target_by_last_day[week["lastDay"]] = weekly_target_by_monday[next_monday]
 
-    # Map every date to its week's target
     result = {}
     for r in dated_rows:
         monday = get_week_monday(r["date"])
         wt = weekly_target_by_monday.get(monday)
-        nwt = next_weekly_target_by_last_day.get(r["date"])  # only on last trading day
+        nwt = next_weekly_target_by_last_day.get(r["date"])
         result[r["date"]] = {
             "weeklyTarget": wt,
             "nextWeeklyTarget": nwt,
@@ -217,7 +263,6 @@ def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
     price_divisor = PRICE_DIVISORS.get(contract["commodity"], 100)
 
-    # Pre-build dated rows for weekly functions
     dated_rows = []
     for r in rows:
         dated_rows.append({
@@ -233,9 +278,9 @@ def build_history(rows: list, contract: dict) -> list:
     history_rows = []
 
     for i, r in enumerate(rows):
-        date_str   = dated_rows[i]["date"]
-        daily_high = round_to_tick(r["high"], tick)
-        daily_low  = round_to_tick(r["low"], tick)
+        date_str    = dated_rows[i]["date"]
+        daily_high  = round_to_tick(r["high"], tick)
+        daily_low   = round_to_tick(r["low"], tick)
         daily_range = round_to_tick(daily_high - daily_low, tick)
 
         full_achievement_value  = compute_daily_full_achievement(rows, i, tick)
@@ -270,21 +315,21 @@ def build_history(rows: list, contract: dict) -> list:
             "sectionBreak": False,
         })
 
-    # Second pass: daily target from prior row's nextDailyTarget
+    # Second pass: daily target, achievements, implied vol trend
     for i, row in enumerate(history_rows):
         prev_row = history_rows[i + 1] if i + 1 < len(history_rows) else None
 
-        daily_target_value  = prev_row["nextDailyTargetValue"] if prev_row else None
-        daily_range_num     = float(row["dailyRange"]) if row["dailyRange"] else None
-        weekly_range_num    = float(row["weeklyRange"]) if row["weeklyRange"] else None
-        weekly_target_value = row["weeklyTargetValue"]
+        daily_target_value       = prev_row["nextDailyTargetValue"] if prev_row else None
+        daily_range_num          = float(row["dailyRange"]) if row["dailyRange"] else None
+        weekly_range_num         = float(row["weeklyRange"]) if row["weeklyRange"] else None
+        weekly_target_value      = row["weeklyTargetValue"]
         next_weekly_target_value = row["nextWeeklyTargetValue"]
 
-        row["dailyTarget"]    = format_tick(daily_target_value, tick) if daily_target_value is not None else ""
-        row["dailyAchievement"] = pct_str(daily_range_num, daily_target_value) if daily_range_num is not None and daily_target_value else ""
-        row["weeklyTarget"]   = format_tick(weekly_target_value, tick) if weekly_target_value is not None else ""
+        row["dailyTarget"]       = format_tick(daily_target_value, tick) if daily_target_value is not None else ""
+        row["dailyAchievement"]  = pct_str(daily_range_num, daily_target_value) if daily_range_num is not None and daily_target_value else ""
+        row["weeklyTarget"]      = format_tick(weekly_target_value, tick) if weekly_target_value is not None else ""
         row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
-        row["nextWeeklyTarget"] = format_tick(next_weekly_target_value, tick) if next_weekly_target_value is not None else ""
+        row["nextWeeklyTarget"]  = format_tick(next_weekly_target_value, tick) if next_weekly_target_value is not None else ""
 
         if i > 0:
             newer = history_rows[i - 1]["date"]
@@ -295,6 +340,11 @@ def build_history(rows: list, contract: dict) -> list:
         del row["nextDailyTargetValue"]
         del row["weeklyTargetValue"]
         del row["nextWeeklyTargetValue"]
+
+    # Third pass: implied vol trend (needs impliedVol populated first)
+    trends = compute_implied_vol_trends(history_rows)
+    for i, row in enumerate(history_rows):
+        row["impliedVolTrend"] = trends[i]
 
     return history_rows
 
@@ -317,6 +367,7 @@ def build_overview_rows_from_history(history_payload: dict) -> list:
             "nextDailyTarget": row["nextDailyTarget"],
             "historicVol": row["historicVol"],
             "impliedVol": row["impliedVol"],
+            "impliedVolTrend": row["impliedVolTrend"],
             "weeklyRange": row["weeklyRange"],
             "weeklyHigh": row["weeklyHigh"],
             "weeklyLow": row["weeklyLow"],
@@ -392,9 +443,9 @@ def main():
                 if x.get("dailyRange"):
                     previous_daily_ranges.append(x["dailyRange"])
 
-            dated_rows = [{"date": r["date"], "high": rows[j]["high"], "low": rows[j]["low"]}
-                         for j, r in enumerate(history_rows)]
-            completed = compute_completed_weekly_ranges(dated_rows, tick)
+            dated_rows_for_prev = [{"date": r["date"], "high": rows[j]["high"], "low": rows[j]["low"]}
+                                   for j, r in enumerate(history_rows)]
+            completed = compute_completed_weekly_ranges(dated_rows_for_prev, tick)
             previous_weekly_ranges = []
             for w in completed[1:4]:
                 previous_weekly_ranges.append(format_tick(w["range"], tick))
@@ -436,7 +487,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v3.1-next-weekly-target",
+        "version": "v3.2-implied-vol-trend",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
