@@ -102,20 +102,7 @@ def compute_next_weekly_target(rows: list, i: int, tick: float):
     return round_to_tick(full_achievement * 0.8, tick)
 
 
-def compute_historic_vol(rows: list, i: int, tick: float) -> str:
-    """
-    New Historic Vol formula:
-      1. Average the current day's range and the 2 prior trading days' ranges (3-day avg)
-      2. Multiply by 0.80 (80% achievement)
-      3. Divide by the closing price of the current day (rows[i])
-      4. Multiply by 16
-      Result expressed as a percentage rounded to 1 decimal place.
-
-    rows are sorted newest -> oldest, so:
-      rows[i]   = current day
-      rows[i+1] = prior day
-      rows[i+2] = two days prior
-    """
+def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float = 1.0) -> str:
     window = rows[i:i + 3]
     if len(window) < 3:
         return ""
@@ -123,6 +110,9 @@ def compute_historic_vol(rows: list, i: int, tick: float) -> str:
     close_price = window[0].get("close")
     if not close_price:
         return ""
+
+    # Convert close to dollars if commodity is quoted in cents (grains)
+    close_price = close_price / price_divisor
 
     ranges = [compute_daily_range(x, tick) for x in window]
     avg_range = sum(ranges) / 3
