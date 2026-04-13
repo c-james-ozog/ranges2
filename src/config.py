@@ -36,28 +36,30 @@ TICK_SIZES = {
     "US Dollar": 0.005, "Wheat": 0.25,
 }
 
-# Commodities where Yahoo returns prices in cents — divide by 100 to get dollars
+# Divide close price by 100 to get 1% of close, used in Historic Vol formula:
+# HV = (avg_3day_range * 0.80) / (close / 100) * 16
+# This applies universally to all commodities.
 PRICE_DIVISORS = {
-    "Cocoa": 1,
-    "Coffee": 1,
-    "Copper": 1,
+    "Cocoa": 100,
+    "Coffee": 100,
+    "Copper": 100,
     "Corn": 100,
-    "Cotton": 1,
-    "Crude Oil WTI": 1,
-    "Feeder Cattle": 1,
-    "Gold": 1,
+    "Cotton": 100,
+    "Crude Oil WTI": 100,
+    "Feeder Cattle": 100,
+    "Gold": 100,
     "Hard Red Wheat": 100,
-    "Lean Hogs": 1,
-    "Live Cattle": 1,
-    "Nasdaq 100 E-Mini": 1,
-    "Natural Gas": 1,
+    "Lean Hogs": 100,
+    "Live Cattle": 100,
+    "Nasdaq 100 E-Mini": 100,
+    "Natural Gas": 100,
     "Rice": 100,
-    "S&P 500 E-Mini": 1,
-    "Silver": 1,
-    "Soybean Meal": 1,
-    "Soybean Oil": 1,
+    "S&P 500 E-Mini": 100,
+    "Silver": 100,
+    "Soybean Meal": 100,
+    "Soybean Oil": 100,
     "Soybeans": 100,
-    "US Dollar": 1,
+    "US Dollar": 100,
     "Wheat": 100,
 }
 
