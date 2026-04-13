@@ -15,17 +15,30 @@ HOME_ORDER = [
 ]
 
 CME_HOLIDAYS_2026 = {
-    "2026-01-01",
-    "2026-01-19",
-    "2026-02-16",
-    "2026-04-03",
-    "2026-05-25",
-    "2026-06-19",
-    "2026-07-03",
-    "2026-09-07",
-    "2026-11-26",
-    "2026-12-25",
+    "2026-01-01", "2026-01-19", "2026-02-16", "2026-04-03",
+    "2026-05-25", "2026-06-19", "2026-07-03", "2026-09-07",
+    "2026-11-26", "2026-12-25",
 }
+
+# Load implied vol overrides from implied_vol.json if it exists
+# Format: { "YYYY-MM-DD": { "SYMBOL": float_percent, ... }, ... }
+IMPLIED_VOL_FILE = Path("implied_vol.json")
+IMPLIED_VOL_DATA: dict = {}
+if IMPLIED_VOL_FILE.exists():
+    try:
+        IMPLIED_VOL_DATA = json.loads(IMPLIED_VOL_FILE.read_text(encoding="utf-8"))
+        print(f"Loaded implied vol data for {len(IMPLIED_VOL_DATA)} dates")
+    except Exception as e:
+        print(f"Warning: could not load implied_vol.json: {e}")
+
+
+def get_implied_vol(date_str: str, symbol: str) -> str:
+    """Return implied vol as '24.0%' string, or '' if not available."""
+    day_data = IMPLIED_VOL_DATA.get(date_str, {})
+    val = day_data.get(symbol)
+    if val is None:
+        return ""
+    return f"{round(float(val), 1)}%"
 
 
 def chicago_date_from_ts(ts: int) -> str:
@@ -78,13 +91,10 @@ def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float =
 
 def compute_implied_vol_trends(history_rows: list) -> list:
     """
-    For each row (newest first), compute impliedVolTrend:
-      - direction: "up", "down", or "" (no change or no data)
-      - count: number of consecutive days in that direction
-
-    rows are newest -> oldest, so we walk forward in time (reversed).
+    For each row compute impliedVolTrend = 'up|N' or 'down|N' or ''.
+    Counts consecutive days in same direction (newest first in input,
+    we process oldest to newest internally).
     """
-    # Work oldest to newest to build consecutive counts
     reversed_rows = list(reversed(history_rows))
     trends = [""] * len(reversed_rows)
 
@@ -93,7 +103,6 @@ def compute_implied_vol_trends(history_rows: list) -> list:
         if not iv_str:
             trends[i] = ""
             continue
-
         try:
             iv = float(iv_str.replace("%", ""))
         except ValueError:
@@ -104,7 +113,6 @@ def compute_implied_vol_trends(history_rows: list) -> list:
             trends[i] = ""
             continue
 
-        # Find previous row with implied vol
         prev_iv = None
         for j in range(i - 1, -1, -1):
             prev_str = reversed_rows[j].get("impliedVol", "")
@@ -127,7 +135,6 @@ def compute_implied_vol_trends(history_rows: list) -> list:
             trends[i] = ""
             continue
 
-        # Count consecutive days in this direction
         count = 1
         for j in range(i - 1, -1, -1):
             prev_trend = trends[j]
@@ -141,7 +148,6 @@ def compute_implied_vol_trends(history_rows: list) -> list:
 
         trends[i] = direction + "|" + str(count)
 
-    # Reverse back to newest-first order
     return list(reversed(trends))
 
 
@@ -262,6 +268,7 @@ def has_market_closed_gap(prev_date_str: str, curr_date_str: str) -> bool:
 def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
     price_divisor = PRICE_DIVISORS.get(contract["commodity"], 100)
+    symbol = contract["base_symbol"]
 
     dated_rows = []
     for r in rows:
@@ -286,6 +293,7 @@ def build_history(rows: list, contract: dict) -> list:
         full_achievement_value  = compute_daily_full_achievement(rows, i, tick)
         next_daily_target_value = compute_next_daily_target(rows, i, tick)
         historic_vol            = compute_historic_vol(rows, i, tick, price_divisor)
+        implied_vol             = get_implied_vol(date_str, symbol)
 
         wd = weekly_data.get(date_str, {})
         weekly_high  = wd.get("weeklyHigh")
@@ -306,7 +314,7 @@ def build_history(rows: list, contract: dict) -> list:
             "nextDailyTarget": format_tick(next_daily_target_value, tick) if next_daily_target_value is not None else "",
             "nextDailyTargetValue": next_daily_target_value,
             "historicVol": historic_vol,
-            "impliedVol": "",
+            "impliedVol": implied_vol,
             "weeklyHigh": format_tick(weekly_high, tick) if weekly_high is not None else "",
             "weeklyLow": format_tick(weekly_low, tick) if weekly_low is not None else "",
             "weeklyRange": format_tick(weekly_range, tick) if weekly_range is not None else "",
@@ -315,7 +323,7 @@ def build_history(rows: list, contract: dict) -> list:
             "sectionBreak": False,
         })
 
-    # Second pass: daily target, achievements, implied vol trend
+    # Second pass: daily target, achievements
     for i, row in enumerate(history_rows):
         prev_row = history_rows[i + 1] if i + 1 < len(history_rows) else None
 
@@ -341,7 +349,7 @@ def build_history(rows: list, contract: dict) -> list:
         del row["weeklyTargetValue"]
         del row["nextWeeklyTargetValue"]
 
-    # Third pass: implied vol trend (needs impliedVol populated first)
+    # Third pass: implied vol trend
     trends = compute_implied_vol_trends(history_rows)
     for i, row in enumerate(history_rows):
         row["impliedVolTrend"] = trends[i]
@@ -487,7 +495,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v3.2-implied-vol-trend",
+        "version": "v3.2-implied-vol",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
