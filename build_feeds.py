@@ -94,18 +94,22 @@ def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float =
     """
     Historic Vol formula:
       1. Average the ranges of the current day and the 2 prior trading days (3-day avg)
-      2. Multiply by 0.80 (80% achievement target)
-      3. Divide by the closing price of the current day (in dollars)
+         Ranges are kept in their raw Yahoo units (cents for grains, dollars for others)
+      2. Multiply avg range by 0.80
+      3. Divide by the closing price converted to dollars (close / price_divisor)
       4. Multiply by 16
     Expressed as a percentage rounded to 1 decimal place.
 
-    rows are sorted newest -> oldest:
+    rows sorted newest -> oldest:
       rows[i]   = current day
       rows[i+1] = prior day
       rows[i+2] = two days prior
 
-    price_divisor: divide close AND ranges by this to convert cents -> dollars
-                   (e.g. 100 for grain contracts like Corn, Soybeans, Wheat)
+    price_divisor: divide ONLY the close price to convert cents -> dollars
+                   (e.g. 100 for Corn, Soybeans, Wheat, Hard Red Wheat, Rice)
+                   Ranges are in the same cents units and do NOT get divided —
+                   the ratio range/close is what matters, and both being in cents
+                   gives the correct annualized percentage.
     """
     window = rows[i:i + 3]
     if len(window) < 3:
@@ -115,16 +119,13 @@ def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float =
     if not close_price:
         return ""
 
-    # Both close and ranges are in the same units (cents for grains),
-    # so dividing both by price_divisor cancels out — ratio is unit-independent.
-    # We keep the division explicit for clarity and correctness.
+    # Convert close to dollars; ranges stay in raw units (cents for grains)
     close_dollars = close_price / price_divisor
 
     ranges = [compute_daily_range(x, tick) for x in window]
     avg_range = sum(ranges) / 3
-    avg_range_dollars = avg_range / price_divisor
+    target_range = avg_range * 0.80
 
-    target_range = avg_range_dollars * 0.80
     hv = (target_range / close_dollars) * 16
     return f"{round(hv, 1)}%"
 
