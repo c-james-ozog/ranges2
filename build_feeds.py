@@ -96,8 +96,8 @@ def is_last_trading_day_of_week(date_str: str) -> bool:
 
 def compute_weekly_ranges(dated_rows: list, tick: float) -> dict:
     """
-    dated_rows: list of dicts with 'date', 'high', 'low' keys.
-    Returns dict keyed by date string with cumulative weekly high/low/range.
+    Cumulative weekly high/low/range for every date.
+    Resets each Monday. Expands when new highs/lows are made.
     """
     weeks: dict = {}
     for r in dated_rows:
@@ -126,7 +126,7 @@ def compute_weekly_ranges(dated_rows: list, tick: float) -> dict:
 def compute_completed_weekly_ranges(dated_rows: list, tick: float) -> list:
     """
     Returns list of completed weekly ranges ordered newest first.
-    dated_rows: list of dicts with 'date', 'high', 'low' keys.
+    A week is complete if its last row is the last trading day of that week.
     """
     weeks: dict = {}
     for r in dated_rows:
@@ -153,12 +153,13 @@ def compute_completed_weekly_ranges(dated_rows: list, tick: float) -> list:
 
 def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
     """
-    Returns dict keyed by last-trading-day-of-week date -> weeklyTarget value.
-    weeklyTarget for week N = avg of ranges of weeks N-1, N-2, N-3.
+    Weekly target = avg of 3 prior completed weekly ranges.
+    Applies to ALL days in the week (not just last trading day).
+    Returns dict keyed by date string -> weeklyTarget value (float or None).
     """
     completed = compute_completed_weekly_ranges(dated_rows, tick)
 
-    # nextWeeklyTarget[i] = avg of completed[i], [i+1], [i+2] ranges
+    # nextWeeklyTarget for each completed week
     next_targets = {}
     for i, week in enumerate(completed):
         if i + 2 < len(completed):
@@ -168,12 +169,23 @@ def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
         else:
             next_targets[week["lastDay"]] = None
 
-    # weeklyTarget for week N's last day = nextWeeklyTarget of the prior completed week
-    weekly_target_by_date = {}
+    # weeklyTarget for week N = nextWeeklyTarget of week N-1 (the prior completed week)
+    # Apply to ALL dates in that week
+    weekly_target_by_week = {}
     for i, week in enumerate(completed):
         if i > 0:
             prior_week = completed[i - 1]
-            weekly_target_by_date[week["lastDay"]] = next_targets.get(prior_week["lastDay"])
+            target = next_targets.get(prior_week["lastDay"])
+            weekly_target_by_week[week["monday"]] = target
+
+    # Map every date to its week's target
+    weekly_target_by_date = {}
+    for r in dated_rows:
+        monday = get_week_monday(r["date"])
+        target = weekly_target_by_week.get(monday)
+        if target is not None:
+            weekly_target_by_date[r["date"]] = target
+
     return weekly_target_by_date
 
 
@@ -196,7 +208,7 @@ def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
     price_divisor = PRICE_DIVISORS.get(contract["commodity"], 100)
 
-    # First add dates to raw rows so weekly functions can use them
+    # Pre-build dated rows for weekly functions
     dated_rows = []
     for r in rows:
         dated_rows.append({
@@ -206,10 +218,10 @@ def build_history(rows: list, contract: dict) -> list:
             "close": r.get("close"),
         })
 
-    # Precompute cumulative weekly highs/lows/ranges
+    # Precompute cumulative weekly highs/lows/ranges for every date
     weekly_data = compute_weekly_ranges(dated_rows, tick)
 
-    # Precompute weekly targets keyed by last trading day of each week
+    # Precompute weekly targets for every date in each week
     weekly_targets = compute_weekly_targets(dated_rows, tick)
 
     history_rows = []
@@ -230,8 +242,8 @@ def build_history(rows: list, contract: dict) -> list:
         weekly_low   = wd.get("weeklyLow")
         weekly_range = wd.get("weeklyRange")
 
-        is_week_end = is_last_trading_day_of_week(date_str)
-        weekly_target_value = weekly_targets.get(date_str) if is_week_end else None
+        # Weekly target applies to all days in the week
+        weekly_target_value = weekly_targets.get(date_str)
 
         history_rows.append({
             "date": date_str,
@@ -370,7 +382,6 @@ def main():
                 if x.get("dailyRange"):
                     previous_daily_ranges.append(x["dailyRange"])
 
-            # Use dated_rows for previous weekly ranges
             dated_rows = [{"date": r["date"], "high": rows[j]["high"], "low": rows[j]["low"]}
                          for j, r in enumerate(history_rows)]
             completed = compute_completed_weekly_ranges(dated_rows, tick)
@@ -415,7 +426,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v2.9-weekly-ranges",
+        "version": "v3.0-weekly-all-days",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
