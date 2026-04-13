@@ -2,7 +2,7 @@
   "symbol": "LEJ26",
   "commodity": "Live Cattle",
   "month": "Apr",
-  "updatedAt": "2026-04-13T17:31:10.040892-05:00",
+  "updatedAt": "2026-04-13T17:52:30.490554-05:00",
   "rows": [
     {
       "date": "2026-04-13",
@@ -12,7 +12,7 @@
       "fullAchievement": "1.775",
       "nextDailyTarget": "1.425",
       "historicVol": "9.1%",
-      "impliedVol": "",
+      "impliedVol": "14.3%",
       "weeklyHigh": "251.575",
       "weeklyLow": "250.5",
       "weeklyRange": "1.075",
@@ -22,7 +22,7 @@
       "weeklyTarget": "6.3",
       "weeklyAchievement": "17.1%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|2"
     },
     {
       "date": "2026-04-10",
@@ -32,7 +32,7 @@
       "fullAchievement": "2.15",
       "nextDailyTarget": "1.725",
       "historicVol": "11.0%",
-      "impliedVol": "",
+      "impliedVol": "14.7%",
       "weeklyHigh": "252.25",
       "weeklyLow": "247",
       "weeklyRange": "5.25",
@@ -42,7 +42,7 @@
       "weeklyTarget": "6.175",
       "weeklyAchievement": "85.0%",
       "nextWeeklyTarget": "6.3",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|1"
     },
     {
       "date": "2026-04-09",
@@ -52,7 +52,7 @@
       "fullAchievement": "1.75",
       "nextDailyTarget": "1.4",
       "historicVol": "8.9%",
-      "impliedVol": "",
+      "impliedVol": "14.9%",
       "weeklyHigh": "249.95",
       "weeklyLow": "247",
       "weeklyRange": "2.95",

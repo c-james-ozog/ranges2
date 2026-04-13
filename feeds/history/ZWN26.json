@@ -2,7 +2,7 @@
   "symbol": "ZWN26",
   "commodity": "Wheat",
   "month": "Jul",
-  "updatedAt": "2026-04-13T17:31:10.040892-05:00",
+  "updatedAt": "2026-04-13T17:52:30.490554-05:00",
   "rows": [
     {
       "date": "2026-04-13",
@@ -12,7 +12,7 @@
       "fullAchievement": "13.5",
       "nextDailyTarget": "10.75",
       "historicVol": "29.4%",
-      "impliedVol": "",
+      "impliedVol": "29.0%",
       "weeklyHigh": "598.25",
       "weeklyLow": "586",
       "weeklyRange": "12.25",
@@ -32,7 +32,7 @@
       "fullAchievement": "13.75",
       "nextDailyTarget": "11",
       "historicVol": "30.1%",
-      "impliedVol": "",
+      "impliedVol": "29.0%",
       "weeklyHigh": "611.5",
       "weeklyLow": "577.75",
       "weeklyRange": "33.75",
@@ -42,7 +42,7 @@
       "weeklyTarget": "31.25",
       "weeklyAchievement": "108.0%",
       "nextWeeklyTarget": "32.75",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|1"
     },
     {
       "date": "2026-04-09",
@@ -52,7 +52,7 @@
       "fullAchievement": "14.5",
       "nextDailyTarget": "11.5",
       "historicVol": "31.7%",
-      "impliedVol": "",
+      "impliedVol": "29.3%",
       "weeklyHigh": "611.5",
       "weeklyLow": "580",
       "weeklyRange": "31.5",
