@@ -179,6 +179,7 @@ def build_history(rows: list, contract: dict) -> list:
             "date": chicago_date_from_ts(r["timestamp"]),
             "dailyHigh": format_tick(daily_high, tick),
             "dailyLow": format_tick(daily_low, tick),
+            "dailyClose": round_to_tick(r.get("close", 0), tick) if r.get("close") else "",
             "dailyRange": format_tick(daily_range, tick),
             "fullAchievement": format_tick(full_achievement_value, tick) if full_achievement_value is not None else "",
             "fullAchievementValue": full_achievement_value,
