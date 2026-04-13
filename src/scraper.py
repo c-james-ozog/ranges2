@@ -28,6 +28,10 @@ def fetch_yahoo_history(symbol: str):
             continue
         rows.append({"timestamp": ts, "high": float(high), "low": float(low), "close": float(close)})
     rows.sort(key=lambda x: x["timestamp"], reverse=True)
+    
+    rows.sort(key=lambda x: x["timestamp"], reverse=True)
+    if "ZSN26" in symbol:
+        print("DEBUG ZSN26:", rows[0])
     return rows
 
 def parse_rows(rows, commodity):
