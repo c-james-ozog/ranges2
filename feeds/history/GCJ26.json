@@ -2,7 +2,7 @@
   "symbol": "GCJ26",
   "commodity": "Gold",
   "month": "Apr",
-  "updatedAt": "2026-04-13T16:57:39.231725-05:00",
+  "updatedAt": "2026-04-13T17:11:29.198886-05:00",
   "rows": [
     {
       "date": "2026-04-13",
@@ -19,8 +19,9 @@
       "sectionBreak": false,
       "dailyTarget": "65.7",
       "dailyAchievement": "41.4%",
-      "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyTarget": "374.2",
+      "weeklyAchievement": "7.3%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-04-10",
@@ -37,8 +38,9 @@
       "sectionBreak": true,
       "dailyTarget": "71.6",
       "dailyAchievement": "64.4%",
-      "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyTarget": "482.6",
+      "weeklyAchievement": "51.0%",
+      "nextWeeklyTarget": "374.2"
     },
     {
       "date": "2026-04-09",
@@ -55,8 +57,9 @@
       "sectionBreak": false,
       "dailyTarget": "70.7",
       "dailyAchievement": "124.6%",
-      "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyTarget": "482.6",
+      "weeklyAchievement": "51.0%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-04-08",
@@ -73,8 +76,9 @@
       "sectionBreak": false,
       "dailyTarget": "100.9",
       "dailyAchievement": "111.2%",
-      "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyTarget": "482.6",
+      "weeklyAchievement": "51.0%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-04-07",
@@ -91,8 +95,9 @@
       "sectionBreak": false,
       "dailyTarget": "115",
       "dailyAchievement": "59.4%",
-      "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyTarget": "482.6",
+      "weeklyAchievement": "17.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-04-06",
@@ -109,8 +114,9 @@
       "sectionBreak": false,
       "dailyTarget": "139.2",
       "dailyAchievement": "60.8%",
-      "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyTarget": "482.6",
+      "weeklyAchievement": "17.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-04-02",
@@ -127,8 +133,9 @@
       "sectionBreak": true,
       "dailyTarget": "123.3",
       "dailyAchievement": "182.9%",
-      "weeklyTarget": "374.2",
-      "weeklyAchievement": "100.4%"
+      "weeklyTarget": "435.5",
+      "weeklyAchievement": "86.3%",
+      "nextWeeklyTarget": "482.6"
     },
     {
       "date": "2026-04-01",
@@ -145,8 +152,9 @@
       "sectionBreak": false,
       "dailyTarget": "139.8",
       "dailyAchievement": "86.6%",
-      "weeklyTarget": "374.2",
-      "weeklyAchievement": "100.4%"
+      "weeklyTarget": "435.5",
+      "weeklyAchievement": "86.3%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-31",
@@ -163,8 +171,9 @@
       "sectionBreak": false,
       "dailyTarget": "144.6",
       "dailyAchievement": "121.4%",
-      "weeklyTarget": "374.2",
-      "weeklyAchievement": "72.3%"
+      "weeklyTarget": "435.5",
+      "weeklyAchievement": "62.2%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-30",
@@ -181,8 +190,9 @@
       "sectionBreak": false,
       "dailyTarget": "138.5",
       "dailyAchievement": "119.6%",
-      "weeklyTarget": "374.2",
-      "weeklyAchievement": "44.3%"
+      "weeklyTarget": "435.5",
+      "weeklyAchievement": "38.0%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-27",
@@ -199,8 +209,9 @@
       "sectionBreak": true,
       "dailyTarget": "137.4",
       "dailyAchievement": "133.2%",
-      "weeklyTarget": "482.6",
-      "weeklyAchievement": "103.8%"
+      "weeklyTarget": "411.6",
+      "weeklyAchievement": "121.7%",
+      "nextWeeklyTarget": "435.5"
     },
     {
       "date": "2026-03-26",
@@ -217,8 +228,9 @@
       "sectionBreak": false,
       "dailyTarget": "202.5",
       "dailyAchievement": "95.5%",
-      "weeklyTarget": "482.6",
-      "weeklyAchievement": "103.8%"
+      "weeklyTarget": "411.6",
+      "weeklyAchievement": "121.7%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-25",
@@ -235,8 +247,9 @@
       "sectionBreak": false,
       "dailyTarget": "233.7",
       "dailyAchievement": "61.1%",
-      "weeklyTarget": "482.6",
-      "weeklyAchievement": "103.8%"
+      "weeklyTarget": "411.6",
+      "weeklyAchievement": "121.7%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-24",
@@ -253,8 +266,9 @@
       "sectionBreak": false,
       "dailyTarget": "282.8",
       "dailyAchievement": "63.4%",
-      "weeklyTarget": "482.6",
-      "weeklyAchievement": "90.6%"
+      "weeklyTarget": "411.6",
+      "weeklyAchievement": "106.2%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-23",
@@ -271,8 +285,9 @@
       "sectionBreak": false,
       "dailyTarget": "223",
       "dailyAchievement": "196.0%",
-      "weeklyTarget": "482.6",
-      "weeklyAchievement": "90.6%"
+      "weeklyTarget": "411.6",
+      "weeklyAchievement": "106.2%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-20",
@@ -289,8 +304,9 @@
       "sectionBreak": true,
       "dailyTarget": "173",
       "dailyAchievement": "150.2%",
-      "weeklyTarget": "435.5",
-      "weeklyAchievement": "131.1%"
+      "weeklyTarget": "284.4",
+      "weeklyAchievement": "200.8%",
+      "nextWeeklyTarget": "411.6"
     },
     {
       "date": "2026-03-19",
@@ -307,8 +323,9 @@
       "sectionBreak": false,
       "dailyTarget": "95.8",
       "dailyAchievement": "379.6%",
-      "weeklyTarget": "435.5",
-      "weeklyAchievement": "125.0%"
+      "weeklyTarget": "284.4",
+      "weeklyAchievement": "191.4%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-18",
@@ -325,8 +342,9 @@
       "sectionBreak": false,
       "dailyTarget": "70.7",
       "dailyAchievement": "300.8%",
-      "weeklyTarget": "435.5",
-      "weeklyAchievement": "55.1%"
+      "weeklyTarget": "284.4",
+      "weeklyAchievement": "84.4%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-17",
@@ -343,8 +361,9 @@
       "sectionBreak": false,
       "dailyTarget": "88.6",
       "dailyAchievement": "81.7%",
-      "weeklyTarget": "435.5",
-      "weeklyAchievement": "18.2%"
+      "weeklyTarget": "284.4",
+      "weeklyAchievement": "27.9%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-16",
@@ -361,8 +380,9 @@
       "sectionBreak": false,
       "dailyTarget": "88.8",
       "dailyAchievement": "83.8%",
-      "weeklyTarget": "435.5",
-      "weeklyAchievement": "17.1%"
+      "weeklyTarget": "284.4",
+      "weeklyAchievement": "26.2%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-13",
@@ -379,8 +399,9 @@
       "sectionBreak": true,
       "dailyTarget": "89.7",
       "dailyAchievement": "131.9%",
-      "weeklyTarget": "411.6",
-      "weeklyAchievement": "57.0%"
+      "weeklyTarget": "298.5",
+      "weeklyAchievement": "78.6%",
+      "nextWeeklyTarget": "284.4"
     },
     {
       "date": "2026-03-12",
@@ -397,8 +418,9 @@
       "sectionBreak": false,
       "dailyTarget": "102.9",
       "dailyAchievement": "135.7%",
-      "weeklyTarget": "411.6",
-      "weeklyAchievement": "55.3%"
+      "weeklyTarget": "298.5",
+      "weeklyAchievement": "76.2%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-11",
@@ -415,8 +437,9 @@
       "sectionBreak": false,
       "dailyTarget": "113.3",
       "dailyAchievement": "66.2%",
-      "weeklyTarget": "411.6",
-      "weeklyAchievement": "55.3%"
+      "weeklyTarget": "298.5",
+      "weeklyAchievement": "76.2%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-10",
@@ -433,8 +456,9 @@
       "sectionBreak": false,
       "dailyTarget": "119.6",
       "dailyAchievement": "101.7%",
-      "weeklyTarget": "411.6",
-      "weeklyAchievement": "55.3%"
+      "weeklyTarget": "298.5",
+      "weeklyAchievement": "76.2%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-09",
@@ -451,8 +475,9 @@
       "sectionBreak": false,
       "dailyTarget": "102.6",
       "dailyAchievement": "184.4%",
-      "weeklyTarget": "411.6",
-      "weeklyAchievement": "46.0%"
+      "weeklyTarget": "298.5",
+      "weeklyAchievement": "63.4%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-06",
@@ -469,8 +494,9 @@
       "sectionBreak": true,
       "dailyTarget": "176",
       "dailyAchievement": "64.8%",
-      "weeklyTarget": "284.4",
-      "weeklyAchievement": "150.9%"
+      "weeklyTarget": "236.9",
+      "weeklyAchievement": "181.1%",
+      "nextWeeklyTarget": "298.5"
     },
     {
       "date": "2026-03-05",
@@ -487,8 +513,9 @@
       "sectionBreak": false,
       "dailyTarget": "180.2",
       "dailyAchievement": "80.7%",
-      "weeklyTarget": "284.4",
-      "weeklyAchievement": "150.9%"
+      "weeklyTarget": "236.9",
+      "weeklyAchievement": "181.1%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-04",
@@ -505,8 +532,9 @@
       "sectionBreak": false,
       "dailyTarget": "177.8",
       "dailyAchievement": "70.6%",
-      "weeklyTarget": "284.4",
-      "weeklyAchievement": "150.9%"
+      "weeklyTarget": "236.9",
+      "weeklyAchievement": "181.1%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-03",
@@ -523,8 +551,9 @@
       "sectionBreak": false,
       "dailyTarget": "94.5",
       "dailyAchievement": "411.9%",
-      "weeklyTarget": "284.4",
-      "weeklyAchievement": "150.9%"
+      "weeklyTarget": "236.9",
+      "weeklyAchievement": "181.1%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-03-02",
@@ -541,8 +570,9 @@
       "sectionBreak": false,
       "dailyTarget": "78.6",
       "dailyAchievement": "205.1%",
-      "weeklyTarget": "284.4",
-      "weeklyAchievement": "56.7%"
+      "weeklyTarget": "236.9",
+      "weeklyAchievement": "68.0%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-27",
@@ -559,8 +589,9 @@
       "sectionBreak": true,
       "dailyTarget": "90.2",
       "dailyAchievement": "128.7%",
-      "weeklyTarget": "298.5",
-      "weeklyAchievement": "63.5%"
+      "weeklyTarget": "404",
+      "weeklyAchievement": "46.9%",
+      "nextWeeklyTarget": "236.9"
     },
     {
       "date": "2026-02-26",
@@ -577,8 +608,9 @@
       "sectionBreak": false,
       "dailyTarget": "106.2",
       "dailyAchievement": "72.6%",
-      "weeklyTarget": "298.5",
-      "weeklyAchievement": "53.6%"
+      "weeklyTarget": "404",
+      "weeklyAchievement": "39.6%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-25",
@@ -595,8 +627,9 @@
       "sectionBreak": false,
       "dailyTarget": "114.2",
       "dailyAchievement": "88.8%",
-      "weeklyTarget": "298.5",
-      "weeklyAchievement": "53.6%"
+      "weeklyTarget": "404",
+      "weeklyAchievement": "39.6%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-24",
@@ -613,8 +646,9 @@
       "sectionBreak": false,
       "dailyTarget": "90.6",
       "dailyAchievement": "176.5%",
-      "weeklyTarget": "298.5",
-      "weeklyAchievement": "53.6%"
+      "weeklyTarget": "404",
+      "weeklyAchievement": "39.6%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-23",
@@ -631,8 +665,9 @@
       "sectionBreak": false,
       "dailyTarget": "97.7",
       "dailyAchievement": "140.1%",
-      "weeklyTarget": "298.5",
-      "weeklyAchievement": "45.9%"
+      "weeklyTarget": "404",
+      "weeklyAchievement": "33.9%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-20",
@@ -649,8 +684,9 @@
       "sectionBreak": true,
       "dailyTarget": "121.3",
       "dailyAchievement": "108.6%",
-      "weeklyTarget": "236.9",
-      "weeklyAchievement": "116.8%"
+      "weeklyTarget": "620.5",
+      "weeklyAchievement": "44.6%",
+      "nextWeeklyTarget": "404"
     },
     {
       "date": "2026-02-19",
@@ -667,8 +703,9 @@
       "sectionBreak": false,
       "dailyTarget": "145.5",
       "dailyAchievement": "49.0%",
-      "weeklyTarget": "236.9",
-      "weeklyAchievement": "93.0%"
+      "weeklyTarget": "620.5",
+      "weeklyAchievement": "35.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-18",
@@ -685,8 +722,9 @@
       "sectionBreak": false,
       "dailyTarget": "161.4",
       "dailyAchievement": "101.2%",
-      "weeklyTarget": "236.9",
-      "weeklyAchievement": "93.0%"
+      "weeklyTarget": "620.5",
+      "weeklyAchievement": "35.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-17",
@@ -703,8 +741,9 @@
       "sectionBreak": false,
       "dailyTarget": "131.4",
       "dailyAchievement": "167.6%",
-      "weeklyTarget": "236.9",
-      "weeklyAchievement": "93.0%"
+      "weeklyTarget": "620.5",
+      "weeklyAchievement": "35.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-13",
@@ -721,8 +760,9 @@
       "sectionBreak": true,
       "dailyTarget": "112.7",
       "dailyAchievement": "143.7%",
-      "weeklyTarget": "404",
-      "weeklyAchievement": "60.5%"
+      "weeklyTarget": "662",
+      "weeklyAchievement": "36.9%",
+      "nextWeeklyTarget": "620.5"
     },
     {
       "date": "2026-02-12",
@@ -739,8 +779,9 @@
       "sectionBreak": false,
       "dailyTarget": "86",
       "dailyAchievement": "259.1%",
-      "weeklyTarget": "404",
-      "weeklyAchievement": "60.5%"
+      "weeklyTarget": "662",
+      "weeklyAchievement": "36.9%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-11",
@@ -757,8 +798,9 @@
       "sectionBreak": false,
       "dailyTarget": "143.9",
       "dailyAchievement": "75.2%",
-      "weeklyTarget": "404",
-      "weeklyAchievement": "38.6%"
+      "weeklyTarget": "662",
+      "weeklyAchievement": "23.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-10",
@@ -775,8 +817,9 @@
       "sectionBreak": false,
       "dailyTarget": "190.2",
       "dailyAchievement": "48.2%",
-      "weeklyTarget": "404",
-      "weeklyAchievement": "30.3%"
+      "weeklyTarget": "662",
+      "weeklyAchievement": "18.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-09",
@@ -793,8 +836,9 @@
       "sectionBreak": false,
       "dailyTarget": "223.3",
       "dailyAchievement": "54.9%",
-      "weeklyTarget": "404",
-      "weeklyAchievement": "30.3%"
+      "weeklyTarget": "662",
+      "weeklyAchievement": "18.5%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-06",
@@ -811,8 +855,9 @@
       "sectionBreak": true,
       "dailyTarget": "223.8",
       "dailyAchievement": "145.5%",
-      "weeklyTarget": "620.5",
-      "weeklyAchievement": "111.3%"
+      "weeklyTarget": "469",
+      "weeklyAchievement": "147.3%",
+      "nextWeeklyTarget": "662"
     },
     {
       "date": "2026-02-05",
@@ -829,8 +874,9 @@
       "sectionBreak": false,
       "dailyTarget": "281.8",
       "dailyAchievement": "94.2%",
-      "weeklyTarget": "620.5",
-      "weeklyAchievement": "111.3%"
+      "weeklyTarget": "469",
+      "weeklyAchievement": "147.3%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-04",
@@ -847,8 +893,9 @@
       "sectionBreak": false,
       "dailyTarget": "424",
       "dailyAchievement": "58.1%",
-      "weeklyTarget": "620.5",
-      "weeklyAchievement": "111.3%"
+      "weeklyTarget": "469",
+      "weeklyAchievement": "147.3%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-03",
@@ -865,8 +912,9 @@
       "sectionBreak": false,
       "dailyTarget": "470.2",
       "dailyAchievement": "69.7%",
-      "weeklyTarget": "620.5",
-      "weeklyAchievement": "95.9%"
+      "weeklyTarget": "469",
+      "weeklyAchievement": "126.8%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-02-02",
@@ -883,8 +931,9 @@
       "sectionBreak": false,
       "dailyTarget": "410.6",
       "dailyAchievement": "117.5%",
-      "weeklyTarget": "620.5",
-      "weeklyAchievement": "77.7%"
+      "weeklyTarget": "469",
+      "weeklyAchievement": "102.9%",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-30",
@@ -901,8 +950,9 @@
       "sectionBreak": true,
       "dailyTarget": "252.2",
       "dailyAchievement": "309.2%",
-      "weeklyTarget": "662",
-      "weeklyAchievement": "139.9%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": "469"
     },
     {
       "date": "2026-01-29",
@@ -919,8 +969,9 @@
       "sectionBreak": false,
       "dailyTarget": "151.3",
       "dailyAchievement": "331.0%",
-      "weeklyTarget": "662",
-      "weeklyAchievement": "91.2%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-28",
@@ -937,8 +988,9 @@
       "sectionBreak": false,
       "dailyTarget": "106.3",
       "dailyAchievement": "243.8%",
-      "weeklyTarget": "662",
-      "weeklyAchievement": "64.9%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-27",
@@ -955,8 +1007,9 @@
       "sectionBreak": false,
       "dailyTarget": "102.7",
       "dailyAchievement": "181.0%",
-      "weeklyTarget": "662",
-      "weeklyAchievement": "31.3%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-26",
@@ -973,8 +1026,9 @@
       "sectionBreak": false,
       "dailyTarget": "105.2",
       "dailyAchievement": "116.3%",
-      "weeklyTarget": "662",
-      "weeklyAchievement": "18.5%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-23",
@@ -991,8 +1045,9 @@
       "sectionBreak": true,
       "dailyTarget": "120.2",
       "dailyAchievement": "75.4%",
-      "weeklyTarget": "469",
-      "weeklyAchievement": "78.6%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-22",
@@ -1009,8 +1064,9 @@
       "sectionBreak": false,
       "dailyTarget": "97",
       "dailyAchievement": "177.5%",
-      "weeklyTarget": "469",
-      "weeklyAchievement": "68.4%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-21",
@@ -1027,8 +1083,9 @@
       "sectionBreak": false,
       "dailyTarget": "76.1",
       "dailyAchievement": "173.2%",
-      "weeklyTarget": "469",
-      "weeklyAchievement": "56.6%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-20",
@@ -1045,8 +1102,9 @@
       "sectionBreak": false,
       "dailyTarget": "51.2",
       "dailyAchievement": "286.1%",
-      "weeklyTarget": "469",
-      "weeklyAchievement": "31.2%"
+      "weeklyTarget": "",
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-16",
@@ -1064,7 +1122,8 @@
       "dailyTarget": "46.2",
       "dailyAchievement": "185.1%",
       "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-15",
@@ -1082,7 +1141,8 @@
       "dailyTarget": "",
       "dailyAchievement": "",
       "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-14",
@@ -1100,7 +1160,8 @@
       "dailyTarget": "",
       "dailyAchievement": "",
       "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     },
     {
       "date": "2026-01-13",
@@ -1118,7 +1179,8 @@
       "dailyTarget": "",
       "dailyAchievement": "",
       "weeklyTarget": "",
-      "weeklyAchievement": ""
+      "weeklyAchievement": "",
+      "nextWeeklyTarget": ""
     }
   ]
 }
