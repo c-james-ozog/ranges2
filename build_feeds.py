@@ -20,8 +20,7 @@ CME_HOLIDAYS_2026 = {
     "2026-11-26", "2026-12-25",
 }
 
-# Load implied vol overrides from implied_vol.json if it exists
-# Format: { "YYYY-MM-DD": { "SYMBOL": float_percent, ... }, ... }
+# Load implied vol overrides
 IMPLIED_VOL_FILE = Path("implied_vol.json")
 IMPLIED_VOL_DATA: dict = {}
 if IMPLIED_VOL_FILE.exists():
@@ -31,8 +30,7 @@ if IMPLIED_VOL_FILE.exists():
     except Exception as e:
         print(f"Warning: could not load implied_vol.json: {e}")
 
-# Load Rice manual override from implied_vol_input.xlsx if it exists
-# Reads the 'Rice Override (ZRN26)' sheet
+# Load Rice manual override from Excel
 RICE_OVERRIDE_DATA: dict = {}
 EXCEL_FILE = Path("implied_vol_input.xlsx")
 if EXCEL_FILE.exists():
@@ -45,7 +43,6 @@ if EXCEL_FILE.exists():
                 date_val, high, low, close, *_ = list(row) + [None, None, None, None]
                 if date_val is None or high is None or low is None:
                     continue
-                # Convert date to YYYY-MM-DD
                 if hasattr(date_val, 'strftime'):
                     date_str = date_val.strftime('%Y-%m-%d')
                 else:
@@ -177,6 +174,7 @@ def get_week_monday(date_str: str) -> str:
 
 
 def is_last_trading_day_of_week(date_str: str) -> bool:
+    """True if date_str is the last trading day of its Mon-Fri week."""
     d = date.fromisoformat(date_str)
     friday = d + timedelta(days=(4 - d.weekday()))
     candidate = friday
@@ -264,23 +262,7 @@ def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
     return result
 
 
-def has_market_closed_gap(prev_date_str: str, curr_date_str: str) -> bool:
-    try:
-        prev_d = date.fromisoformat(prev_date_str)
-        curr_d = date.fromisoformat(curr_date_str)
-    except ValueError:
-        return False
-    d = curr_d + timedelta(days=1)
-    while d < prev_d:
-        iso = d.isoformat()
-        if d.weekday() >= 5 or iso in CME_HOLIDAYS_2026:
-            return True
-        d += timedelta(days=1)
-    return False
-
-
 def apply_rice_overrides(rows: list, symbol: str) -> list:
-    """For ZRN26, replace Yahoo high/low/close with manual override data where available."""
     if symbol != "ZRN26" or not RICE_OVERRIDE_DATA:
         return rows
     updated = []
@@ -302,7 +284,6 @@ def build_history(rows: list, contract: dict) -> list:
     price_divisor = PRICE_DIVISORS.get(contract["commodity"], 100)
     symbol = contract["base_symbol"]
 
-    # Apply Rice manual overrides before processing
     rows = apply_rice_overrides(rows, symbol)
 
     dated_rows = []
@@ -358,6 +339,7 @@ def build_history(rows: list, contract: dict) -> list:
             "sectionBreak": False,
         })
 
+    # Second pass
     for i, row in enumerate(history_rows):
         prev_row = history_rows[i + 1] if i + 1 < len(history_rows) else None
 
@@ -373,16 +355,15 @@ def build_history(rows: list, contract: dict) -> list:
         row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
         row["nextWeeklyTarget"]  = format_tick(next_weekly_target_value, tick) if next_weekly_target_value is not None else ""
 
-        if i > 0:
-            newer = history_rows[i - 1]["date"]
-            older = row["date"]
-            row["sectionBreak"] = has_market_closed_gap(newer, older)
+        # Blue separator on last trading day of each week
+        row["sectionBreak"] = is_last_trading_day_of_week(row["date"])
 
         del row["fullAchievementValue"]
         del row["nextDailyTargetValue"]
         del row["weeklyTargetValue"]
         del row["nextWeeklyTargetValue"]
 
+    # Third pass: implied vol trend
     trends = compute_implied_vol_trends(history_rows)
     for i, row in enumerate(history_rows):
         row["impliedVolTrend"] = trends[i]
@@ -528,7 +509,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v3.3-rice-override",
+        "version": "v3.4-section-break",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
