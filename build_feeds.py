@@ -31,9 +31,41 @@ if IMPLIED_VOL_FILE.exists():
     except Exception as e:
         print(f"Warning: could not load implied_vol.json: {e}")
 
+# Load Rice manual override from implied_vol_input.xlsx if it exists
+# Reads the 'Rice Override (ZRN26)' sheet
+RICE_OVERRIDE_DATA: dict = {}
+EXCEL_FILE = Path("implied_vol_input.xlsx")
+if EXCEL_FILE.exists():
+    try:
+        from openpyxl import load_workbook
+        wb = load_workbook(EXCEL_FILE, data_only=True)
+        if 'Rice Override (ZRN26)' in wb.sheetnames:
+            ws = wb['Rice Override (ZRN26)']
+            for row in ws.iter_rows(min_row=3, values_only=True):
+                date_val, high, low, close, *_ = list(row) + [None, None, None, None]
+                if date_val is None or high is None or low is None:
+                    continue
+                # Convert date to YYYY-MM-DD
+                if hasattr(date_val, 'strftime'):
+                    date_str = date_val.strftime('%Y-%m-%d')
+                else:
+                    try:
+                        from datetime import datetime as dt
+                        d = dt.strptime(str(date_val), '%m/%d/%y')
+                        date_str = d.strftime('%Y-%m-%d')
+                    except Exception:
+                        continue
+                RICE_OVERRIDE_DATA[date_str] = {
+                    'high': float(high),
+                    'low': float(low),
+                    'close': float(close) if close else None,
+                }
+        print(f"Loaded Rice override data for {len(RICE_OVERRIDE_DATA)} dates")
+    except Exception as e:
+        print(f"Warning: could not load Rice override from Excel: {e}")
+
 
 def get_implied_vol(date_str: str, symbol: str) -> str:
-    """Return implied vol as '24.0%' string, or '' if not available."""
     day_data = IMPLIED_VOL_DATA.get(date_str, {})
     val = day_data.get(symbol)
     if val is None:
@@ -90,14 +122,8 @@ def compute_historic_vol(rows: list, i: int, tick: float, price_divisor: float =
 
 
 def compute_implied_vol_trends(history_rows: list) -> list:
-    """
-    For each row compute impliedVolTrend = 'up|N' or 'down|N' or ''.
-    Counts consecutive days in same direction (newest first in input,
-    we process oldest to newest internally).
-    """
     reversed_rows = list(reversed(history_rows))
     trends = [""] * len(reversed_rows)
-
     for i, row in enumerate(reversed_rows):
         iv_str = row.get("impliedVol", "")
         if not iv_str:
@@ -108,11 +134,9 @@ def compute_implied_vol_trends(history_rows: list) -> list:
         except ValueError:
             trends[i] = ""
             continue
-
         if i == 0:
             trends[i] = ""
             continue
-
         prev_iv = None
         for j in range(i - 1, -1, -1):
             prev_str = reversed_rows[j].get("impliedVol", "")
@@ -122,11 +146,9 @@ def compute_implied_vol_trends(history_rows: list) -> list:
                     break
                 except ValueError:
                     continue
-
         if prev_iv is None:
             trends[i] = ""
             continue
-
         if iv > prev_iv:
             direction = "up"
         elif iv < prev_iv:
@@ -134,7 +156,6 @@ def compute_implied_vol_trends(history_rows: list) -> list:
         else:
             trends[i] = ""
             continue
-
         count = 1
         for j in range(i - 1, -1, -1):
             prev_trend = trends[j]
@@ -145,9 +166,7 @@ def compute_implied_vol_trends(history_rows: list) -> list:
                 count += 1
             else:
                 break
-
         trends[i] = direction + "|" + str(count)
-
     return list(reversed(trends))
 
 
@@ -174,7 +193,6 @@ def compute_weekly_ranges(dated_rows: list, tick: float) -> dict:
     for r in dated_rows:
         monday = get_week_monday(r["date"])
         weeks.setdefault(monday, []).append(r)
-
     result = {}
     for monday, week_rows in weeks.items():
         week_rows_sorted = sorted(week_rows, key=lambda x: x["date"])
@@ -199,7 +217,6 @@ def compute_completed_weekly_ranges(dated_rows: list, tick: float) -> list:
     for r in dated_rows:
         monday = get_week_monday(r["date"])
         weeks.setdefault(monday, []).append(r)
-
     completed = []
     for monday, week_rows in sorted(weeks.items(), reverse=True):
         week_rows_sorted = sorted(week_rows, key=lambda x: x["date"])
@@ -220,7 +237,6 @@ def compute_completed_weekly_ranges(dated_rows: list, tick: float) -> list:
 
 def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
     completed = compute_completed_weekly_ranges(dated_rows, tick)
-
     weekly_target_by_monday = {}
     for i, week in enumerate(completed):
         if i + 2 < len(completed):
@@ -230,14 +246,12 @@ def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
             next_monday_d = date.fromisoformat(completed[i]["monday"]) + timedelta(weeks=1)
             next_monday = next_monday_d.isoformat()
             weekly_target_by_monday[next_monday] = target
-
     next_weekly_target_by_last_day = {}
     for week in completed:
         next_monday_d = date.fromisoformat(week["monday"]) + timedelta(weeks=1)
         next_monday = next_monday_d.isoformat()
         if next_monday in weekly_target_by_monday:
             next_weekly_target_by_last_day[week["lastDay"]] = weekly_target_by_monday[next_monday]
-
     result = {}
     for r in dated_rows:
         monday = get_week_monday(r["date"])
@@ -265,10 +279,31 @@ def has_market_closed_gap(prev_date_str: str, curr_date_str: str) -> bool:
     return False
 
 
+def apply_rice_overrides(rows: list, symbol: str) -> list:
+    """For ZRN26, replace Yahoo high/low/close with manual override data where available."""
+    if symbol != "ZRN26" or not RICE_OVERRIDE_DATA:
+        return rows
+    updated = []
+    for r in rows:
+        date_str = chicago_date_from_ts(r["timestamp"])
+        if date_str in RICE_OVERRIDE_DATA:
+            override = RICE_OVERRIDE_DATA[date_str]
+            r = dict(r)
+            r["high"] = override["high"]
+            r["low"] = override["low"]
+            if override.get("close"):
+                r["close"] = override["close"]
+        updated.append(r)
+    return updated
+
+
 def build_history(rows: list, contract: dict) -> list:
     tick = TICK_SIZES[contract["commodity"]]
     price_divisor = PRICE_DIVISORS.get(contract["commodity"], 100)
     symbol = contract["base_symbol"]
+
+    # Apply Rice manual overrides before processing
+    rows = apply_rice_overrides(rows, symbol)
 
     dated_rows = []
     for r in rows:
@@ -323,7 +358,6 @@ def build_history(rows: list, contract: dict) -> list:
             "sectionBreak": False,
         })
 
-    # Second pass: daily target, achievements
     for i, row in enumerate(history_rows):
         prev_row = history_rows[i + 1] if i + 1 < len(history_rows) else None
 
@@ -349,7 +383,6 @@ def build_history(rows: list, contract: dict) -> list:
         del row["weeklyTargetValue"]
         del row["nextWeeklyTargetValue"]
 
-    # Third pass: implied vol trend
     trends = compute_implied_vol_trends(history_rows)
     for i, row in enumerate(history_rows):
         row["impliedVolTrend"] = trends[i]
@@ -495,7 +528,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v3.2-implied-vol",
+        "version": "v3.3-rice-override",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
