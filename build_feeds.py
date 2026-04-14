@@ -174,7 +174,6 @@ def get_week_monday(date_str: str) -> str:
 
 
 def is_last_trading_day_of_week(date_str: str) -> bool:
-    """True if date_str is the last trading day of its Mon-Fri week."""
     d = date.fromisoformat(date_str)
     friday = d + timedelta(days=(4 - d.weekday()))
     candidate = friday
@@ -183,6 +182,19 @@ def is_last_trading_day_of_week(date_str: str) -> bool:
         if candidate.weekday() < 5 and iso not in CME_HOLIDAYS_2026:
             return date_str == iso
         candidate -= timedelta(days=1)
+    return False
+
+
+def is_first_trading_day_of_week(date_str: str) -> bool:
+    """True if date_str is the first trading day of its Mon-Fri week."""
+    d = date.fromisoformat(date_str)
+    monday = d - timedelta(days=d.weekday())
+    candidate = monday
+    for _ in range(5):
+        iso = candidate.isoformat()
+        if candidate.weekday() < 5 and iso not in CME_HOLIDAYS_2026:
+            return date_str == iso
+        candidate += timedelta(days=1)
     return False
 
 
@@ -355,8 +367,9 @@ def build_history(rows: list, contract: dict) -> list:
         row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
         row["nextWeeklyTarget"]  = format_tick(next_weekly_target_value, tick) if next_weekly_target_value is not None else ""
 
-        # Blue separator on last trading day of each week
-        row["sectionBreak"] = is_last_trading_day_of_week(row["date"])
+        # Blue separator on first trading day of each week (rows displayed newest->oldest,
+        # so border-top on Monday visually separates it from the prior Friday above it)
+        row["sectionBreak"] = is_first_trading_day_of_week(row["date"])
 
         del row["fullAchievementValue"]
         del row["nextDailyTargetValue"]
