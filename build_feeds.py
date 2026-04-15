@@ -20,6 +20,9 @@ CME_HOLIDAYS_2026 = {
     "2026-11-26", "2026-12-25",
 }
 
+# Today's date in CT — used to cap rows so future dates are excluded
+TODAY_CT = datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d")
+
 # Load implied vol overrides
 IMPLIED_VOL_FILE = Path("implied_vol.json")
 IMPLIED_VOL_DATA: dict = {}
@@ -73,7 +76,6 @@ if EXCEL_FILE.exists():
 
 
 def is_trading_day(date_str: str) -> bool:
-    """Return True if date_str is a weekday and not a CME holiday."""
     try:
         d = date.fromisoformat(date_str)
     except ValueError:
@@ -338,8 +340,10 @@ def build_history(rows: list, contract: dict) -> list:
     rows = apply_price_overrides(rows, symbol)
     rows = apply_rice_overrides(rows, symbol)
 
-    # Filter out non-trading days (weekends, holidays) that Yahoo sometimes returns
-    rows = [r for r in rows if is_trading_day(chicago_date_from_ts(r["timestamp"]))]
+    # Filter: keep only valid trading days at or before today
+    rows = [r for r in rows
+            if is_trading_day(chicago_date_from_ts(r["timestamp"]))
+            and chicago_date_from_ts(r["timestamp"]) <= TODAY_CT]
 
     dated_rows = []
     for r in rows:
@@ -563,7 +567,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v3.6-filter-nontrading",
+        "version": "v3.7-date-cap",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
