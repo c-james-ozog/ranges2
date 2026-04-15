@@ -2,7 +2,7 @@
   "symbol": "LEJ26",
   "commodity": "Live Cattle",
   "month": "Apr",
-  "updatedAt": "2026-04-14T18:59:59.158494-05:00",
+  "updatedAt": "2026-04-14T21:12:16.787632-05:00",
   "rows": [
     {
       "date": "2026-04-14",
@@ -12,7 +12,7 @@
       "fullAchievement": "2.15",
       "nextDailyTarget": "1.725",
       "historicVol": "10.9%",
-      "impliedVol": "",
+      "impliedVol": "14.8%",
       "weeklyHigh": "253.6",
       "weeklyLow": "250.5",
       "weeklyRange": "3.1",
@@ -22,7 +22,7 @@
       "weeklyTarget": "6.3",
       "weeklyAchievement": "49.2%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "up|1"
     },
     {
       "date": "2026-04-13",

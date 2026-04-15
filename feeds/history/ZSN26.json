@@ -2,8 +2,28 @@
   "symbol": "ZSN26",
   "commodity": "Soybeans",
   "month": "Jul",
-  "updatedAt": "2026-04-14T18:59:59.158494-05:00",
+  "updatedAt": "2026-04-14T21:12:16.787632-05:00",
   "rows": [
+    {
+      "date": "2026-04-15",
+      "dailyHigh": "1175.75",
+      "dailyLow": "1171",
+      "dailyRange": "4.75",
+      "fullAchievement": "13.75",
+      "nextDailyTarget": "11",
+      "historicVol": "15.1%",
+      "impliedVol": "",
+      "weeklyHigh": "1199",
+      "weeklyLow": "1170.25",
+      "weeklyRange": "28.75",
+      "sectionBreak": false,
+      "dailyTarget": "13.5",
+      "dailyAchievement": "35.2%",
+      "weeklyTarget": "29.75",
+      "weeklyAchievement": "96.6%",
+      "nextWeeklyTarget": "",
+      "impliedVolTrend": ""
+    },
     {
       "date": "2026-04-14",
       "dailyHigh": "1183",
@@ -12,7 +32,7 @@
       "fullAchievement": "17",
       "nextDailyTarget": "13.5",
       "historicVol": "18.5%",
-      "impliedVol": "",
+      "impliedVol": "15.9%",
       "weeklyHigh": "1199",
       "weeklyLow": "1170.25",
       "weeklyRange": "28.75",
@@ -22,7 +42,7 @@
       "weeklyTarget": "29.75",
       "weeklyAchievement": "96.6%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|2"
     },
     {
       "date": "2026-04-13",
