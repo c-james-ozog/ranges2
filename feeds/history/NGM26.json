@@ -2,7 +2,7 @@
   "symbol": "NGM26",
   "commodity": "Natural Gas",
   "month": "Jun",
-  "updatedAt": "2026-04-15T13:34:40.219854-05:00",
+  "updatedAt": "2026-04-15T14:12:17.678217-05:00",
   "rows": [
     {
       "date": "2026-04-15",
@@ -11,7 +11,7 @@
       "dailyRange": "0.049",
       "fullAchievement": "0.082",
       "nextDailyTarget": "0.066",
-      "historicVol": "37.8%",
+      "historicVol": "37.7%",
       "impliedVol": "",
       "weeklyHigh": "2.881",
       "weeklyLow": "2.724",
@@ -102,7 +102,7 @@
       "weeklyTarget": "0.306",
       "weeklyAchievement": "68.0%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|4"
     },
     {
       "date": "2026-04-08",
@@ -112,7 +112,7 @@
       "fullAchievement": "0.113",
       "nextDailyTarget": "0.09",
       "historicVol": "50.7%",
-      "impliedVol": "",
+      "impliedVol": "49.7%",
       "weeklyHigh": "3.004",
       "weeklyLow": "2.829",
       "weeklyRange": "0.175",
@@ -122,7 +122,7 @@
       "weeklyTarget": "0.306",
       "weeklyAchievement": "57.2%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|3"
     },
     {
       "date": "2026-04-07",
@@ -132,7 +132,7 @@
       "fullAchievement": "0.102",
       "nextDailyTarget": "0.082",
       "historicVol": "43.7%",
-      "impliedVol": "",
+      "impliedVol": "51.0%",
       "weeklyHigh": "3.004",
       "weeklyLow": "2.887",
       "weeklyRange": "0.117",
@@ -142,7 +142,7 @@
       "weeklyTarget": "0.306",
       "weeklyAchievement": "38.2%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|2"
     },
     {
       "date": "2026-04-06",
@@ -152,7 +152,7 @@
       "fullAchievement": "0.097",
       "nextDailyTarget": "0.078",
       "historicVol": "42.1%",
-      "impliedVol": "",
+      "impliedVol": "51.2%",
       "weeklyHigh": "2.986",
       "weeklyLow": "2.899",
       "weeklyRange": "0.087",
@@ -162,7 +162,7 @@
       "weeklyTarget": "0.306",
       "weeklyAchievement": "28.4%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|1"
     },
     {
       "date": "2026-04-02",
@@ -172,7 +172,7 @@
       "fullAchievement": "0.118",
       "nextDailyTarget": "0.094",
       "historicVol": "51.8%",
-      "impliedVol": "",
+      "impliedVol": "52.3%",
       "weeklyHigh": "3.19",
       "weeklyLow": "2.904",
       "weeklyRange": "0.286",
