@@ -30,8 +30,7 @@ if IMPLIED_VOL_FILE.exists():
     except Exception as e:
         print(f"Warning: could not load implied_vol.json: {e}")
 
-# Load price overrides (for correcting bad Yahoo data)
-# Format: { "YYYY-MM-DD": { "SYMBOL": { "high": float, "low": float }, ... }, ... }
+# Load price overrides
 PRICE_OVERRIDE_FILE = Path("price_overrides.json")
 PRICE_OVERRIDE_DATA: dict = {}
 if PRICE_OVERRIDE_FILE.exists():
@@ -71,6 +70,15 @@ if EXCEL_FILE.exists():
         print(f"Loaded Rice override data for {len(RICE_OVERRIDE_DATA)} dates")
     except Exception as e:
         print(f"Warning: could not load Rice override from Excel: {e}")
+
+
+def is_trading_day(date_str: str) -> bool:
+    """Return True if date_str is a weekday and not a CME holiday."""
+    try:
+        d = date.fromisoformat(date_str)
+    except ValueError:
+        return False
+    return d.weekday() < 5 and date_str not in CME_HOLIDAYS_2026
 
 
 def get_implied_vol(date_str: str, symbol: str) -> str:
@@ -285,7 +293,6 @@ def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
 
 
 def apply_price_overrides(rows: list, symbol: str) -> list:
-    """Apply manual price overrides for any contract/date in price_overrides.json."""
     if not PRICE_OVERRIDE_DATA:
         return rows
     updated = []
@@ -306,7 +313,6 @@ def apply_price_overrides(rows: list, symbol: str) -> list:
 
 
 def apply_rice_overrides(rows: list, symbol: str) -> list:
-    """For ZRN26, replace Yahoo high/low/close with manual override data where available."""
     if symbol != "ZRN26" or not RICE_OVERRIDE_DATA:
         return rows
     updated = []
@@ -328,9 +334,12 @@ def build_history(rows: list, contract: dict) -> list:
     price_divisor = PRICE_DIVISORS.get(contract["commodity"], 100)
     symbol = contract["base_symbol"]
 
-    # Apply overrides before any calculations
+    # Apply overrides before filtering
     rows = apply_price_overrides(rows, symbol)
     rows = apply_rice_overrides(rows, symbol)
+
+    # Filter out non-trading days (weekends, holidays) that Yahoo sometimes returns
+    rows = [r for r in rows if is_trading_day(chicago_date_from_ts(r["timestamp"]))]
 
     dated_rows = []
     for r in rows:
@@ -554,7 +563,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v3.5-price-overrides",
+        "version": "v3.6-filter-nontrading",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
