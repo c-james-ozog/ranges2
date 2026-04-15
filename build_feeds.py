@@ -30,6 +30,17 @@ if IMPLIED_VOL_FILE.exists():
     except Exception as e:
         print(f"Warning: could not load implied_vol.json: {e}")
 
+# Load price overrides (for correcting bad Yahoo data)
+# Format: { "YYYY-MM-DD": { "SYMBOL": { "high": float, "low": float }, ... }, ... }
+PRICE_OVERRIDE_FILE = Path("price_overrides.json")
+PRICE_OVERRIDE_DATA: dict = {}
+if PRICE_OVERRIDE_FILE.exists():
+    try:
+        PRICE_OVERRIDE_DATA = json.loads(PRICE_OVERRIDE_FILE.read_text(encoding="utf-8"))
+        print(f"Loaded price overrides for {len(PRICE_OVERRIDE_DATA)} dates")
+    except Exception as e:
+        print(f"Warning: could not load price_overrides.json: {e}")
+
 # Load Rice manual override from Excel
 RICE_OVERRIDE_DATA: dict = {}
 EXCEL_FILE = Path("implied_vol_input.xlsx")
@@ -186,7 +197,6 @@ def is_last_trading_day_of_week(date_str: str) -> bool:
 
 
 def is_first_trading_day_of_week(date_str: str) -> bool:
-    """True if date_str is the first trading day of its Mon-Fri week."""
     d = date.fromisoformat(date_str)
     monday = d - timedelta(days=d.weekday())
     candidate = monday
@@ -274,7 +284,29 @@ def compute_weekly_targets(dated_rows: list, tick: float) -> dict:
     return result
 
 
+def apply_price_overrides(rows: list, symbol: str) -> list:
+    """Apply manual price overrides for any contract/date in price_overrides.json."""
+    if not PRICE_OVERRIDE_DATA:
+        return rows
+    updated = []
+    for r in rows:
+        date_str = chicago_date_from_ts(r["timestamp"])
+        day_overrides = PRICE_OVERRIDE_DATA.get(date_str, {})
+        sym_override = day_overrides.get(symbol)
+        if sym_override:
+            r = dict(r)
+            if "high" in sym_override:
+                r["high"] = float(sym_override["high"])
+            if "low" in sym_override:
+                r["low"] = float(sym_override["low"])
+            if "close" in sym_override and sym_override["close"] is not None:
+                r["close"] = float(sym_override["close"])
+        updated.append(r)
+    return updated
+
+
 def apply_rice_overrides(rows: list, symbol: str) -> list:
+    """For ZRN26, replace Yahoo high/low/close with manual override data where available."""
     if symbol != "ZRN26" or not RICE_OVERRIDE_DATA:
         return rows
     updated = []
@@ -296,6 +328,8 @@ def build_history(rows: list, contract: dict) -> list:
     price_divisor = PRICE_DIVISORS.get(contract["commodity"], 100)
     symbol = contract["base_symbol"]
 
+    # Apply overrides before any calculations
+    rows = apply_price_overrides(rows, symbol)
     rows = apply_rice_overrides(rows, symbol)
 
     dated_rows = []
@@ -367,8 +401,6 @@ def build_history(rows: list, contract: dict) -> list:
         row["weeklyAchievement"] = pct_str(weekly_range_num, weekly_target_value) if weekly_range_num is not None and weekly_target_value else ""
         row["nextWeeklyTarget"]  = format_tick(next_weekly_target_value, tick) if next_weekly_target_value is not None else ""
 
-        # Blue separator on first trading day of each week (rows displayed newest->oldest,
-        # so border-top on Monday visually separates it from the prior Friday above it)
         row["sectionBreak"] = is_first_trading_day_of_week(row["date"])
 
         del row["fullAchievementValue"]
@@ -522,7 +554,7 @@ def main():
         "status": "ok" if not errors else "partial",
         "successCount": len(CONTRACTS) - len(errors),
         "errorCount": len(errors),
-        "version": "v3.4-section-break",
+        "version": "v3.5-price-overrides",
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
