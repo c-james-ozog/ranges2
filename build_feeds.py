@@ -83,7 +83,7 @@ def get_implied_vol(date_str: str, symbol: str) -> str:
 
 def chicago_date_from_ts(ts: int) -> str:
     dt = datetime.fromtimestamp(ts, tz=ZoneInfo("America/Chicago"))
-    return (dt + timedelta(days=1)).strftime("%Y-%m-%d")
+    return dt.strftime("%Y-%m-%d")
 
 
 def pct_str(numerator: float, denominator: float) -> str:
