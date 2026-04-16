@@ -2,7 +2,7 @@
   "symbol": "GFK26",
   "commodity": "Feeder Cattle",
   "month": "May",
-  "updatedAt": "2026-04-15T18:59:42.546983-05:00",
+  "updatedAt": "2026-04-15T22:47:21.349964-05:00",
   "rows": [
     {
       "date": "2026-04-15",
@@ -12,7 +12,7 @@
       "fullAchievement": "4.35",
       "nextDailyTarget": "3.475",
       "historicVol": "15.0%",
-      "impliedVol": "",
+      "impliedVol": "14.6%",
       "weeklyHigh": "377.575",
       "weeklyLow": "369.4",
       "weeklyRange": "8.175",
@@ -22,7 +22,7 @@
       "weeklyTarget": "11.35",
       "weeklyAchievement": "72.0%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "up|1"
     },
     {
       "date": "2026-04-14",

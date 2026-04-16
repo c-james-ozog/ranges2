@@ -2,7 +2,7 @@
   "symbol": "GCJ26",
   "commodity": "Gold",
   "month": "Apr",
-  "updatedAt": "2026-04-15T18:59:42.546983-05:00",
+  "updatedAt": "2026-04-15T22:47:21.349964-05:00",
   "rows": [
     {
       "date": "2026-04-15",
@@ -12,7 +12,7 @@
       "fullAchievement": "47.2",
       "nextDailyTarget": "37.8",
       "historicVol": "12.6%",
-      "impliedVol": "",
+      "impliedVol": "25.3%",
       "weeklyHigh": "4843.6",
       "weeklyLow": "4704",
       "weeklyRange": "139.6",
@@ -22,7 +22,7 @@
       "weeklyTarget": "374.2",
       "weeklyAchievement": "37.3%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|1"
     },
     {
       "date": "2026-04-14",
