@@ -2,7 +2,7 @@
   "symbol": "ZMN26",
   "commodity": "Soybean Meal",
   "month": "Jul",
-  "updatedAt": "2026-04-16T18:57:51.398152-05:00",
+  "updatedAt": "2026-04-16T21:56:46.449757-05:00",
   "rows": [
     {
       "date": "2026-04-16",
@@ -12,7 +12,7 @@
       "fullAchievement": "6.6",
       "nextDailyTarget": "5.3",
       "historicVol": "25.6%",
-      "impliedVol": "",
+      "impliedVol": "23.9%",
       "weeklyHigh": "335.6",
       "weeklyLow": "323",
       "weeklyRange": "12.6",
@@ -22,7 +22,7 @@
       "weeklyTarget": "13.9",
       "weeklyAchievement": "90.6%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "up|1"
     },
     {
       "date": "2026-04-15",
