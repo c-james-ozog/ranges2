@@ -27,6 +27,7 @@ from zoneinfo import ZoneInfo
 
 from src.config import (
     CME_HOLIDAYS,
+    CONTRACT_BY_SYMBOL,
     CONTRACTS,
     DAILY_TARGET_LOOKBACK,
     FETCH_DELAY,
@@ -659,19 +660,46 @@ def main() -> None:
         history_index.append(symbol)
 
     # ---- Write overview-by-date feed (date-aware contract selection) ----
-    # For each date, only include the contract that was active on that date
-    # (respects roll_date so pre-roll dates show old contracts, post-roll show new)
-    overview_by_date: dict[str, list[dict]] = {}
-    for row in all_overview_rows:
-        date_str = row["date"]
-        active = active_symbols_for_date(date_str)
-        if row["symbol"] in active:
-            overview_by_date.setdefault(date_str, []).append(row)
+    # For each date, include the preferred contract per commodity.
+    # If the preferred contract has no data for that date (e.g. expired),
+    # fall back to whichever contract for that commodity DOES have data.
 
-    # Sort each date's rows by home-page order
-    order_map = {sym: i for i, sym in enumerate(HOME_ORDER)}
-    for date_rows in overview_by_date.values():
+    # First, index all rows by (date, symbol)
+    rows_by_date_sym: dict[str, dict[str, dict]] = {}
+    for row in all_overview_rows:
+        rows_by_date_sym.setdefault(row["date"], {})[row["symbol"]] = row
+
+    overview_by_date: dict[str, list[dict]] = {}
+    for date_str, sym_map in rows_by_date_sym.items():
+        preferred = active_symbols_for_date(date_str)
+        date_rows = []
+        seen_commodities: list[str] = []
+        for sym in preferred:
+            contract = CONTRACT_BY_SYMBOL.get(sym)
+            if not contract:
+                continue
+            commodity = contract["commodity"]
+            if commodity in seen_commodities:
+                continue
+            if sym in sym_map:
+                # Preferred contract has data — use it
+                date_rows.append(sym_map[sym])
+                seen_commodities.append(commodity)
+            else:
+                # Preferred contract has no data — fall back to any contract
+                # for this commodity that does have data, newest roll first
+                for c in CONTRACTS:
+                    if c["commodity"] == commodity and c["base_symbol"] in sym_map:
+                        date_rows.append(sym_map[c["base_symbol"]])
+                        seen_commodities.append(commodity)
+                        break
+        # Sort by HOME_ORDER
+        order_map = {sym: i for i, sym in enumerate(HOME_ORDER)}
         date_rows.sort(key=lambda r: order_map.get(r["symbol"], 9999))
+        if date_rows:
+            overview_by_date[date_str] = date_rows
+
+    # (order_map already applied above per date)
 
     (FEEDS_DIR / "overview-by-date.json").write_text(
         json.dumps(overview_by_date, indent=2), encoding="utf-8"
