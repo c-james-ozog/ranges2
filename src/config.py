@@ -1,7 +1,9 @@
 """
 Contract configuration for ranges2 feed builder.
 
-All commodity definitions, tick sizes, and formula constants live here.
+roll_date: the first date this contract appears on the home page.
+           For dates before roll_date the prior contract for that commodity is shown.
+           None means always active from the beginning of history.
 """
 
 from typing import TypedDict
@@ -12,68 +14,153 @@ from typing import TypedDict
 # ---------------------------------------------------------------------------
 
 class Contract(TypedDict):
-    commodity: str    # Human-readable name (e.g. "Cocoa")
-    symbol: str       # Yahoo Finance ticker (e.g. "CCN26.NYB")
-    base_symbol: str  # Clean CME symbol (e.g. "CCN26")
-    month: str        # Contract month abbreviation (e.g. "Jul")
+    commodity:  str            # Human-readable name (e.g. "Cocoa")
+    symbol:     str            # Yahoo Finance ticker (e.g. "CCN26.NYB")
+    base_symbol: str           # Clean CME symbol (e.g. "CCN26")
+    month:      str            # Contract month abbreviation (e.g. "Jul")
+    roll_date:  str | None     # YYYY-MM-DD first date shown on home page (None = always)
 
 
 # ---------------------------------------------------------------------------
-# Active contracts  (shown on home page, ordered for display)
+# All contracts  (active + expired, ordered for home-page display by commodity)
+# Contracts with the same commodity are ordered newest-first so the most
+# recent always appears when a date falls within its roll window.
 # ---------------------------------------------------------------------------
 
-ACTIVE_CONTRACTS: list[Contract] = [
-    {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul"},
-    {"commodity": "Coffee",           "symbol": "KCN26.NYB",  "base_symbol": "KCN26", "month": "Jul"},
-    {"commodity": "Copper",           "symbol": "HGN26.CMX",  "base_symbol": "HGN26", "month": "Jul"},
-    {"commodity": "Corn",             "symbol": "ZCN26.CBT",  "base_symbol": "ZCN26", "month": "Jul"},
-    {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec"},
-    {"commodity": "Cotton",           "symbol": "CTN26.NYB",  "base_symbol": "CTN26", "month": "Jul"},
-    {"commodity": "Crude Oil WTI",    "symbol": "CLM26.NYM",  "base_symbol": "CLM26", "month": "Jun"},
-    {"commodity": "Feeder Cattle",    "symbol": "GFQ26.CME",  "base_symbol": "GFQ26", "month": "Aug"},
-    {"commodity": "Gold",             "symbol": "GCM26.CMX",  "base_symbol": "GCM26", "month": "Jun"},
-    {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul"},
-    {"commodity": "Lean Hogs",        "symbol": "HEM26.CME",  "base_symbol": "HEM26", "month": "Jun"},
-    {"commodity": "Live Cattle",      "symbol": "LEM26.CME",  "base_symbol": "LEM26", "month": "Jun"},
-    {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun"},
-    {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun"},
-    {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul"},
-    {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun"},
-    {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun"},
-    {"commodity": "Soybean Meal",     "symbol": "ZMN26.CBT",  "base_symbol": "ZMN26", "month": "Jul"},
-    {"commodity": "Soybean Oil",      "symbol": "ZLN26.CBT",  "base_symbol": "ZLN26", "month": "Jul"},
-    {"commodity": "Soybeans",         "symbol": "ZSN26.CBT",  "base_symbol": "ZSN26", "month": "Jul"},
-    {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov"},
-    {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun"},
-    {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul"},
+CONTRACTS: list[Contract] = [
+    # Cocoa — rolled to Jul on 4/20
+    {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul", "roll_date": "2026-04-20"},
+    {"commodity": "Cocoa",            "symbol": "CCK26.NYB",  "base_symbol": "CCK26", "month": "May", "roll_date": None},
+
+    # Coffee — rolled to Jul on 4/20
+    {"commodity": "Coffee",           "symbol": "KCN26.NYB",  "base_symbol": "KCN26", "month": "Jul", "roll_date": "2026-04-20"},
+    {"commodity": "Coffee",           "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May", "roll_date": None},
+
+    # Copper — rolled to Jul on 4/20
+    {"commodity": "Copper",           "symbol": "HGN26.CMX",  "base_symbol": "HGN26", "month": "Jul", "roll_date": "2026-04-20"},
+    {"commodity": "Copper",           "symbol": "HGK26.CMX",  "base_symbol": "HGK26", "month": "May", "roll_date": None},
+
+    # Corn — no roll
+    {"commodity": "Corn",             "symbol": "ZCN26.CBT",  "base_symbol": "ZCN26", "month": "Jul", "roll_date": None},
+    {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None},
+
+    # Cotton — rolled to Jul on 4/20
+    {"commodity": "Cotton",           "symbol": "CTN26.NYB",  "base_symbol": "CTN26", "month": "Jul", "roll_date": "2026-04-20"},
+    {"commodity": "Cotton",           "symbol": "CTK26.NYB",  "base_symbol": "CTK26", "month": "May", "roll_date": None},
+
+    # Crude Oil — no roll
+    {"commodity": "Crude Oil WTI",    "symbol": "CLM26.NYM",  "base_symbol": "CLM26", "month": "Jun", "roll_date": None},
+
+    # Feeder Cattle — rolled to Aug on 4/20
+    {"commodity": "Feeder Cattle",    "symbol": "GFQ26.CME",  "base_symbol": "GFQ26", "month": "Aug", "roll_date": "2026-04-20"},
+    {"commodity": "Feeder Cattle",    "symbol": "GFK26.CME",  "base_symbol": "GFK26", "month": "May", "roll_date": None},
+
+    # Gold — rolled to Jun on 4/20
+    {"commodity": "Gold",             "symbol": "GCM26.CMX",  "base_symbol": "GCM26", "month": "Jun", "roll_date": "2026-04-20"},
+    {"commodity": "Gold",             "symbol": "GCJ26.CMX",  "base_symbol": "GCJ26", "month": "Apr", "roll_date": None},
+
+    # Hard Red Wheat — no roll
+    {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None},
+
+    # Lean Hogs — no roll
+    {"commodity": "Lean Hogs",        "symbol": "HEM26.CME",  "base_symbol": "HEM26", "month": "Jun", "roll_date": None},
+
+    # Live Cattle — rolled to Jun on 4/20
+    {"commodity": "Live Cattle",      "symbol": "LEM26.CME",  "base_symbol": "LEM26", "month": "Jun", "roll_date": "2026-04-20"},
+    {"commodity": "Live Cattle",      "symbol": "LEJ26.CME",  "base_symbol": "LEJ26", "month": "Apr", "roll_date": None},
+
+    # Nasdaq — no roll
+    {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
+
+    # Natural Gas — no roll
+    {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": None},
+
+    # Rice — no roll
+    {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
+
+    # S&P 500 — no roll
+    {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
+
+    # Silver — no roll
+    {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun", "roll_date": None},
+
+    # Soybean Meal — no roll
+    {"commodity": "Soybean Meal",     "symbol": "ZMN26.CBT",  "base_symbol": "ZMN26", "month": "Jul", "roll_date": None},
+
+    # Soybean Oil — no roll
+    {"commodity": "Soybean Oil",      "symbol": "ZLN26.CBT",  "base_symbol": "ZLN26", "month": "Jul", "roll_date": None},
+
+    # Soybeans — no roll
+    {"commodity": "Soybeans",         "symbol": "ZSN26.CBT",  "base_symbol": "ZSN26", "month": "Jul", "roll_date": None},
+    {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None},
+
+    # US Dollar — no roll
+    {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
+
+    # Wheat — no roll
+    {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None},
 ]
 
-# ---------------------------------------------------------------------------
-# Expired/rolled contracts  (history feeds still built, not shown on home page)
-# ---------------------------------------------------------------------------
-
-EXPIRED_CONTRACTS: list[Contract] = [
-    {"commodity": "Cocoa",         "symbol": "CCK26.NYB",  "base_symbol": "CCK26", "month": "May"},
-    {"commodity": "Coffee",        "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May"},
-    {"commodity": "Copper",        "symbol": "HGK26.CMX",  "base_symbol": "HGK26", "month": "May"},
-    {"commodity": "Cotton",        "symbol": "CTK26.NYB",  "base_symbol": "CTK26", "month": "May"},
-    {"commodity": "Gold",          "symbol": "GCJ26.CMX",  "base_symbol": "GCJ26", "month": "Apr"},
-    {"commodity": "Live Cattle",   "symbol": "LEJ26.CME",  "base_symbol": "LEJ26", "month": "Apr"},
-    {"commodity": "Feeder Cattle", "symbol": "GFK26.CME",  "base_symbol": "GFK26", "month": "May"},
-]
-
-# All contracts (active + expired) — full set for feed building
-CONTRACTS: list[Contract] = ACTIVE_CONTRACTS + EXPIRED_CONTRACTS
-
-# Lookup of base_symbol -> Contract for fast access
+# Lookup of base_symbol -> Contract
 CONTRACT_BY_SYMBOL: dict[str, Contract] = {c["base_symbol"]: c for c in CONTRACTS}
 
-# Home page display order (active contracts only)
-HOME_ORDER: list[str] = [c["base_symbol"] for c in ACTIVE_CONTRACTS]
+# Home page display order — unique commodities in display order
+# (used to sort rows; we pick one contract per commodity per date)
+COMMODITY_ORDER: list[str] = [
+    "Cocoa", "Coffee", "Copper", "Corn", "Corn",
+    "Cotton", "Crude Oil WTI", "Feeder Cattle", "Gold",
+    "Hard Red Wheat", "Lean Hogs", "Live Cattle",
+    "Nasdaq 100 E-Mini", "Natural Gas", "Rice",
+    "S&P 500 E-Mini", "Silver", "Soybean Meal", "Soybean Oil",
+    "Soybeans", "Soybeans", "US Dollar", "Wheat",
+]
+
+# Stable per-symbol order for sorting (all symbols, newest contract first per commodity)
+HOME_ORDER: list[str] = [c["base_symbol"] for c in CONTRACTS]
+
+
+def active_symbol_for_date(commodity: str, date_str: str) -> str:
+    """
+    Return the base_symbol of the contract that should appear on the home page
+    for the given commodity and date.
+
+    Picks the newest contract whose roll_date <= date_str,
+    falling back to the contract with roll_date=None.
+    """
+    # Collect all contracts for this commodity
+    candidates = [c for c in CONTRACTS if c["commodity"] == commodity]
+    if not candidates:
+        return ""
+
+    # Find the best match: latest roll_date that is <= date_str
+    best = None
+    for c in candidates:
+        rd = c["roll_date"]
+        if rd is None:
+            if best is None:
+                best = c          # fallback
+        elif rd <= date_str:
+            if best is None or (best["roll_date"] or "") < rd:
+                best = c
+
+    return best["base_symbol"] if best else candidates[-1]["base_symbol"]
+
+
+def active_symbols_for_date(date_str: str) -> list[str]:
+    """Return the ordered list of base_symbols active on the home page for date_str."""
+    seen_commodities: list[str] = []
+    result: list[str] = []
+    for c in CONTRACTS:
+        commodity = c["commodity"]
+        expected = active_symbol_for_date(commodity, date_str)
+        if expected == c["base_symbol"] and commodity not in seen_commodities:
+            result.append(c["base_symbol"])
+            seen_commodities.append(commodity)
+    return result
 
 
 # ---------------------------------------------------------------------------
-# Tick sizes (minimum price increment per commodity)
+# Tick sizes
 # ---------------------------------------------------------------------------
 
 TICK_SIZES: dict[str, float] = {
@@ -117,16 +204,16 @@ DAILY_TARGET_LOOKBACK: int = 3
 # ---------------------------------------------------------------------------
 
 CME_HOLIDAYS: frozenset[str] = frozenset({
-    "2026-01-01",  # New Year's Day
-    "2026-01-19",  # MLK Day
-    "2026-02-16",  # Presidents' Day
-    "2026-04-03",  # Good Friday
-    "2026-05-25",  # Memorial Day
-    "2026-06-19",  # Juneteenth
-    "2026-07-03",  # Independence Day (observed)
-    "2026-09-07",  # Labor Day
-    "2026-11-26",  # Thanksgiving
-    "2026-12-25",  # Christmas
+    "2026-01-01",
+    "2026-01-19",
+    "2026-02-16",
+    "2026-04-03",
+    "2026-05-25",
+    "2026-06-19",
+    "2026-07-03",
+    "2026-09-07",
+    "2026-11-26",
+    "2026-12-25",
 })
 
 
