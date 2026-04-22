@@ -294,8 +294,8 @@ def full_achievement_and_target(
 # Weekly computations
 # ---------------------------------------------------------------------------
 
-type WeeklyData = dict[str, dict]  # date_str -> {weeklyHigh, weeklyLow, weeklyRange}
-type WeeklyTargets = dict[str, dict]  # date_str -> {weeklyTarget, nextWeeklyTarget}
+WeeklyData = dict  # date_str -> {weeklyHigh, weeklyLow, weeklyRange}
+WeeklyTargets = dict  # date_str -> {weeklyTarget, nextWeeklyTarget}
 
 
 def compute_weekly_ranges(dated_rows: list[dict], tick: float) -> WeeklyData:
