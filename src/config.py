@@ -13,12 +13,13 @@ from typing import TypedDict
 # Types
 # ---------------------------------------------------------------------------
 
-class Contract(TypedDict):
-    commodity:  str            # Human-readable name (e.g. "Cocoa")
-    symbol:     str            # Yahoo Finance ticker (e.g. "CCN26.NYB")
+class Contract(TypedDict, total=False):
+    commodity:   str           # Human-readable name (e.g. "Cocoa")
+    symbol:      str           # Yahoo Finance ticker (e.g. "CCN26.NYB")
     base_symbol: str           # Clean CME symbol (e.g. "CCN26")
-    month:      str            # Contract month abbreviation (e.g. "Jul")
-    roll_date:  str | None     # YYYY-MM-DD first date shown on home page (None = always)
+    month:       str           # Contract month abbreviation (e.g. "Jul")
+    roll_date:   str | None    # YYYY-MM-DD first date shown on home page (None = always)
+    always_show: bool          # If True, always included on home page regardless of roll logic
 
 
 # ---------------------------------------------------------------------------
@@ -45,7 +46,7 @@ CONTRACTS: list[Contract] = [
 
     # Corn — Jul/Dec always active, Mar expired 2/26
     {"commodity": "Corn",             "symbol": "ZCN26.CBT",  "base_symbol": "ZCN26", "month": "Jul", "roll_date": None},
-    {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None},
+    {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None, "always_show": True},
     {"commodity": "Corn",             "symbol": "ZCH26.CBT",  "base_symbol": "ZCH26", "month": "Mar", "roll_date": None},
 
     # Cotton — rolled to Jul on 4/20
@@ -104,7 +105,7 @@ CONTRACTS: list[Contract] = [
 
     # Soybeans — Jul/Nov always active, Mar expired 2/26
     {"commodity": "Soybeans",         "symbol": "ZSN26.CBT",  "base_symbol": "ZSN26", "month": "Jul", "roll_date": None},
-    {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None},
+    {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None, "always_show": True},
     {"commodity": "Soybeans",         "symbol": "ZSH26.CBT",  "base_symbol": "ZSH26", "month": "Mar", "roll_date": None},
 
     # US Dollar — no roll
@@ -160,11 +161,19 @@ def active_symbol_for_date(commodity: str, date_str: str) -> str:
 
 
 def active_symbols_for_date(date_str: str) -> list[str]:
-    """Return the ordered list of base_symbols active on the home page for date_str."""
+    """Return the ordered list of base_symbols active on the home page for date_str.
+    
+    Contracts with always_show=True are always included regardless of roll logic.
+    For other contracts, one is selected per commodity based on roll_date.
+    """
     seen_commodities: list[str] = []
     result: list[str] = []
     for c in CONTRACTS:
         commodity = c["commodity"]
+        # always_show contracts (e.g. ZCZ26, ZSX26) are included unconditionally
+        if c.get("always_show"):
+            result.append(c["base_symbol"])
+            continue
         expected = active_symbol_for_date(commodity, date_str)
         if expected == c["base_symbol"] and commodity not in seen_commodities:
             result.append(c["base_symbol"])
