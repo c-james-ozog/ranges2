@@ -661,10 +661,14 @@ def main() -> None:
 
     # ---- Write overview-by-date feed (date-aware contract selection) ----
     # For each date, include the preferred contract per commodity.
-    # If the preferred contract has no data for that date (e.g. expired),
-    # fall back to whichever contract for that commodity DOES have data.
+    # Contracts with always_show=True (e.g. ZCZ26, ZSX26) are always included.
+    # If the preferred contract has no data (expired), fall back to any contract
+    # for that commodity that does have data.
 
-    # First, index all rows by (date, symbol)
+    # Symbols that always appear regardless of roll logic
+    always_show_syms = {c["base_symbol"] for c in CONTRACTS if c.get("always_show")}
+
+    # Index all rows by (date, symbol)
     rows_by_date_sym: dict[str, dict[str, dict]] = {}
     for row in all_overview_rows:
         rows_by_date_sym.setdefault(row["date"], {})[row["symbol"]] = row
@@ -673,33 +677,44 @@ def main() -> None:
     for date_str, sym_map in rows_by_date_sym.items():
         preferred = active_symbols_for_date(date_str)
         date_rows = []
+        added_syms: set[str] = set()
         seen_commodities: list[str] = []
+
         for sym in preferred:
             contract = CONTRACT_BY_SYMBOL.get(sym)
             if not contract:
                 continue
             commodity = contract["commodity"]
-            if commodity in seen_commodities:
+            is_always = sym in always_show_syms
+
+            # always_show contracts bypass the one-per-commodity rule
+            if not is_always and commodity in seen_commodities:
                 continue
+
             if sym in sym_map:
-                # Preferred contract has data — use it
                 date_rows.append(sym_map[sym])
-                seen_commodities.append(commodity)
-            else:
-                # Preferred contract has no data — fall back to any contract
-                # for this commodity that does have data, newest roll first
+                added_syms.add(sym)
+                if not is_always:
+                    seen_commodities.append(commodity)
+            elif not is_always:
+                # Preferred contract has no data — fall back
                 for c in CONTRACTS:
                     if c["commodity"] == commodity and c["base_symbol"] in sym_map:
                         date_rows.append(sym_map[c["base_symbol"]])
+                        added_syms.add(c["base_symbol"])
                         seen_commodities.append(commodity)
                         break
+
+        # Ensure always_show contracts are included even if not in preferred list
+        for sym in always_show_syms:
+            if sym not in added_syms and sym in sym_map:
+                date_rows.append(sym_map[sym])
+
         # Sort by HOME_ORDER
         order_map = {sym: i for i, sym in enumerate(HOME_ORDER)}
         date_rows.sort(key=lambda r: order_map.get(r["symbol"], 9999))
         if date_rows:
             overview_by_date[date_str] = date_rows
-
-    # (order_map already applied above per date)
 
     (FEEDS_DIR / "overview-by-date.json").write_text(
         json.dumps(overview_by_date, indent=2), encoding="utf-8"
