@@ -1,17 +1,17 @@
 {
   "contracts": [
-    "CCK26",
-    "KCK26",
-    "HGK26",
+    "CCN26",
+    "KCN26",
+    "HGN26",
     "ZCN26",
     "ZCZ26",
-    "CTK26",
+    "CTN26",
     "CLM26",
-    "GFK26",
-    "GCJ26",
+    "GFQ26",
+    "GCM26",
     "KEN26",
     "HEM26",
-    "LEJ26",
+    "LEM26",
     "NQM26",
     "NGM26",
     "ZRN26",
@@ -22,6 +22,13 @@
     "ZSN26",
     "ZSX26",
     "DXM26",
-    "ZWN26"
+    "ZWN26",
+    "CCK26",
+    "KCK26",
+    "HGK26",
+    "CTK26",
+    "GCJ26",
+    "LEJ26",
+    "GFK26"
   ]
 }
