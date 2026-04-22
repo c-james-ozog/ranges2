@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "symbol": "CCH26",
+    "error": "Failed to fetch CCH26.NYB after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "KCH26",
+    "error": "Failed to fetch KCH26.NYB after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "HGH26",
+    "error": "Failed to fetch HGH26.CMX after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "ZCH26",
+    "error": "Failed to fetch ZCH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "CLJ26",
+    "error": "Failed to fetch CLJ26.NYM after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "GCH26",
+    "error": "Failed to fetch GCH26.CMX after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "HEG26",
+    "error": "Failed to fetch HEG26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "LEG26",
+    "error": "Failed to fetch LEG26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "NGH26",
+    "error": "Failed to fetch NGH26.NYM after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "SIH26",
+    "error": "Failed to fetch SIH26.CMX after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "ZMH26",
+    "error": "Failed to fetch ZMH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "ZLH26",
+    "error": "Failed to fetch ZLH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "ZSH26",
+    "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  }
+]
