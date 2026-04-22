@@ -2,7 +2,7 @@
   "symbol": "GCM26",
   "commodity": "Gold",
   "month": "Jun",
-  "updatedAt": "2026-04-22T11:07:57.224981-05:00",
+  "updatedAt": "2026-04-22T11:14:25.638643-05:00",
   "rows": [
     {
       "date": "2026-04-22",
@@ -31,7 +31,7 @@
       "dailyRange": "169",
       "fullAchievement": "132.2",
       "historicVol": "35.9%",
-      "impliedVol": "",
+      "impliedVol": "26.2%",
       "weeklyHigh": "4854.8",
       "weeklyLow": "4685.8",
       "weeklyRange": "169",
@@ -42,7 +42,7 @@
       "weeklyTarget": "311.6",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "54.2%",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "up|1"
     },
     {
       "date": "2026-04-20",
@@ -51,7 +51,7 @@
       "dailyRange": "95.9",
       "fullAchievement": "99",
       "historicVol": "26.2%",
-      "impliedVol": "",
+      "impliedVol": "24.0%",
       "weeklyHigh": "4847.9",
       "weeklyLow": "4752",
       "weeklyRange": "95.9",

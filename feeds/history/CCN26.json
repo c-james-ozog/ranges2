@@ -2,7 +2,7 @@
   "symbol": "CCN26",
   "commodity": "Cocoa",
   "month": "Jul",
-  "updatedAt": "2026-04-22T11:07:57.224981-05:00",
+  "updatedAt": "2026-04-22T11:14:25.638643-05:00",
   "rows": [
     {
       "date": "2026-04-22",
@@ -31,7 +31,7 @@
       "dailyRange": "106",
       "fullAchievement": "177",
       "historicVol": "68.6%",
-      "impliedVol": "",
+      "impliedVol": "43.7%",
       "weeklyHigh": "3434",
       "weeklyLow": "3286",
       "weeklyRange": "148",
@@ -42,7 +42,7 @@
       "weeklyTarget": "354",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "41.8%",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "up|1"
     },
     {
       "date": "2026-04-20",
@@ -51,7 +51,7 @@
       "dailyRange": "13",
       "fullAchievement": "198",
       "historicVol": "74.8%",
-      "impliedVol": "",
+      "impliedVol": "43.1%",
       "weeklyHigh": "3434",
       "weeklyLow": "3304",
       "weeklyRange": "13",
