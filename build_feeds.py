@@ -26,7 +26,6 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from src.config import (
-    ACTIVE_CONTRACTS,
     CME_HOLIDAYS,
     CONTRACTS,
     DAILY_TARGET_LOOKBACK,
@@ -39,6 +38,7 @@ from src.config import (
     TICK_SIZES,
     WEEKLY_TARGET_LOOKBACK,
     Contract,
+    active_symbols_for_date,
 )
 from src.scraper import RawRow, fetch_yahoo_history, format_tick, round_to_tick
 
@@ -658,12 +658,15 @@ def main() -> None:
         )
         history_index.append(symbol)
 
-    # ---- Write overview-by-date feed (active contracts only) ----
-    active_symbols = {c["base_symbol"] for c in ACTIVE_CONTRACTS}
+    # ---- Write overview-by-date feed (date-aware contract selection) ----
+    # For each date, only include the contract that was active on that date
+    # (respects roll_date so pre-roll dates show old contracts, post-roll show new)
     overview_by_date: dict[str, list[dict]] = {}
     for row in all_overview_rows:
-        if row["symbol"] in active_symbols:
-            overview_by_date.setdefault(row["date"], []).append(row)
+        date_str = row["date"]
+        active = active_symbols_for_date(date_str)
+        if row["symbol"] in active:
+            overview_by_date.setdefault(date_str, []).append(row)
 
     # Sort each date's rows by home-page order
     order_map = {sym: i for i, sym in enumerate(HOME_ORDER)}
