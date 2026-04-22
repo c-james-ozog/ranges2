@@ -2,7 +2,7 @@
   "symbol": "CCK26",
   "commodity": "Cocoa",
   "month": "May",
-  "updatedAt": "2026-04-21T18:52:03.977831-05:00",
+  "updatedAt": "2026-04-21T20:46:41.445397-05:00",
   "rows": [
     {
       "date": "2026-04-21",
@@ -12,7 +12,7 @@
       "fullAchievement": "177",
       "nextDailyTarget": "142",
       "historicVol": "70.3%",
-      "impliedVol": "",
+      "impliedVol": "43.1%",
       "weeklyHigh": "3342",
       "weeklyLow": "3198",
       "weeklyRange": "144",
@@ -22,7 +22,7 @@
       "weeklyTarget": "358",
       "weeklyAchievement": "40.2%",
       "nextWeeklyTarget": "",
-      "impliedVolTrend": ""
+      "impliedVolTrend": "down|1"
     },
     {
       "date": "2026-04-20",
