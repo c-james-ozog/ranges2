@@ -2,6 +2,8 @@ name: Build Feeds
 
 on:
   schedule:
+    - cron: '17 19 * * 1-5'  # 2:17 PM CT (CDT = UTC-5), Mon-Fri
+    - cron: '17 22 * * 1-5'  # 5:17 PM CT (CDT = UTC-5), Mon-Fri
     - cron: '16 23 * * 1-5'  # 6:16 PM CT (CDT = UTC-5), Mon-Fri
   workflow_dispatch:  # Allow manual runs
 
