@@ -5,6 +5,7 @@ on:
     - cron: '17 19 * * 1-5'  # 2:17 PM CT (CDT = UTC-5), Mon-Fri
     - cron: '17 22 * * 1-5'  # 5:17 PM CT (CDT = UTC-5), Mon-Fri
     - cron: '16 23 * * 1-5'  # 6:16 PM CT (CDT = UTC-5), Mon-Fri
+    - cron: '30 00 * * 2-6'  # 7:30 PM CT (CDT = UTC-5), Mon-Fri (next UTC day)
   workflow_dispatch:  # Allow manual runs
 
 jobs:
@@ -21,9 +22,21 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests openpyxl
 
-      - name: Run build_feeds.py
+      - name: Run build_feeds.py (attempt 1)
+        run: python build_feeds.py
+
+      - name: Wait 3 minutes before retry
+        run: sleep 180
+
+      - name: Run build_feeds.py (attempt 2)
+        run: python build_feeds.py
+
+      - name: Wait 3 minutes before final retry
+        run: sleep 180
+
+      - name: Run build_feeds.py (attempt 3)
         run: python build_feeds.py
 
       - name: Commit and push feeds
