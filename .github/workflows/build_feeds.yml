@@ -27,16 +27,10 @@ jobs:
       - name: Run build_feeds.py (attempt 1)
         run: python build_feeds.py
 
-      - name: Wait 3 minutes before retry
-        run: sleep 180
+      - name: Wait 2 minutes before retry
+        run: sleep 120
 
       - name: Run build_feeds.py (attempt 2)
-        run: python build_feeds.py
-
-      - name: Wait 3 minutes before final retry
-        run: sleep 180
-
-      - name: Run build_feeds.py (attempt 3)
         run: python build_feeds.py
 
       - name: Commit and push feeds
