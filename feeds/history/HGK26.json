@@ -2,8 +2,29 @@
   "symbol": "HGK26",
   "commodity": "Copper",
   "month": "May",
-  "updatedAt": "2026-04-26T20:31:58.991124-05:00",
+  "updatedAt": "2026-04-27T15:20:42.294960-05:00",
   "rows": [
+    {
+      "date": "2026-04-27",
+      "dailyHigh": "6.0755",
+      "dailyLow": "5.9895",
+      "dailyRange": "0.086",
+      "fullAchievement": "0.096",
+      "historicVol": "20.3%",
+      "impliedVol": "",
+      "weeklyHigh": "6.0755",
+      "weeklyLow": "5.9895",
+      "weeklyRange": "0.086",
+      "sectionBreak": true,
+      "dailyTarget": "0.092",
+      "nextDailyTarget": "0.077",
+      "dailyAchievement": "93.5%",
+      "weeklyTarget": "0.322",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "26.7%",
+      "underTargetStreak": 1,
+      "impliedVolTrend": ""
+    },
     {
       "date": "2026-04-24",
       "dailyHigh": "6.047",
@@ -22,7 +43,7 @@
       "weeklyTarget": "0.368",
       "nextWeeklyTarget": "0.322",
       "weeklyAchievement": "50.0%",
-      "underTargetStreak": 1,
+      "underTargetStreak": 2,
       "impliedVolTrend": ""
     },
     {

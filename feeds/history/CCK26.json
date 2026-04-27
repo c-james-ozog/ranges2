@@ -2,15 +2,36 @@
   "symbol": "CCK26",
   "commodity": "Cocoa",
   "month": "May",
-  "updatedAt": "2026-04-26T20:31:58.991124-05:00",
+  "updatedAt": "2026-04-27T15:20:42.294960-05:00",
   "rows": [
+    {
+      "date": "2026-04-27",
+      "dailyHigh": "3281",
+      "dailyLow": "3244",
+      "dailyRange": "37",
+      "fullAchievement": "56",
+      "historicVol": "22.2%",
+      "impliedVol": "",
+      "weeklyHigh": "3281",
+      "weeklyLow": "3244",
+      "weeklyRange": "37",
+      "sectionBreak": true,
+      "dailyTarget": "87",
+      "nextDailyTarget": "45",
+      "dailyAchievement": "42.5%",
+      "weeklyTarget": "335",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "11.0%",
+      "underTargetStreak": 1,
+      "impliedVolTrend": ""
+    },
     {
       "date": "2026-04-24",
       "dailyHigh": "3402",
       "dailyLow": "34",
       "dailyRange": "2",
       "fullAchievement": "109",
-      "historicVol": "40.9%",
+      "historicVol": "41.5%",
       "impliedVol": "",
       "weeklyHigh": "3402",
       "weeklyLow": "3198",
@@ -22,7 +43,7 @@
       "weeklyTarget": "358",
       "nextWeeklyTarget": "335",
       "weeklyAchievement": "57.0%",
-      "underTargetStreak": 1,
+      "underTargetStreak": 2,
       "impliedVolTrend": ""
     },
     {
@@ -43,7 +64,7 @@
       "weeklyTarget": "358",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "56.4%",
-      "underTargetStreak": 2,
+      "underTargetStreak": 3,
       "impliedVolTrend": ""
     },
     {
