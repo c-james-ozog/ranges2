@@ -2,27 +2,27 @@
   "symbol": "ESM26",
   "commodity": "S&P 500 E-Mini",
   "month": "Jun",
-  "updatedAt": "2026-04-28T15:40:09.269818-05:00",
+  "updatedAt": "2026-04-28T18:09:09.858468-05:00",
   "rows": [
     {
       "date": "2026-04-28",
-      "dailyHigh": "7223.25",
-      "dailyLow": "7146.25",
-      "dailyRange": "77",
-      "fullAchievement": "60.5",
-      "historicVol": "10.8%",
+      "dailyHigh": "7178",
+      "dailyLow": "7172.5",
+      "dailyRange": "5.5",
+      "fullAchievement": "36.75",
+      "historicVol": "6.6%",
       "impliedVol": "",
-      "weeklyHigh": "7223.25",
-      "weeklyLow": "7146.25",
-      "weeklyRange": "77",
+      "weeklyHigh": "7211.25",
+      "weeklyLow": "7171.5",
+      "weeklyRange": "39.75",
       "sectionBreak": false,
       "dailyTarget": "55.25",
-      "nextDailyTarget": "48.5",
-      "dailyAchievement": "139.4%",
+      "nextDailyTarget": "29.5",
+      "dailyAchievement": "10.0%",
       "weeklyTarget": "287",
       "nextWeeklyTarget": "",
-      "weeklyAchievement": "26.8%",
-      "underTargetStreak": 0,
+      "weeklyAchievement": "13.9%",
+      "underTargetStreak": 1,
       "impliedVolTrend": ""
     },
     {
@@ -43,7 +43,7 @@
       "weeklyTarget": "287",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "13.9%",
-      "underTargetStreak": 1,
+      "underTargetStreak": 2,
       "impliedVolTrend": "down|1"
     },
     {
@@ -64,7 +64,7 @@
       "weeklyTarget": "346.75",
       "nextWeeklyTarget": "287",
       "weeklyAchievement": "35.0%",
-      "underTargetStreak": 2,
+      "underTargetStreak": 3,
       "impliedVolTrend": "up|1"
     },
     {
