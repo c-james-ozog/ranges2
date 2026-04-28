@@ -2,8 +2,29 @@
   "symbol": "KCK26",
   "commodity": "Coffee",
   "month": "May",
-  "updatedAt": "2026-04-27T23:11:23.801814-05:00",
+  "updatedAt": "2026-04-28T15:40:09.269818-05:00",
   "rows": [
+    {
+      "date": "2026-04-28",
+      "dailyHigh": "308.55",
+      "dailyLow": "306.35",
+      "dailyRange": "2.2",
+      "fullAchievement": "5.1",
+      "historicVol": "21.1%",
+      "impliedVol": "",
+      "weeklyHigh": "308.55",
+      "weeklyLow": "303.5",
+      "weeklyRange": "5.05",
+      "sectionBreak": false,
+      "dailyTarget": "7.7",
+      "nextDailyTarget": "4.1",
+      "dailyAchievement": "28.6%",
+      "weeklyTarget": "22.95",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "22.0%",
+      "underTargetStreak": 1,
+      "impliedVolTrend": ""
+    },
     {
       "date": "2026-04-27",
       "dailyHigh": "308.35",
@@ -22,7 +43,7 @@
       "weeklyTarget": "22.95",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "21.1%",
-      "underTargetStreak": 1,
+      "underTargetStreak": 2,
       "impliedVolTrend": ""
     },
     {
@@ -43,7 +64,7 @@
       "weeklyTarget": "14.95",
       "nextWeeklyTarget": "22.95",
       "weeklyAchievement": "230.4%",
-      "underTargetStreak": 2,
+      "underTargetStreak": 3,
       "impliedVolTrend": ""
     },
     {
