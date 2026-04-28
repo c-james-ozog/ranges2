@@ -2,7 +2,7 @@
   "symbol": "KEN26",
   "commodity": "Hard Red Wheat",
   "month": "Jul",
-  "updatedAt": "2026-04-27T19:06:41.628044-05:00",
+  "updatedAt": "2026-04-27T21:33:54.210058-05:00",
   "rows": [
     {
       "date": "2026-04-27",
@@ -10,8 +10,8 @@
       "dailyLow": "665.5",
       "dailyRange": "15.25",
       "fullAchievement": "23",
-      "historicVol": "43.6%",
-      "impliedVol": "",
+      "historicVol": "43.8%",
+      "impliedVol": "31.7%",
       "weeklyHigh": "680.75",
       "weeklyLow": "665.5",
       "weeklyRange": "15.25",
@@ -23,7 +23,7 @@
       "nextWeeklyTarget": "",
       "weeklyAchievement": "35.7%",
       "underTargetStreak": 1,
-      "impliedVolTrend": ""
+      "impliedVolTrend": "up|1"
     },
     {
       "date": "2026-04-24",
