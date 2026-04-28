@@ -24,13 +24,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests openpyxl
 
-      - name: Run build_feeds.py (attempt 1)
-        run: python build_feeds.py
-
-      - name: Wait 2 minutes before retry
-        run: sleep 120
-
-      - name: Run build_feeds.py (attempt 2)
+      - name: Run build_feeds.py
         run: python build_feeds.py
 
       - name: Commit and push feeds
