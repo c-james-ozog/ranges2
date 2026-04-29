@@ -526,13 +526,6 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
         row["weeklyAchievement"]= pct(w_range_num, weekly_target)
         row["sectionBreak"]     = is_first_trading_day_of_week(row["date"])
 
-        # Consecutive days where range < target (newest-first, so look at i-1 for prior day)
-        if d_range_num is not None and daily_target and d_range_num < daily_target:
-            prior_streak = history[i - 1].get("underTargetStreak", 0) if i > 0 else 0
-            row["underTargetStreak"] = prior_streak + 1
-        else:
-            row["underTargetStreak"] = 0
-
         # Remove temp keys
         del row["_fullAch"], row["_nextTarget"], row["_weeklyTarget"], row["_nextWeeklyTarget"]
 
@@ -540,6 +533,18 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
     trends = compute_iv_trends(history)
     for row, trend in zip(history, trends):
         row["impliedVolTrend"] = trend
+
+    # ---- Fourth pass: under-target streak (oldest to newest) ----
+    # history is newest-first so iterate in reverse to build streak correctly
+    streak = 0
+    for row in reversed(history):
+        d_range  = float(row["dailyRange"])  if row["dailyRange"]  else None
+        d_target = float(row["dailyTarget"]) if row["dailyTarget"] else None
+        if d_range is not None and d_target and d_range < d_target:
+            streak += 1
+        else:
+            streak = 0
+        row["underTargetStreak"] = streak
 
     return history
 
