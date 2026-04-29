@@ -572,9 +572,11 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
                     weekly_direction = direction
                 trend_str = f"{direction}|{weekly_streak}"
         # Apply trend to all rows in this week
+        # For incomplete weeks, carry forward last completed week's trend
+        applied_trend = trend_str if trend_str else weekly_direction and f"{weekly_direction}|{weekly_streak}" or ""
         for row in week_rows:
             row["weeklyUnderTargetStreak"] = 0  # kept for compatibility
-            row["weeklyTrend"] = trend_str
+            row["weeklyTrend"] = applied_trend
 
     return history
 
