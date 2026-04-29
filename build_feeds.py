@@ -546,6 +546,30 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
             streak = 0
         row["underTargetStreak"] = streak
 
+    # ---- Fifth pass: weekly under-target streak (per completed week, oldest to newest) ----
+    # Group rows by week, compute streak across completed weeks
+    from collections import defaultdict
+    weeks: dict = defaultdict(list)
+    for row in history:
+        weeks[week_monday(row["date"])].append(row)
+
+    # Sort weeks oldest to newest
+    weekly_streak = 0
+    for monday in sorted(weeks.keys()):
+        week_rows = weeks[monday]
+        # Only score completed weeks (last day is last trading day of week)
+        last_day = max(r["date"] for r in week_rows)
+        if is_last_trading_day_of_week(last_day):
+            w_range  = float(week_rows[0]["weeklyRange"])  if week_rows[0].get("weeklyRange")  else None
+            w_target = float(week_rows[0]["weeklyTarget"]) if week_rows[0].get("weeklyTarget") else None
+            if w_range is not None and w_target and w_range < w_target:
+                weekly_streak += 1
+            else:
+                weekly_streak = 0
+        # Apply streak to all rows in this week
+        for row in week_rows:
+            row["weeklyUnderTargetStreak"] = weekly_streak
+
     return history
 
 
@@ -577,6 +601,7 @@ def to_overview_row(history_row: dict, contract: Contract) -> dict:
         "weeklyTarget":    history_row["weeklyTarget"],
         "nextWeeklyTarget":history_row["nextWeeklyTarget"],
         "underTargetStreak":history_row.get("underTargetStreak", 0),
+        "weeklyUnderTargetStreak":history_row.get("weeklyUnderTargetStreak", 0),
     }
 
 
