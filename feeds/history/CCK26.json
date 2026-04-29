@@ -2,7 +2,7 @@
   "symbol": "CCK26",
   "commodity": "Cocoa",
   "month": "May",
-  "updatedAt": "2026-04-29T15:20:30.131031-05:00",
+  "updatedAt": "2026-04-29T15:24:54.665865-05:00",
   "rows": [
     {
       "date": "2026-04-28",
@@ -25,7 +25,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-24",
@@ -2256,7 +2256,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -2279,7 +2279,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -2302,7 +2302,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -2325,7 +2325,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -2348,7 +2348,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -2371,7 +2371,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -2394,7 +2394,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -2417,7 +2417,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-21",

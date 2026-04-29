@@ -23,7 +23,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-29",
@@ -48,7 +48,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-29",
@@ -73,7 +73,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-29",
@@ -98,7 +98,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|6"
     },
     {
       "date": "2026-04-29",
@@ -123,7 +123,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-04-29",
@@ -148,7 +148,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-29",
@@ -173,7 +173,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-29",
@@ -198,7 +198,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-29",
@@ -223,7 +223,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|4"
     },
     {
       "date": "2026-04-29",
@@ -248,7 +248,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-29",
@@ -273,7 +273,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-29",
@@ -298,7 +298,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-29",
@@ -306,13 +306,13 @@
       "commodity": "Nasdaq 100 E-Mini",
       "month": "Jun",
       "dailyTarget": "324.5",
-      "dailyRange": "289.75",
+      "dailyRange": "295.75",
       "dailyHigh": "27414",
-      "dailyLow": "27124.25",
-      "dailyAchievement": "89.3%",
-      "fullAchievement": "345.5",
-      "nextDailyTarget": "276.5",
-      "historicVol": "16.2%",
+      "dailyLow": "27118.25",
+      "dailyAchievement": "91.1%",
+      "fullAchievement": "347.5",
+      "nextDailyTarget": "278",
+      "historicVol": "16.4%",
       "impliedVol": "",
       "impliedVolTrend": "",
       "weeklyRange": "533",
@@ -323,7 +323,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-29",
@@ -337,7 +337,7 @@
       "dailyAchievement": "98.7%",
       "fullAchievement": "0.093",
       "nextDailyTarget": "0.074",
-      "historicVol": "44.9%",
+      "historicVol": "44.8%",
       "impliedVol": "",
       "impliedVolTrend": "",
       "weeklyRange": "0.193",
@@ -348,7 +348,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-04-29",
@@ -373,7 +373,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-04-29",
@@ -381,24 +381,24 @@
       "commodity": "S&P 500 E-Mini",
       "month": "Jun",
       "dailyTarget": "48.5",
-      "dailyRange": "53.75",
+      "dailyRange": "55.75",
       "dailyHigh": "7190.75",
-      "dailyLow": "7137",
-      "dailyAchievement": "110.8%",
-      "fullAchievement": "56.75",
-      "nextDailyTarget": "45.5",
-      "historicVol": "10.1%",
+      "dailyLow": "7135",
+      "dailyAchievement": "114.9%",
+      "fullAchievement": "57.5",
+      "nextDailyTarget": "46",
+      "historicVol": "10.3%",
       "impliedVol": "",
       "impliedVolTrend": "",
-      "weeklyRange": "86.25",
+      "weeklyRange": "88.25",
       "weeklyHigh": "7223.25",
-      "weeklyLow": "7137",
-      "weeklyAchievement": "30.1%",
+      "weeklyLow": "7135",
+      "weeklyAchievement": "30.7%",
       "weeklyTarget": "287",
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-29",
@@ -412,7 +412,7 @@
       "dailyAchievement": "132.7%",
       "fullAchievement": "2.95",
       "nextDailyTarget": "2.36",
-      "historicVol": "52.6%",
+      "historicVol": "52.8%",
       "impliedVol": "",
       "impliedVolTrend": "",
       "weeklyRange": "5.615",
@@ -423,7 +423,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-29",
@@ -448,7 +448,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-29",
@@ -473,7 +473,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-04-29",
@@ -498,7 +498,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-29",
@@ -523,7 +523,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-04-29",
@@ -548,7 +548,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-29",
@@ -573,7 +573,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     }
   ],
   "2026-04-28": [
@@ -600,7 +600,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-28",
@@ -625,7 +625,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-28",
@@ -650,7 +650,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-28",
@@ -675,7 +675,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|6"
     },
     {
       "date": "2026-04-28",
@@ -700,7 +700,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-04-28",
@@ -725,7 +725,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-28",
@@ -750,7 +750,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-28",
@@ -775,7 +775,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-28",
@@ -800,7 +800,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|4"
     },
     {
       "date": "2026-04-28",
@@ -825,7 +825,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-28",
@@ -850,7 +850,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-28",
@@ -875,7 +875,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-28",
@@ -900,7 +900,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-28",
@@ -925,7 +925,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-04-28",
@@ -950,7 +950,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-04-28",
@@ -975,7 +975,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-28",
@@ -1000,7 +1000,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-28",
@@ -1025,7 +1025,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-28",
@@ -1050,7 +1050,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-04-28",
@@ -1075,7 +1075,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-28",
@@ -1100,7 +1100,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-04-28",
@@ -1125,7 +1125,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-28",
@@ -1150,7 +1150,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     }
   ],
   "2026-04-27": [
@@ -1177,7 +1177,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-27",
@@ -1202,7 +1202,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-27",
@@ -1227,7 +1227,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -1252,7 +1252,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|6"
     },
     {
       "date": "2026-04-27",
@@ -1277,7 +1277,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-04-27",
@@ -1302,7 +1302,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-27",
@@ -1327,7 +1327,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -1352,7 +1352,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-27",
@@ -1377,7 +1377,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|4"
     },
     {
       "date": "2026-04-27",
@@ -1402,7 +1402,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-27",
@@ -1427,7 +1427,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-27",
@@ -1452,7 +1452,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-04-27",
@@ -1477,7 +1477,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -1502,7 +1502,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-04-27",
@@ -1527,7 +1527,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-04-27",
@@ -1552,7 +1552,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -1577,7 +1577,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -1602,7 +1602,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-27",
@@ -1627,7 +1627,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-04-27",
@@ -1652,7 +1652,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -1677,7 +1677,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-04-27",
@@ -1702,7 +1702,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-27",
@@ -1727,7 +1727,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|2"
     }
   ],
   "2026-04-24": [
@@ -56569,7 +56569,7 @@
       "nextWeeklyTarget": "54",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56594,7 +56594,7 @@
       "nextWeeklyTarget": "27.05",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56619,7 +56619,7 @@
       "nextWeeklyTarget": "0.1765",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -56644,7 +56644,7 @@
       "nextWeeklyTarget": "13.25",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56669,7 +56669,7 @@
       "nextWeeklyTarget": "11",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56694,7 +56694,7 @@
       "nextWeeklyTarget": "1.53",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -56719,7 +56719,7 @@
       "nextWeeklyTarget": "2.52",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56744,7 +56744,7 @@
       "nextWeeklyTarget": "21.275",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -56769,7 +56769,7 @@
       "nextWeeklyTarget": "153.8",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -56794,7 +56794,7 @@
       "nextWeeklyTarget": "21.5",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56819,7 +56819,7 @@
       "nextWeeklyTarget": "3.775",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -56844,7 +56844,7 @@
       "nextWeeklyTarget": "12.475",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56869,7 +56869,7 @@
       "nextWeeklyTarget": "971.5",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56894,7 +56894,7 @@
       "nextWeeklyTarget": "0.257",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -56919,7 +56919,7 @@
       "nextWeeklyTarget": "33.5",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56944,7 +56944,7 @@
       "nextWeeklyTarget": "185.75",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -56969,7 +56969,7 @@
       "nextWeeklyTarget": "2.305",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -56994,7 +56994,7 @@
       "nextWeeklyTarget": "12.7",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-05",
@@ -57019,7 +57019,7 @@
       "nextWeeklyTarget": "2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -57044,7 +57044,7 @@
       "nextWeeklyTarget": "36.25",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -57069,7 +57069,7 @@
       "nextWeeklyTarget": "26",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -57094,7 +57094,7 @@
       "nextWeeklyTarget": "0.56",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-05",
@@ -57119,7 +57119,7 @@
       "nextWeeklyTarget": "19.75",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-12-04": [
@@ -57146,7 +57146,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57171,7 +57171,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57196,7 +57196,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57221,7 +57221,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57246,7 +57246,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57271,7 +57271,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57296,7 +57296,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57321,7 +57321,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57346,7 +57346,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57371,7 +57371,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57396,7 +57396,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57421,7 +57421,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57446,7 +57446,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57471,7 +57471,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57496,7 +57496,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57521,7 +57521,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57546,7 +57546,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57571,7 +57571,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-04",
@@ -57596,7 +57596,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57621,7 +57621,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57646,7 +57646,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57671,7 +57671,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -57696,7 +57696,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-12-03": [
@@ -57723,7 +57723,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -57748,7 +57748,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -57773,7 +57773,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -57798,7 +57798,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -57823,7 +57823,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -57848,7 +57848,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -57873,7 +57873,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -57898,7 +57898,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -57923,7 +57923,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -57948,7 +57948,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -57973,7 +57973,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -57998,7 +57998,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58023,7 +58023,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58048,7 +58048,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -58073,7 +58073,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58098,7 +58098,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58123,7 +58123,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -58148,7 +58148,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-03",
@@ -58173,7 +58173,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58198,7 +58198,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58223,7 +58223,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58248,7 +58248,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -58273,7 +58273,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-12-02": [
@@ -58300,7 +58300,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58325,7 +58325,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58350,7 +58350,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58375,7 +58375,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58400,7 +58400,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58425,7 +58425,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58450,7 +58450,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58475,7 +58475,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58500,7 +58500,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58525,7 +58525,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58550,7 +58550,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58575,7 +58575,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58600,7 +58600,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58625,7 +58625,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58650,7 +58650,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58675,7 +58675,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 5,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58700,7 +58700,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58725,7 +58725,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-02",
@@ -58750,7 +58750,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58775,7 +58775,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58800,7 +58800,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58825,7 +58825,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -58850,7 +58850,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-12-01": [
@@ -58877,7 +58877,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -58902,7 +58902,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -58927,7 +58927,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -58952,7 +58952,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -58977,7 +58977,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59002,7 +59002,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -59027,7 +59027,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59052,7 +59052,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -59077,7 +59077,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -59102,7 +59102,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59127,7 +59127,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -59152,7 +59152,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59177,7 +59177,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 4,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59202,7 +59202,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -59227,7 +59227,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 4,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59252,7 +59252,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 4,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59277,7 +59277,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -59302,7 +59302,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-12-01",
@@ -59327,7 +59327,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59352,7 +59352,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59377,7 +59377,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59402,7 +59402,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -59427,7 +59427,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-11-26": [
@@ -59454,7 +59454,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59479,7 +59479,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59504,7 +59504,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59529,7 +59529,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59554,7 +59554,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59579,7 +59579,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59604,7 +59604,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59629,7 +59629,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59654,7 +59654,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59679,7 +59679,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59704,7 +59704,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59729,7 +59729,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59754,7 +59754,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59779,7 +59779,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59804,7 +59804,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59829,7 +59829,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59854,7 +59854,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59879,7 +59879,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-26",
@@ -59904,7 +59904,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59929,7 +59929,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59954,7 +59954,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -59979,7 +59979,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -60004,7 +60004,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-11-25": [
@@ -60031,7 +60031,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60056,7 +60056,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60081,7 +60081,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60106,7 +60106,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60131,7 +60131,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60156,7 +60156,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60181,7 +60181,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60206,7 +60206,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60231,7 +60231,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60256,7 +60256,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60281,7 +60281,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60306,7 +60306,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60331,7 +60331,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60356,7 +60356,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60381,7 +60381,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60406,7 +60406,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60431,7 +60431,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60456,7 +60456,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-25",
@@ -60481,7 +60481,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60506,7 +60506,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60531,7 +60531,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60556,7 +60556,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -60581,7 +60581,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-11-24": [
@@ -60608,7 +60608,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60633,7 +60633,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60658,7 +60658,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -60683,7 +60683,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60708,7 +60708,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60733,7 +60733,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -60758,7 +60758,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60783,7 +60783,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -60808,7 +60808,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -60833,7 +60833,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60858,7 +60858,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -60883,7 +60883,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60908,7 +60908,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60933,7 +60933,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -60958,7 +60958,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -60983,7 +60983,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -61008,7 +61008,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -61033,7 +61033,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2025-11-24",
@@ -61058,7 +61058,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -61083,7 +61083,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -61108,7 +61108,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -61133,7 +61133,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -61158,7 +61158,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     }
   ],
   "2025-11-21": [

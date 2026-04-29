@@ -2,30 +2,30 @@
   "symbol": "ESM26",
   "commodity": "S&P 500 E-Mini",
   "month": "Jun",
-  "updatedAt": "2026-04-29T15:20:30.131031-05:00",
+  "updatedAt": "2026-04-29T15:24:54.665865-05:00",
   "rows": [
     {
       "date": "2026-04-29",
       "dailyHigh": "7190.75",
-      "dailyLow": "7137",
-      "dailyRange": "53.75",
-      "fullAchievement": "56.75",
-      "historicVol": "10.1%",
+      "dailyLow": "7135",
+      "dailyRange": "55.75",
+      "fullAchievement": "57.5",
+      "historicVol": "10.3%",
       "impliedVol": "",
       "weeklyHigh": "7223.25",
-      "weeklyLow": "7137",
-      "weeklyRange": "86.25",
+      "weeklyLow": "7135",
+      "weeklyRange": "88.25",
       "sectionBreak": false,
       "dailyTarget": "48.5",
-      "nextDailyTarget": "45.5",
-      "dailyAchievement": "110.8%",
+      "nextDailyTarget": "46",
+      "dailyAchievement": "114.9%",
       "weeklyTarget": "287",
       "nextWeeklyTarget": "",
-      "weeklyAchievement": "30.1%",
+      "weeklyAchievement": "30.7%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-28",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-27",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-04-24",
@@ -2279,7 +2279,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-04",
@@ -2302,7 +2302,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-03",
@@ -2325,7 +2325,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-02",
@@ -2348,7 +2348,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 5,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-12-01",
@@ -2371,7 +2371,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 4,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-26",
@@ -2394,7 +2394,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-25",
@@ -2417,7 +2417,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-24",
@@ -2440,7 +2440,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2025-11-21",
