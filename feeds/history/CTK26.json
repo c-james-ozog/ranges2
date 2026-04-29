@@ -2,8 +2,29 @@
   "symbol": "CTK26",
   "commodity": "Cotton",
   "month": "May",
-  "updatedAt": "2026-04-28T19:07:17.645499-05:00",
+  "updatedAt": "2026-04-28T22:08:58.637813-05:00",
   "rows": [
+    {
+      "date": "2026-04-28",
+      "dailyHigh": "77.34",
+      "dailyLow": "77.34",
+      "dailyRange": "0",
+      "fullAchievement": "0.11",
+      "historicVol": "1.8%",
+      "impliedVol": "",
+      "weeklyHigh": "77.56",
+      "weeklyLow": "77.34",
+      "weeklyRange": "0.22",
+      "sectionBreak": false,
+      "dailyTarget": "0.58",
+      "nextDailyTarget": "0.09",
+      "dailyAchievement": "",
+      "weeklyTarget": "3.96",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "5.6%",
+      "underTargetStreak": 1,
+      "impliedVolTrend": ""
+    },
     {
       "date": "2026-04-27",
       "dailyHigh": "77.56",
@@ -22,7 +43,7 @@
       "weeklyTarget": "3.96",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "",
-      "underTargetStreak": 1,
+      "underTargetStreak": 2,
       "impliedVolTrend": ""
     },
     {
@@ -43,7 +64,7 @@
       "weeklyTarget": "3.66",
       "nextWeeklyTarget": "3.96",
       "weeklyAchievement": "100.8%",
-      "underTargetStreak": 2,
+      "underTargetStreak": 3,
       "impliedVolTrend": ""
     },
     {
