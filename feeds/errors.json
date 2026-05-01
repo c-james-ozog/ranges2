@@ -20,6 +20,10 @@
     "error": "Failed to fetch CLJ26.NYM after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "GCJ26",
+    "error": "Failed to fetch GCJ26.CMX after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "GCH26",
     "error": "Failed to fetch GCH26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
