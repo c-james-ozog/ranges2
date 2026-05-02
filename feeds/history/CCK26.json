@@ -2,8 +2,31 @@
   "symbol": "CCK26",
   "commodity": "Cocoa",
   "month": "May",
-  "updatedAt": "2026-05-01T19:06:01.650414-05:00",
+  "updatedAt": "2026-05-01T22:58:06.655558-05:00",
   "rows": [
+    {
+      "date": "2026-05-01",
+      "dailyHigh": "3521",
+      "dailyLow": "3521",
+      "dailyRange": "",
+      "fullAchievement": "",
+      "historicVol": "0.0%",
+      "impliedVol": "",
+      "weeklyHigh": "3521",
+      "weeklyLow": "3244",
+      "weeklyRange": "277",
+      "sectionBreak": false,
+      "dailyTarget": "",
+      "nextDailyTarget": "",
+      "dailyAchievement": "",
+      "weeklyTarget": "335",
+      "nextWeeklyTarget": "325",
+      "weeklyAchievement": "82.7%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|2"
+    },
     {
       "date": "2026-04-30",
       "dailyHigh": "3494",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-29",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-28",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-27",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-04-24",
