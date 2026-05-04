@@ -32,6 +32,10 @@
     "error": "Failed to fetch HEG26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "LEJ26",
+    "error": "Failed to fetch LEJ26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "LEG26",
     "error": "Failed to fetch LEG26.CME after 3 attempts: HTTP Error 404: Not Found"
   },

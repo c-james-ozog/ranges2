@@ -2,7 +2,7 @@
   "symbol": "SIM26",
   "commodity": "Silver",
   "month": "Jun",
-  "updatedAt": "2026-05-01T22:58:06.655558-05:00",
+  "updatedAt": "2026-05-03T22:30:23.187846-05:00",
   "rows": [
     {
       "date": "2026-05-01",
@@ -10,8 +10,8 @@
       "dailyLow": "73.2",
       "dailyRange": "3.92",
       "fullAchievement": "3.19",
-      "historicVol": "54.0%",
-      "impliedVol": "",
+      "historicVol": "53.6%",
+      "impliedVol": "46.5%",
       "weeklyHigh": "77.12",
       "weeklyLow": "71.145",
       "weeklyRange": "5.975",
@@ -22,7 +22,7 @@
       "weeklyTarget": "8.305",
       "nextWeeklyTarget": "7.665",
       "weeklyAchievement": "71.9%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|2"
