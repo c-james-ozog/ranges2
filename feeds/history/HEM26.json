@@ -2,7 +2,7 @@
   "symbol": "HEM26",
   "commodity": "Lean Hogs",
   "month": "Jun",
-  "updatedAt": "2026-05-05T19:03:48.766997-05:00",
+  "updatedAt": "2026-05-05T20:33:31.791581-05:00",
   "rows": [
     {
       "date": "2026-05-05",
@@ -11,7 +11,7 @@
       "dailyRange": "1.975",
       "fullAchievement": "2.125",
       "historicVol": "26.7%",
-      "impliedVol": "",
+      "impliedVol": "18.4%",
       "weeklyHigh": "101.95",
       "weeklyLow": "99.475",
       "weeklyRange": "2.475",
@@ -22,7 +22,7 @@
       "weeklyTarget": "3.475",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "71.2%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
