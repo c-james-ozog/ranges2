@@ -2,7 +2,7 @@
   "symbol": "KCN26",
   "commodity": "Coffee",
   "month": "Jul",
-  "updatedAt": "2026-05-06T19:04:43.132836-05:00",
+  "updatedAt": "2026-05-06T21:22:54.467481-05:00",
   "rows": [
     {
       "date": "2026-05-06",
@@ -11,7 +11,7 @@
       "dailyRange": "10.15",
       "fullAchievement": "9.2",
       "historicVol": "41.6%",
-      "impliedVol": "",
+      "impliedVol": "35.8%",
       "weeklyHigh": "297.2",
       "weeklyLow": "283.1",
       "weeklyRange": "14.1",
@@ -22,7 +22,7 @@
       "weeklyTarget": "19.75",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "71.4%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
