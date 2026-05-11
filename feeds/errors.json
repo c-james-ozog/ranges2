@@ -16,6 +16,10 @@
     "error": "Failed to fetch ZCH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "CTK26",
+    "error": "Failed to fetch CTK26.NYB after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "CLJ26",
     "error": "Failed to fetch CLJ26.NYM after 3 attempts: HTTP Error 404: Not Found"
   },
