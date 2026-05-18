@@ -246,8 +246,18 @@ def preprocess_rows(
 # Tick-level computations
 # ---------------------------------------------------------------------------
 
-def daily_range(row: RawRow, tick: float) -> float:
-    return round_to_tick(round_to_tick(row["high"], tick) - round_to_tick(row["low"], tick), tick)
+def daily_range(row: RawRow, tick: float, prev_close: float | None = None) -> float:
+    """
+    True Range = max(High - Low, |High - Prev Close|, |Low - Prev Close|)
+    Falls back to High - Low when no previous close is available.
+    """
+    high  = round_to_tick(row["high"], tick)
+    low   = round_to_tick(row["low"],  tick)
+    hl    = round_to_tick(high - low, tick)
+    if prev_close is None:
+        return hl
+    pc = round_to_tick(prev_close, tick)
+    return round_to_tick(max(hl, abs(high - pc), abs(low - pc)), tick)
 
 
 def pct(numerator: float | None, denominator: float | None) -> str:
@@ -267,7 +277,11 @@ def historic_vol(rows: list[RawRow], i: int, tick: float) -> str:
     window = rows[i : i + DAILY_TARGET_LOOKBACK]
     if len(window) < DAILY_TARGET_LOOKBACK or not window[0].get("close"):
         return ""
-    avg_range = sum(daily_range(r, tick) for r in window) / DAILY_TARGET_LOOKBACK
+    # Pass previous close for True Range (rows are newest-first, so next index = prior day)
+    avg_range = sum(
+        daily_range(window[j], tick, rows[i + j + 1].get("close") if i + j + 1 < len(rows) else None)
+        for j in range(DAILY_TARGET_LOOKBACK)
+    ) / DAILY_TARGET_LOOKBACK
     close_one_pct = window[0]["close"] / PRICE_DIVISOR
     hv = (avg_range * HV_TARGET_MULTIPLIER / close_one_pct) * HV_ANNUALIZATION_FACTOR
     return f"{round(hv, 1)}%"
@@ -285,7 +299,11 @@ def full_achievement_and_target(
     window = rows[i : i + DAILY_TARGET_LOOKBACK]
     if len(window) < DAILY_TARGET_LOOKBACK:
         return None, None
-    avg = sum(daily_range(r, tick) for r in window) / DAILY_TARGET_LOOKBACK
+    # Pass previous close for True Range
+    avg = sum(
+        daily_range(window[j], tick, rows[i + j + 1].get("close") if i + j + 1 < len(rows) else None)
+        for j in range(DAILY_TARGET_LOOKBACK)
+    ) / DAILY_TARGET_LOOKBACK
     avg_r  = round_to_tick(avg, tick)
     target = round_to_tick(avg_r * HV_TARGET_MULTIPLIER, tick)
     return avg_r, target
@@ -479,7 +497,9 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
         trade_date = ts_to_ct_date(row["timestamp"])
         d_high = round_to_tick(row["high"], tick)
         d_low  = round_to_tick(row["low"],  tick)
-        d_range = round_to_tick(d_high - d_low, tick)
+        # True Range: include overnight gap vs previous close (rows newest-first, so i+1 = prior day)
+        prev_close = rows[i + 1].get("close") if i + 1 < len(rows) else None
+        d_range = daily_range(row, tick, prev_close)
 
         full_ach, next_target = full_achievement_and_target(rows, i, tick)
         hv = historic_vol(rows, i, tick)
