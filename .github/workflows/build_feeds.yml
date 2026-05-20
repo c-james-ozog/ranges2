@@ -6,6 +6,7 @@ on:
     - cron: '17 22 * * 1-5'  # 5:17 PM CT (CDT = UTC-5), Mon-Fri
     - cron: '16 23 * * 1-5'  # 6:16 PM CT (CDT = UTC-5), Mon-Fri
     - cron: '30 00 * * 2-6'  # 7:30 PM CT (CDT = UTC-5), Mon-Fri (next UTC day)
+    - cron: '00 01 * * 2-6'  # 8:00 PM CT (CDT = UTC-5), Mon-Fri (next UTC day)
   workflow_dispatch:  # Allow manual runs
 
 jobs:
