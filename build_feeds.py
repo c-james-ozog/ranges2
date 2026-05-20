@@ -321,7 +321,24 @@ def compute_weekly_ranges(dated_rows: list[dict], tick: float) -> WeeklyData:
     """
     Compute cumulative weekly high/low/range for each trading day.
     Ranges expand Mon→Fri as new highs/lows are made during the week.
+    Accounts for gap opens: if Monday opens with a gap vs prior Friday's close,
+    the gap is included in the weekly range.
     """
+    # Build a date -> close lookup for gap detection
+    close_by_date: dict[str, float] = {
+        r["date"]: r["close"] for r in dated_rows if r.get("close")
+    }
+
+    # Sort all rows by date to find prior Friday close easily
+    sorted_dates = sorted(close_by_date.keys())
+
+    def prior_close(date_str: str) -> float | None:
+        """Return the close of the most recent prior trading day."""
+        idx = sorted_dates.index(date_str) if date_str in sorted_dates else -1
+        if idx <= 0:
+            return None
+        return close_by_date.get(sorted_dates[idx - 1])
+
     # Group rows by their week's Monday
     weeks: dict[str, list[dict]] = {}
     for row in dated_rows:
@@ -334,6 +351,15 @@ def compute_weekly_ranges(dated_rows: list[dict], tick: float) -> WeeklyData:
         for row in week_rows:
             h = round_to_tick(row["high"], tick)
             l = round_to_tick(row["low"], tick)
+            # On first day of week, check for gap vs prior close
+            if cum_high is None:
+                pc = prior_close(row["date"])
+                if pc is not None:
+                    pc = round_to_tick(pc, tick)
+                    # Gap up: prior close below today's low
+                    # Gap down: prior close above today's high
+                    h = max(h, pc)
+                    l = min(l, pc)
             cum_high = h if cum_high is None else max(cum_high, h)
             cum_low  = l if cum_low  is None else min(cum_low,  l)
             result[row["date"]] = {
@@ -348,7 +374,20 @@ def compute_completed_weeks(dated_rows: list[dict], tick: float) -> list[dict]:
     """
     Return completed weeks (those ending on a valid last trading day), newest first.
     Each entry: {monday, lastDay, high, low, range}
+    Accounts for gap opens on Monday vs prior Friday close.
     """
+    # Build close lookup for gap detection
+    close_by_date: dict[str, float] = {
+        r["date"]: r["close"] for r in dated_rows if r.get("close")
+    }
+    sorted_dates = sorted(close_by_date.keys())
+
+    def prior_close(date_str: str) -> float | None:
+        idx = sorted_dates.index(date_str) if date_str in sorted_dates else -1
+        if idx <= 0:
+            return None
+        return close_by_date.get(sorted_dates[idx - 1])
+
     weeks: dict[str, list[dict]] = {}
     for row in dated_rows:
         weeks.setdefault(week_monday(row["date"]), []).append(row)
@@ -361,6 +400,13 @@ def compute_completed_weeks(dated_rows: list[dict], tick: float) -> list[dict]:
             continue
         high = round_to_tick(max(r["high"] for r in week_rows), tick)
         low  = round_to_tick(min(r["low"]  for r in week_rows), tick)
+        # Include gap on Monday
+        first_day = week_rows[0]["date"]
+        pc = prior_close(first_day)
+        if pc is not None:
+            pc = round_to_tick(pc, tick)
+            high = max(high, pc)
+            low  = min(low,  pc)
         completed.append({
             "monday":  monday,
             "lastDay": last_day,
