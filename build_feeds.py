@@ -530,7 +530,7 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
 
     # Build lightweight dated rows for weekly computations
     dated = [
-        {"date": ts_to_ct_date(r["timestamp"]), "high": r["high"], "low": r["low"]}
+        {"date": ts_to_ct_date(r["timestamp"]), "high": r["high"], "low": r["low"], "close": r.get("close")}
         for r in rows
     ]
 
