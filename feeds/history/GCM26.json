@@ -2,8 +2,31 @@
   "symbol": "GCM26",
   "commodity": "Gold",
   "month": "Jun",
-  "updatedAt": "2026-05-21T23:53:57.442781-05:00",
+  "updatedAt": "2026-05-22T15:46:59.136149-05:00",
   "rows": [
+    {
+      "date": "2026-05-22",
+      "dailyHigh": "4547",
+      "dailyLow": "4488",
+      "dailyRange": "59",
+      "fullAchievement": "82.2",
+      "historicVol": "23.3%",
+      "impliedVol": "",
+      "weeklyHigh": "4593.2",
+      "weeklyLow": "4455",
+      "weeklyRange": "138.2",
+      "sectionBreak": false,
+      "dailyTarget": "83.6",
+      "nextDailyTarget": "65.8",
+      "dailyAchievement": "70.6%",
+      "weeklyTarget": "252.8",
+      "nextWeeklyTarget": "224.3",
+      "weeklyAchievement": "54.7%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 3,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-05-21",
       "dailyHigh": "4572.4",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-20",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-19",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-18",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-15",

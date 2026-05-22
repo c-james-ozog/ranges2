@@ -2,8 +2,31 @@
   "symbol": "SIM26",
   "commodity": "Silver",
   "month": "Jun",
-  "updatedAt": "2026-05-21T23:53:57.442781-05:00",
+  "updatedAt": "2026-05-22T15:46:59.136149-05:00",
   "rows": [
+    {
+      "date": "2026-05-22",
+      "dailyHigh": "76.9",
+      "dailyLow": "75.19",
+      "dailyRange": "1.71",
+      "fullAchievement": "2.425",
+      "historicVol": "41.1%",
+      "impliedVol": "",
+      "weeklyHigh": "79.015",
+      "weeklyLow": "73.1",
+      "weeklyRange": "5.915",
+      "sectionBreak": false,
+      "dailyTarget": "3.065",
+      "nextDailyTarget": "1.94",
+      "dailyAchievement": "55.8%",
+      "weeklyTarget": "9.805",
+      "nextWeeklyTarget": "9.785",
+      "weeklyAchievement": "60.3%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 3,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-05-21",
       "dailyHigh": "77",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-20",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-19",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-18",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-05-15",
