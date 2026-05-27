@@ -62,7 +62,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Feeder Cattle",    "symbol": "GFQ26.CME",  "base_symbol": "GFQ26", "month": "Aug", "roll_date": "2026-04-20"},
     {"commodity": "Feeder Cattle",    "symbol": "GFK26.CME",  "base_symbol": "GFK26", "month": "May", "roll_date": None},
 
-    # Gold — rolled to Jun on 4/20, was Apr before that, was Feb before 2/26
+    # Gold — Aug active from 5/27, Jun from 4/20, Apr from 2/26, Mar fallback
+    {"commodity": "Gold",             "symbol": "GCQ26.CMX",  "base_symbol": "GCQ26", "month": "Aug", "roll_date": "2026-05-27"},
     {"commodity": "Gold",             "symbol": "GCM26.CMX",  "base_symbol": "GCM26", "month": "Jun", "roll_date": "2026-04-20"},
     {"commodity": "Gold",             "symbol": "GCJ26.CMX",  "base_symbol": "GCJ26", "month": "Apr", "roll_date": "2026-02-26"},
     {"commodity": "Gold",             "symbol": "GCH26.CMX",  "base_symbol": "GCH26", "month": "Mar", "roll_date": None},
@@ -82,7 +83,8 @@ CONTRACTS: list[Contract] = [
     # Nasdaq — no roll
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
-    # Natural Gas — Jun active, Mar expired 2/26
+    # Natural Gas — Jul active from 5/27, Jun expired, Mar expired 2/26
+    {"commodity": "Natural Gas",      "symbol": "NGN26.NYM",  "base_symbol": "NGN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Natural Gas",      "symbol": "NGH26.NYM",  "base_symbol": "NGH26", "month": "Mar", "roll_date": None},
 
@@ -92,7 +94,8 @@ CONTRACTS: list[Contract] = [
     # S&P 500 — no roll
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
-    # Silver — Jun active, Mar expired 2/26
+    # Silver — Jul active from 5/27, Jun expired, Mar expired 2/26
+    {"commodity": "Silver",           "symbol": "SIN26.CMX",  "base_symbol": "SIN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Silver",           "symbol": "SIH26.CMX",  "base_symbol": "SIH26", "month": "Mar", "roll_date": None},
 
