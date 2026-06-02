@@ -2,7 +2,7 @@
   "symbol": "HGN26",
   "commodity": "Copper",
   "month": "Jul",
-  "updatedAt": "2026-06-01T20:36:16.538179-05:00",
+  "updatedAt": "2026-06-01T21:44:17.782136-05:00",
   "rows": [
     {
       "date": "2026-06-01",
@@ -11,7 +11,7 @@
       "dailyRange": "0.205",
       "fullAchievement": "0.1545",
       "historicVol": "30.2%",
-      "impliedVol": "",
+      "impliedVol": "27.4%",
       "weeklyHigh": "6.585",
       "weeklyLow": "6.38",
       "weeklyRange": "0.205",
@@ -22,7 +22,7 @@
       "weeklyTarget": "0.3245",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "63.2%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|2"
