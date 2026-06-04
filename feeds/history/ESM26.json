@@ -2,7 +2,7 @@
   "symbol": "ESM26",
   "commodity": "S&P 500 E-Mini",
   "month": "Jun",
-  "updatedAt": "2026-06-03T20:47:49.429548-05:00",
+  "updatedAt": "2026-06-03T22:04:09.127446-05:00",
   "rows": [
     {
       "date": "2026-06-03",
@@ -11,7 +11,7 @@
       "dailyRange": "86.75",
       "fullAchievement": "66",
       "historicVol": "11.2%",
-      "impliedVol": "",
+      "impliedVol": "12.4%",
       "weeklyHigh": "7632.25",
       "weeklyLow": "7541.75",
       "weeklyRange": "90.5",
@@ -22,7 +22,7 @@
       "weeklyTarget": "155.75",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "58.1%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|2"
