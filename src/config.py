@@ -39,7 +39,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Coffee",           "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May", "roll_date": "2026-02-18"},
     {"commodity": "Coffee",           "symbol": "KCH26.NYB",  "base_symbol": "KCH26", "month": "Mar", "roll_date": None},
 
-    # Copper — rolled to Jul on 4/20, was May before that, was Mar before 2/26
+    # Copper — Aug active from 6/5, Jul from 4/20, May from 2/26, Mar fallback
+    {"commodity": "Copper",           "symbol": "HGQ26.CMX",  "base_symbol": "HGQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Copper",           "symbol": "HGN26.CMX",  "base_symbol": "HGN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Copper",           "symbol": "HGK26.CMX",  "base_symbol": "HGK26", "month": "May", "roll_date": "2026-02-26"},
     {"commodity": "Copper",           "symbol": "HGH26.CMX",  "base_symbol": "HGH26", "month": "Mar", "roll_date": None},
@@ -71,11 +72,13 @@ CONTRACTS: list[Contract] = [
     # Hard Red Wheat — no roll
     {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None},
 
-    # Lean Hogs — Jun active, Feb expired 2/14
+    # Lean Hogs — Aug active from 6/5, Jun from 2/14, Feb fallback
+    {"commodity": "Lean Hogs",        "symbol": "HEQ26.CME",  "base_symbol": "HEQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Lean Hogs",        "symbol": "HEM26.CME",  "base_symbol": "HEM26", "month": "Jun", "roll_date": "2026-02-14"},
     {"commodity": "Lean Hogs",        "symbol": "HEG26.CME",  "base_symbol": "HEG26", "month": "Feb", "roll_date": None},
 
-    # Live Cattle — rolled to Jun on 4/20, was Apr before that, was Feb before 2/14
+    # Live Cattle — Aug active from 6/5, Jun from 4/20, Apr from 2/14, Feb fallback
+    {"commodity": "Live Cattle",      "symbol": "LEQ26.CME",  "base_symbol": "LEQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Live Cattle",      "symbol": "LEM26.CME",  "base_symbol": "LEM26", "month": "Jun", "roll_date": "2026-04-20"},
     {"commodity": "Live Cattle",      "symbol": "LEJ26.CME",  "base_symbol": "LEJ26", "month": "Apr", "roll_date": "2026-02-14"},
     {"commodity": "Live Cattle",      "symbol": "LEG26.CME",  "base_symbol": "LEG26", "month": "Feb", "roll_date": None},
@@ -117,6 +120,12 @@ CONTRACTS: list[Contract] = [
 
     # Wheat — no roll
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None},
+
+    # Bitcoin — new from 6/5
+    {"commodity": "Bitcoin",          "symbol": "BTQ26.CME",  "base_symbol": "BTQ26", "month": "Aug", "roll_date": "2026-06-05"},
+
+    # Sugar — new from 6/5
+    {"commodity": "Sugar",            "symbol": "SBV26.NYB",  "base_symbol": "SBV26", "month": "Oct", "roll_date": "2026-06-05"},
 ]
 
 # Lookup of base_symbol -> Contract
@@ -211,6 +220,8 @@ TICK_SIZES: dict[str, float] = {
     "Soybeans":          0.25,
     "US Dollar":         0.005,
     "Wheat":             0.25,
+    "Bitcoin":           5.0,
+    "Sugar":             0.01,
 }
 
 
