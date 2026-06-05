@@ -86,5 +86,9 @@
   {
     "symbol": "ZSH26",
     "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "BTQ26",
+    "error": "Failed to fetch BTQ26.CME after 3 attempts: HTTP Error 404: Not Found"
   }
 ]

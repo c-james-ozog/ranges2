@@ -2,30 +2,30 @@
   "symbol": "SIN26",
   "commodity": "Silver",
   "month": "Jul",
-  "updatedAt": "2026-06-05T06:53:17.739191-05:00",
+  "updatedAt": "2026-06-05T13:48:04.757782-05:00",
   "rows": [
     {
       "date": "2026-06-05",
       "dailyHigh": "74.38",
-      "dailyLow": "71.44",
-      "dailyRange": "2.94",
-      "fullAchievement": "2.83",
-      "historicVol": "49.7%",
+      "dailyLow": "68.175",
+      "dailyRange": "6.205",
+      "fullAchievement": "3.92",
+      "historicVol": "73.4%",
       "impliedVol": "",
       "weeklyHigh": "77.355",
-      "weeklyLow": "71.44",
-      "weeklyRange": "5.915",
+      "weeklyLow": "68.175",
+      "weeklyRange": "9.18",
       "sectionBreak": false,
       "dailyTarget": "2.17",
-      "nextDailyTarget": "2.265",
-      "dailyAchievement": "135.5%",
+      "nextDailyTarget": "3.135",
+      "dailyAchievement": "285.9%",
       "weeklyTarget": "9.105",
-      "nextWeeklyTarget": "6.405",
-      "weeklyAchievement": "65.0%",
+      "nextWeeklyTarget": "7.495",
+      "weeklyAchievement": "100.8%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-04",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-03",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-02",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-01",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-05-29",

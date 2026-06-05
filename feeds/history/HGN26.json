@@ -2,30 +2,30 @@
   "symbol": "HGN26",
   "commodity": "Copper",
   "month": "Jul",
-  "updatedAt": "2026-06-05T06:53:17.739191-05:00",
+  "updatedAt": "2026-06-05T13:48:04.757782-05:00",
   "rows": [
     {
       "date": "2026-06-05",
       "dailyHigh": "6.537",
-      "dailyLow": "6.396",
-      "dailyRange": "0.141",
-      "fullAchievement": "0.165",
-      "historicVol": "32.8%",
+      "dailyLow": "6.263",
+      "dailyRange": "0.274",
+      "fullAchievement": "0.209",
+      "historicVol": "42.7%",
       "impliedVol": "",
       "weeklyHigh": "6.698",
-      "weeklyLow": "6.38",
-      "weeklyRange": "0.318",
+      "weeklyLow": "6.263",
+      "weeklyRange": "0.435",
       "sectionBreak": false,
       "dailyTarget": "0.1395",
-      "nextDailyTarget": "0.132",
-      "dailyAchievement": "101.1%",
+      "nextDailyTarget": "0.167",
+      "dailyAchievement": "196.4%",
       "weeklyTarget": "0.3245",
-      "nextWeeklyTarget": "0.275",
-      "weeklyAchievement": "98.0%",
+      "nextWeeklyTarget": "0.314",
+      "weeklyAchievement": "134.1%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-04",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-03",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-02",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-01",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-05-29",
