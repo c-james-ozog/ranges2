@@ -29,6 +29,9 @@ class Contract(TypedDict, total=False):
 # ---------------------------------------------------------------------------
 
 CONTRACTS: list[Contract] = [
+    # Bitcoin — new from 6/5
+    {"commodity": "Bitcoin",          "symbol": "BTQ26.CME",  "base_symbol": "BTQ26", "month": "Aug", "roll_date": "2026-06-05"},
+
     # Cocoa — rolled to Jul on 4/20, was May before that, was Mar before 2/25
     {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cocoa",            "symbol": "CCK26.NYB",  "base_symbol": "CCK26", "month": "May", "roll_date": "2026-02-25"},
@@ -83,10 +86,10 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Live Cattle",      "symbol": "LEJ26.CME",  "base_symbol": "LEJ26", "month": "Apr", "roll_date": "2026-02-14"},
     {"commodity": "Live Cattle",      "symbol": "LEG26.CME",  "base_symbol": "LEG26", "month": "Feb", "roll_date": None},
 
-    # Nasdaq — no roll
+    # Nasdaq 100 E-Mini — no roll
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
-    # Natural Gas — Jul active from 5/27, Jun expired, Mar expired 2/26
+    # Natural Gas — Jul active from 5/27, Jun from 2/26, Mar fallback
     {"commodity": "Natural Gas",      "symbol": "NGN26.NYM",  "base_symbol": "NGN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Natural Gas",      "symbol": "NGH26.NYM",  "base_symbol": "NGH26", "month": "Mar", "roll_date": None},
@@ -94,19 +97,19 @@ CONTRACTS: list[Contract] = [
     # Rice — no roll
     {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
-    # S&P 500 — no roll
+    # S&P 500 E-Mini — no roll
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
-    # Silver — Jul active from 5/27, Jun expired, Mar expired 2/26
+    # Silver — Jul active from 5/27, Jun from 2/26, Mar fallback
     {"commodity": "Silver",           "symbol": "SIN26.CMX",  "base_symbol": "SIN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Silver",           "symbol": "SIH26.CMX",  "base_symbol": "SIH26", "month": "Mar", "roll_date": None},
 
-    # Soybean Meal — Jul active, Mar expired 2/26
+    # Soybean Meal — Jul active from 2/26, Mar fallback
     {"commodity": "Soybean Meal",     "symbol": "ZMN26.CBT",  "base_symbol": "ZMN26", "month": "Jul", "roll_date": "2026-02-26"},
     {"commodity": "Soybean Meal",     "symbol": "ZMH26.CBT",  "base_symbol": "ZMH26", "month": "Mar", "roll_date": None},
 
-    # Soybean Oil — Jul active, Mar expired 2/26
+    # Soybean Oil — Jul active from 2/26, Mar fallback
     {"commodity": "Soybean Oil",      "symbol": "ZLN26.CBT",  "base_symbol": "ZLN26", "month": "Jul", "roll_date": "2026-02-26"},
     {"commodity": "Soybean Oil",      "symbol": "ZLH26.CBT",  "base_symbol": "ZLH26", "month": "Mar", "roll_date": None},
 
@@ -115,17 +118,14 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None, "always_show": True},
     {"commodity": "Soybeans",         "symbol": "ZSH26.CBT",  "base_symbol": "ZSH26", "month": "Mar", "roll_date": None},
 
+    # Sugar — new from 6/5
+    {"commodity": "Sugar",            "symbol": "SBV26.NYB",  "base_symbol": "SBV26", "month": "Oct", "roll_date": "2026-06-05"},
+
     # US Dollar — no roll
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
 
     # Wheat — no roll
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None},
-
-    # Bitcoin — new from 6/5
-    {"commodity": "Bitcoin",          "symbol": "BTQ26.CME",  "base_symbol": "BTQ26", "month": "Aug", "roll_date": "2026-06-05"},
-
-    # Sugar — new from 6/5
-    {"commodity": "Sugar",            "symbol": "SBV26.NYB",  "base_symbol": "SBV26", "month": "Oct", "roll_date": "2026-06-05"},
 ]
 
 # Lookup of base_symbol -> Contract
