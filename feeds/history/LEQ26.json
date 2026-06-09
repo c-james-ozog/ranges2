@@ -2,7 +2,7 @@
   "symbol": "LEQ26",
   "commodity": "Live Cattle",
   "month": "Aug",
-  "updatedAt": "2026-06-09T13:20:21.434493-05:00",
+  "updatedAt": "2026-06-09T16:08:50.070329-05:00",
   "rows": [
     {
       "date": "2026-06-09",
@@ -34,7 +34,7 @@
       "dailyRange": "7",
       "fullAchievement": "6.575",
       "historicVol": "35.6%",
-      "impliedVol": "16.2%",
+      "impliedVol": "",
       "weeklyHigh": "243.25",
       "weeklyLow": "236.25",
       "weeklyRange": "7",
@@ -45,7 +45,7 @@
       "weeklyTarget": "10.175",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "68.8%",
-      "impliedVolTrend": "up|1",
+      "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
@@ -57,7 +57,7 @@
       "dailyRange": "4.425",
       "fullAchievement": "5.875",
       "historicVol": "31.1%",
-      "impliedVol": "15.7%",
+      "impliedVol": "",
       "weeklyHigh": "245.225",
       "weeklyLow": "233.975",
       "weeklyRange": "11.25",
