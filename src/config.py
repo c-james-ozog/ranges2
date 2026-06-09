@@ -30,7 +30,7 @@ class Contract(TypedDict, total=False):
 
 CONTRACTS: list[Contract] = [
     # Bitcoin — new from 6/5
-    {"commodity": "Bitcoin",          "symbol": "BTQ26.CME",  "base_symbol": "BTQ26", "month": "Aug", "roll_date": "2026-06-05"},
+    {"commodity": "Bitcoin",          "symbol": "BTCQ26.CME", "base_symbol": "BTCQ26", "month": "Aug", "roll_date": "2026-06-05"},
 
     # Cocoa — rolled to Jul on 4/20, was May before that, was Mar before 2/25
     {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul", "roll_date": "2026-04-20"},
