@@ -130,30 +130,43 @@ def _fetch_url(url: str, symbol: str, headers: dict) -> list[RawRow]:
 
 
 def _aggregate_hourly_to_daily(rows: list[RawRow]) -> list[RawRow]:
-    """Aggregate hourly bars into daily OHLC bars."""
+    """
+    Aggregate hourly bars into daily OHLC bars.
+
+    Stores timestamps as midnight UTC of the prior day — matching Yahoo's
+    daily bar convention — so ts_to_ct_date() computes the correct trade date.
+    """
     from collections import defaultdict
     from datetime import datetime, timezone, timedelta
+    from zoneinfo import ZoneInfo
 
-    daily: dict[str, dict] = defaultdict(lambda: {"high": None, "low": None, "close": None, "timestamp": None})
+    CT = ZoneInfo("America/Chicago")
+    daily: dict[str, dict] = defaultdict(lambda: {"high": None, "low": None, "close": None})
+
     for row in rows:
-        dt = datetime.fromtimestamp(row["timestamp"], tz=timezone.utc)
-        date_str = dt.strftime("%Y-%m-%d")
+        # Use Chicago time to assign hourly bar to its trade date
+        dt_ct = datetime.fromtimestamp(row["timestamp"], tz=CT)
+        date_str = dt_ct.strftime("%Y-%m-%d")
         d = daily[date_str]
-        d["high"]      = row["high"] if d["high"] is None else max(d["high"], row["high"])
-        d["low"]       = row["low"]  if d["low"]  is None else min(d["low"],  row["low"])
-        d["close"]     = row["close"]
-        d["timestamp"] = row["timestamp"]
+        d["high"]  = row["high"] if d["high"] is None else max(d["high"], row["high"])
+        d["low"]   = row["low"]  if d["low"]  is None else min(d["low"],  row["low"])
+        d["close"] = row["close"]
 
     result = []
     for date_str, d in daily.items():
         if d["high"] is None or d["high"] == d["low"]:
             continue
+        # Build a midnight-UTC timestamp for the prior day so ts_to_ct_date
+        # adds 1 day and recovers the correct trade date
+        prior_midnight = datetime.fromisoformat(date_str) - timedelta(days=1)
+        fake_ts = int(prior_midnight.replace(tzinfo=timezone.utc).timestamp())
         result.append({
-            "timestamp": d["timestamp"],
+            "timestamp": fake_ts,
             "high":      d["high"],
             "low":       d["low"],
             "close":     d["close"],
         })
+
     result.sort(key=lambda r: r["timestamp"], reverse=True)
     return result
 
