@@ -80,8 +80,7 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
         "Accept": "application/json",
     }
 
-    last_error: Exception | None = None
-    rows = _fetch_url(url, symbol)
+    rows = _fetch_url(url, symbol, headers)
 
     # Detect flat data: if >50% of rows have high == low, data is bad
     # Fall back to hourly data aggregated to daily
@@ -92,7 +91,7 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
             f"?range=2mo&interval=1h&includePrePost=false"
         )
         try:
-            hourly_rows = _fetch_url(hourly_url, symbol)
+            hourly_rows = _fetch_url(hourly_url, symbol, headers)
             aggregated = _aggregate_hourly_to_daily(hourly_rows)
             if aggregated:
                 return aggregated
@@ -102,7 +101,7 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
     return rows
 
 
-def _fetch_url(url: str, symbol: str) -> list[RawRow]:
+def _fetch_url(url: str, symbol: str, headers: dict) -> list[RawRow]:
     """Internal fetch with retry logic."""
     last_error: Exception | None = None
     for attempt in range(FETCH_MAX_RETRIES):
