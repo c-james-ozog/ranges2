@@ -1,210 +1,90 @@
 [
   {
-    "symbol": "BTCQ26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "CCN26",
-    "error": "name 'headers' is not defined"
-  },
-  {
     "symbol": "CCK26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch CCK26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "CCH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "KCN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch CCH26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "KCK26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch KCK26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "KCH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "HGQ26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "HGN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch KCH26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "HGK26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch HGK26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "HGH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZCN26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZCZ26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch HGH26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZCH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "CTN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch ZCH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "CTK26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "CLN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch CTK26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "CLM26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch CLM26.NYM after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "CLJ26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "GFQ26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch CLJ26.NYM after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "GFK26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "GCQ26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "GCM26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch GFK26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "GCJ26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch GCJ26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "GCH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "KEN26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "HEQ26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "HEM26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch GCH26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "HEG26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "LEQ26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "LEM26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch HEG26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "LEJ26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch LEJ26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "LEG26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "NQM26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "NGN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch LEG26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "NGM26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch NGM26.NYM after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "NGH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZRN26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ESM26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "SIN26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "SIM26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch NGH26.NYM after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "SIH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZMN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch SIH26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZMH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZLN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch ZMH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZLH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZSN26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZSX26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch ZLH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZSH26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "SBV26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "DXM26",
-    "error": "name 'headers' is not defined"
-  },
-  {
-    "symbol": "ZWN26",
-    "error": "name 'headers' is not defined"
+    "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   }
 ]
