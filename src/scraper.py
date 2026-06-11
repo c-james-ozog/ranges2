@@ -57,6 +57,9 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
     """
     Fetch daily OHLC history from Yahoo Finance for the given symbol.
 
+    For contracts where daily data returns flat H==L (bad data), automatically
+    falls back to hourly data aggregated into daily bars.
+
     Returns rows sorted newest-first, with None values filtered out.
     Retries on transient network errors with exponential backoff.
 
@@ -77,6 +80,30 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
         "Accept": "application/json",
     }
 
+    last_error: Exception | None = None
+    rows = _fetch_url(url, symbol)
+
+    # Detect flat data: if >50% of rows have high == low, data is bad
+    # Fall back to hourly data aggregated to daily
+    if rows and sum(1 for r in rows if r["high"] == r["low"]) > len(rows) * 0.5:
+        log.warning("%s: flat OHLC detected — falling back to hourly aggregation", symbol)
+        hourly_url = (
+            f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+            f"?range=2mo&interval=1h&includePrePost=false"
+        )
+        try:
+            hourly_rows = _fetch_url(hourly_url, symbol)
+            aggregated = _aggregate_hourly_to_daily(hourly_rows)
+            if aggregated:
+                return aggregated
+        except Exception as e:
+            log.warning("%s: hourly fallback failed: %s", symbol, e)
+
+    return rows
+
+
+def _fetch_url(url: str, symbol: str) -> list[RawRow]:
+    """Internal fetch with retry logic."""
     last_error: Exception | None = None
     for attempt in range(FETCH_MAX_RETRIES):
         if attempt > 0:
@@ -101,6 +128,35 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
     raise RuntimeError(
         f"Failed to fetch {symbol} after {FETCH_MAX_RETRIES} attempts: {last_error}"
     )
+
+
+def _aggregate_hourly_to_daily(rows: list[RawRow]) -> list[RawRow]:
+    """Aggregate hourly bars into daily OHLC bars."""
+    from collections import defaultdict
+    from datetime import datetime, timezone, timedelta
+
+    daily: dict[str, dict] = defaultdict(lambda: {"high": None, "low": None, "close": None, "timestamp": None})
+    for row in rows:
+        dt = datetime.fromtimestamp(row["timestamp"], tz=timezone.utc)
+        date_str = dt.strftime("%Y-%m-%d")
+        d = daily[date_str]
+        d["high"]      = row["high"] if d["high"] is None else max(d["high"], row["high"])
+        d["low"]       = row["low"]  if d["low"]  is None else min(d["low"],  row["low"])
+        d["close"]     = row["close"]
+        d["timestamp"] = row["timestamp"]
+
+    result = []
+    for date_str, d in daily.items():
+        if d["high"] is None or d["high"] == d["low"]:
+            continue
+        result.append({
+            "timestamp": d["timestamp"],
+            "high":      d["high"],
+            "low":       d["low"],
+            "close":     d["close"],
+        })
+    result.sort(key=lambda r: r["timestamp"], reverse=True)
+    return result
 
 
 def _parse_yahoo_response(data: dict) -> list[RawRow]:
