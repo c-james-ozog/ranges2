@@ -178,11 +178,18 @@ def load_rice_overrides() -> dict[str, dict[str, float]]:
         for date_val, high, low, close, *_ in ws.iter_rows(min_row=3, values_only=True):
             if date_val is None or high is None or low is None:
                 continue
-            date_str = (
-                date_val.strftime("%Y-%m-%d")
-                if hasattr(date_val, "strftime")
-                else datetime.strptime(str(date_val), "%m/%d/%y").strftime("%Y-%m-%d")
-            )
+            if hasattr(date_val, "strftime"):
+                date_str = date_val.strftime("%Y-%m-%d")
+            else:
+                s = str(date_val)
+                for fmt in ("%Y-%m-%d", "%m/%d/%y"):
+                    try:
+                        date_str = datetime.strptime(s, fmt).strftime("%Y-%m-%d")
+                        break
+                    except ValueError:
+                        continue
+                else:
+                    continue  # skip unparseable dates
             result[date_str] = {
                 "high": float(high),
                 "low": float(low),
@@ -236,6 +243,14 @@ def preprocess_rows(
             row["high"]  = override["high"]
             row["low"]   = override["low"]
             row["close"] = override["close"] or row["close"]
+
+        # Yahoo changed Rice pricing from cents/cwt to dollars/cwt
+        # If price is < 100, multiply by 100 to restore correct scale
+        if symbol == "ZRN26" and row.get("high", 0) < 100:
+            row = dict(row)
+            row["high"]  = round(row["high"]  * 100, 4)
+            row["low"]   = round(row["low"]   * 100, 4)
+            row["close"] = round(row["close"] * 100, 4)
 
         result.append(row)
 
@@ -551,7 +566,7 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
         hv = historic_vol(rows, i, tick)
 
         iv_val = iv_data.get(trade_date, {}).get(symbol)
-        iv_str = f"{round(float(iv_val), 1)}%" if iv_val is not None else ""
+        iv_str = f"{round(float(iv_val), 1)}%" if iv_val is not None and float(iv_val) > 0 else ""
 
         wr = weekly_ranges.get(trade_date, {})
         wt = weekly_targets.get(trade_date, {})
