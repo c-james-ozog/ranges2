@@ -2,8 +2,31 @@
   "symbol": "HEM26",
   "commodity": "Lean Hogs",
   "month": "Jun",
-  "updatedAt": "2026-06-12T00:23:17.989912-05:00",
+  "updatedAt": "2026-06-12T16:04:55.153585-05:00",
   "rows": [
+    {
+      "date": "2026-06-12",
+      "dailyHigh": "92.7",
+      "dailyLow": "92.3",
+      "dailyRange": "0.475",
+      "fullAchievement": "0.475",
+      "historicVol": "6.6%",
+      "impliedVol": "",
+      "weeklyHigh": "94.775",
+      "weeklyLow": "92.3",
+      "weeklyRange": "2.475",
+      "sectionBreak": false,
+      "dailyTarget": "0.4",
+      "nextDailyTarget": "0.375",
+      "dailyAchievement": "118.7%",
+      "weeklyTarget": "3.375",
+      "nextWeeklyTarget": "2.3",
+      "weeklyAchievement": "73.3%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|3"
+    },
     {
       "date": "2026-06-11",
       "dailyHigh": "92.975",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 4,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-06-10",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-06-09",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-06-08",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-06-05",

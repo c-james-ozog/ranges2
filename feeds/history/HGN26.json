@@ -2,30 +2,30 @@
   "symbol": "HGN26",
   "commodity": "Copper",
   "month": "Jul",
-  "updatedAt": "2026-06-12T00:23:17.989912-05:00",
+  "updatedAt": "2026-06-12T16:04:55.153585-05:00",
   "rows": [
     {
       "date": "2026-06-12",
-      "dailyHigh": "6.43",
-      "dailyLow": "6.3715",
-      "dailyRange": "0.155",
-      "fullAchievement": "0.1855",
-      "historicVol": "37.0%",
+      "dailyHigh": "6.496",
+      "dailyLow": "6.3585",
+      "dailyRange": "0.221",
+      "fullAchievement": "0.2075",
+      "historicVol": "41.0%",
       "impliedVol": "",
-      "weeklyHigh": "6.4655",
+      "weeklyHigh": "6.496",
       "weeklyLow": "6.1715",
-      "weeklyRange": "0.294",
+      "weeklyRange": "0.3245",
       "sectionBreak": false,
       "dailyTarget": "0.1555",
-      "nextDailyTarget": "0.1485",
-      "dailyAchievement": "99.7%",
+      "nextDailyTarget": "0.166",
+      "dailyAchievement": "142.1%",
       "weeklyTarget": "0.3195",
-      "nextWeeklyTarget": "0.3305",
-      "weeklyAchievement": "92.0%",
+      "nextWeeklyTarget": "0.3405",
+      "weeklyAchievement": "101.6%",
       "impliedVolTrend": "",
-      "underTargetStreak": 1,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-06-11",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-06-10",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-06-09",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-06-08",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-06-05",
