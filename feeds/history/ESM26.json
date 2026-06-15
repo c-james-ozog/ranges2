@@ -2,7 +2,7 @@
   "symbol": "ESM26",
   "commodity": "S&P 500 E-Mini",
   "month": "Jun",
-  "updatedAt": "2026-06-15T12:51:23.920025-05:00",
+  "updatedAt": "2026-06-15T13:14:51.923477-05:00",
   "rows": [
     {
       "date": "2026-06-15",
@@ -45,7 +45,7 @@
       "weeklyTarget": "187.75",
       "nextWeeklyTarget": "217.5",
       "weeklyAchievement": "137.8%",
-      "impliedVolTrend": "up|1",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
@@ -57,7 +57,7 @@
       "dailyRange": "187.75",
       "fullAchievement": "193.5",
       "historicVol": "33.5%",
-      "impliedVol": "",
+      "impliedVol": "18.2%",
       "weeklyHigh": "7491",
       "weeklyLow": "7232.25",
       "weeklyRange": "258.75",
@@ -68,7 +68,7 @@
       "weeklyTarget": "187.75",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "137.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
@@ -80,7 +80,7 @@
       "dailyRange": "148.75",
       "fullAchievement": "171.25",
       "historicVol": "30.1%",
-      "impliedVol": "",
+      "impliedVol": "21.6%",
       "weeklyHigh": "7491",
       "weeklyLow": "7247.25",
       "weeklyRange": "243.75",
@@ -91,7 +91,7 @@
       "weeklyTarget": "187.75",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "129.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
@@ -103,7 +103,7 @@
       "dailyRange": "243.75",
       "fullAchievement": "202.25",
       "historicVol": "35.0%",
-      "impliedVol": "",
+      "impliedVol": "18.1%",
       "weeklyHigh": "7491",
       "weeklyLow": "7247.25",
       "weeklyRange": "243.75",
@@ -114,7 +114,7 @@
       "weeklyTarget": "187.75",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "129.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"

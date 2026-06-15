@@ -2,7 +2,7 @@
   "symbol": "ZSN26",
   "commodity": "Soybeans",
   "month": "Jul",
-  "updatedAt": "2026-06-15T12:51:23.920025-05:00",
+  "updatedAt": "2026-06-15T13:14:51.923477-05:00",
   "rows": [
     {
       "date": "2026-06-15",
@@ -45,7 +45,7 @@
       "weeklyTarget": "47.25",
       "nextWeeklyTarget": "39.75",
       "weeklyAchievement": "45.5%",
-      "impliedVolTrend": "down|1",
+      "impliedVolTrend": "down|5",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
@@ -57,7 +57,7 @@
       "dailyRange": "16.75",
       "fullAchievement": "14",
       "historicVol": "16.0%",
-      "impliedVol": "",
+      "impliedVol": "13.4%",
       "weeklyHigh": "1129.75",
       "weeklyLow": "1108.25",
       "weeklyRange": "21.5",
@@ -68,7 +68,7 @@
       "weeklyTarget": "47.25",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "45.5%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
@@ -80,7 +80,7 @@
       "dailyRange": "16.75",
       "fullAchievement": "13",
       "historicVol": "14.8%",
-      "impliedVol": "",
+      "impliedVol": "14.0%",
       "weeklyHigh": "1129.75",
       "weeklyLow": "1110.25",
       "weeklyRange": "19.5",
@@ -91,7 +91,7 @@
       "weeklyTarget": "47.25",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "41.3%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
@@ -103,7 +103,7 @@
       "dailyRange": "8.25",
       "fullAchievement": "12.25",
       "historicVol": "14.2%",
-      "impliedVol": "",
+      "impliedVol": "14.3%",
       "weeklyHigh": "1125.25",
       "weeklyLow": "1110.25",
       "weeklyRange": "15",
@@ -114,7 +114,7 @@
       "weeklyTarget": "47.25",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "31.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"

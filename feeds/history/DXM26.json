@@ -2,7 +2,7 @@
   "symbol": "DXM26",
   "commodity": "US Dollar",
   "month": "Jun",
-  "updatedAt": "2026-06-15T12:51:23.920025-05:00",
+  "updatedAt": "2026-06-15T13:14:51.923477-05:00",
   "rows": [
     {
       "date": "2026-06-15",
@@ -45,7 +45,7 @@
       "weeklyTarget": "0.92",
       "nextWeeklyTarget": "0.935",
       "weeklyAchievement": "81.5%",
-      "impliedVolTrend": "down|1",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
@@ -57,7 +57,7 @@
       "dailyRange": "0.75",
       "fullAchievement": "0.5",
       "historicVol": "6.4%",
-      "impliedVol": "",
+      "impliedVol": "5.0%",
       "weeklyHigh": "100.315",
       "weeklyLow": "99.565",
       "weeklyRange": "0.75",
@@ -68,7 +68,7 @@
       "weeklyTarget": "0.92",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "81.5%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
@@ -80,7 +80,7 @@
       "dailyRange": "0.345",
       "fullAchievement": "0.38",
       "historicVol": "4.9%",
-      "impliedVol": "",
+      "impliedVol": "5.1%",
       "weeklyHigh": "100.2",
       "weeklyLow": "99.655",
       "weeklyRange": "0.545",
@@ -103,7 +103,7 @@
       "dailyRange": "0.405",
       "fullAchievement": "0.59",
       "historicVol": "7.5%",
-      "impliedVol": "",
+      "impliedVol": "5.1%",
       "weeklyHigh": "100.2",
       "weeklyLow": "99.655",
       "weeklyRange": "0.545",

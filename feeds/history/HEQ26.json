@@ -2,7 +2,7 @@
   "symbol": "HEQ26",
   "commodity": "Lean Hogs",
   "month": "Aug",
-  "updatedAt": "2026-06-15T12:51:23.920025-05:00",
+  "updatedAt": "2026-06-15T13:14:51.923477-05:00",
   "rows": [
     {
       "date": "2026-06-15",
@@ -45,7 +45,7 @@
       "weeklyTarget": "4.3",
       "nextWeeklyTarget": "3.85",
       "weeklyAchievement": "116.9%",
-      "impliedVolTrend": "down|1",
+      "impliedVolTrend": "down|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
@@ -57,7 +57,7 @@
       "dailyRange": "1.1",
       "fullAchievement": "1.8",
       "historicVol": "23.9%",
-      "impliedVol": "",
+      "impliedVol": "22.9%",
       "weeklyHigh": "99",
       "weeklyLow": "93.975",
       "weeklyRange": "5.025",
@@ -68,7 +68,7 @@
       "weeklyTarget": "4.3",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "116.9%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
@@ -80,7 +80,7 @@
       "dailyRange": "2.025",
       "fullAchievement": "2.4",
       "historicVol": "32.3%",
-      "impliedVol": "",
+      "impliedVol": "23.7%",
       "weeklyHigh": "99",
       "weeklyLow": "93.975",
       "weeklyRange": "5.025",
@@ -91,7 +91,7 @@
       "weeklyTarget": "4.3",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "116.9%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
@@ -103,7 +103,7 @@
       "dailyRange": "2.25",
       "fullAchievement": "2.5",
       "historicVol": "33.9%",
-      "impliedVol": "",
+      "impliedVol": "24.2%",
       "weeklyHigh": "99",
       "weeklyLow": "94.3",
       "weeklyRange": "4.7",
@@ -114,7 +114,7 @@
       "weeklyTarget": "4.3",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "109.3%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"

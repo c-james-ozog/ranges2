@@ -2,7 +2,7 @@
   "symbol": "GCQ26",
   "commodity": "Gold",
   "month": "Aug",
-  "updatedAt": "2026-06-15T12:51:23.920025-05:00",
+  "updatedAt": "2026-06-15T13:14:51.923477-05:00",
   "rows": [
     {
       "date": "2026-06-15",
@@ -45,7 +45,7 @@
       "weeklyTarget": "208.4",
       "nextWeeklyTarget": "276.8",
       "weeklyAchievement": "164.3%",
-      "impliedVolTrend": "up|1",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|3"
@@ -57,7 +57,7 @@
       "dailyRange": "195.1",
       "fullAchievement": "173.4",
       "historicVol": "53.9%",
-      "impliedVol": "",
+      "impliedVol": "25.4%",
       "weeklyHigh": "4388.6",
       "weeklyLow": "4046.2",
       "weeklyRange": "342.4",
@@ -68,7 +68,7 @@
       "weeklyTarget": "208.4",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "164.3%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|3"
@@ -80,7 +80,7 @@
       "dailyRange": "196.3",
       "fullAchievement": "136.5",
       "historicVol": "42.3%",
-      "impliedVol": "",
+      "impliedVol": "23.3%",
       "weeklyHigh": "4388.6",
       "weeklyLow": "4090.1",
       "weeklyRange": "298.5",
@@ -103,7 +103,7 @@
       "dailyRange": "128.7",
       "fullAchievement": "128.4",
       "historicVol": "38.4%",
-      "impliedVol": "",
+      "impliedVol": "23.3%",
       "weeklyHigh": "4388.6",
       "weeklyLow": "4259.9",
       "weeklyRange": "128.7",
@@ -114,7 +114,7 @@
       "weeklyTarget": "208.4",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "61.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|3"
