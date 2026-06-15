@@ -2,7 +2,7 @@
   "symbol": "ZRN26",
   "commodity": "Rice",
   "month": "Jul",
-  "updatedAt": "2026-06-13T00:12:17.201972-05:00",
+  "updatedAt": "2026-06-14T22:47:36.422284-05:00",
   "rows": [
     {
       "date": "2026-06-12",
@@ -11,7 +11,7 @@
       "dailyRange": "33",
       "fullAchievement": "29",
       "historicVol": "30.7%",
-      "impliedVol": "",
+      "impliedVol": "21.8%",
       "weeklyHigh": "1265.5",
       "weeklyLow": "1195",
       "weeklyRange": "70.5",
@@ -22,7 +22,7 @@
       "weeklyTarget": "52.5",
       "nextWeeklyTarget": "55",
       "weeklyAchievement": "134.3%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
