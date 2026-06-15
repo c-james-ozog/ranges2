@@ -32,12 +32,14 @@ CONTRACTS: list[Contract] = [
     # Bitcoin — new from 6/5
     {"commodity": "Bitcoin",          "symbol": "BTCQ26.CME", "base_symbol": "BTCQ26", "month": "Aug", "roll_date": "2026-06-05"},
 
-    # Cocoa — rolled to Jul on 4/20, was May before that, was Mar before 2/25
+    # Cocoa — rolled to Aug on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
+    {"commodity": "Cocoa",            "symbol": "CCQ26.NYB",  "base_symbol": "CCQ26", "month": "Aug", "roll_date": "2026-06-12"},
     {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cocoa",            "symbol": "CCK26.NYB",  "base_symbol": "CCK26", "month": "May", "roll_date": "2026-02-25"},
     {"commodity": "Cocoa",            "symbol": "CCH26.NYB",  "base_symbol": "CCH26", "month": "Mar", "roll_date": None},
 
-    # Coffee — rolled to Jul on 4/20, was May before that, was Mar before 2/18
+    # Coffee — rolled to Dec on 6/12, was Jul from 4/20, May from 2/18, Mar fallback
+    {"commodity": "Coffee",           "symbol": "KCZ26.NYB",  "base_symbol": "KCZ26", "month": "Dec", "roll_date": "2026-06-12"},
     {"commodity": "Coffee",           "symbol": "KCN26.NYB",  "base_symbol": "KCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Coffee",           "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May", "roll_date": "2026-02-18"},
     {"commodity": "Coffee",           "symbol": "KCH26.NYB",  "base_symbol": "KCH26", "month": "Mar", "roll_date": None},
@@ -53,7 +55,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None, "always_show": True},
     {"commodity": "Corn",             "symbol": "ZCH26.CBT",  "base_symbol": "ZCH26", "month": "Mar", "roll_date": None},
 
-    # Cotton — rolled to Jul on 4/20
+    # Cotton — rolled to Dec on 6/12, was Jul from 4/20
+    {"commodity": "Cotton",           "symbol": "CTZ26.NYB",  "base_symbol": "CTZ26", "month": "Dec", "roll_date": "2026-06-12"},
     {"commodity": "Cotton",           "symbol": "CTN26.NYB",  "base_symbol": "CTN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cotton",           "symbol": "CTK26.NYB",  "base_symbol": "CTK26", "month": "May", "roll_date": None},
 
