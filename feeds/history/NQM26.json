@@ -2,7 +2,7 @@
   "symbol": "NQM26",
   "commodity": "Nasdaq 100 E-Mini",
   "month": "Jun",
-  "updatedAt": "2026-06-14T23:00:17.300361-05:00",
+  "updatedAt": "2026-06-14T23:07:13.836600-05:00",
   "rows": [
     {
       "date": "2026-06-12",
@@ -34,7 +34,7 @@
       "dailyRange": "1278.5",
       "fullAchievement": "1246.75",
       "historicVol": "54.2%",
-      "impliedVol": "30.7%",
+      "impliedVol": "",
       "weeklyHigh": "29848.25",
       "weeklyLow": "28227.75",
       "weeklyRange": "1620.5",
@@ -45,7 +45,7 @@
       "weeklyTarget": "1363.25",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "118.9%",
-      "impliedVolTrend": "up|1",
+      "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
@@ -57,7 +57,7 @@
       "dailyRange": "841",
       "fullAchievement": "1127.5",
       "historicVol": "50.5%",
-      "impliedVol": "29.5%",
+      "impliedVol": "",
       "weeklyHigh": "29848.25",
       "weeklyLow": "28227.75",
       "weeklyRange": "1620.5",
@@ -80,7 +80,7 @@
       "dailyRange": "1620.5",
       "fullAchievement": "1416",
       "historicVol": "62.3%",
-      "impliedVol": "29.5%",
+      "impliedVol": "",
       "weeklyHigh": "29848.25",
       "weeklyLow": "28227.75",
       "weeklyRange": "1620.5",
@@ -91,7 +91,7 @@
       "weeklyTarget": "1363.25",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "118.9%",
-      "impliedVolTrend": "up|1",
+      "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"

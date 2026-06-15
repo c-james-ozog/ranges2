@@ -2,7 +2,7 @@
   "symbol": "CTN26",
   "commodity": "Cotton",
   "month": "Jul",
-  "updatedAt": "2026-06-14T23:00:17.300361-05:00",
+  "updatedAt": "2026-06-14T23:07:13.836600-05:00",
   "rows": [
     {
       "date": "2026-06-12",
@@ -34,7 +34,7 @@
       "dailyRange": "1.83",
       "fullAchievement": "1.9",
       "historicVol": "33.5%",
-      "impliedVol": "33.0%",
+      "impliedVol": "",
       "weeklyHigh": "74.47",
       "weeklyLow": "70.92",
       "weeklyRange": "3.55",
@@ -45,7 +45,7 @@
       "weeklyTarget": "5.34",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "66.5%",
-      "impliedVolTrend": "down|1",
+      "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|3"
@@ -57,7 +57,7 @@
       "dailyRange": "1.08",
       "fullAchievement": "1.8",
       "historicVol": "32.5%",
-      "impliedVol": "34.6%",
+      "impliedVol": "",
       "weeklyHigh": "74.47",
       "weeklyLow": "71.01",
       "weeklyRange": "3.46",
@@ -68,7 +68,7 @@
       "weeklyTarget": "5.34",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "64.8%",
-      "impliedVolTrend": "up|5",
+      "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|3"
@@ -80,7 +80,7 @@
       "dailyRange": "2.78",
       "fullAchievement": "2.12",
       "historicVol": "38.1%",
-      "impliedVol": "34.5%",
+      "impliedVol": "",
       "weeklyHigh": "74.47",
       "weeklyLow": "71.08",
       "weeklyRange": "3.39",
@@ -91,7 +91,7 @@
       "weeklyTarget": "5.34",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "63.5%",
-      "impliedVolTrend": "up|4",
+      "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|3"
