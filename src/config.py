@@ -32,8 +32,8 @@ CONTRACTS: list[Contract] = [
     # Bitcoin — new from 6/5
     {"commodity": "Bitcoin",          "symbol": "BTCQ26.CME", "base_symbol": "BTCQ26", "month": "Aug", "roll_date": "2026-06-05"},
 
-    # Cocoa — rolled to Aug on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
-    {"commodity": "Cocoa",            "symbol": "CCQ26.NYB",  "base_symbol": "CCQ26", "month": "Aug", "roll_date": "2026-06-12"},
+    # Cocoa — rolled to Dec on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
+    {"commodity": "Cocoa",            "symbol": "CCZ26.NYB",  "base_symbol": "CCZ26", "month": "Dec", "roll_date": "2026-06-12"},
     {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cocoa",            "symbol": "CCK26.NYB",  "base_symbol": "CCK26", "month": "May", "roll_date": "2026-02-25"},
     {"commodity": "Cocoa",            "symbol": "CCH26.NYB",  "base_symbol": "CCH26", "month": "Mar", "roll_date": None},
