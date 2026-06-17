@@ -1,16 +1,15 @@
 {
   "contracts": [
     "BTCQ26",
-    "CCZ26",
     "CCN26",
-    "KCZ26",
     "KCN26",
     "HGQ26",
     "HGN26",
     "ZCN26",
     "ZCZ26",
-    "CTZ26",
+    "ZCZ27",
     "CTN26",
+    "CLZ26",
     "CLN26",
     "GFQ26",
     "GCQ26",
@@ -30,8 +29,8 @@
     "ZLN26",
     "ZSN26",
     "ZSX26",
+    "ZSX27",
     "SBV26",
-    "DXU26",
     "DXM26",
     "ZWN26"
   ]
