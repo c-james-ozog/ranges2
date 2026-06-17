@@ -32,14 +32,12 @@ CONTRACTS: list[Contract] = [
     # Bitcoin — new from 6/5
     {"commodity": "Bitcoin",          "symbol": "BTCQ26.CME", "base_symbol": "BTCQ26", "month": "Aug", "roll_date": "2026-06-05"},
 
-    # Cocoa — rolled to Dec on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
-    {"commodity": "Cocoa",            "symbol": "CCZ26.NYB",  "base_symbol": "CCZ26", "month": "Dec", "roll_date": "2026-06-12"},
+    # Cocoa — rolled to Jul on 4/20, was May before that, was Mar before 2/25
     {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cocoa",            "symbol": "CCK26.NYB",  "base_symbol": "CCK26", "month": "May", "roll_date": "2026-02-25"},
     {"commodity": "Cocoa",            "symbol": "CCH26.NYB",  "base_symbol": "CCH26", "month": "Mar", "roll_date": None},
 
-    # Coffee — rolled to Dec on 6/12, was Jul from 4/20, May from 2/18, Mar fallback
-    {"commodity": "Coffee",           "symbol": "KCZ26.NYB",  "base_symbol": "KCZ26", "month": "Dec", "roll_date": "2026-06-12"},
+    # Coffee — rolled to Jul on 4/20, was May before that, was Mar before 2/18
     {"commodity": "Coffee",           "symbol": "KCN26.NYB",  "base_symbol": "KCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Coffee",           "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May", "roll_date": "2026-02-18"},
     {"commodity": "Coffee",           "symbol": "KCH26.NYB",  "base_symbol": "KCH26", "month": "Mar", "roll_date": None},
@@ -50,17 +48,18 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Copper",           "symbol": "HGK26.CMX",  "base_symbol": "HGK26", "month": "May", "roll_date": "2026-02-26"},
     {"commodity": "Copper",           "symbol": "HGH26.CMX",  "base_symbol": "HGH26", "month": "Mar", "roll_date": None},
 
-    # Corn — Jul/Dec always active, Mar expired 2/26
+    # Corn — Jul/Dec always active, Mar expired 2/26; Dec27 added 6/17
     {"commodity": "Corn",             "symbol": "ZCN26.CBT",  "base_symbol": "ZCN26", "month": "Jul", "roll_date": None},
     {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None, "always_show": True},
+    {"commodity": "Corn",             "symbol": "ZCZ27.CBT",  "base_symbol": "ZCZ27", "month": "Dec27", "roll_date": "2026-06-17", "always_show": True},
     {"commodity": "Corn",             "symbol": "ZCH26.CBT",  "base_symbol": "ZCH26", "month": "Mar", "roll_date": None},
 
-    # Cotton — rolled to Dec on 6/12, was Jul from 4/20
-    {"commodity": "Cotton",           "symbol": "CTZ26.NYB",  "base_symbol": "CTZ26", "month": "Dec", "roll_date": "2026-06-12"},
+    # Cotton — rolled to Jul on 4/20
     {"commodity": "Cotton",           "symbol": "CTN26.NYB",  "base_symbol": "CTN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cotton",           "symbol": "CTK26.NYB",  "base_symbol": "CTK26", "month": "May", "roll_date": None},
 
-    # Crude Oil — Jul active from 5/16, Jun expired, Apr expired 3/21
+    # Crude Oil — Dec active from 7/17, Jul active from 5/16, Jun expired, Apr expired 3/21
+    {"commodity": "Crude Oil WTI",    "symbol": "CLZ26.NYM",  "base_symbol": "CLZ26", "month": "Dec", "roll_date": "2026-07-17"},
     {"commodity": "Crude Oil WTI",    "symbol": "CLN26.NYM",  "base_symbol": "CLN26", "month": "Jul", "roll_date": "2026-05-16"},
     {"commodity": "Crude Oil WTI",    "symbol": "CLM26.NYM",  "base_symbol": "CLM26", "month": "Jun", "roll_date": "2026-03-21"},
     {"commodity": "Crude Oil WTI",    "symbol": "CLJ26.NYM",  "base_symbol": "CLJ26", "month": "Apr", "roll_date": None},
@@ -116,16 +115,16 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Soybean Oil",      "symbol": "ZLN26.CBT",  "base_symbol": "ZLN26", "month": "Jul", "roll_date": "2026-02-26"},
     {"commodity": "Soybean Oil",      "symbol": "ZLH26.CBT",  "base_symbol": "ZLH26", "month": "Mar", "roll_date": None},
 
-    # Soybeans — Jul/Nov always active, Mar expired 2/26
+    # Soybeans — Jul/Nov always active, Mar expired 2/26; Nov27 added 6/17
     {"commodity": "Soybeans",         "symbol": "ZSN26.CBT",  "base_symbol": "ZSN26", "month": "Jul", "roll_date": None},
     {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None, "always_show": True},
+    {"commodity": "Soybeans",         "symbol": "ZSX27.CBT",  "base_symbol": "ZSX27", "month": "Nov27", "roll_date": "2026-06-17", "always_show": True},
     {"commodity": "Soybeans",         "symbol": "ZSH26.CBT",  "base_symbol": "ZSH26", "month": "Mar", "roll_date": None},
 
     # Sugar — new from 6/5
     {"commodity": "Sugar",            "symbol": "SBV26.NYB",  "base_symbol": "SBV26", "month": "Oct", "roll_date": "2026-06-05"},
 
-    # US Dollar — rolled to Sep on 6/15 (quarterly cycle: Mar/Jun/Sep/Dec)
-    {"commodity": "US Dollar",        "symbol": "DXU26.NYB",  "base_symbol": "DXU26", "month": "Sep", "roll_date": "2026-06-15"},
+    # US Dollar — no roll
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
 
     # Wheat — no roll
@@ -158,8 +157,12 @@ def active_symbol_for_date(commodity: str, date_str: str) -> str:
     Picks the newest contract whose roll_date <= date_str,
     falling back to the contract with roll_date=None.
     """
-    # Collect all contracts for this commodity
-    candidates = [c for c in CONTRACTS if c["commodity"] == commodity]
+    # Collect all contracts for this commodity, excluding always_show contracts
+    # (those are separate fixed slots, handled directly in active_symbols_for_date)
+    candidates = [
+        c for c in CONTRACTS
+        if c["commodity"] == commodity and not c.get("always_show")
+    ]
     if not candidates:
         return ""
 
@@ -180,15 +183,19 @@ def active_symbol_for_date(commodity: str, date_str: str) -> str:
 def active_symbols_for_date(date_str: str) -> list[str]:
     """Return the ordered list of base_symbols active on the home page for date_str.
     
-    Contracts with always_show=True are always included regardless of roll logic.
+    Contracts with always_show=True are included regardless of the commodity's
+    main (single-pick) roll logic, but still respect their own roll_date —
+    e.g. ZCZ27 only appears once date_str >= its roll_date.
     For other contracts, one is selected per commodity based on roll_date.
     """
     seen_commodities: list[str] = []
     result: list[str] = []
     for c in CONTRACTS:
         commodity = c["commodity"]
-        # always_show contracts (e.g. ZCZ26, ZSX26) are included unconditionally
         if c.get("always_show"):
+            rd = c.get("roll_date")
+            if rd is not None and rd > date_str:
+                continue  # not yet active
             result.append(c["base_symbol"])
             continue
         expected = active_symbol_for_date(commodity, date_str)
