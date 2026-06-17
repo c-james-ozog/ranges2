@@ -124,7 +124,8 @@ CONTRACTS: list[Contract] = [
     # Sugar — new from 6/5
     {"commodity": "Sugar",            "symbol": "SBV26.NYB",  "base_symbol": "SBV26", "month": "Oct", "roll_date": "2026-06-05"},
 
-    # US Dollar — no roll
+    # US Dollar — rolled to Sep on 6/15 (quarterly cycle: Mar/Jun/Sep/Dec)
+    {"commodity": "US Dollar",        "symbol": "DXU26.NYB",  "base_symbol": "DXU26", "month": "Sep", "roll_date": "2026-06-15"},
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
 
     # Wheat — no roll
