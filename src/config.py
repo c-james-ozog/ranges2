@@ -1,5 +1,5 @@
 """
-Contract configuration for ranges2 feed builder.
+Contract configuration for ranges2 feed builder Wed June 17th, 2026.
 
 roll_date: the first date this contract appears on the home page.
            For dates before roll_date the prior contract for that commodity is shown.
