@@ -61,8 +61,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Cotton",           "symbol": "CTN26.NYB",  "base_symbol": "CTN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cotton",           "symbol": "CTK26.NYB",  "base_symbol": "CTK26", "month": "May", "roll_date": None},
 
-    # Crude Oil — Dec active from 7/17, Jul active from 5/16, Jun expired, Apr expired 3/21
-    {"commodity": "Crude Oil WTI",    "symbol": "CLZ26.NYM",  "base_symbol": "CLZ26", "month": "Dec", "roll_date": "2026-07-17"},
+    # Crude Oil — Dec active from 6/17, Jul active from 5/16, Jun expired, Apr expired 3/21
+    {"commodity": "Crude Oil WTI",    "symbol": "CLZ26.NYM",  "base_symbol": "CLZ26", "month": "Dec", "roll_date": "2026-06-17"},
     {"commodity": "Crude Oil WTI",    "symbol": "CLN26.NYM",  "base_symbol": "CLN26", "month": "Jul", "roll_date": "2026-05-16"},
     {"commodity": "Crude Oil WTI",    "symbol": "CLM26.NYM",  "base_symbol": "CLM26", "month": "Jun", "roll_date": "2026-03-21"},
     {"commodity": "Crude Oil WTI",    "symbol": "CLJ26.NYM",  "base_symbol": "CLJ26", "month": "Apr", "roll_date": None},
