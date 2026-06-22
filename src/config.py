@@ -1,5 +1,5 @@
 """
-Contract configuration for ranges2 feed builder Wed June 17th, 2026.
+Contract configuration for ranges2 feed builder.
 
 roll_date: the first date this contract appears on the home page.
            For dates before roll_date the prior contract for that commodity is shown.
@@ -77,8 +77,9 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Gold",             "symbol": "GCJ26.CMX",  "base_symbol": "GCJ26", "month": "Apr", "roll_date": "2026-02-26"},
     {"commodity": "Gold",             "symbol": "GCH26.CMX",  "base_symbol": "GCH26", "month": "Mar", "roll_date": None},
 
-    # Hard Red Wheat — no roll
+    # Hard Red Wheat — Jul always active; Sep added 6/18 (Jul to be removed 6/26)
     {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None},
+    {"commodity": "Hard Red Wheat",   "symbol": "KEU26.CBT",  "base_symbol": "KEU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True},
 
     # Lean Hogs — Aug active from 6/5, Jun from 2/14, Feb fallback
     {"commodity": "Lean Hogs",        "symbol": "HEQ26.CME",  "base_symbol": "HEQ26", "month": "Aug", "roll_date": "2026-06-05"},
@@ -102,7 +103,8 @@ CONTRACTS: list[Contract] = [
     # Rice — no roll
     {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
-    # S&P 500 E-Mini — no roll
+    # S&P 500 E-Mini — rolled to Sep on 6/18 (quarterly cycle: Mar/Jun/Sep/Dec)
+    {"commodity": "S&P 500 E-Mini",   "symbol": "ESU26.CME",  "base_symbol": "ESU26", "month": "Sep", "roll_date": "2026-06-18"},
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
     # Silver — Jul active from 5/27, Jun from 2/26, Mar fallback
@@ -131,8 +133,9 @@ CONTRACTS: list[Contract] = [
     {"commodity": "US Dollar",        "symbol": "DXU26.NYB",  "base_symbol": "DXU26", "month": "Sep", "roll_date": "2026-06-15"},
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
 
-    # Wheat — no roll
+    # Wheat — Jul always active; Sep added 6/18 (Jul to be removed 6/26)
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None},
+    {"commodity": "Wheat",            "symbol": "ZWU26.CBT",  "base_symbol": "ZWU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True},
 ]
 
 # Lookup of base_symbol -> Contract
