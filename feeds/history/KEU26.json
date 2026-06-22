@@ -2,7 +2,7 @@
   "symbol": "KEU26",
   "commodity": "Hard Red Wheat",
   "month": "Sep",
-  "updatedAt": "2026-06-22T09:55:47.236818-05:00",
+  "updatedAt": "2026-06-22T16:35:11.110982-05:00",
   "rows": [
     {
       "date": "2026-06-22",
@@ -10,8 +10,8 @@
       "dailyLow": "638.5",
       "dailyRange": "17.25",
       "fullAchievement": "18.75",
-      "historicVol": "37.1%",
-      "impliedVol": "",
+      "historicVol": "37.3%",
+      "impliedVol": "26.4%",
       "weeklyHigh": "655.75",
       "weeklyLow": "638.5",
       "weeklyRange": "17.25",
@@ -22,7 +22,7 @@
       "weeklyTarget": "36",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "47.9%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
