@@ -32,6 +32,10 @@
     "error": "Failed to fetch CTK26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "CLN26",
+    "error": "Failed to fetch CLN26.NYM after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "CLM26",
     "error": "Failed to fetch CLM26.NYM after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -98,5 +102,9 @@
   {
     "symbol": "ZSH26",
     "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "DXM26",
+    "error": "Failed to fetch DXM26.NYB after 3 attempts: HTTP Error 404: Not Found"
   }
 ]
