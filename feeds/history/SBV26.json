@@ -2,8 +2,31 @@
   "symbol": "SBV26",
   "commodity": "Sugar",
   "month": "Oct",
-  "updatedAt": "2026-06-26T00:00:41.713136-05:00",
+  "updatedAt": "2026-06-26T15:54:25.481243-05:00",
   "rows": [
+    {
+      "date": "2026-06-26",
+      "dailyHigh": "14.68",
+      "dailyLow": "14.02",
+      "dailyRange": "0.66",
+      "fullAchievement": "0.42",
+      "historicVol": "36.9%",
+      "impliedVol": "",
+      "weeklyHigh": "14.68",
+      "weeklyLow": "13.74",
+      "weeklyRange": "0.94",
+      "sectionBreak": false,
+      "dailyTarget": "0.23",
+      "nextDailyTarget": "0.34",
+      "dailyAchievement": "287.0%",
+      "weeklyTarget": "0.55",
+      "nextWeeklyTarget": "0.67",
+      "weeklyAchievement": "170.9%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-06-25",
       "dailyHigh": "14.18",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-24",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-23",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-22",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-18",
