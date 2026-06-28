@@ -2,7 +2,7 @@
   "symbol": "CTZ26",
   "commodity": "Cotton",
   "month": "Dec",
-  "updatedAt": "2026-06-26T23:42:34.076791-05:00",
+  "updatedAt": "2026-06-28T16:32:01.603525-05:00",
   "rows": [
     {
       "date": "2026-06-26",
@@ -10,8 +10,8 @@
       "dailyLow": "75.5",
       "dailyRange": "1.63",
       "fullAchievement": "1.98",
-      "historicVol": "33.2%",
-      "impliedVol": "",
+      "historicVol": "33.3%",
+      "impliedVol": "20.6%",
       "weeklyHigh": "80.4",
       "weeklyLow": "75.5",
       "weeklyRange": "4.9",
@@ -22,7 +22,7 @@
       "weeklyTarget": "4.09",
       "nextWeeklyTarget": "4.17",
       "weeklyAchievement": "119.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"

@@ -2,7 +2,7 @@
   "symbol": "GCQ26",
   "commodity": "Gold",
   "month": "Aug",
-  "updatedAt": "2026-06-26T23:42:34.076791-05:00",
+  "updatedAt": "2026-06-28T16:32:01.603525-05:00",
   "rows": [
     {
       "date": "2026-06-26",
@@ -11,7 +11,7 @@
       "dailyRange": "113.4",
       "fullAchievement": "123.6",
       "historicVol": "38.6%",
-      "impliedVol": "",
+      "impliedVol": "23.6%",
       "weeklyHigh": "4245.9",
       "weeklyLow": "3975.7",
       "weeklyRange": "270.2",
@@ -22,7 +22,7 @@
       "weeklyTarget": "260.7",
       "nextWeeklyTarget": "265.3",
       "weeklyAchievement": "103.6%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"

@@ -2,7 +2,7 @@
   "symbol": "SIN26",
   "commodity": "Silver",
   "month": "Jul",
-  "updatedAt": "2026-06-26T23:42:34.076791-05:00",
+  "updatedAt": "2026-06-28T16:32:01.603525-05:00",
   "rows": [
     {
       "date": "2026-06-26",
@@ -11,7 +11,7 @@
       "dailyRange": "3.835",
       "fullAchievement": "4.39",
       "historicVol": "94.9%",
-      "impliedVol": "",
+      "impliedVol": "56.0%",
       "weeklyHigh": "67.23",
       "weeklyLow": "55.695",
       "weeklyRange": "11.535",
@@ -22,7 +22,7 @@
       "weeklyTarget": "7.9",
       "nextWeeklyTarget": "8.53",
       "weeklyAchievement": "146.0%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
