@@ -20,6 +20,7 @@ class Contract(TypedDict, total=False):
     month:       str           # Contract month abbreviation (e.g. "Jul")
     roll_date:   str | None    # YYYY-MM-DD first date shown on home page (None = always)
     always_show: bool          # If True, always included on home page regardless of roll logic
+    drop_date:   str | None    # YYYY-MM-DD on/after which this contract is excluded entirely
 
 
 # ---------------------------------------------------------------------------
@@ -51,6 +52,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Copper",           "symbol": "HGH26.CMX",  "base_symbol": "HGH26", "month": "Mar", "roll_date": None},
 
     # Corn — Jul/Dec always active, Mar expired 2/26; Dec27 added 6/17
+    {"commodity": "Corn",             "symbol": "ZCU26.CBT",  "base_symbol": "ZCU26", "month": "Sep", "roll_date": "2026-06-27"},
     {"commodity": "Corn",             "symbol": "ZCN26.CBT",  "base_symbol": "ZCN26", "month": "Jul", "roll_date": None},
     {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None, "always_show": True},
     {"commodity": "Corn",             "symbol": "ZCZ27.CBT",  "base_symbol": "ZCZ27", "month": "Dec27", "roll_date": "2026-06-17", "always_show": True},
@@ -78,7 +80,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Gold",             "symbol": "GCH26.CMX",  "base_symbol": "GCH26", "month": "Mar", "roll_date": None},
 
     # Hard Red Wheat — Jul always active; Sep added 6/18 (Jul to be removed 6/26)
-    {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None},
+    {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Hard Red Wheat",   "symbol": "KEU26.CBT",  "base_symbol": "KEU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True},
 
     # Lean Hogs — Aug active from 6/5, Jun from 2/14, Feb fallback
@@ -108,6 +110,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
     # Silver — Jul active from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Silver",           "symbol": "SIQ26.CMX",  "base_symbol": "SIQ26", "month": "Aug", "roll_date": "2026-06-27"},
     {"commodity": "Silver",           "symbol": "SIN26.CMX",  "base_symbol": "SIN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Silver",           "symbol": "SIH26.CMX",  "base_symbol": "SIH26", "month": "Mar", "roll_date": None},
@@ -121,6 +124,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Soybean Oil",      "symbol": "ZLH26.CBT",  "base_symbol": "ZLH26", "month": "Mar", "roll_date": None},
 
     # Soybeans — Jul/Nov always active, Mar expired 2/26; Nov27 added 6/17
+    {"commodity": "Soybeans",         "symbol": "ZSU26.CBT",  "base_symbol": "ZSU26", "month": "Sep", "roll_date": "2026-06-27"},
     {"commodity": "Soybeans",         "symbol": "ZSN26.CBT",  "base_symbol": "ZSN26", "month": "Jul", "roll_date": None},
     {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None, "always_show": True},
     {"commodity": "Soybeans",         "symbol": "ZSX27.CBT",  "base_symbol": "ZSX27", "month": "Nov27", "roll_date": "2026-06-17", "always_show": True},
@@ -134,7 +138,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
 
     # Wheat — Jul always active; Sep added 6/18 (Jul to be removed 6/26)
-    {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None},
+    {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Wheat",            "symbol": "ZWU26.CBT",  "base_symbol": "ZWU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True},
 ]
 
@@ -166,9 +170,12 @@ def active_symbol_for_date(commodity: str, date_str: str) -> str:
     """
     # Collect all contracts for this commodity, excluding always_show contracts
     # (those are separate fixed slots, handled directly in active_symbols_for_date)
+    # and excluding contracts whose drop_date has passed (fully retired).
     candidates = [
         c for c in CONTRACTS
-        if c["commodity"] == commodity and not c.get("always_show")
+        if c["commodity"] == commodity
+        and not c.get("always_show")
+        and not (c.get("drop_date") is not None and c["drop_date"] <= date_str)
     ]
     if not candidates:
         return ""
