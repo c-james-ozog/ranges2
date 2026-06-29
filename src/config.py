@@ -94,7 +94,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Live Cattle",      "symbol": "LEJ26.CME",  "base_symbol": "LEJ26", "month": "Apr", "roll_date": "2026-02-14"},
     {"commodity": "Live Cattle",      "symbol": "LEG26.CME",  "base_symbol": "LEG26", "month": "Feb", "roll_date": None},
 
-    # Nasdaq 100 E-Mini — no roll
+    # Nasdaq 100 E-Mini — rolled to Sep on 6/22 (quarterly cycle: Mar/Jun/Sep/Dec)
+    {"commodity": "Nasdaq 100 E-Mini","symbol": "NQU26.CME",  "base_symbol": "NQU26", "month": "Sep", "roll_date": "2026-06-22"},
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
     # Natural Gas — Jul active from 5/27, Jun from 2/26, Mar fallback
