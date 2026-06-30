@@ -9,6 +9,7 @@ import json
 import logging
 import time
 from urllib.error import HTTPError, URLError
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 from src.config import FETCH_DELAY, FETCH_MAX_RETRIES, YAHOO_INTERVAL, YAHOO_RANGE
@@ -67,7 +68,7 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
         RuntimeError: if all retry attempts fail.
     """
     url = (
-        f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+        f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol, safe='')}"
         f"?range={YAHOO_RANGE}&interval={YAHOO_INTERVAL}"
         f"&includePrePost=false&events=div%2Csplits"
     )
@@ -87,7 +88,7 @@ def fetch_yahoo_history(symbol: str) -> list[RawRow]:
     if rows and sum(1 for r in rows if r["high"] == r["low"]) > len(rows) * 0.5:
         log.warning("%s: flat OHLC detected — falling back to hourly aggregation", symbol)
         hourly_url = (
-            f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+            f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol, safe='')}"
             f"?range=2mo&interval=1h&includePrePost=false"
         )
         try:
