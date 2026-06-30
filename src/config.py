@@ -30,7 +30,10 @@ class Contract(TypedDict, total=False):
 # ---------------------------------------------------------------------------
 
 CONTRACTS: list[Contract] = [
-    # Bitcoin — new from 6/5
+    # Bitcoin — switched to continuous front-month (BTC=F) on 6/27;
+    # per-contract-month tickers (BTCQ26 etc.) are unreliable on Yahoo —
+    # many show "$0.00" or "data unavailable" even when CME lists them.
+    {"commodity": "Bitcoin",          "symbol": "BTC=F",      "base_symbol": "BTC=F", "month": "Cont.", "roll_date": "2026-06-27"},
     {"commodity": "Bitcoin",          "symbol": "BTCQ26.CME", "base_symbol": "BTCQ26", "month": "Aug", "roll_date": "2026-06-05"},
 
     # Cocoa — rolled to Dec on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
