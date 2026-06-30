@@ -2,7 +2,7 @@
   "symbol": "BTCQ26",
   "commodity": "Bitcoin",
   "month": "Aug",
-  "updatedAt": "2026-06-30T12:57:26.180819-05:00",
+  "updatedAt": "2026-06-30T13:12:59.147380-05:00",
   "rows": [
     {
       "date": "2026-06-29",
@@ -11,7 +11,7 @@
       "dailyRange": "172",
       "fullAchievement": "31",
       "historicVol": "66.4%",
-      "impliedVol": "41.5%",
+      "impliedVol": "",
       "weeklyHigh": "6017",
       "weeklyLow": "5845",
       "weeklyRange": "172",
@@ -22,7 +22,7 @@
       "weeklyTarget": "",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "",
-      "impliedVolTrend": "down|1",
+      "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": ""
