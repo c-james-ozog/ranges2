@@ -107,9 +107,6 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Natural Gas",      "symbol": "NGH26.NYM",  "base_symbol": "NGH26", "month": "Mar", "roll_date": None},
 
-    # RBOB Gasoline (Unleaded) — new from 6/30, using continuous front-month (RB=F)
-    {"commodity": "RBOB Gasoline",    "symbol": "RB=F",        "base_symbol": "RB=F", "month": "Cont.", "roll_date": "2026-06-30"},
-
     # Rice — no roll
     {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
@@ -146,6 +143,9 @@ CONTRACTS: list[Contract] = [
     # US Dollar — rolled to Sep on 6/15 (quarterly cycle: Mar/Jun/Sep/Dec)
     {"commodity": "US Dollar",        "symbol": "DXU26.NYB",  "base_symbol": "DXU26", "month": "Sep", "roll_date": "2026-06-15"},
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
+
+    # Unleaded Gasoline (RBOB) — new from 6/30, using continuous front-month (RB=F)
+    {"commodity": "Unleaded Gasoline","symbol": "RB=F",        "base_symbol": "RB=F", "month": "Cont.", "roll_date": "2026-06-30"},
 
     # Wheat — Jul always active; Sep added 6/18 (Jul to be removed 6/26)
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
@@ -252,7 +252,7 @@ TICK_SIZES: dict[str, float] = {
     "Nasdaq 100 E-Mini": 0.25,
     "Natural Gas":       0.001,
     "Rice":              0.5,
-    "RBOB Gasoline":     0.0001,
+    "Unleaded Gasoline": 0.0001,
     "S&P 500 E-Mini":    0.25,
     "Silver":            0.005,
     "Soybean Meal":      0.1,
