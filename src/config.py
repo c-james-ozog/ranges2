@@ -116,11 +116,13 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Silver",           "symbol": "SIH26.CMX",  "base_symbol": "SIH26", "month": "Mar", "roll_date": None},
 
-    # Soybean Meal — Jul active from 2/26, Mar fallback
+    # Soybean Meal — Sep active from 6/27, Jul from 2/26, Mar fallback
+    {"commodity": "Soybean Meal",     "symbol": "ZMU26.CBT",  "base_symbol": "ZMU26", "month": "Sep", "roll_date": "2026-06-27"},
     {"commodity": "Soybean Meal",     "symbol": "ZMN26.CBT",  "base_symbol": "ZMN26", "month": "Jul", "roll_date": "2026-02-26"},
     {"commodity": "Soybean Meal",     "symbol": "ZMH26.CBT",  "base_symbol": "ZMH26", "month": "Mar", "roll_date": None},
 
-    # Soybean Oil — Jul active from 2/26, Mar fallback
+    # Soybean Oil — Sep active from 6/27, Jul from 2/26, Mar fallback
+    {"commodity": "Soybean Oil",      "symbol": "ZLU26.CBT",  "base_symbol": "ZLU26", "month": "Sep", "roll_date": "2026-06-27"},
     {"commodity": "Soybean Oil",      "symbol": "ZLN26.CBT",  "base_symbol": "ZLN26", "month": "Jul", "roll_date": "2026-02-26"},
     {"commodity": "Soybean Oil",      "symbol": "ZLH26.CBT",  "base_symbol": "ZLH26", "month": "Mar", "roll_date": None},
 
