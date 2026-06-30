@@ -101,7 +101,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQU26.CME",  "base_symbol": "NQU26", "month": "Sep", "roll_date": "2026-06-22"},
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
-    # Natural Gas — Jul active from 5/27, Jun from 2/26, Mar fallback
+    # Natural Gas — Aug active from 6/29 (NGN26 expired 6/26), Jul from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Natural Gas",      "symbol": "NGQ26.NYM",  "base_symbol": "NGQ26", "month": "Aug", "roll_date": "2026-06-29"},
     {"commodity": "Natural Gas",      "symbol": "NGN26.NYM",  "base_symbol": "NGN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Natural Gas",      "symbol": "NGH26.NYM",  "base_symbol": "NGH26", "month": "Mar", "roll_date": None},
