@@ -107,6 +107,9 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Natural Gas",      "symbol": "NGH26.NYM",  "base_symbol": "NGH26", "month": "Mar", "roll_date": None},
 
+    # RBOB Gasoline (Unleaded) — new from 6/30, using continuous front-month (RB=F)
+    {"commodity": "RBOB Gasoline",    "symbol": "RB=F",        "base_symbol": "RB=F", "month": "Cont.", "roll_date": "2026-06-30"},
+
     # Rice — no roll
     {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
@@ -198,7 +201,11 @@ def active_symbol_for_date(commodity: str, date_str: str) -> str:
             if best is None or (best["roll_date"] or "") < rd:
                 best = c
 
-    return best["base_symbol"] if best else candidates[-1]["base_symbol"]
+    if best is not None:
+        return best["base_symbol"]
+    # No candidate's roll_date has been reached yet, and no roll_date=None
+    # fallback exists for this commodity — nothing should show yet.
+    return ""
 
 
 def active_symbols_for_date(date_str: str) -> list[str]:
@@ -245,6 +252,7 @@ TICK_SIZES: dict[str, float] = {
     "Nasdaq 100 E-Mini": 0.25,
     "Natural Gas":       0.001,
     "Rice":              0.5,
+    "RBOB Gasoline":     0.0001,
     "S&P 500 E-Mini":    0.25,
     "Silver":            0.005,
     "Soybean Meal":      0.1,
