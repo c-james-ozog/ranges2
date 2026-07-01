@@ -2,7 +2,7 @@
   "symbol": "ZSU26",
   "commodity": "Soybeans",
   "month": "Sep",
-  "updatedAt": "2026-06-30T20:32:18.459628-05:00",
+  "updatedAt": "2026-06-30T22:52:36.189951-05:00",
   "rows": [
     {
       "date": "2026-06-30",
@@ -11,7 +11,7 @@
       "dailyRange": "31.5",
       "fullAchievement": "20.5",
       "historicVol": "23.2%",
-      "impliedVol": "17.0%",
+      "impliedVol": "16.4%",
       "weeklyHigh": "1142.25",
       "weeklyLow": "1110.75",
       "weeklyRange": "31.5",
@@ -22,7 +22,7 @@
       "weeklyTarget": "28.25",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "111.5%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|3"
