@@ -2,30 +2,30 @@
   "symbol": "BTC=F",
   "commodity": "Bitcoin",
   "month": "Cont.",
-  "updatedAt": "2026-07-02T15:36:21.689334-05:00",
+  "updatedAt": "2026-07-02T18:20:23.881522-05:00",
   "rows": [
     {
       "date": "2026-07-02",
-      "dailyHigh": "6242",
-      "dailyLow": "5971",
-      "dailyRange": "271",
-      "fullAchievement": "275",
-      "historicVol": "57.1%",
+      "dailyHigh": "61835",
+      "dailyLow": "61535",
+      "dailyRange": "1655",
+      "fullAchievement": "24",
+      "historicVol": "49.8%",
       "impliedVol": "",
-      "weeklyHigh": "6242",
+      "weeklyHigh": "61835",
       "weeklyLow": "5785",
-      "weeklyRange": "457",
+      "weeklyRange": "3985",
       "sectionBreak": false,
       "dailyTarget": "206",
-      "nextDailyTarget": "22",
-      "dailyAchievement": "13.2%",
+      "nextDailyTarget": "192",
+      "dailyAchievement": "80.3%",
       "weeklyTarget": "558",
-      "nextWeeklyTarget": "578",
-      "weeklyAchievement": "8.2%",
+      "nextWeeklyTarget": "5585",
+      "weeklyAchievement": "71.4%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-01",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-30",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-29",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-26",

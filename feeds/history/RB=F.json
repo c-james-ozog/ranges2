@@ -2,30 +2,30 @@
   "symbol": "RB=F",
   "commodity": "Unleaded Gasoline",
   "month": "Cont.",
-  "updatedAt": "2026-07-02T15:36:21.689334-05:00",
+  "updatedAt": "2026-07-02T18:20:23.881522-05:00",
   "rows": [
     {
       "date": "2026-07-02",
-      "dailyHigh": "2.9413",
-      "dailyLow": "2.8549",
-      "dailyRange": "0.0903",
-      "fullAchievement": "0.0981",
-      "historicVol": "43.0%",
+      "dailyHigh": "2.9221",
+      "dailyLow": "2.919",
+      "dailyRange": "0.0262",
+      "fullAchievement": "0.0767",
+      "historicVol": "33.6%",
       "impliedVol": "",
       "weeklyHigh": "3.0682",
-      "weeklyLow": "2.8549",
-      "weeklyRange": "0.2133",
+      "weeklyLow": "2.901",
+      "weeklyRange": "0.1672",
       "sectionBreak": false,
       "dailyTarget": "0.084",
-      "nextDailyTarget": "0.0785",
-      "dailyAchievement": "107.5%",
+      "nextDailyTarget": "0.0614",
+      "dailyAchievement": "31.2%",
       "weeklyTarget": "0.2077",
-      "nextWeeklyTarget": "0.2049",
-      "weeklyAchievement": "102.7%",
+      "nextWeeklyTarget": "0.1895",
+      "weeklyAchievement": "80.5%",
       "impliedVolTrend": "",
-      "underTargetStreak": 0,
+      "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-07-01",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-06-30",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-06-29",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-06-26",
