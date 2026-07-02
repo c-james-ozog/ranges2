@@ -2,8 +2,31 @@
   "symbol": "ZLN26",
   "commodity": "Soybean Oil",
   "month": "Jul",
-  "updatedAt": "2026-07-01T23:49:48.385032-05:00",
+  "updatedAt": "2026-07-02T15:36:21.689334-05:00",
   "rows": [
+    {
+      "date": "2026-07-02",
+      "dailyHigh": "67.97",
+      "dailyLow": "66.87",
+      "dailyRange": "1.1",
+      "fullAchievement": "2",
+      "historicVol": "38.2%",
+      "impliedVol": "",
+      "weeklyHigh": "71.71",
+      "weeklyLow": "65.5",
+      "weeklyRange": "6.21",
+      "sectionBreak": false,
+      "dailyTarget": "2.08",
+      "nextDailyTarget": "1.6",
+      "dailyAchievement": "52.9%",
+      "weeklyTarget": "4.34",
+      "nextWeeklyTarget": "5.22",
+      "weeklyAchievement": "143.1%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 2,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-07-01",
       "dailyHigh": "67.25",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-30",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-29",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-26",

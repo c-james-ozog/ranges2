@@ -2,8 +2,31 @@
   "symbol": "NQU26",
   "commodity": "Nasdaq 100 E-Mini",
   "month": "Sep",
-  "updatedAt": "2026-07-01T23:49:48.385032-05:00",
+  "updatedAt": "2026-07-02T15:36:21.689334-05:00",
   "rows": [
+    {
+      "date": "2026-07-02",
+      "dailyHigh": "30320",
+      "dailyLow": "29328.5",
+      "dailyRange": "991.5",
+      "fullAchievement": "734",
+      "historicVol": "31.8%",
+      "impliedVol": "",
+      "weeklyHigh": "30599.75",
+      "weeklyLow": "29273.75",
+      "weeklyRange": "1326",
+      "sectionBreak": false,
+      "dailyTarget": "535",
+      "nextDailyTarget": "587.25",
+      "dailyAchievement": "185.3%",
+      "weeklyTarget": "1495.75",
+      "nextWeeklyTarget": "1395.25",
+      "weeklyAchievement": "88.7%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-07-01",
       "dailyHigh": "30553.75",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-30",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|5",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-29",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-26",

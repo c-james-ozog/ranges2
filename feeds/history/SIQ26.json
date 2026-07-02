@@ -2,8 +2,31 @@
   "symbol": "SIQ26",
   "commodity": "Silver",
   "month": "Aug",
-  "updatedAt": "2026-07-01T23:49:48.385032-05:00",
+  "updatedAt": "2026-07-02T15:36:21.689334-05:00",
   "rows": [
+    {
+      "date": "2026-07-02",
+      "dailyHigh": "62.3",
+      "dailyLow": "59.47",
+      "dailyRange": "2.83",
+      "fullAchievement": "3.395",
+      "historicVol": "71.0%",
+      "impliedVol": "",
+      "weeklyHigh": "62.3",
+      "weeklyLow": "57.01",
+      "weeklyRange": "5.29",
+      "sectionBreak": false,
+      "dailyTarget": "2.475",
+      "nextDailyTarget": "2.715",
+      "dailyAchievement": "114.3%",
+      "weeklyTarget": "8.295",
+      "nextWeeklyTarget": "7.565",
+      "weeklyAchievement": "63.8%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-07-01",
       "dailyHigh": "61.285",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-30",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-29",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-26",
