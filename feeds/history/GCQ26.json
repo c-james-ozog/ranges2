@@ -2,31 +2,8 @@
   "symbol": "GCQ26",
   "commodity": "Gold",
   "month": "Aug",
-  "updatedAt": "2026-07-02T18:20:23.881522-05:00",
+  "updatedAt": "2026-07-02T19:18:10.896800-05:00",
   "rows": [
-    {
-      "date": "2026-07-02",
-      "dailyHigh": "4141.1",
-      "dailyLow": "4135.1",
-      "dailyRange": "58.7",
-      "fullAchievement": "113.1",
-      "historicVol": "35.0%",
-      "impliedVol": "",
-      "weeklyHigh": "4141.1",
-      "weeklyLow": "3955.4",
-      "weeklyRange": "185.7",
-      "sectionBreak": false,
-      "dailyTarget": "99.1",
-      "nextDailyTarget": "90.5",
-      "dailyAchievement": "59.2%",
-      "weeklyTarget": "265.3",
-      "nextWeeklyTarget": "213.1",
-      "weeklyAchievement": "70.0%",
-      "impliedVolTrend": "",
-      "underTargetStreak": 1,
-      "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
-    },
     {
       "date": "2026-07-01",
       "dailyHigh": "4131",
@@ -48,7 +25,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-30",
@@ -71,7 +48,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-29",
@@ -94,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-26",
