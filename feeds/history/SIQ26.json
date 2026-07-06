@@ -2,7 +2,7 @@
   "symbol": "SIQ26",
   "commodity": "Silver",
   "month": "Aug",
-  "updatedAt": "2026-07-03T23:25:58.664017-05:00",
+  "updatedAt": "2026-07-05T19:40:11.302283-05:00",
   "rows": [
     {
       "date": "2026-07-02",
@@ -11,7 +11,7 @@
       "dailyRange": "2.83",
       "fullAchievement": "3.395",
       "historicVol": "71.4%",
-      "impliedVol": "",
+      "impliedVol": "44.1%",
       "weeklyHigh": "62.3",
       "weeklyLow": "57.01",
       "weeklyRange": "5.29",
@@ -22,7 +22,7 @@
       "weeklyTarget": "8.295",
       "nextWeeklyTarget": "7.565",
       "weeklyAchievement": "63.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"

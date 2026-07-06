@@ -2,7 +2,7 @@
   "symbol": "HGQ26",
   "commodity": "Copper",
   "month": "Aug",
-  "updatedAt": "2026-07-03T23:25:58.664017-05:00",
+  "updatedAt": "2026-07-05T19:40:11.302283-05:00",
   "rows": [
     {
       "date": "2026-07-02",
@@ -11,7 +11,7 @@
       "dailyRange": "0.086",
       "fullAchievement": "0.151",
       "historicVol": "31.4%",
-      "impliedVol": "",
+      "impliedVol": "28.8%",
       "weeklyHigh": "6.2895",
       "weeklyLow": "6.0635",
       "weeklyRange": "0.226",
@@ -22,7 +22,7 @@
       "weeklyTarget": "0.3295",
       "nextWeeklyTarget": "0.3065",
       "weeklyAchievement": "68.6%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"

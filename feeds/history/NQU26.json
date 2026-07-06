@@ -2,7 +2,7 @@
   "symbol": "NQU26",
   "commodity": "Nasdaq 100 E-Mini",
   "month": "Sep",
-  "updatedAt": "2026-07-03T23:25:58.664017-05:00",
+  "updatedAt": "2026-07-05T19:40:11.302283-05:00",
   "rows": [
     {
       "date": "2026-07-02",
@@ -11,7 +11,7 @@
       "dailyRange": "991.5",
       "fullAchievement": "734",
       "historicVol": "31.8%",
-      "impliedVol": "",
+      "impliedVol": "24.8%",
       "weeklyHigh": "30599.75",
       "weeklyLow": "29273.75",
       "weeklyRange": "1326",
@@ -22,7 +22,7 @@
       "weeklyTarget": "1495.75",
       "nextWeeklyTarget": "1395.25",
       "weeklyAchievement": "88.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"

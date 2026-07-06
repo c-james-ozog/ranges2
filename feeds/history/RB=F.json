@@ -2,7 +2,7 @@
   "symbol": "RB=F",
   "commodity": "Unleaded Gasoline",
   "month": "Cont.",
-  "updatedAt": "2026-07-03T23:25:58.664017-05:00",
+  "updatedAt": "2026-07-05T19:40:11.302283-05:00",
   "rows": [
     {
       "date": "2026-07-02",
@@ -11,7 +11,7 @@
       "dailyRange": "0.0903",
       "fullAchievement": "0.0981",
       "historicVol": "43.0%",
-      "impliedVol": "",
+      "impliedVol": "41.4%",
       "weeklyHigh": "3.0682",
       "weeklyLow": "2.8549",
       "weeklyRange": "0.2133",
@@ -22,7 +22,7 @@
       "weeklyTarget": "0.2077",
       "nextWeeklyTarget": "0.2049",
       "weeklyAchievement": "102.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
