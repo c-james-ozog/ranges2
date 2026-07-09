@@ -2,7 +2,7 @@
   "symbol": "DXU26",
   "commodity": "US Dollar",
   "month": "Sep",
-  "updatedAt": "2026-07-08T19:19:41.904083-05:00",
+  "updatedAt": "2026-07-08T22:50:56.727339-05:00",
   "rows": [
     {
       "date": "2026-07-08",
@@ -11,7 +11,7 @@
       "dailyRange": "0.35",
       "fullAchievement": "0.33",
       "historicVol": "4.2%",
-      "impliedVol": "4.9%",
+      "impliedVol": "5.1%",
       "weeklyHigh": "101.06",
       "weeklyLow": "100.575",
       "weeklyRange": "0.485",
@@ -22,7 +22,7 @@
       "weeklyTarget": "1.215",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "39.9%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|2"
