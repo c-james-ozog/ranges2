@@ -6,24 +6,24 @@
       "commodity": "Bitcoin",
       "month": "Cont.",
       "dailyTarget": "1625",
-      "dailyRange": "108",
-      "dailyHigh": "64465",
-      "dailyLow": "6412",
-      "dailyAchievement": "6.6%",
-      "fullAchievement": "1765",
-      "nextDailyTarget": "141",
-      "historicVol": "35.0%",
+      "dailyRange": "1845",
+      "dailyHigh": "64915",
+      "dailyLow": "6307",
+      "dailyAchievement": "113.5%",
+      "fullAchievement": "202",
+      "nextDailyTarget": "1615",
+      "historicVol": "40.3%",
       "impliedVol": "",
       "impliedVolTrend": "",
-      "weeklyRange": "334",
-      "weeklyHigh": "6477",
+      "weeklyRange": "3485",
+      "weeklyHigh": "64915",
       "weeklyLow": "6143",
-      "weeklyAchievement": "5.8%",
+      "weeklyAchievement": "60.3%",
       "weeklyTarget": "578",
-      "nextWeeklyTarget": "5185",
-      "underTargetStreak": 1,
+      "nextWeeklyTarget": "523",
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-10",
@@ -725,7 +725,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-09",
@@ -1427,7 +1427,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-08",
@@ -2129,7 +2129,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-07",
@@ -2831,7 +2831,7 @@
       "nextWeeklyTarget": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-06",
