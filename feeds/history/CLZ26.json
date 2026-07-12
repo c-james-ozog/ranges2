@@ -2,7 +2,7 @@
   "symbol": "CLZ26",
   "commodity": "Crude Oil WTI",
   "month": "Dec",
-  "updatedAt": "2026-07-10T22:57:57.136406-05:00",
+  "updatedAt": "2026-07-12T18:42:22.023290-05:00",
   "rows": [
     {
       "date": "2026-07-10",
@@ -11,7 +11,7 @@
       "dailyRange": "1.7",
       "fullAchievement": "2.53",
       "historicVol": "45.9%",
-      "impliedVol": "",
+      "impliedVol": "36.2%",
       "weeklyHigh": "73.27",
       "weeklyLow": "67.58",
       "weeklyRange": "5.69",
@@ -22,7 +22,7 @@
       "weeklyTarget": "5.8",
       "nextWeeklyTarget": "5.3",
       "weeklyAchievement": "98.1%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|2"
