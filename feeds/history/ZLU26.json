@@ -2,30 +2,30 @@
   "symbol": "ZLU26",
   "commodity": "Soybean Oil",
   "month": "Sep",
-  "updatedAt": "2026-07-17T07:42:26.645051-05:00",
+  "updatedAt": "2026-07-17T15:13:45.459395-05:00",
   "rows": [
     {
       "date": "2026-07-17",
-      "dailyHigh": "73.05",
+      "dailyHigh": "74.49",
       "dailyLow": "71.51",
-      "dailyRange": "1.54",
-      "fullAchievement": "1.27",
-      "historicVol": "22.3%",
+      "dailyRange": "2.98",
+      "fullAchievement": "1.75",
+      "historicVol": "30.3%",
       "impliedVol": "",
-      "weeklyHigh": "73.05",
+      "weeklyHigh": "74.49",
       "weeklyLow": "69.92",
-      "weeklyRange": "3.13",
+      "weeklyRange": "4.57",
       "sectionBreak": false,
       "dailyTarget": "0.94",
-      "nextDailyTarget": "1.02",
-      "dailyAchievement": "163.8%",
+      "nextDailyTarget": "1.4",
+      "dailyAchievement": "317.0%",
       "weeklyTarget": "3.55",
-      "nextWeeklyTarget": "3.84",
-      "weeklyAchievement": "88.2%",
+      "nextWeeklyTarget": "4.32",
+      "weeklyAchievement": "128.7%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-16",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-15",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "up|4",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-14",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|3",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-13",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-10",
