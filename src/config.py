@@ -108,6 +108,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Natural Gas",      "symbol": "NGH26.NYM",  "base_symbol": "NGH26", "month": "Mar", "roll_date": None},
 
     # Rice — no roll
+    {"commodity": "Rice",             "symbol": "ZRU26.CBT",  "base_symbol": "ZRU26", "month": "Sep", "roll_date": "2026-07-17"},
     {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
     # S&P 500 E-Mini — rolled to Sep on 6/18 (quarterly cycle: Mar/Jun/Sep/Dec)
