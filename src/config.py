@@ -21,6 +21,7 @@ class Contract(TypedDict, total=False):
     roll_date:   str | None    # YYYY-MM-DD first date shown on home page (None = always)
     always_show: bool          # If True, always included on home page regardless of roll logic
     drop_date:   str | None    # YYYY-MM-DD on/after which this contract is excluded entirely
+    history_start: str | None  # YYYY-MM-DD earliest date to include in history feed (None = all history)
 
 
 # ---------------------------------------------------------------------------
@@ -33,7 +34,7 @@ CONTRACTS: list[Contract] = [
     # Bitcoin — switched to continuous front-month (BTC=F) on 6/27;
     # per-contract-month tickers (BTCQ26 etc.) are unreliable on Yahoo —
     # many show "$0.00" or "data unavailable" even when CME lists them.
-    {"commodity": "Bitcoin",          "symbol": "BTC=F",      "base_symbol": "BTC=F", "month": "Cont.", "roll_date": "2026-06-27"},
+    {"commodity": "Bitcoin",          "symbol": "BTC=F",      "base_symbol": "BTC=F", "month": "Cont.", "roll_date": "2026-06-27", "history_start": "2026-06-05"},
     {"commodity": "Bitcoin",          "symbol": "BTCQ26.CME", "base_symbol": "BTCQ26", "month": "Aug", "roll_date": "2026-06-05"},
 
     # Cocoa — rolled to Dec on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
@@ -109,7 +110,7 @@ CONTRACTS: list[Contract] = [
 
     # Rice — switched to continuous front-month (ZR=F) on 7/14;
     # per-contract tickers unreliable on Yahoo (flat data, scale issues).
-    {"commodity": "Rice",             "symbol": "ZR=F",        "base_symbol": "ZR=F", "month": "Cont.", "roll_date": "2026-07-14"},
+    {"commodity": "Rice",             "symbol": "ZR=F",        "base_symbol": "ZR=F", "month": "Cont.", "roll_date": "2026-07-14", "history_start": "2026-07-14"},
     {"commodity": "Rice",             "symbol": "ZRN26.CBT",   "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
     # S&P 500 E-Mini — rolled to Sep on 6/18 (quarterly cycle: Mar/Jun/Sep/Dec)
@@ -147,7 +148,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
 
     # Unleaded Gasoline (RBOB) — new from 6/30, using continuous front-month (RB=F)
-    {"commodity": "Unleaded Gasoline","symbol": "RB=F",        "base_symbol": "RB=F", "month": "Cont.", "roll_date": "2026-06-30"},
+    {"commodity": "Unleaded Gasoline","symbol": "RB=F",        "base_symbol": "RB=F", "month": "Cont.", "roll_date": "2026-06-30", "history_start": "2026-06-30"},
 
     # Wheat — Jul always active; Sep added 6/18 (Jul to be removed 6/26)
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
