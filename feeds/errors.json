@@ -61,7 +61,7 @@
   },
   {
     "symbol": "GCM26",
-    "error": "Failed to fetch GCM26.CMX after 3 attempts: HTTP Error 400: Bad Request"
+    "error": "Failed to fetch GCM26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "GCJ26",
