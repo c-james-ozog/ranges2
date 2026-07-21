@@ -664,6 +664,12 @@ def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list
             row["weeklyUnderTargetStreak"] = 0  # kept for compatibility
             row["weeklyTrend"] = applied_trend
 
+    # Filter history to history_start date if specified (e.g. continuous front-month
+    # tickers like BTC=F, RB=F, ZR=F should not show pre-roll history)
+    history_start = contract.get("history_start")
+    if history_start:
+        history = [row for row in history if row["date"] >= history_start]
+
     return history
 
 
