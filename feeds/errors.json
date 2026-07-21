@@ -33,7 +33,7 @@
   },
   {
     "symbol": "ZCH26",
-    "error": "Failed to fetch ZCH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+    "error": "Failed to fetch ZCH26.CBT after 3 attempts: HTTP Error 400: Bad Request"
   },
   {
     "symbol": "CTN26",
@@ -149,7 +149,7 @@
   },
   {
     "symbol": "ZSH26",
-    "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 400: Bad Request"
+    "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZWN26",
