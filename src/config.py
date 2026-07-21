@@ -107,9 +107,10 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Natural Gas",      "symbol": "NGH26.NYM",  "base_symbol": "NGH26", "month": "Mar", "roll_date": None},
 
-    # Rice — Sep active from 7/14, Jul fallback
-    {"commodity": "Rice",             "symbol": "ZRU26.CBT",  "base_symbol": "ZRU26", "month": "Sep", "roll_date": "2026-07-14"},
-    {"commodity": "Rice",             "symbol": "ZRN26.CBT",  "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
+    # Rice — switched to continuous front-month (ZR=F) on 7/14;
+    # per-contract tickers unreliable on Yahoo (flat data, scale issues).
+    {"commodity": "Rice",             "symbol": "ZR=F",        "base_symbol": "ZR=F", "month": "Cont.", "roll_date": "2026-07-14"},
+    {"commodity": "Rice",             "symbol": "ZRN26.CBT",   "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
     # S&P 500 E-Mini — rolled to Sep on 6/18 (quarterly cycle: Mar/Jun/Sep/Dec)
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESU26.CME",  "base_symbol": "ESU26", "month": "Sep", "roll_date": "2026-06-18"},
