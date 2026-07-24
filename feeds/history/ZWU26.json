@@ -2,8 +2,31 @@
   "symbol": "ZWU26",
   "commodity": "Wheat",
   "month": "Sep",
-  "updatedAt": "2026-07-23T22:59:10.675048-05:00",
+  "updatedAt": "2026-07-24T15:39:57.262414-05:00",
   "rows": [
+    {
+      "date": "2026-07-24",
+      "dailyHigh": "711.25",
+      "dailyLow": "659.5",
+      "dailyRange": "51.75",
+      "fullAchievement": "33",
+      "historicVol": "62.4%",
+      "impliedVol": "",
+      "weeklyHigh": "711.25",
+      "weeklyLow": "659.5",
+      "weeklyRange": "51.75",
+      "sectionBreak": false,
+      "dailyTarget": "16.5",
+      "nextDailyTarget": "26.5",
+      "dailyAchievement": "313.6%",
+      "weeklyTarget": "51",
+      "nextWeeklyTarget": "56.75",
+      "weeklyAchievement": "101.5%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|3"
+    },
     {
       "date": "2026-07-23",
       "dailyHigh": "710.25",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-22",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-21",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-20",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-07-17",

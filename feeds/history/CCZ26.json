@@ -2,15 +2,38 @@
   "symbol": "CCZ26",
   "commodity": "Cocoa",
   "month": "Dec",
-  "updatedAt": "2026-07-23T22:59:10.675048-05:00",
+  "updatedAt": "2026-07-24T15:39:57.262414-05:00",
   "rows": [
+    {
+      "date": "2026-07-24",
+      "dailyHigh": "557",
+      "dailyLow": "5371",
+      "dailyRange": "199",
+      "fullAchievement": "271",
+      "historicVol": "63.4%",
+      "impliedVol": "",
+      "weeklyHigh": "5885",
+      "weeklyLow": "5313",
+      "weeklyRange": "572",
+      "sectionBreak": false,
+      "dailyTarget": "25",
+      "nextDailyTarget": "217",
+      "dailyAchievement": "79.6%",
+      "weeklyTarget": "855",
+      "nextWeeklyTarget": "926",
+      "weeklyAchievement": "66.9%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|2"
+    },
     {
       "date": "2026-07-23",
       "dailyHigh": "5553",
       "dailyLow": "5313",
       "dailyRange": "24",
       "fullAchievement": "313",
-      "historicVol": "72.7%",
+      "historicVol": "73.6%",
       "impliedVol": "54.1%",
       "weeklyHigh": "5885",
       "weeklyLow": "5313",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "down|3",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-22",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-21",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 6,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-20",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 5,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-17",
