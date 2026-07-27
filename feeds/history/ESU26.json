@@ -2,7 +2,7 @@
   "symbol": "ESU26",
   "commodity": "S&P 500 E-Mini",
   "month": "Sep",
-  "updatedAt": "2026-07-24T22:55:30.968850-05:00",
+  "updatedAt": "2026-07-26T22:11:55.440428-05:00",
   "rows": [
     {
       "date": "2026-07-24",
@@ -11,7 +11,7 @@
       "dailyRange": "65",
       "fullAchievement": "87.5",
       "historicVol": "15.0%",
-      "impliedVol": "",
+      "impliedVol": "15.0%",
       "weeklyHigh": "7563.5",
       "weeklyLow": "7411.75",
       "weeklyRange": "151.75",
@@ -22,7 +22,7 @@
       "weeklyTarget": "171.75",
       "nextWeeklyTarget": "157",
       "weeklyAchievement": "88.4%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|4"
