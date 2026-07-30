@@ -49,7 +49,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Coffee",           "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May", "roll_date": "2026-02-18"},
     {"commodity": "Coffee",           "symbol": "KCH26.NYB",  "base_symbol": "KCH26", "month": "Mar", "roll_date": None},
 
-    # Copper — Aug active from 6/5, Jul from 4/20, May from 2/26, Mar fallback
+    # Copper — Oct active from 7/29, Aug from 6/5, Jul from 4/20, May from 2/26, Mar fallback
+    {"commodity": "Copper",           "symbol": "HGV26.CMX",  "base_symbol": "HGV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Copper",           "symbol": "HGQ26.CMX",  "base_symbol": "HGQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Copper",           "symbol": "HGN26.CMX",  "base_symbol": "HGN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Copper",           "symbol": "HGK26.CMX",  "base_symbol": "HGK26", "month": "May", "roll_date": "2026-02-26"},
@@ -77,7 +78,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Feeder Cattle",    "symbol": "GFQ26.CME",  "base_symbol": "GFQ26", "month": "Aug", "roll_date": "2026-04-20"},
     {"commodity": "Feeder Cattle",    "symbol": "GFK26.CME",  "base_symbol": "GFK26", "month": "May", "roll_date": None},
 
-    # Gold — Aug active from 5/27, Jun from 4/20, Apr from 2/26, Mar fallback
+    # Gold — Oct active from 7/29, Aug from 5/27, Jun from 4/20, Apr from 2/26, Mar fallback
+    {"commodity": "Gold",             "symbol": "GCV26.CMX",  "base_symbol": "GCV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Gold",             "symbol": "GCQ26.CMX",  "base_symbol": "GCQ26", "month": "Aug", "roll_date": "2026-05-27"},
     {"commodity": "Gold",             "symbol": "GCM26.CMX",  "base_symbol": "GCM26", "month": "Jun", "roll_date": "2026-04-20"},
     {"commodity": "Gold",             "symbol": "GCJ26.CMX",  "base_symbol": "GCJ26", "month": "Apr", "roll_date": "2026-02-26"},
@@ -87,12 +89,15 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Hard Red Wheat",   "symbol": "KEU26.CBT",  "base_symbol": "KEU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True},
 
-    # Lean Hogs — Aug active from 6/5, Jun from 2/14, Feb fallback
+    # Lean Hogs — Oct active from 7/29, Dec added 7/29 (always_show second slot), Aug from 6/5, Jun from 2/14, Feb fallback
+    {"commodity": "Lean Hogs",        "symbol": "HEV26.CME",  "base_symbol": "HEV26", "month": "Oct", "roll_date": "2026-07-29"},
+    {"commodity": "Lean Hogs",        "symbol": "HEZ26.CME",  "base_symbol": "HEZ26", "month": "Dec", "roll_date": "2026-07-29", "always_show": True},
     {"commodity": "Lean Hogs",        "symbol": "HEQ26.CME",  "base_symbol": "HEQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Lean Hogs",        "symbol": "HEM26.CME",  "base_symbol": "HEM26", "month": "Jun", "roll_date": "2026-02-14"},
     {"commodity": "Lean Hogs",        "symbol": "HEG26.CME",  "base_symbol": "HEG26", "month": "Feb", "roll_date": None},
 
-    # Live Cattle — Aug active from 6/5, Jun from 4/20, Apr from 2/14, Feb fallback
+    # Live Cattle — Oct active from 7/29, Aug from 6/5, Jun from 4/20, Apr from 2/14, Feb fallback
+    {"commodity": "Live Cattle",      "symbol": "LEV26.CME",  "base_symbol": "LEV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Live Cattle",      "symbol": "LEQ26.CME",  "base_symbol": "LEQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Live Cattle",      "symbol": "LEM26.CME",  "base_symbol": "LEM26", "month": "Jun", "roll_date": "2026-04-20"},
     {"commodity": "Live Cattle",      "symbol": "LEJ26.CME",  "base_symbol": "LEJ26", "month": "Apr", "roll_date": "2026-02-14"},
@@ -102,7 +107,9 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQU26.CME",  "base_symbol": "NQU26", "month": "Sep", "roll_date": "2026-06-22"},
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
-    # Natural Gas — Aug active from 6/29 (NGN26 expired 6/26), Jul from 5/27, Jun from 2/26, Mar fallback
+    # Natural Gas — Oct active from 7/29, Mar27 added 7/29 (always_show second slot), Aug from 6/29, Jul from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Natural Gas",      "symbol": "NGV26.NYM",  "base_symbol": "NGV26", "month": "Oct", "roll_date": "2026-07-29"},
+    {"commodity": "Natural Gas",      "symbol": "NGH27.NYM",  "base_symbol": "NGH27", "month": "Mar27", "roll_date": "2026-07-29", "always_show": True},
     {"commodity": "Natural Gas",      "symbol": "NGQ26.NYM",  "base_symbol": "NGQ26", "month": "Aug", "roll_date": "2026-06-29"},
     {"commodity": "Natural Gas",      "symbol": "NGN26.NYM",  "base_symbol": "NGN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
@@ -117,7 +124,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESU26.CME",  "base_symbol": "ESU26", "month": "Sep", "roll_date": "2026-06-18"},
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
-    # Silver — Jul active from 5/27, Jun from 2/26, Mar fallback
+    # Silver — Oct active from 7/29, Aug from 6/27, Jul from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Silver",           "symbol": "SIV26.CMX",  "base_symbol": "SIV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Silver",           "symbol": "SIQ26.CMX",  "base_symbol": "SIQ26", "month": "Aug", "roll_date": "2026-06-27"},
     {"commodity": "Silver",           "symbol": "SIN26.CMX",  "base_symbol": "SIN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun", "roll_date": "2026-02-26"},
