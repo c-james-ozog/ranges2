@@ -2,8 +2,31 @@
   "symbol": "HEV26",
   "commodity": "Lean Hogs",
   "month": "Oct",
-  "updatedAt": "2026-07-30T23:14:44.749866-05:00",
+  "updatedAt": "2026-07-31T15:37:02.684730-05:00",
   "rows": [
+    {
+      "date": "2026-07-31",
+      "dailyHigh": "85.175",
+      "dailyLow": "83.125",
+      "dailyRange": "2.05",
+      "fullAchievement": "2.85",
+      "historicVol": "43.2%",
+      "impliedVol": "19.7%",
+      "weeklyHigh": "89.025",
+      "weeklyLow": "82.1",
+      "weeklyRange": "6.925",
+      "sectionBreak": false,
+      "dailyTarget": "2.15",
+      "nextDailyTarget": "2.275",
+      "dailyAchievement": "95.3%",
+      "weeklyTarget": "4",
+      "nextWeeklyTarget": "4.65",
+      "weeklyAchievement": "173.1%",
+      "impliedVolTrend": "down|1",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-07-30",
       "dailyHigh": "85.525",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-29",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-28",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-27",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-24",
