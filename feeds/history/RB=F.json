@@ -2,30 +2,30 @@
   "symbol": "RB=F",
   "commodity": "Unleaded Gasoline",
   "month": "Cont.",
-  "updatedAt": "2026-07-31T22:59:02.678179-05:00",
+  "updatedAt": "2026-07-31T23:14:16.708413-05:00",
   "rows": [
     {
       "date": "2026-07-31",
-      "dailyHigh": "3.1735",
-      "dailyLow": "3.065",
-      "dailyRange": "0.2197",
-      "fullAchievement": "0.1514",
-      "historicVol": "61.1%",
+      "dailyHigh": "3.2626",
+      "dailyLow": "3.1992",
+      "dailyRange": "0.0855",
+      "fullAchievement": "0.1067",
+      "historicVol": "42.4%",
       "impliedVol": "54.9%",
       "weeklyHigh": "3.4056",
-      "weeklyLow": "3.065",
-      "weeklyRange": "0.3406",
+      "weeklyLow": "3.1992",
+      "weeklyRange": "0.2064",
       "sectionBreak": false,
       "dailyTarget": "0.0795",
-      "nextDailyTarget": "0.1211",
-      "dailyAchievement": "276.4%",
+      "nextDailyTarget": "0.0854",
+      "dailyAchievement": "107.5%",
       "weeklyTarget": "0.2954",
-      "nextWeeklyTarget": "0.3273",
-      "weeklyAchievement": "115.3%",
+      "nextWeeklyTarget": "0.2826",
+      "weeklyAchievement": "69.9%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-30",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-29",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-28",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-27",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-07-24",
