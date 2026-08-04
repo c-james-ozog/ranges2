@@ -137,7 +137,7 @@
   },
   {
     "symbol": "SIM26",
-    "error": "Failed to fetch SIM26.CMX after 3 attempts: HTTP Error 404: Not Found"
+    "error": "Failed to fetch SIM26.CMX after 3 attempts: HTTP Error 502: Connection reset by peer"
   },
   {
     "symbol": "SIH26",
