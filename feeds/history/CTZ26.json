@@ -2,30 +2,30 @@
   "symbol": "CTZ26",
   "commodity": "Cotton",
   "month": "Dec",
-  "updatedAt": "2026-08-07T05:23:32.820467-05:00",
+  "updatedAt": "2026-08-07T14:57:37.347361-05:00",
   "rows": [
     {
       "date": "2026-08-07",
-      "dailyHigh": "83.7",
+      "dailyHigh": "84.49",
       "dailyLow": "82.51",
-      "dailyRange": "1.19",
-      "fullAchievement": "1.39",
-      "historicVol": "21.5%",
+      "dailyRange": "1.98",
+      "fullAchievement": "1.66",
+      "historicVol": "25.1%",
       "impliedVol": "",
-      "weeklyHigh": "84.08",
+      "weeklyHigh": "84.49",
       "weeklyLow": "80.39",
-      "weeklyRange": "3.69",
+      "weeklyRange": "4.1",
       "sectionBreak": false,
       "dailyTarget": "1.2",
-      "nextDailyTarget": "1.11",
-      "dailyAchievement": "99.2%",
+      "nextDailyTarget": "1.33",
+      "dailyAchievement": "165.0%",
       "weeklyTarget": "3.8",
-      "nextWeeklyTarget": "3.29",
-      "weeklyAchievement": "97.1%",
+      "nextWeeklyTarget": "3.42",
+      "weeklyAchievement": "107.9%",
       "impliedVolTrend": "",
-      "underTargetStreak": 2,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-06",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-05",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-04",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-03",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-07-31",
