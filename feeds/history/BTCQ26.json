@@ -2,30 +2,30 @@
   "symbol": "BTCQ26",
   "commodity": "Bitcoin",
   "month": "Aug",
-  "updatedAt": "2026-08-07T14:57:37.347361-05:00",
+  "updatedAt": "2026-08-07T17:53:35.215839-05:00",
   "rows": [
     {
       "date": "2026-08-07",
-      "dailyHigh": "6602",
-      "dailyLow": "6429",
-      "dailyRange": "173",
-      "fullAchievement": "1305",
-      "historicVol": "25.6%",
+      "dailyHigh": "65185",
+      "dailyLow": "6514",
+      "dailyRange": "565",
+      "fullAchievement": "915",
+      "historicVol": "18.0%",
       "impliedVol": "",
-      "weeklyHigh": "6602",
+      "weeklyHigh": "65285",
       "weeklyLow": "6235",
-      "weeklyRange": "367",
+      "weeklyRange": "2935",
       "sectionBreak": false,
       "dailyTarget": "87",
-      "nextDailyTarget": "1045",
-      "dailyAchievement": "19.9%",
+      "nextDailyTarget": "73",
+      "dailyAchievement": "64.9%",
       "weeklyTarget": "368",
-      "nextWeeklyTarget": "361",
-      "weeklyAchievement": "10.0%",
+      "nextWeeklyTarget": "3365",
+      "weeklyAchievement": "79.8%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-06",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-05",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-04",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-03",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-07-31",
