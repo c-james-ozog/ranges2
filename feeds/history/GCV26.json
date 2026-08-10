@@ -2,7 +2,7 @@
   "symbol": "GCV26",
   "commodity": "Gold",
   "month": "Oct",
-  "updatedAt": "2026-08-07T21:47:00.358288-05:00",
+  "updatedAt": "2026-08-09T20:25:51.088273-05:00",
   "rows": [
     {
       "date": "2026-08-07",
@@ -11,7 +11,7 @@
       "dailyRange": "141.8",
       "fullAchievement": "142.5",
       "historicVol": "41.8%",
-      "impliedVol": "",
+      "impliedVol": "22.7%",
       "weeklyHigh": "4399.5",
       "weeklyLow": "4044.1",
       "weeklyRange": "355.4",
@@ -22,7 +22,7 @@
       "weeklyTarget": "151.6",
       "nextWeeklyTarget": "219.2",
       "weeklyAchievement": "234.4%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
