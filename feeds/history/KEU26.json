@@ -2,30 +2,30 @@
   "symbol": "KEU26",
   "commodity": "Hard Red Wheat",
   "month": "Sep",
-  "updatedAt": "2026-08-14T05:30:10.721042-05:00",
+  "updatedAt": "2026-08-14T14:54:45.474728-05:00",
   "rows": [
     {
       "date": "2026-08-14",
-      "dailyHigh": "737",
+      "dailyHigh": "756.75",
       "dailyLow": "719",
-      "dailyRange": "18",
-      "fullAchievement": "24",
-      "historicVol": "41.8%",
-      "impliedVol": "",
-      "weeklyHigh": "737",
+      "dailyRange": "37.75",
+      "fullAchievement": "30.5",
+      "historicVol": "52.0%",
+      "impliedVol": "37.9%",
+      "weeklyHigh": "756.75",
       "weeklyLow": "696.5",
-      "weeklyRange": "40.5",
+      "weeklyRange": "60.25",
       "sectionBreak": false,
       "dailyTarget": "21",
-      "nextDailyTarget": "19.25",
-      "dailyAchievement": "85.7%",
+      "nextDailyTarget": "24.5",
+      "dailyAchievement": "179.8%",
       "weeklyTarget": "48.25",
-      "nextWeeklyTarget": "41.75",
-      "weeklyAchievement": "83.9%",
+      "nextWeeklyTarget": "48.25",
+      "weeklyAchievement": "124.9%",
       "impliedVolTrend": "",
-      "underTargetStreak": 1,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-13",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-12",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-11",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-10",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-07",
