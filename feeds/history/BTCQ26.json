@@ -2,8 +2,31 @@
   "symbol": "BTCQ26",
   "commodity": "Bitcoin",
   "month": "Aug",
-  "updatedAt": "2026-08-13T22:17:24.771721-05:00",
+  "updatedAt": "2026-08-14T00:39:04.745628-05:00",
   "rows": [
+    {
+      "date": "2026-08-14",
+      "dailyHigh": "63715",
+      "dailyLow": "633",
+      "dailyRange": "415",
+      "fullAchievement": "995",
+      "historicVol": "20.1%",
+      "impliedVol": "",
+      "weeklyHigh": "657",
+      "weeklyLow": "62865",
+      "weeklyRange": "2835",
+      "sectionBreak": false,
+      "dailyTarget": "1045",
+      "nextDailyTarget": "795",
+      "dailyAchievement": "39.7%",
+      "weeklyTarget": "361",
+      "nextWeeklyTarget": "3425",
+      "weeklyAchievement": "78.5%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-08-13",
       "dailyHigh": "64115",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-12",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-11",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-10",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-07",
