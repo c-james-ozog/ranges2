@@ -2,7 +2,7 @@
   "symbol": "SIV26",
   "commodity": "Silver",
   "month": "Oct",
-  "updatedAt": "2026-08-14T21:05:43.395104-05:00",
+  "updatedAt": "2026-08-16T20:06:41.924419-05:00",
   "rows": [
     {
       "date": "2026-08-14",
@@ -10,8 +10,8 @@
       "dailyLow": "64.17",
       "dailyRange": "1.885",
       "fullAchievement": "1.835",
-      "historicVol": "36.1%",
-      "impliedVol": "43.8%",
+      "historicVol": "35.9%",
+      "impliedVol": "42.0%",
       "weeklyHigh": "67.075",
       "weeklyLow": "63.485",
       "weeklyRange": "3.59",
@@ -22,7 +22,7 @@
       "weeklyTarget": "5.335",
       "nextWeeklyTarget": "5.085",
       "weeklyAchievement": "67.3%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
