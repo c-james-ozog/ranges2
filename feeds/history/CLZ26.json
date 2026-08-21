@@ -2,8 +2,31 @@
   "symbol": "CLZ26",
   "commodity": "Crude Oil WTI",
   "month": "Dec",
-  "updatedAt": "2026-08-20T23:22:42.291707-05:00",
+  "updatedAt": "2026-08-21T04:57:15.141363-05:00",
   "rows": [
+    {
+      "date": "2026-08-21",
+      "dailyHigh": "82.78",
+      "dailyLow": "82.03",
+      "dailyRange": "0.75",
+      "fullAchievement": "1.68",
+      "historicVol": "26.1%",
+      "impliedVol": "",
+      "weeklyHigh": "83.17",
+      "weeklyLow": "77.91",
+      "weeklyRange": "5.26",
+      "sectionBreak": false,
+      "dailyTarget": "1.5",
+      "nextDailyTarget": "1.34",
+      "dailyAchievement": "50.0%",
+      "weeklyTarget": "5.64",
+      "nextWeeklyTarget": "5.36",
+      "weeklyAchievement": "93.3%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|3"
+    },
     {
       "date": "2026-08-20",
       "dailyHigh": "83.17",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-08-19",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-08-18",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-08-17",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|3"
     },
     {
       "date": "2026-08-14",

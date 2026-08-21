@@ -2,8 +2,31 @@
   "symbol": "CTZ26",
   "commodity": "Cotton",
   "month": "Dec",
-  "updatedAt": "2026-08-20T23:22:42.291707-05:00",
+  "updatedAt": "2026-08-21T04:57:15.141363-05:00",
   "rows": [
+    {
+      "date": "2026-08-21",
+      "dailyHigh": "88.96",
+      "dailyLow": "88.16",
+      "dailyRange": "0.8",
+      "fullAchievement": "2",
+      "historicVol": "28.9%",
+      "impliedVol": "",
+      "weeklyHigh": "89.45",
+      "weeklyLow": "84.26",
+      "weeklyRange": "5.19",
+      "sectionBreak": false,
+      "dailyTarget": "1.74",
+      "nextDailyTarget": "1.6",
+      "dailyAchievement": "46.0%",
+      "weeklyTarget": "3.17",
+      "nextWeeklyTarget": "3.98",
+      "weeklyAchievement": "163.7%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-08-20",
       "dailyHigh": "89.45",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-19",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-18",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-17",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-14",
