@@ -1,0 +1,31 @@
+{
+  "symbol": "HOZ26",
+  "commodity": "Heating Oil",
+  "month": "Dec",
+  "updatedAt": "2026-08-24T10:11:06.290764-05:00",
+  "rows": [
+    {
+      "date": "2026-08-24",
+      "dailyHigh": "4.0409",
+      "dailyLow": "3.9527",
+      "dailyRange": "0.132",
+      "fullAchievement": "0.1024",
+      "historicVol": "33.1%",
+      "impliedVol": "",
+      "weeklyHigh": "4.0847",
+      "weeklyLow": "3.9527",
+      "weeklyRange": "0.132",
+      "sectionBreak": true,
+      "dailyTarget": "0.0698",
+      "nextDailyTarget": "0.0819",
+      "dailyAchievement": "189.1%",
+      "weeklyTarget": "0.2781",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "47.5%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|2"
+    }
+  ]
+}

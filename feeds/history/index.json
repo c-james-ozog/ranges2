@@ -1,11 +1,10 @@
 {
   "contracts": [
-    "BTC=F",
-    "BTCQ26",
     "CCZ26",
     "KCZ26",
     "HGV26",
     "HGQ26",
+    "ZCH27",
     "ZCU26",
     "ZCZ26",
     "ZCZ27",
@@ -17,6 +16,7 @@
     "GCQ26",
     "KEZ26",
     "KEU26",
+    "HOZ26",
     "HEV26",
     "HEZ26",
     "LEV26",
@@ -32,14 +32,15 @@
     "ZMU26",
     "ZLZ26",
     "ZLU26",
+    "ZSH27",
     "ZSU26",
     "ZSX26",
     "ZSX27",
     "SBV26",
     "DXU26",
-    "DXM26",
     "RB=F",
     "ZWZ26",
-    "ZWU26"
+    "ZWU26",
+    "ZNZ26"
   ]
 }

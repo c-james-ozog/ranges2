@@ -1,5 +1,13 @@
 [
   {
+    "symbol": "BTC=F",
+    "error": "'Bitcoin'"
+  },
+  {
+    "symbol": "BTCQ26",
+    "error": "'Bitcoin'"
+  },
+  {
     "symbol": "CCN26",
     "error": "Failed to fetch CCN26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -170,6 +178,10 @@
   {
     "symbol": "ZSH26",
     "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "DXM26",
+    "error": "Failed to fetch DXM26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZWN26",
