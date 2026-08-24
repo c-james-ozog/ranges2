@@ -57,6 +57,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Copper",           "symbol": "HGH26.CMX",  "base_symbol": "HGH26", "month": "Mar", "roll_date": None},
 
     # Corn — Sep active from 6/27, drops 8/23; Dec/Dec27 always_show slots remain
+    {"commodity": "Corn",             "symbol": "ZCH27.CBT",  "base_symbol": "ZCH27", "month": "Mar27", "roll_date": "2026-08-24"},
     {"commodity": "Corn",             "symbol": "ZCU26.CBT",  "base_symbol": "ZCU26", "month": "Sep", "roll_date": "2026-06-27", "drop_date": "2026-08-23"},
     {"commodity": "Corn",             "symbol": "ZCN26.CBT",  "base_symbol": "ZCN26", "month": "Jul", "roll_date": None, "drop_date": "2026-08-23"},
     {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None, "always_show": True},
@@ -90,6 +91,9 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Hard Red Wheat",   "symbol": "KEZ26.CBT",  "base_symbol": "KEZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True},
     {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Hard Red Wheat",   "symbol": "KEU26.CBT",  "base_symbol": "KEU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True, "drop_date": "2026-08-23"},
+
+    # Heating Oil — Dec 2026 (HOZ26) added 8/24
+    {"commodity": "Heating Oil",      "symbol": "HOZ26.NYM",   "base_symbol": "HOZ26", "month": "Dec", "roll_date": "2026-08-24", "history_start": "2026-08-24"},
 
     # Lean Hogs — Oct active from 7/29, Dec added 7/29 (always_show second slot), Aug from 6/5, Jun from 2/14, Feb fallback
     {"commodity": "Lean Hogs",        "symbol": "HEV26.CME",  "base_symbol": "HEV26", "month": "Oct", "roll_date": "2026-07-29"},
@@ -146,6 +150,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Soybean Oil",      "symbol": "ZLH26.CBT",  "base_symbol": "ZLH26", "month": "Mar", "roll_date": None, "drop_date": "2026-08-23"},
 
     # Soybeans — Sep active from 6/27, drops 8/23; Nov/Nov27 always_show slots remain
+    {"commodity": "Soybeans",         "symbol": "ZSH27.CBT",  "base_symbol": "ZSH27", "month": "Mar27", "roll_date": "2026-08-24"},
     {"commodity": "Soybeans",         "symbol": "ZSU26.CBT",  "base_symbol": "ZSU26", "month": "Sep", "roll_date": "2026-06-27", "drop_date": "2026-08-23"},
     {"commodity": "Soybeans",         "symbol": "ZSN26.CBT",  "base_symbol": "ZSN26", "month": "Jul", "roll_date": None, "drop_date": "2026-08-23"},
     {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None, "always_show": True},
@@ -166,6 +171,9 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Wheat",            "symbol": "ZWZ26.CBT",  "base_symbol": "ZWZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True},
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Wheat",            "symbol": "ZWU26.CBT",  "base_symbol": "ZWU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True, "drop_date": "2026-08-23"},
+
+    # 10-Year T-Note — Dec 2026 (ZNZ26) added 8/24, at bottom of home page
+    {"commodity": "10-Year T-Note",   "symbol": "ZNZ26.CBT",   "base_symbol": "ZNZ26", "month": "Dec", "roll_date": "2026-08-24", "history_start": "2026-08-24"},
 ]
 
 # Lookup of base_symbol -> Contract
@@ -279,7 +287,8 @@ TICK_SIZES: dict[str, float] = {
     "Soybeans":          0.25,
     "US Dollar":         0.005,
     "Wheat":             0.25,
-    "Bitcoin":           5.0,
+    "Heating Oil":       0.0001,
+    "10-Year T-Note":    0.015625,
     "Sugar":             0.01,
 }
 
