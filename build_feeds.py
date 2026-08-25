@@ -64,6 +64,7 @@ HISTORY_DIR  = FEEDS_DIR / "history"
 IMPLIED_VOL_FILE    = Path("implied_vol.json")
 PRICE_OVERRIDE_FILE = Path("price_overrides.json")
 EXCEL_OVERRIDE_FILE = Path("implied_vol_input.xlsx")
+MANUAL_OHLC_FILE    = Path("manual_ohlc.json")
 
 # ---------------------------------------------------------------------------
 # Chicago timezone & date helpers
@@ -206,6 +207,50 @@ def load_rice_overrides() -> dict[str, dict[str, float]]:
     except Exception as e:
         log.warning("Could not load Rice overrides from Excel: %s", e)
         return {}
+
+
+def load_manual_ohlc() -> dict[str, dict[str, dict[str, float]]]:
+    """
+    Load manually-entered OHLC for contracts that have no Yahoo source
+    (e.g. Canola / RS1, sourced from TradingView and pasted by hand).
+
+    Format: { "SYMBOL": { "YYYY-MM-DD": { "high": float, "low": float,
+                                          "close": float } } }
+    Keyed by base_symbol, then by trade date. `open` is not required —
+    the range/target formulas only use high, low and close.
+    """
+    data = load_json_file(MANUAL_OHLC_FILE)
+    if data:
+        total = sum(len(v) for v in data.values())
+        log.info("Loaded manual OHLC for %d symbol(s), %d rows", len(data), total)
+    return data
+
+
+def build_manual_rows(symbol: str, manual_data: dict) -> list[RawRow]:
+    """
+    Turn a manual per-date OHLC map into RawRows compatible with the rest of
+    the pipeline. Synthesises a timestamp for each trade date such that
+    ts_to_ct_date() recovers exactly that date (noon CT on the prior day, so
+    the +1-day convention lands on the intended trade date and DST edges are
+    avoided). Returns rows newest-first, matching fetch_yahoo_history().
+    """
+    per_symbol = manual_data.get(symbol, {})
+    rows: list[RawRow] = []
+    for date_str, ohlc in per_symbol.items():
+        try:
+            d = date.fromisoformat(date_str)
+        except ValueError:
+            log.warning("Manual OHLC %s: bad date %r — skipping", symbol, date_str)
+            continue
+        prior_noon_ct = datetime(d.year, d.month, d.day, 12, tzinfo=CT) - timedelta(days=1)
+        rows.append({
+            "timestamp": int(prior_noon_ct.timestamp()),
+            "high":      float(ohlc["high"]),
+            "low":       float(ohlc["low"]),
+            "close":     float(ohlc["close"]),
+        })
+    rows.sort(key=lambda r: r["timestamp"], reverse=True)
+    return rows
 
 
 # ---------------------------------------------------------------------------
@@ -716,15 +761,22 @@ def process_contract(
     price_overrides: dict,
     rice_overrides: dict,
     iv_data: dict,
+    manual_data: dict,
 ) -> tuple[str, list[dict] | Exception]:
     """
     Fetch and process a single contract. Returns (base_symbol, history_rows | Exception).
     Designed to run in a thread pool — all inputs are read-only.
+
+    Contracts marked "source": "manual" are built from manual_ohlc.json instead
+    of Yahoo (used for tickers with no Yahoo feed, e.g. Canola / RS1).
     """
     symbol = contract["base_symbol"]
     try:
-        time.sleep(FETCH_DELAY)
-        raw_rows = fetch_yahoo_history(contract["symbol"])
+        if contract.get("source") == "manual":
+            raw_rows = build_manual_rows(symbol, manual_data)
+        else:
+            time.sleep(FETCH_DELAY)
+            raw_rows = fetch_yahoo_history(contract["symbol"])
         clean_rows = preprocess_rows(raw_rows, symbol, today, price_overrides, rice_overrides)
         history = build_history(clean_rows, contract, iv_data)
         log.info("OK  %s  (%d rows)", symbol, len(history))
@@ -751,6 +803,7 @@ def main() -> None:
     iv_data         = load_implied_vol()
     price_overrides = load_price_overrides()
     rice_overrides  = load_rice_overrides()
+    manual_data     = load_manual_ohlc()
 
     # ---- Parallel fetch & process ----
     results: dict[str, list[dict]] = {}
@@ -760,7 +813,7 @@ def main() -> None:
         future_map: dict[Future, Contract] = {
             pool.submit(
                 process_contract,
-                contract, today, price_overrides, rice_overrides, iv_data,
+                contract, today, price_overrides, rice_overrides, iv_data, manual_data,
             ): contract
             for contract in CONTRACTS
         }
@@ -844,9 +897,14 @@ def main() -> None:
                         seen_commodities.append(commodity)
                         break
 
-        # Ensure always_show contracts are included even if not in preferred list
+        # Ensure always_show contracts are included — but only those actually
+        # active for this date. `preferred` already honors roll_date + drop_date,
+        # so a dropped/expired always_show contract (e.g. KEU26 after its
+        # drop_date) stays out instead of reappearing just because Yahoo still
+        # returns data for it.
+        preferred_set = set(preferred)
         for sym in always_show_syms:
-            if sym not in added_syms and sym in sym_map:
+            if sym in preferred_set and sym not in added_syms and sym in sym_map:
                 date_rows.append(sym_map[sym])
 
         # Sort by HOME_ORDER
