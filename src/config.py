@@ -22,6 +22,7 @@ class Contract(TypedDict, total=False):
     always_show: bool          # If True, always included on home page regardless of roll logic
     drop_date:   str | None    # YYYY-MM-DD on/after which this contract is excluded entirely
     history_start: str | None  # YYYY-MM-DD earliest date to include in history feed (None = all history)
+    source:      str           # Data source; "manual" reads OHLC from manual_ohlc.json instead of Yahoo
 
 
 # ---------------------------------------------------------------------------
@@ -36,6 +37,10 @@ CONTRACTS: list[Contract] = [
     # many show "$0.00" or "data unavailable" even when CME lists them.
     {"commodity": "Bitcoin",          "symbol": "BTC=F",      "base_symbol": "BTC=F", "month": "Cont.", "roll_date": "2026-06-27", "history_start": "2026-06-05"},
     {"commodity": "Bitcoin",          "symbol": "BTCQ26.CME", "base_symbol": "BTCQ26", "month": "Aug", "roll_date": "2026-06-05"},
+
+    # Canola — ICE Canada (RS), continuous front month via TradingView RS1!.
+    # No Yahoo feed; OHLC is entered by hand in manual_ohlc.json (source: manual).
+    {"commodity": "Canola",           "symbol": "RS1",        "base_symbol": "RS1", "month": "Cont.", "roll_date": "2026-08-17", "history_start": "2026-08-17", "source": "manual"},
 
     # Cocoa — rolled to Dec on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
     {"commodity": "Cocoa",            "symbol": "CCZ26.NYB",  "base_symbol": "CCZ26", "month": "Dec", "roll_date": "2026-06-12"},
@@ -182,6 +187,7 @@ CONTRACT_BY_SYMBOL: dict[str, Contract] = {c["base_symbol"]: c for c in CONTRACT
 # Home page display order — unique commodities in display order
 # (used to sort rows; we pick one contract per commodity per date)
 COMMODITY_ORDER: list[str] = [
+    "Canola",
     "Cocoa", "Coffee", "Copper", "Corn", "Corn",
     "Cotton", "Crude Oil WTI", "Feeder Cattle", "Gold",
     "Hard Red Wheat", "Lean Hogs", "Live Cattle",
@@ -265,6 +271,7 @@ def active_symbols_for_date(date_str: str) -> list[str]:
 # ---------------------------------------------------------------------------
 
 TICK_SIZES: dict[str, float] = {
+    "Canola":            0.1,
     "Cocoa":             1.0,
     "Coffee":            0.05,
     "Copper":            0.0005,
