@@ -2,7 +2,7 @@
   "symbol": "SBV26",
   "commodity": "Sugar",
   "month": "Oct",
-  "updatedAt": "2026-08-27T22:34:29.537532-05:00",
+  "updatedAt": "2026-08-27T22:54:36.726879-05:00",
   "rows": [
     {
       "date": "2026-08-27",
@@ -11,7 +11,7 @@
       "dailyRange": "0.67",
       "fullAchievement": "0.66",
       "historicVol": "46.4%",
-      "impliedVol": "30.3%",
+      "impliedVol": "32.4%",
       "weeklyHigh": "18.22",
       "weeklyLow": "17.08",
       "weeklyRange": "1.14",
@@ -22,7 +22,7 @@
       "weeklyTarget": "1.52",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "75.0%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
