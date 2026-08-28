@@ -2,30 +2,30 @@
   "symbol": "ZNZ26",
   "commodity": "10-Year T-Note",
   "month": "Dec",
-  "updatedAt": "2026-08-28T07:19:26.772016-05:00",
+  "updatedAt": "2026-08-28T15:56:52.409776-05:00",
   "rows": [
     {
       "date": "2026-08-28",
-      "dailyHigh": "108.375",
-      "dailyLow": "108.203125",
-      "dailyRange": "0.171875",
-      "fullAchievement": "0.296875",
-      "historicVol": "3.4%",
+      "dailyHigh": "108.484375",
+      "dailyLow": "107.8125",
+      "dailyRange": "0.671875",
+      "fullAchievement": "0.453125",
+      "historicVol": "5.4%",
       "impliedVol": "",
       "weeklyHigh": "108.75",
-      "weeklyLow": "108",
-      "weeklyRange": "0.75",
+      "weeklyLow": "107.8125",
+      "weeklyRange": "0.9375",
       "sectionBreak": false,
       "dailyTarget": "0.359375",
-      "nextDailyTarget": "0.234375",
-      "dailyAchievement": "47.8%",
+      "nextDailyTarget": "0.359375",
+      "dailyAchievement": "187.0%",
       "weeklyTarget": "0.921875",
-      "nextWeeklyTarget": "0.8125",
-      "weeklyAchievement": "81.4%",
+      "nextWeeklyTarget": "0.875",
+      "weeklyAchievement": "101.7%",
       "impliedVolTrend": "",
-      "underTargetStreak": 2,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-27",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-26",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-25",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-24",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     }
   ]
 }
