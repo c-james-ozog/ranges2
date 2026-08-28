@@ -2,8 +2,31 @@
   "symbol": "HOZ26",
   "commodity": "Heating Oil",
   "month": "Dec",
-  "updatedAt": "2026-08-27T22:54:36.726879-05:00",
+  "updatedAt": "2026-08-28T01:05:41.995751-05:00",
   "rows": [
+    {
+      "date": "2026-08-28",
+      "dailyHigh": "3.9016",
+      "dailyLow": "3.8761",
+      "dailyRange": "0.0255",
+      "fullAchievement": "0.1065",
+      "historicVol": "35.0%",
+      "impliedVol": "",
+      "weeklyHigh": "4.0847",
+      "weeklyLow": "3.7336",
+      "weeklyRange": "0.3511",
+      "sectionBreak": false,
+      "dailyTarget": "0.1162",
+      "nextDailyTarget": "0.0852",
+      "dailyAchievement": "21.9%",
+      "weeklyTarget": "0.2781",
+      "nextWeeklyTarget": "0.3083",
+      "weeklyAchievement": "126.2%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 2,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|3"
+    },
     {
       "date": "2026-08-27",
       "dailyHigh": "3.9104",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-08-26",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-08-25",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-08-24",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|3"
     }
   ]
 }
