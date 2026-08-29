@@ -2,31 +2,8 @@
   "symbol": "ZCZ27",
   "commodity": "Corn",
   "month": "Dec27",
-  "updatedAt": "2026-08-28T22:42:09.198527-05:00",
+  "updatedAt": "2026-08-28T23:09:19.884492-05:00",
   "rows": [
-    {
-      "date": "2026-08-28",
-      "dailyHigh": "531",
-      "dailyLow": "523.75",
-      "dailyRange": "7.25",
-      "fullAchievement": "10.5",
-      "historicVol": "25.5%",
-      "impliedVol": "",
-      "weeklyHigh": "534",
-      "weeklyLow": "509.75",
-      "weeklyRange": "24.25",
-      "sectionBreak": false,
-      "dailyTarget": "9.5",
-      "nextDailyTarget": "8.5",
-      "dailyAchievement": "76.3%",
-      "weeklyTarget": "13.25",
-      "nextWeeklyTarget": "17.25",
-      "weeklyAchievement": "183.0%",
-      "impliedVolTrend": "",
-      "underTargetStreak": 1,
-      "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
-    },
     {
       "date": "2026-08-27",
       "dailyHigh": "532.75",
@@ -48,7 +25,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-26",
@@ -71,7 +48,7 @@
       "impliedVolTrend": "up|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-25",
@@ -94,7 +71,7 @@
       "impliedVolTrend": "up|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-24",
@@ -117,7 +94,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-21",

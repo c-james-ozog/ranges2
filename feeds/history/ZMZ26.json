@@ -2,31 +2,8 @@
   "symbol": "ZMZ26",
   "commodity": "Soybean Meal",
   "month": "Dec",
-  "updatedAt": "2026-08-28T22:42:09.198527-05:00",
+  "updatedAt": "2026-08-28T23:09:19.884492-05:00",
   "rows": [
-    {
-      "date": "2026-08-28",
-      "dailyHigh": "352.2",
-      "dailyLow": "337.8",
-      "dailyRange": "14.4",
-      "fullAchievement": "11.6",
-      "historicVol": "42.7%",
-      "impliedVol": "",
-      "weeklyHigh": "352.2",
-      "weeklyLow": "324.5",
-      "weeklyRange": "27.7",
-      "sectionBreak": false,
-      "dailyTarget": "7",
-      "nextDailyTarget": "9.3",
-      "dailyAchievement": "205.7%",
-      "weeklyTarget": "10.5",
-      "nextWeeklyTarget": "16.5",
-      "weeklyAchievement": "263.8%",
-      "impliedVolTrend": "",
-      "underTargetStreak": 0,
-      "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
-    },
     {
       "date": "2026-08-27",
       "dailyHigh": "343.3",
@@ -48,7 +25,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-26",
@@ -71,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-25",
@@ -94,7 +71,7 @@
       "impliedVolTrend": "up|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-24",
@@ -117,7 +94,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-08-21",
