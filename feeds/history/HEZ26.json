@@ -2,7 +2,7 @@
   "symbol": "HEZ26",
   "commodity": "Lean Hogs",
   "month": "Dec",
-  "updatedAt": "2026-08-30T17:26:35.484010-05:00",
+  "updatedAt": "2026-08-30T17:35:28.821327-05:00",
   "rows": [
     {
       "date": "2026-08-28",
@@ -11,7 +11,7 @@
       "dailyRange": "1.875",
       "fullAchievement": "1.2",
       "historicVol": "21.2%",
-      "impliedVol": "",
+      "impliedVol": "21.5%",
       "weeklyHigh": "72.375",
       "weeklyLow": "70.15",
       "weeklyRange": "2.225",
@@ -22,7 +22,7 @@
       "weeklyTarget": "3.4",
       "nextWeeklyTarget": "3.1",
       "weeklyAchievement": "65.4%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|4"
