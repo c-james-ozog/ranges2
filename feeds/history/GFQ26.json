@@ -2,8 +2,31 @@
   "symbol": "GFQ26",
   "commodity": "Feeder Cattle",
   "month": "Aug",
-  "updatedAt": "2026-08-29T02:29:44.216129-05:00",
+  "updatedAt": "2026-08-30T17:26:35.484010-05:00",
   "rows": [
+    {
+      "date": "2026-08-28",
+      "dailyHigh": "332.8",
+      "dailyLow": "332.8",
+      "dailyRange": "0.95",
+      "fullAchievement": "1.35",
+      "historicVol": "5.2%",
+      "impliedVol": "",
+      "weeklyHigh": "336.975",
+      "weeklyLow": "331.95",
+      "weeklyRange": "5.025",
+      "sectionBreak": false,
+      "dailyTarget": "1.525",
+      "nextDailyTarget": "1.075",
+      "dailyAchievement": "62.3%",
+      "weeklyTarget": "12.325",
+      "nextWeeklyTarget": "10.9",
+      "weeklyAchievement": "40.8%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 4,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|2"
+    },
     {
       "date": "2026-08-27",
       "dailyHigh": "333.95",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-08-26",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-08-25",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-08-24",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-08-21",
