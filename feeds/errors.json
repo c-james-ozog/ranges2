@@ -24,6 +24,10 @@
     "error": "Failed to fetch KCH26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "HGQ26",
+    "error": "Failed to fetch HGQ26.CMX after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "HGN26",
     "error": "Failed to fetch HGN26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -66,6 +70,10 @@
   {
     "symbol": "GFK26",
     "error": "Failed to fetch GFK26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "GCQ26",
+    "error": "Failed to fetch GCQ26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "GCM26",
@@ -136,6 +144,10 @@
     "error": "Failed to fetch ESM26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "SIQ26",
+    "error": "Failed to fetch SIQ26.CMX after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "SIN26",
     "error": "Failed to fetch SIN26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -170,6 +182,10 @@
   {
     "symbol": "ZSH26",
     "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "DXM26",
+    "error": "Failed to fetch DXM26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZWN26",
