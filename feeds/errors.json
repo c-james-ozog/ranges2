@@ -1,5 +1,9 @@
 [
   {
+    "symbol": "BTCQ26",
+    "error": "Failed to fetch BTCQ26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "CCN26",
     "error": "Failed to fetch CCN26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -66,6 +70,10 @@
   {
     "symbol": "CLJ26",
     "error": "Failed to fetch CLJ26.NYM after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "GFQ26",
+    "error": "Failed to fetch GFQ26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "GFK26",
