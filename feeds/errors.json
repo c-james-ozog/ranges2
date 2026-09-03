@@ -112,6 +112,10 @@
     "error": "Failed to fetch HEG26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "LEQ26",
+    "error": "Failed to fetch LEQ26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "LEM26",
     "error": "Failed to fetch LEM26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -190,10 +194,6 @@
   {
     "symbol": "ZSH26",
     "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
-  },
-  {
-    "symbol": "DXM26",
-    "error": "Failed to fetch DXM26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZWN26",
