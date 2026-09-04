@@ -2,7 +2,7 @@
   "symbol": "KCZ26",
   "commodity": "Coffee",
   "month": "Dec",
-  "updatedAt": "2026-09-03T19:58:13.529591-05:00",
+  "updatedAt": "2026-09-03T22:51:40.667087-05:00",
   "rows": [
     {
       "date": "2026-09-03",
@@ -11,7 +11,7 @@
       "dailyRange": "10.25",
       "fullAchievement": "13.55",
       "historicVol": "58.9%",
-      "impliedVol": "48.8%",
+      "impliedVol": "45.9%",
       "weeklyHigh": "317.15",
       "weeklyLow": "289.75",
       "weeklyRange": "27.4",
@@ -22,7 +22,7 @@
       "weeklyTarget": "27.1",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "101.1%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
