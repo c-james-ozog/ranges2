@@ -2,8 +2,54 @@
   "symbol": "ZCU26",
   "commodity": "Corn",
   "month": "Sep",
-  "updatedAt": "2026-09-04T00:10:52.554948-05:00",
+  "updatedAt": "2026-09-04T08:36:57.868622-05:00",
   "rows": [
+    {
+      "date": "2026-09-04",
+      "dailyHigh": "516",
+      "dailyLow": "516",
+      "dailyRange": "0.75",
+      "fullAchievement": "9.75",
+      "historicVol": "24.0%",
+      "impliedVol": "",
+      "weeklyHigh": "526.5",
+      "weeklyLow": "503",
+      "weeklyRange": "23.5",
+      "sectionBreak": false,
+      "dailyTarget": "11",
+      "nextDailyTarget": "7.75",
+      "dailyAchievement": "6.8%",
+      "weeklyTarget": "28.5",
+      "nextWeeklyTarget": "27.75",
+      "weeklyAchievement": "82.5%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
+    {
+      "date": "2026-09-03",
+      "dailyHigh": "518",
+      "dailyLow": "503",
+      "dailyRange": "15.75",
+      "fullAchievement": "13.75",
+      "historicVol": "34.0%",
+      "impliedVol": "",
+      "weeklyHigh": "526.5",
+      "weeklyLow": "503",
+      "weeklyRange": "23.5",
+      "sectionBreak": false,
+      "dailyTarget": "9.25",
+      "nextDailyTarget": "11",
+      "dailyAchievement": "170.3%",
+      "weeklyTarget": "28.5",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "82.5%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-09-02",
       "dailyHigh": "526.5",
@@ -25,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-09-01",
@@ -48,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-08-31",
@@ -71,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|3"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-08-28",

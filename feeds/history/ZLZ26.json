@@ -2,30 +2,53 @@
   "symbol": "ZLZ26",
   "commodity": "Soybean Oil",
   "month": "Dec",
-  "updatedAt": "2026-09-04T00:10:52.554948-05:00",
+  "updatedAt": "2026-09-04T08:36:57.868622-05:00",
   "rows": [
     {
       "date": "2026-09-04",
       "dailyHigh": "70.13",
-      "dailyLow": "69.63",
-      "dailyRange": "1.33",
-      "fullAchievement": "1.81",
-      "historicVol": "33.2%",
+      "dailyLow": "69",
+      "dailyRange": "1.13",
+      "fullAchievement": "1.7",
+      "historicVol": "31.6%",
       "impliedVol": "",
       "weeklyHigh": "73",
-      "weeklyLow": "69.63",
-      "weeklyRange": "3.37",
+      "weeklyLow": "69",
+      "weeklyRange": "4",
       "sectionBreak": false,
-      "dailyTarget": "1.5",
-      "nextDailyTarget": "1.45",
-      "dailyAchievement": "88.7%",
+      "dailyTarget": "1.56",
+      "nextDailyTarget": "1.36",
+      "dailyAchievement": "72.4%",
       "weeklyTarget": "3.47",
-      "nextWeeklyTarget": "3.92",
-      "weeklyAchievement": "97.1%",
+      "nextWeeklyTarget": "4.13",
+      "weeklyAchievement": "115.3%",
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
+    },
+    {
+      "date": "2026-09-03",
+      "dailyHigh": "71.01",
+      "dailyLow": "69.26",
+      "dailyRange": "1.75",
+      "fullAchievement": "1.95",
+      "historicVol": "35.7%",
+      "impliedVol": "25.3%",
+      "weeklyHigh": "73",
+      "weeklyLow": "69.26",
+      "weeklyRange": "3.74",
+      "sectionBreak": false,
+      "dailyTarget": "1.5",
+      "nextDailyTarget": "1.56",
+      "dailyAchievement": "116.7%",
+      "weeklyTarget": "3.47",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "107.8%",
+      "impliedVolTrend": "down|3",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-09-02",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-09-01",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-31",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-08-28",

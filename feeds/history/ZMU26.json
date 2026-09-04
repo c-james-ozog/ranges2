@@ -2,8 +2,54 @@
   "symbol": "ZMU26",
   "commodity": "Soybean Meal",
   "month": "Sep",
-  "updatedAt": "2026-09-04T00:10:52.554948-05:00",
+  "updatedAt": "2026-09-04T08:36:57.868622-05:00",
   "rows": [
+    {
+      "date": "2026-09-04",
+      "dailyHigh": "342.5",
+      "dailyLow": "342.4",
+      "dailyRange": "2.8",
+      "fullAchievement": "6.7",
+      "historicVol": "24.9%",
+      "impliedVol": "",
+      "weeklyHigh": "345.2",
+      "weeklyLow": "332.5",
+      "weeklyRange": "12.7",
+      "sectionBreak": false,
+      "dailyTarget": "7.1",
+      "nextDailyTarget": "5.4",
+      "dailyAchievement": "39.4%",
+      "weeklyTarget": "15.5",
+      "nextWeeklyTarget": "17",
+      "weeklyAchievement": "81.9%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
+    {
+      "date": "2026-09-03",
+      "dailyHigh": "345.2",
+      "dailyLow": "335",
+      "dailyRange": "10.2",
+      "fullAchievement": "8.9",
+      "historicVol": "33.0%",
+      "impliedVol": "",
+      "weeklyHigh": "345.2",
+      "weeklyLow": "332.5",
+      "weeklyRange": "12.7",
+      "sectionBreak": false,
+      "dailyTarget": "5.8",
+      "nextDailyTarget": "7.1",
+      "dailyAchievement": "175.9%",
+      "weeklyTarget": "15.5",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "81.9%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-09-02",
       "dailyHigh": "341.6",
@@ -25,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-09-01",
@@ -48,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-08-31",
@@ -71,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-08-28",
