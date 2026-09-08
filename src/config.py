@@ -85,7 +85,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Feeder Cattle",    "symbol": "GFQ26.CME",  "base_symbol": "GFQ26", "month": "Aug", "roll_date": "2026-04-20"},
     {"commodity": "Feeder Cattle",    "symbol": "GFK26.CME",  "base_symbol": "GFK26", "month": "May", "roll_date": None},
 
-    # Gold — Oct active from 7/29, Aug from 5/27, Jun from 4/20, Apr from 2/26, Mar fallback
+    # Gold — Dec active from 9/8, Oct active from 7/29, Aug from 5/27, Jun from 4/20, Apr from 2/26, Mar fallback
+    {"commodity": "Gold",             "symbol": "GCZ26.CMX",  "base_symbol": "GCZ26", "month": "Dec", "roll_date": "2026-09-08"},
     {"commodity": "Gold",             "symbol": "GCV26.CMX",  "base_symbol": "GCV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Gold",             "symbol": "GCQ26.CMX",  "base_symbol": "GCQ26", "month": "Aug", "roll_date": "2026-05-27"},
     {"commodity": "Gold",             "symbol": "GCM26.CMX",  "base_symbol": "GCM26", "month": "Jun", "roll_date": "2026-04-20"},
