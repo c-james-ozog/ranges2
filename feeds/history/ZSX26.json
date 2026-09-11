@@ -2,8 +2,31 @@
   "symbol": "ZSX26",
   "commodity": "Soybeans",
   "month": "Nov",
-  "updatedAt": "2026-09-10T23:44:44.913654-05:00",
+  "updatedAt": "2026-09-11T00:21:29.267447-05:00",
   "rows": [
+    {
+      "date": "2026-09-11",
+      "dailyHigh": "1335.25",
+      "dailyLow": "1319",
+      "dailyRange": "16.25",
+      "fullAchievement": "20",
+      "historicVol": "19.4%",
+      "impliedVol": "",
+      "weeklyHigh": "1335.25",
+      "weeklyLow": "1304",
+      "weeklyRange": "31.25",
+      "sectionBreak": false,
+      "dailyTarget": "16.25",
+      "nextDailyTarget": "16",
+      "dailyAchievement": "100.0%",
+      "weeklyTarget": "59",
+      "nextWeeklyTarget": "50.5",
+      "weeklyAchievement": "53.0%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|2"
+    },
     {
       "date": "2026-09-10",
       "dailyHigh": "1333.5",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-09",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-08",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-04",

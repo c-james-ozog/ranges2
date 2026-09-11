@@ -2,8 +2,31 @@
   "symbol": "NGV26",
   "commodity": "Natural Gas",
   "month": "Oct",
-  "updatedAt": "2026-09-10T23:44:44.913654-05:00",
+  "updatedAt": "2026-09-11T00:21:29.267447-05:00",
   "rows": [
+    {
+      "date": "2026-09-11",
+      "dailyHigh": "2.843",
+      "dailyLow": "2.82",
+      "dailyRange": "0.023",
+      "fullAchievement": "0.077",
+      "historicVol": "34.9%",
+      "impliedVol": "",
+      "weeklyHigh": "3.014",
+      "weeklyLow": "2.753",
+      "weeklyRange": "0.261",
+      "sectionBreak": false,
+      "dailyTarget": "0.096",
+      "nextDailyTarget": "0.062",
+      "dailyAchievement": "24.0%",
+      "weeklyTarget": "0.21",
+      "nextWeeklyTarget": "0.233",
+      "weeklyAchievement": "124.3%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 2,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-09-10",
       "dailyHigh": "2.844",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-09",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-08",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-04",
