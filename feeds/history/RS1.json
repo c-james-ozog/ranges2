@@ -2,8 +2,31 @@
   "symbol": "RS1",
   "commodity": "Canola Oil",
   "month": "Cont.",
-  "updatedAt": "2026-09-12T00:12:03.154199-05:00",
+  "updatedAt": "2026-09-13T16:55:49.794041-05:00",
   "rows": [
+    {
+      "date": "2026-09-11",
+      "dailyHigh": "841.6",
+      "dailyLow": "815.5",
+      "dailyRange": "26.1",
+      "fullAchievement": "19.4",
+      "historicVol": "30.3%",
+      "impliedVol": "17.5%",
+      "weeklyHigh": "841.9",
+      "weeklyLow": "815.5",
+      "weeklyRange": "26.4",
+      "sectionBreak": false,
+      "dailyTarget": "14",
+      "nextDailyTarget": "15.5",
+      "dailyAchievement": "186.4%",
+      "weeklyTarget": "43.3",
+      "nextWeeklyTarget": "39.8",
+      "weeklyAchievement": "61.0%",
+      "impliedVolTrend": "down|1",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|2"
+    },
     {
       "date": "2026-09-10",
       "dailyHigh": "840.1",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-09",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-08",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-04",
