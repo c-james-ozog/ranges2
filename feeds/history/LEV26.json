@@ -2,7 +2,7 @@
   "symbol": "LEV26",
   "commodity": "Live Cattle",
   "month": "Oct",
-  "updatedAt": "2026-09-13T16:55:49.794041-05:00",
+  "updatedAt": "2026-09-13T17:55:58.963016-05:00",
   "rows": [
     {
       "date": "2026-09-11",
@@ -11,7 +11,7 @@
       "dailyRange": "2.525",
       "fullAchievement": "2.8",
       "historicVol": "16.3%",
-      "impliedVol": "15.8%",
+      "impliedVol": "15.4%",
       "weeklyHigh": "220.35",
       "weeklyLow": "212.95",
       "weeklyRange": "7.4",
@@ -22,7 +22,7 @@
       "weeklyTarget": "8.4",
       "nextWeeklyTarget": "7.75",
       "weeklyAchievement": "88.1%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|4"
