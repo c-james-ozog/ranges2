@@ -163,7 +163,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Soybeans",         "symbol": "ZSN26.CBT",  "base_symbol": "ZSN26", "month": "Jul", "roll_date": None, "drop_date": "2026-08-23"},
     {"commodity": "Soybeans",         "symbol": "ZSH26.CBT",  "base_symbol": "ZSH26", "month": "Mar", "roll_date": None, "drop_date": "2026-08-23"},
 
-    # Sugar — new from 6/5
+    # Sugar — Mar27 active from 9/15 (no Dec contract for Sugar #11), Oct from 6/5
+    {"commodity": "Sugar",            "symbol": "SBH27.NYB",  "base_symbol": "SBH27", "month": "Mar27", "roll_date": "2026-09-15"},
     {"commodity": "Sugar",            "symbol": "SBV26.NYB",  "base_symbol": "SBV26", "month": "Oct", "roll_date": "2026-06-05"},
 
     # US Dollar — rolled to Sep on 6/15 (quarterly cycle: Mar/Jun/Sep/Dec)
