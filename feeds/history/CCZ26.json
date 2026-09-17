@@ -2,7 +2,7 @@
   "symbol": "CCZ26",
   "commodity": "Cocoa",
   "month": "Dec",
-  "updatedAt": "2026-09-16T20:25:26.146359-05:00",
+  "updatedAt": "2026-09-16T22:23:07.850855-05:00",
   "rows": [
     {
       "date": "2026-09-16",
@@ -11,7 +11,7 @@
       "dailyRange": "171",
       "fullAchievement": "248",
       "historicVol": "53.3%",
-      "impliedVol": "51.3%",
+      "impliedVol": "49.6%",
       "weeklyHigh": "6113",
       "weeklyLow": "5804",
       "weeklyRange": "309",
@@ -22,7 +22,7 @@
       "weeklyTarget": "756",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "40.9%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"

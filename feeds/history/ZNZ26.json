@@ -2,7 +2,7 @@
   "symbol": "ZNZ26",
   "commodity": "10-Year T-Note",
   "month": "Dec",
-  "updatedAt": "2026-09-16T20:25:26.146359-05:00",
+  "updatedAt": "2026-09-16T22:23:07.850855-05:00",
   "rows": [
     {
       "date": "2026-09-16",
@@ -11,7 +11,7 @@
       "dailyRange": "0.6875",
       "fullAchievement": "0.578125",
       "historicVol": "7.0%",
-      "impliedVol": "5.4%",
+      "impliedVol": "5.3%",
       "weeklyHigh": "106.375",
       "weeklyLow": "105.65625",
       "weeklyRange": "0.71875",
@@ -22,7 +22,7 @@
       "weeklyTarget": "1.140625",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "63.0%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
