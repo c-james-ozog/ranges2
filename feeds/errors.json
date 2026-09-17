@@ -44,6 +44,10 @@
     "error": "Failed to fetch HGH26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "ZCU26",
+    "error": "Failed to fetch ZCU26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "ZCN26",
     "error": "Failed to fetch ZCN26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -98,6 +102,10 @@
   {
     "symbol": "KEN26",
     "error": "Failed to fetch KEN26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "KEU26",
+    "error": "Failed to fetch KEU26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "HEQ26",
@@ -172,12 +180,20 @@
     "error": "Failed to fetch SIH26.CMX after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "ZMU26",
+    "error": "Failed to fetch ZMU26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "ZMN26",
     "error": "Failed to fetch ZMN26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZMH26",
     "error": "Failed to fetch ZMH26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "ZLU26",
+    "error": "Failed to fetch ZLU26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "ZLN26",
@@ -188,6 +204,10 @@
     "error": "Failed to fetch ZLH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "ZSU26",
+    "error": "Failed to fetch ZSU26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "ZSN26",
     "error": "Failed to fetch ZSN26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -196,11 +216,11 @@
     "error": "Failed to fetch ZSH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
-    "symbol": "DXM26",
-    "error": "Failed to fetch DXM26.NYB after 3 attempts: HTTP Error 404: Not Found"
-  },
-  {
     "symbol": "ZWN26",
     "error": "Failed to fetch ZWN26.CBT after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "ZWU26",
+    "error": "Failed to fetch ZWU26.CBT after 3 attempts: HTTP Error 404: Not Found"
   }
 ]
