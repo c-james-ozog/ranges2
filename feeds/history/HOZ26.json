@@ -2,8 +2,54 @@
   "symbol": "HOZ26",
   "commodity": "Heating Oil",
   "month": "Dec",
-  "updatedAt": "2026-09-17T22:14:47.258550-05:00",
+  "updatedAt": "2026-09-18T00:20:32.853002-05:00",
   "rows": [
+    {
+      "date": "2026-09-18",
+      "dailyHigh": "4.6082",
+      "dailyLow": "4.5667",
+      "dailyRange": "0.0595",
+      "fullAchievement": "0.1229",
+      "historicVol": "34.2%",
+      "impliedVol": "",
+      "weeklyHigh": "4.7926",
+      "weeklyLow": "4.5013",
+      "weeklyRange": "0.2913",
+      "sectionBreak": false,
+      "dailyTarget": "0.1498",
+      "nextDailyTarget": "0.0983",
+      "dailyAchievement": "39.7%",
+      "weeklyTarget": "0.4226",
+      "nextWeeklyTarget": "0.4026",
+      "weeklyAchievement": "68.9%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
+    {
+      "date": "2026-09-17",
+      "dailyHigh": "4.7188",
+      "dailyLow": "4.5506",
+      "dailyRange": "0.1682",
+      "fullAchievement": "0.1872",
+      "historicVol": "51.8%",
+      "impliedVol": "54.4%",
+      "weeklyHigh": "4.7926",
+      "weeklyLow": "4.5013",
+      "weeklyRange": "0.2913",
+      "sectionBreak": false,
+      "dailyTarget": "0.1579",
+      "nextDailyTarget": "0.1498",
+      "dailyAchievement": "106.5%",
+      "weeklyTarget": "0.4226",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "68.9%",
+      "impliedVolTrend": "down|1",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-09-16",
       "dailyHigh": "4.7722",
@@ -25,7 +71,7 @@
       "impliedVolTrend": "up|7",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|5"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-09-15",
@@ -48,7 +94,7 @@
       "impliedVolTrend": "up|6",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|5"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-09-14",
@@ -71,7 +117,7 @@
       "impliedVolTrend": "up|5",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|5"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-09-11",
