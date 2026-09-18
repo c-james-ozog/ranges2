@@ -2,30 +2,30 @@
   "symbol": "CTZ26",
   "commodity": "Cotton",
   "month": "Dec",
-  "updatedAt": "2026-09-18T08:41:27.508422-05:00",
+  "updatedAt": "2026-09-18T16:40:27.403633-05:00",
   "rows": [
     {
       "date": "2026-09-18",
       "dailyHigh": "82.52",
-      "dailyLow": "81.06",
-      "dailyRange": "1.46",
-      "fullAchievement": "1.58",
-      "historicVol": "24.9%",
+      "dailyLow": "80.71",
+      "dailyRange": "1.81",
+      "fullAchievement": "1.69",
+      "historicVol": "26.7%",
       "impliedVol": "",
       "weeklyHigh": "86.51",
-      "weeklyLow": "81.06",
-      "weeklyRange": "5.45",
+      "weeklyLow": "80.71",
+      "weeklyRange": "5.8",
       "sectionBreak": false,
       "dailyTarget": "1.32",
-      "nextDailyTarget": "1.26",
-      "dailyAchievement": "110.6%",
+      "nextDailyTarget": "1.35",
+      "dailyAchievement": "137.1%",
       "weeklyTarget": "5.67",
-      "nextWeeklyTarget": "5.58",
-      "weeklyAchievement": "96.1%",
+      "nextWeeklyTarget": "5.7",
+      "weeklyAchievement": "102.3%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-17",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-16",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-15",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-14",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-11",
