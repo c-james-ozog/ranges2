@@ -2,8 +2,31 @@
   "symbol": "LEV26",
   "commodity": "Live Cattle",
   "month": "Oct",
-  "updatedAt": "2026-09-18T00:20:32.853002-05:00",
+  "updatedAt": "2026-09-18T08:41:27.508422-05:00",
   "rows": [
+    {
+      "date": "2026-09-18",
+      "dailyHigh": "216.5",
+      "dailyLow": "215.2",
+      "dailyRange": "1.3",
+      "fullAchievement": "2.9",
+      "historicVol": "17.1%",
+      "impliedVol": "",
+      "weeklyHigh": "222.825",
+      "weeklyLow": "215.2",
+      "weeklyRange": "7.625",
+      "sectionBreak": false,
+      "dailyTarget": "2.725",
+      "nextDailyTarget": "2.325",
+      "dailyAchievement": "47.7%",
+      "weeklyTarget": "7.75",
+      "nextWeeklyTarget": "6.975",
+      "weeklyAchievement": "98.4%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|5"
+    },
     {
       "date": "2026-09-17",
       "dailyHigh": "220.225",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-09-16",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-09-15",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-09-14",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|4"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-09-11",
