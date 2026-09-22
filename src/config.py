@@ -115,7 +115,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Live Cattle",      "symbol": "LEJ26.CME",  "base_symbol": "LEJ26", "month": "Apr", "roll_date": "2026-02-14"},
     {"commodity": "Live Cattle",      "symbol": "LEG26.CME",  "base_symbol": "LEG26", "month": "Feb", "roll_date": None},
 
-    # Nasdaq 100 E-Mini — rolled to Sep on 6/22 (quarterly cycle: Mar/Jun/Sep/Dec)
+    # Nasdaq 100 E-Mini — rolled to Dec on 9/18 (Sep expired), Sep from 6/22 (quarterly cycle: Mar/Jun/Sep/Dec)
+    {"commodity": "Nasdaq 100 E-Mini","symbol": "NQZ26.CME",  "base_symbol": "NQZ26", "month": "Dec", "roll_date": "2026-09-18"},
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQU26.CME",  "base_symbol": "NQU26", "month": "Sep", "roll_date": "2026-06-22"},
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
@@ -132,7 +133,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Rice",             "symbol": "ZR=F",        "base_symbol": "ZR=F", "month": "Cont.", "roll_date": "2026-07-14", "history_start": "2026-07-14"},
     {"commodity": "Rice",             "symbol": "ZRN26.CBT",   "base_symbol": "ZRN26", "month": "Jul", "roll_date": None},
 
-    # S&P 500 E-Mini — rolled to Sep on 6/18 (quarterly cycle: Mar/Jun/Sep/Dec)
+    # S&P 500 E-Mini — rolled to Dec on 9/18 (Sep expired), Sep from 6/18 (quarterly cycle: Mar/Jun/Sep/Dec)
+    {"commodity": "S&P 500 E-Mini",   "symbol": "ESZ26.CME",  "base_symbol": "ESZ26", "month": "Dec", "roll_date": "2026-09-18"},
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESU26.CME",  "base_symbol": "ESU26", "month": "Sep", "roll_date": "2026-06-18"},
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
@@ -167,7 +169,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Sugar",            "symbol": "SBH27.NYB",  "base_symbol": "SBH27", "month": "Mar27", "roll_date": "2026-09-15"},
     {"commodity": "Sugar",            "symbol": "SBV26.NYB",  "base_symbol": "SBV26", "month": "Oct", "roll_date": "2026-06-05"},
 
-    # US Dollar — rolled to Sep on 6/15 (quarterly cycle: Mar/Jun/Sep/Dec)
+    # US Dollar — rolled to Dec on 9/15 (Sep expired), Sep from 6/15 (quarterly cycle: Mar/Jun/Sep/Dec)
+    {"commodity": "US Dollar",        "symbol": "DXZ26.NYB",  "base_symbol": "DXZ26", "month": "Dec", "roll_date": "2026-09-15"},
     {"commodity": "US Dollar",        "symbol": "DXU26.NYB",  "base_symbol": "DXU26", "month": "Sep", "roll_date": "2026-06-15"},
     {"commodity": "US Dollar",        "symbol": "DXM26.NYB",  "base_symbol": "DXM26", "month": "Jun", "roll_date": None},
 
