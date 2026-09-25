@@ -2,7 +2,7 @@
   "symbol": "BTC=F",
   "commodity": "Bitcoin",
   "month": "Cont.",
-  "updatedAt": "2026-09-25T00:32:07.667464-05:00",
+  "updatedAt": "2026-09-25T01:43:28.742648-05:00",
   "rows": [
     {
       "date": "2026-09-25",
@@ -10,7 +10,7 @@
       "dailyLow": "839",
       "dailyRange": "99",
       "fullAchievement": "2285",
-      "historicVol": "34.8%",
+      "historicVol": "34.7%",
       "impliedVol": "",
       "weeklyHigh": "87455",
       "weeklyLow": "81005",
@@ -34,7 +34,7 @@
       "dailyRange": "2095",
       "fullAchievement": "25",
       "historicVol": "37.9%",
-      "impliedVol": "32.5%",
+      "impliedVol": "32.8%",
       "weeklyHigh": "87455",
       "weeklyLow": "81005",
       "weeklyRange": "645",
@@ -45,7 +45,7 @@
       "weeklyTarget": "581",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "11.1%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
