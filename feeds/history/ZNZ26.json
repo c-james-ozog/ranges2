@@ -2,8 +2,31 @@
   "symbol": "ZNZ26",
   "commodity": "10-Year T-Note",
   "month": "Dec",
-  "updatedAt": "2026-09-24T20:30:13.865288-05:00",
+  "updatedAt": "2026-09-25T00:32:07.667464-05:00",
   "rows": [
+    {
+      "date": "2026-09-25",
+      "dailyHigh": "104.78125",
+      "dailyLow": "104.59375",
+      "dailyRange": "0.265625",
+      "fullAchievement": "0.828125",
+      "historicVol": "10.1%",
+      "impliedVol": "",
+      "weeklyHigh": "106.328125",
+      "weeklyLow": "104.453125",
+      "weeklyRange": "1.875",
+      "sectionBreak": false,
+      "dailyTarget": "0.71875",
+      "nextDailyTarget": "0.65625",
+      "dailyAchievement": "37.0%",
+      "weeklyTarget": "1.078125",
+      "nextWeeklyTarget": "1.421875",
+      "weeklyAchievement": "173.9%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-09-24",
       "dailyHigh": "105.28125",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-23",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-22",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-21",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-18",
