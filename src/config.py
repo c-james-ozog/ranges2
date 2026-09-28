@@ -54,7 +54,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Coffee",           "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May", "roll_date": "2026-02-18"},
     {"commodity": "Coffee",           "symbol": "KCH26.NYB",  "base_symbol": "KCH26", "month": "Mar", "roll_date": None},
 
-    # Copper — Oct active from 7/29, Aug from 6/5, Jul from 4/20, May from 2/26, Mar fallback
+    # Copper — Dec active from 9/27, Oct from 7/29, Aug from 6/5, Jul from 4/20, May from 2/26, Mar fallback
+    {"commodity": "Copper",           "symbol": "HGZ26.CMX",  "base_symbol": "HGZ26", "month": "Dec", "roll_date": "2026-09-27"},
     {"commodity": "Copper",           "symbol": "HGV26.CMX",  "base_symbol": "HGV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Copper",           "symbol": "HGQ26.CMX",  "base_symbol": "HGQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Copper",           "symbol": "HGN26.CMX",  "base_symbol": "HGN26", "month": "Jul", "roll_date": "2026-04-20"},
@@ -120,7 +121,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQU26.CME",  "base_symbol": "NQU26", "month": "Sep", "roll_date": "2026-06-22"},
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
-    # Natural Gas — Oct active from 7/29, Mar27 added 7/29 (always_show second slot), Aug from 6/29, Jul from 5/27, Jun from 2/26, Mar fallback
+    # Natural Gas — Dec active from 9/27, Oct from 7/29, Mar27 always_show (added 7/29), Aug from 6/29, Jul from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Natural Gas",      "symbol": "NGZ26.NYM",  "base_symbol": "NGZ26", "month": "Dec", "roll_date": "2026-09-27"},
     {"commodity": "Natural Gas",      "symbol": "NGV26.NYM",  "base_symbol": "NGV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Natural Gas",      "symbol": "NGH27.NYM",  "base_symbol": "NGH27", "month": "Mar27", "roll_date": "2026-07-29", "always_show": True},
     {"commodity": "Natural Gas",      "symbol": "NGQ26.NYM",  "base_symbol": "NGQ26", "month": "Aug", "roll_date": "2026-06-29"},
@@ -138,7 +140,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESU26.CME",  "base_symbol": "ESU26", "month": "Sep", "roll_date": "2026-06-18"},
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
-    # Silver — Oct active from 7/29, Aug from 6/27, Jul from 5/27, Jun from 2/26, Mar fallback
+    # Silver — Dec active from 9/27, Oct from 7/29, Aug from 6/27, Jul from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Silver",           "symbol": "SIZ26.CMX",  "base_symbol": "SIZ26", "month": "Dec", "roll_date": "2026-09-27"},
     {"commodity": "Silver",           "symbol": "SIV26.CMX",  "base_symbol": "SIV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Silver",           "symbol": "SIQ26.CMX",  "base_symbol": "SIQ26", "month": "Aug", "roll_date": "2026-06-27"},
     {"commodity": "Silver",           "symbol": "SIN26.CMX",  "base_symbol": "SIN26", "month": "Jul", "roll_date": "2026-05-27"},
