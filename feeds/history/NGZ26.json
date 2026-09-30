@@ -2,7 +2,7 @@
   "symbol": "NGZ26",
   "commodity": "Natural Gas",
   "month": "Dec",
-  "updatedAt": "2026-09-29T21:07:27.889998-05:00",
+  "updatedAt": "2026-09-29T22:15:45.491717-05:00",
   "rows": [
     {
       "date": "2026-09-29",
@@ -11,7 +11,7 @@
       "dailyRange": "0.153",
       "fullAchievement": "0.156",
       "historicVol": "59.8%",
-      "impliedVol": "56.6%",
+      "impliedVol": "55.6%",
       "weeklyHigh": "3.534",
       "weeklyLow": "3.333",
       "weeklyRange": "0.201",
@@ -22,7 +22,7 @@
       "weeklyTarget": "0.232",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "86.6%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
