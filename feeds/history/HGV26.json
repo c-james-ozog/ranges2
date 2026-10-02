@@ -2,8 +2,31 @@
   "symbol": "HGV26",
   "commodity": "Copper",
   "month": "Oct",
-  "updatedAt": "2026-10-02T06:56:38.836194-05:00",
+  "updatedAt": "2026-10-02T10:53:58.461976-05:00",
   "rows": [
+    {
+      "date": "2026-10-02",
+      "dailyHigh": "6.535",
+      "dailyLow": "6.4995",
+      "dailyRange": "0.053",
+      "fullAchievement": "0.066",
+      "historicVol": "12.9%",
+      "impliedVol": "",
+      "weeklyHigh": "6.7015",
+      "weeklyLow": "6.46",
+      "weeklyRange": "0.2415",
+      "sectionBreak": false,
+      "dailyTarget": "0.06",
+      "nextDailyTarget": "0.053",
+      "dailyAchievement": "88.3%",
+      "weeklyTarget": "0.317",
+      "nextWeeklyTarget": "0.27",
+      "weeklyAchievement": "76.2%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|2"
+    },
     {
       "date": "2026-10-01",
       "dailyHigh": "6.533",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-30",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-29",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-28",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-09-25",

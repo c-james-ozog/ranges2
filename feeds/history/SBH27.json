@@ -2,30 +2,30 @@
   "symbol": "SBH27",
   "commodity": "Sugar",
   "month": "Mar27",
-  "updatedAt": "2026-10-02T06:56:38.836194-05:00",
+  "updatedAt": "2026-10-02T10:53:58.461976-05:00",
   "rows": [
     {
       "date": "2026-10-02",
-      "dailyHigh": "19.37",
+      "dailyHigh": "19.79",
       "dailyLow": "18.93",
-      "dailyRange": "0.44",
-      "fullAchievement": "0.51",
-      "historicVol": "33.9%",
+      "dailyRange": "0.86",
+      "fullAchievement": "0.65",
+      "historicVol": "42.2%",
       "impliedVol": "",
-      "weeklyHigh": "19.37",
+      "weeklyHigh": "19.79",
       "weeklyLow": "18.39",
-      "weeklyRange": "0.98",
+      "weeklyRange": "1.4",
       "sectionBreak": false,
       "dailyTarget": "0.46",
-      "nextDailyTarget": "0.41",
-      "dailyAchievement": "95.7%",
+      "nextDailyTarget": "0.52",
+      "dailyAchievement": "187.0%",
       "weeklyTarget": "1.06",
-      "nextWeeklyTarget": "1.05",
-      "weeklyAchievement": "92.5%",
+      "nextWeeklyTarget": "1.19",
+      "weeklyAchievement": "132.1%",
       "impliedVolTrend": "",
-      "underTargetStreak": 1,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-01",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-30",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-29",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-28",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|5"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-25",
