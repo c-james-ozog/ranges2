@@ -2,8 +2,31 @@
   "symbol": "KCZ26",
   "commodity": "Coffee",
   "month": "Dec",
-  "updatedAt": "2026-10-02T01:21:43.309371-05:00",
+  "updatedAt": "2026-10-02T06:56:38.836194-05:00",
   "rows": [
+    {
+      "date": "2026-10-02",
+      "dailyHigh": "296",
+      "dailyLow": "290.5",
+      "dailyRange": "7.75",
+      "fullAchievement": "8.35",
+      "historicVol": "36.2%",
+      "impliedVol": "",
+      "weeklyHigh": "298.8",
+      "weeklyLow": "277.05",
+      "weeklyRange": "21.75",
+      "sectionBreak": false,
+      "dailyTarget": "7.7",
+      "nextDailyTarget": "6.7",
+      "dailyAchievement": "100.6%",
+      "weeklyTarget": "16.95",
+      "nextWeeklyTarget": "18.15",
+      "weeklyAchievement": "128.3%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-10-01",
       "dailyHigh": "290.9",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-30",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "up|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-29",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "up|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-28",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-09-25",
