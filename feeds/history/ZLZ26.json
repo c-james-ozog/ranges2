@@ -2,8 +2,31 @@
   "symbol": "ZLZ26",
   "commodity": "Soybean Oil",
   "month": "Dec",
-  "updatedAt": "2026-10-01T22:42:48.634630-05:00",
+  "updatedAt": "2026-10-02T01:21:43.309371-05:00",
   "rows": [
+    {
+      "date": "2026-10-02",
+      "dailyHigh": "67.5",
+      "dailyLow": "67.18",
+      "dailyRange": "0.32",
+      "fullAchievement": "1.06",
+      "historicVol": "20.2%",
+      "impliedVol": "",
+      "weeklyHigh": "69.03",
+      "weeklyLow": "66.61",
+      "weeklyRange": "2.42",
+      "sectionBreak": false,
+      "dailyTarget": "1.12",
+      "nextDailyTarget": "0.85",
+      "dailyAchievement": "28.6%",
+      "weeklyTarget": "2.91",
+      "nextWeeklyTarget": "2.68",
+      "weeklyAchievement": "83.2%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|4"
+    },
     {
       "date": "2026-10-01",
       "dailyHigh": "68.41",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "down|4"
     },
     {
       "date": "2026-09-30",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "down|4"
     },
     {
       "date": "2026-09-29",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "down|4"
     },
     {
       "date": "2026-09-28",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|3"
+      "weeklyTrend": "down|4"
     },
     {
       "date": "2026-09-25",
@@ -2845,14 +2868,14 @@
       "weeklyLow": "64.89",
       "weeklyRange": "1.11",
       "sectionBreak": false,
-      "dailyTarget": "1.14",
+      "dailyTarget": "",
       "nextDailyTarget": "1.02",
-      "dailyAchievement": "92.1%",
+      "dailyAchievement": "",
       "weeklyTarget": "",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "",
       "impliedVolTrend": "",
-      "underTargetStreak": 1,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": ""
     },
@@ -2861,15 +2884,15 @@
       "dailyHigh": "65.82",
       "dailyLow": "64.89",
       "dailyRange": "0.93",
-      "fullAchievement": "1.43",
-      "historicVol": "27.9%",
+      "fullAchievement": "",
+      "historicVol": "",
       "impliedVol": "",
       "weeklyHigh": "65.82",
       "weeklyLow": "64.89",
       "weeklyRange": "0.93",
       "sectionBreak": true,
       "dailyTarget": "",
-      "nextDailyTarget": "1.14",
+      "nextDailyTarget": "",
       "dailyAchievement": "",
       "weeklyTarget": "",
       "nextWeeklyTarget": "",
@@ -2890,29 +2913,6 @@
       "weeklyHigh": "65.58",
       "weeklyLow": "63.74",
       "weeklyRange": "1.84",
-      "sectionBreak": false,
-      "dailyTarget": "",
-      "nextDailyTarget": "",
-      "dailyAchievement": "",
-      "weeklyTarget": "",
-      "nextWeeklyTarget": "",
-      "weeklyAchievement": "",
-      "impliedVolTrend": "",
-      "underTargetStreak": 0,
-      "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
-    },
-    {
-      "date": "2026-04-01",
-      "dailyHigh": "65.4",
-      "dailyLow": "63.88",
-      "dailyRange": "1.52",
-      "fullAchievement": "",
-      "historicVol": "",
-      "impliedVol": "",
-      "weeklyHigh": "65.4",
-      "weeklyLow": "63.88",
-      "weeklyRange": "1.52",
       "sectionBreak": false,
       "dailyTarget": "",
       "nextDailyTarget": "",
