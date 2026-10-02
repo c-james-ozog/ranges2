@@ -109,7 +109,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Lean Hogs",        "symbol": "HEM26.CME",  "base_symbol": "HEM26", "month": "Jun", "roll_date": "2026-02-14"},
     {"commodity": "Lean Hogs",        "symbol": "HEG26.CME",  "base_symbol": "HEG26", "month": "Feb", "roll_date": None},
 
-    # Live Cattle — Oct active from 7/29, Aug from 6/5, Jun from 4/20, Apr from 2/14, Feb fallback
+    # Live Cattle — Dec active starting 10/2, Oct active from 7/29, Aug from 6/5, Jun from 4/20, Apr from 2/14, Feb fallback
+    {"commodity": "Live Cattle",      "symbol": "LEZ26.CME",  "base_symbol": "LEZ26", "month": "Dec", "roll_date": "2026-10-01"},
     {"commodity": "Live Cattle",      "symbol": "LEV26.CME",  "base_symbol": "LEV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Live Cattle",      "symbol": "LEQ26.CME",  "base_symbol": "LEQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Live Cattle",      "symbol": "LEM26.CME",  "base_symbol": "LEM26", "month": "Jun", "roll_date": "2026-04-20"},
