@@ -2,30 +2,30 @@
   "symbol": "ZWZ26",
   "commodity": "Wheat",
   "month": "Dec",
-  "updatedAt": "2026-10-09T01:52:09.298158-05:00",
+  "updatedAt": "2026-10-09T11:22:52.185611-05:00",
   "rows": [
     {
       "date": "2026-10-09",
       "dailyHigh": "687.5",
-      "dailyLow": "681",
-      "dailyRange": "6.5",
-      "fullAchievement": "12.75",
-      "historicVol": "23.7%",
+      "dailyLow": "667",
+      "dailyRange": "20.5",
+      "fullAchievement": "17.25",
+      "historicVol": "33.1%",
       "impliedVol": "",
       "weeklyHigh": "706.5",
-      "weeklyLow": "679.75",
-      "weeklyRange": "26.75",
+      "weeklyLow": "667",
+      "weeklyRange": "39.5",
       "sectionBreak": false,
       "dailyTarget": "12.5",
-      "nextDailyTarget": "10.25",
-      "dailyAchievement": "52.0%",
+      "nextDailyTarget": "13.75",
+      "dailyAchievement": "164.0%",
       "weeklyTarget": "35",
-      "nextWeeklyTarget": "35.25",
-      "weeklyAchievement": "76.4%",
+      "nextWeeklyTarget": "39.5",
+      "weeklyAchievement": "112.9%",
       "impliedVolTrend": "",
-      "underTargetStreak": 2,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-08",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-07",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-06",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-05",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-02",
