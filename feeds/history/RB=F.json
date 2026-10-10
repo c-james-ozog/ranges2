@@ -2,30 +2,30 @@
   "symbol": "RB=F",
   "commodity": "Unleaded Gasoline",
   "month": "Cont.",
-  "updatedAt": "2026-10-09T21:20:00.609102-05:00",
+  "updatedAt": "2026-10-10T01:29:05.461643-05:00",
   "rows": [
     {
       "date": "2026-10-09",
-      "dailyHigh": "3.1646",
-      "dailyLow": "3.1149",
-      "dailyRange": "0.2011",
-      "fullAchievement": "0.1741",
-      "historicVol": "71.0%",
+      "dailyHigh": "3.3185",
+      "dailyLow": "3.26",
+      "dailyRange": "0.0585",
+      "fullAchievement": "0.1265",
+      "historicVol": "49.2%",
       "impliedVol": "52.6%",
       "weeklyHigh": "3.3906",
-      "weeklyLow": "3.1149",
-      "weeklyRange": "0.2757",
+      "weeklyLow": "3.1874",
+      "weeklyRange": "0.2032",
       "sectionBreak": false,
       "dailyTarget": "0.1218",
-      "nextDailyTarget": "0.1393",
-      "dailyAchievement": "165.1%",
+      "nextDailyTarget": "0.1012",
+      "dailyAchievement": "48.0%",
       "weeklyTarget": "0.2547",
-      "nextWeeklyTarget": "0.2679",
-      "weeklyAchievement": "108.2%",
+      "nextWeeklyTarget": "0.2438",
+      "weeklyAchievement": "79.8%",
       "impliedVolTrend": "",
-      "underTargetStreak": 0,
+      "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-10-08",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-10-07",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-10-06",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-10-05",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|5"
     },
     {
       "date": "2026-10-02",
