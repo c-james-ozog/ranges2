@@ -2,31 +2,8 @@
   "symbol": "BTC=F",
   "commodity": "Bitcoin",
   "month": "Cont.",
-  "updatedAt": "2026-10-09T18:14:54.931496-05:00",
+  "updatedAt": "2026-10-09T20:44:36.806379-05:00",
   "rows": [
-    {
-      "date": "2026-10-09",
-      "dailyHigh": "82645",
-      "dailyLow": "82645",
-      "dailyRange": "695",
-      "fullAchievement": "2265",
-      "historicVol": "35.1%",
-      "impliedVol": "34.7%",
-      "weeklyHigh": "87395",
-      "weeklyLow": "80535",
-      "weeklyRange": "686",
-      "sectionBreak": false,
-      "dailyTarget": "2075",
-      "nextDailyTarget": "181",
-      "dailyAchievement": "33.5%",
-      "weeklyTarget": "597",
-      "nextWeeklyTarget": "605",
-      "weeklyAchievement": "11.5%",
-      "impliedVolTrend": "",
-      "underTargetStreak": 1,
-      "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
-    },
     {
       "date": "2026-10-08",
       "dailyHigh": "8366",
@@ -48,7 +25,7 @@
       "impliedVolTrend": "up|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-10-07",
@@ -71,7 +48,7 @@
       "impliedVolTrend": "up|3",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-10-06",
@@ -94,7 +71,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-10-05",
@@ -117,7 +94,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-10-02",
