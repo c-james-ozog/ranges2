@@ -2,8 +2,31 @@
   "symbol": "DXZ26",
   "commodity": "US Dollar",
   "month": "Dec",
-  "updatedAt": "2026-10-15T23:11:08.665243-05:00",
+  "updatedAt": "2026-10-16T00:12:39.468097-05:00",
   "rows": [
+    {
+      "date": "2026-10-16",
+      "dailyHigh": "101.895",
+      "dailyLow": "101.635",
+      "dailyRange": "0.26",
+      "fullAchievement": "0.595",
+      "historicVol": "7.5%",
+      "impliedVol": "",
+      "weeklyHigh": "102.735",
+      "weeklyLow": "101.635",
+      "weeklyRange": "1.1",
+      "sectionBreak": false,
+      "dailyTarget": "0.52",
+      "nextDailyTarget": "0.475",
+      "dailyAchievement": "50.0%",
+      "weeklyTarget": "1.105",
+      "nextWeeklyTarget": "1.06",
+      "weeklyAchievement": "99.5%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|2"
+    },
     {
       "date": "2026-10-15",
       "dailyHigh": "102.09",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-10-14",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-10-13",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-10-12",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "down|2"
     },
     {
       "date": "2026-10-09",
