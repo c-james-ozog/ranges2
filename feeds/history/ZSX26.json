@@ -2,30 +2,30 @@
   "symbol": "ZSX26",
   "commodity": "Soybeans",
   "month": "Nov",
-  "updatedAt": "2026-10-16T00:12:39.468097-05:00",
+  "updatedAt": "2026-10-16T09:04:04.607442-05:00",
   "rows": [
     {
       "date": "2026-10-16",
       "dailyHigh": "1265.75",
-      "dailyLow": "1259.5",
-      "dailyRange": "6.25",
-      "fullAchievement": "13.5",
-      "historicVol": "13.7%",
+      "dailyLow": "1254.75",
+      "dailyRange": "11",
+      "fullAchievement": "15",
+      "historicVol": "15.4%",
       "impliedVol": "",
       "weeklyHigh": "1297.75",
-      "weeklyLow": "1259.5",
-      "weeklyRange": "38.25",
+      "weeklyLow": "1254.75",
+      "weeklyRange": "43",
       "sectionBreak": false,
       "dailyTarget": "15.25",
-      "nextDailyTarget": "10.75",
-      "dailyAchievement": "41.0%",
+      "nextDailyTarget": "12",
+      "dailyAchievement": "72.1%",
       "weeklyTarget": "40.75",
-      "nextWeeklyTarget": "42.25",
-      "weeklyAchievement": "93.9%",
+      "nextWeeklyTarget": "43.75",
+      "weeklyAchievement": "105.5%",
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-15",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "down|5",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-14",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-13",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "down|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-12",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-09",

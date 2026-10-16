@@ -2,30 +2,30 @@
   "symbol": "DXZ26",
   "commodity": "US Dollar",
   "month": "Dec",
-  "updatedAt": "2026-10-16T00:12:39.468097-05:00",
+  "updatedAt": "2026-10-16T09:04:04.607442-05:00",
   "rows": [
     {
       "date": "2026-10-16",
       "dailyHigh": "101.895",
-      "dailyLow": "101.635",
-      "dailyRange": "0.26",
-      "fullAchievement": "0.595",
-      "historicVol": "7.5%",
+      "dailyLow": "101.395",
+      "dailyRange": "0.5",
+      "fullAchievement": "0.675",
+      "historicVol": "8.5%",
       "impliedVol": "",
       "weeklyHigh": "102.735",
-      "weeklyLow": "101.635",
-      "weeklyRange": "1.1",
+      "weeklyLow": "101.395",
+      "weeklyRange": "1.34",
       "sectionBreak": false,
       "dailyTarget": "0.52",
-      "nextDailyTarget": "0.475",
-      "dailyAchievement": "50.0%",
+      "nextDailyTarget": "0.54",
+      "dailyAchievement": "96.2%",
       "weeklyTarget": "1.105",
-      "nextWeeklyTarget": "1.06",
-      "weeklyAchievement": "99.5%",
+      "nextWeeklyTarget": "1.14",
+      "weeklyAchievement": "121.3%",
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-15",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-14",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-13",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-12",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-09",
