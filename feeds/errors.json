@@ -108,6 +108,10 @@
     "error": "Failed to fetch KEU26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "HEV26",
+    "error": "Failed to fetch HEV26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "HEQ26",
     "error": "Failed to fetch HEQ26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
