@@ -81,7 +81,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Crude Oil WTI",    "symbol": "CLM26.NYM",  "base_symbol": "CLM26", "month": "Jun", "roll_date": "2026-03-21"},
     {"commodity": "Crude Oil WTI",    "symbol": "CLJ26.NYM",  "base_symbol": "CLJ26", "month": "Apr", "roll_date": None},
 
-    # Feeder Cattle — Oct active from 8/14, Aug from 4/20
+    # Feeder Cattle — Jan27 active from 10/22, Oct from 8/14, Aug from 4/20
+    {"commodity": "Feeder Cattle",    "symbol": "GFF27.CME",  "base_symbol": "GFF27", "month": "Jan27", "roll_date": "2026-10-22"},
     {"commodity": "Feeder Cattle",    "symbol": "GFV26.CME",  "base_symbol": "GFV26", "month": "Oct", "roll_date": "2026-08-14"},
     {"commodity": "Feeder Cattle",    "symbol": "GFQ26.CME",  "base_symbol": "GFQ26", "month": "Aug", "roll_date": "2026-04-20"},
     {"commodity": "Feeder Cattle",    "symbol": "GFK26.CME",  "base_symbol": "GFK26", "month": "May", "roll_date": None},
@@ -102,9 +103,9 @@ CONTRACTS: list[Contract] = [
     # Heating Oil — Dec 2026 (HOZ26) added 8/24
     {"commodity": "Heating Oil",      "symbol": "HOZ26.NYM",   "base_symbol": "HOZ26", "month": "Dec", "roll_date": "2026-08-24", "history_start": "2026-08-24"},
 
-    # Lean Hogs — Oct active from 7/29, Dec added 7/29 (always_show second slot), Aug from 6/5, Jun from 2/14, Feb fallback
-    {"commodity": "Lean Hogs",        "symbol": "HEV26.CME",  "base_symbol": "HEV26", "month": "Oct", "roll_date": "2026-07-29"},
-    {"commodity": "Lean Hogs",        "symbol": "HEZ26.CME",  "base_symbol": "HEZ26", "month": "Dec", "roll_date": "2026-07-29", "always_show": True},
+    # Lean Hogs — rolled Oct->Dec on 10/22 (Oct retired; Dec was the always_show slot, now the front); Aug/Jun/Feb expired
+    {"commodity": "Lean Hogs",        "symbol": "HEZ26.CME",  "base_symbol": "HEZ26", "month": "Dec", "roll_date": "2026-10-22"},
+    {"commodity": "Lean Hogs",        "symbol": "HEV26.CME",  "base_symbol": "HEV26", "month": "Oct", "roll_date": "2026-07-29", "drop_date": "2026-10-22"},
     {"commodity": "Lean Hogs",        "symbol": "HEQ26.CME",  "base_symbol": "HEQ26", "month": "Aug", "roll_date": "2026-06-05"},
     {"commodity": "Lean Hogs",        "symbol": "HEM26.CME",  "base_symbol": "HEM26", "month": "Jun", "roll_date": "2026-02-14"},
     {"commodity": "Lean Hogs",        "symbol": "HEG26.CME",  "base_symbol": "HEG26", "month": "Feb", "roll_date": None},
