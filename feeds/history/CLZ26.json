@@ -2,30 +2,30 @@
   "symbol": "CLZ26",
   "commodity": "Crude Oil WTI",
   "month": "Dec",
-  "updatedAt": "2026-10-23T09:18:40.337841-05:00",
+  "updatedAt": "2026-10-23T17:07:47.620338-05:00",
   "rows": [
     {
       "date": "2026-10-23",
-      "dailyHigh": "102.66",
+      "dailyHigh": "103.92",
       "dailyLow": "98.84",
-      "dailyRange": "3.82",
-      "fullAchievement": "3.66",
-      "historicVol": "45.7%",
+      "dailyRange": "5.08",
+      "fullAchievement": "4.08",
+      "historicVol": "50.5%",
       "impliedVol": "",
-      "weeklyHigh": "102.66",
+      "weeklyHigh": "103.92",
       "weeklyLow": "95.25",
-      "weeklyRange": "7.41",
+      "weeklyRange": "8.67",
       "sectionBreak": false,
       "dailyTarget": "3.54",
-      "nextDailyTarget": "2.93",
-      "dailyAchievement": "107.9%",
+      "nextDailyTarget": "3.26",
+      "dailyAchievement": "143.5%",
       "weeklyTarget": "7.45",
-      "nextWeeklyTarget": "8",
-      "weeklyAchievement": "99.5%",
+      "nextWeeklyTarget": "8.42",
+      "weeklyAchievement": "116.4%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-10-22",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-10-21",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-10-20",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-10-19",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|3"
     },
     {
       "date": "2026-10-16",

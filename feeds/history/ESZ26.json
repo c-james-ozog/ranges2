@@ -2,30 +2,30 @@
   "symbol": "ESZ26",
   "commodity": "S&P 500 E-Mini",
   "month": "Dec",
-  "updatedAt": "2026-10-23T09:18:40.337841-05:00",
+  "updatedAt": "2026-10-23T17:07:47.620338-05:00",
   "rows": [
     {
       "date": "2026-10-23",
       "dailyHigh": "7714.25",
-      "dailyLow": "7653.25",
-      "dailyRange": "61",
-      "fullAchievement": "82",
-      "historicVol": "13.7%",
+      "dailyLow": "7648.5",
+      "dailyRange": "65.75",
+      "fullAchievement": "83.5",
+      "historicVol": "13.9%",
       "impliedVol": "",
       "weeklyHigh": "7812.25",
-      "weeklyLow": "7653.25",
-      "weeklyRange": "159",
+      "weeklyLow": "7648.5",
+      "weeklyRange": "163.75",
       "sectionBreak": false,
       "dailyTarget": "72.5",
-      "nextDailyTarget": "65.5",
-      "dailyAchievement": "84.1%",
+      "nextDailyTarget": "66.75",
+      "dailyAchievement": "90.7%",
       "weeklyTarget": "162",
-      "nextWeeklyTarget": "169",
-      "weeklyAchievement": "98.1%",
+      "nextWeeklyTarget": "170.75",
+      "weeklyAchievement": "101.1%",
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-10-22",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-10-21",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-10-20",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-10-19",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-10-16",
