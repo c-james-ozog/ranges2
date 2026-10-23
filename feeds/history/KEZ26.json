@@ -2,7 +2,7 @@
   "symbol": "KEZ26",
   "commodity": "Hard Red Wheat",
   "month": "Dec",
-  "updatedAt": "2026-10-23T00:29:56.019015-05:00",
+  "updatedAt": "2026-10-23T02:33:19.994288-05:00",
   "rows": [
     {
       "date": "2026-10-23",
@@ -34,7 +34,7 @@
       "dailyRange": "10.5",
       "fullAchievement": "17.25",
       "historicVol": "33.2%",
-      "impliedVol": "24.5%",
+      "impliedVol": "24.7%",
       "weeklyHigh": "710.5",
       "weeklyLow": "665.25",
       "weeklyRange": "45.25",
@@ -45,7 +45,7 @@
       "weeklyTarget": "36",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "125.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|3",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"

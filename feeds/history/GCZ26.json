@@ -2,7 +2,7 @@
   "symbol": "GCZ26",
   "commodity": "Gold",
   "month": "Dec",
-  "updatedAt": "2026-10-23T00:29:56.019015-05:00",
+  "updatedAt": "2026-10-23T02:33:19.994288-05:00",
   "rows": [
     {
       "date": "2026-10-23",
@@ -10,7 +10,7 @@
       "dailyLow": "4000.9",
       "dailyRange": "59.5",
       "fullAchievement": "75.1",
-      "historicVol": "23.8%",
+      "historicVol": "23.9%",
       "impliedVol": "",
       "weeklyHigh": "4211.2",
       "weeklyLow": "4000.9",
@@ -34,7 +34,7 @@
       "dailyRange": "127.5",
       "fullAchievement": "70.2",
       "historicVol": "22.1%",
-      "impliedVol": "18.8%",
+      "impliedVol": "20.2%",
       "weeklyHigh": "4211.2",
       "weeklyLow": "4036.8",
       "weeklyRange": "174.4",
@@ -45,7 +45,7 @@
       "weeklyTarget": "156",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "111.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
