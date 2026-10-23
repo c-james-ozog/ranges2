@@ -2,8 +2,54 @@
   "symbol": "BTC=F",
   "commodity": "Bitcoin",
   "month": "Cont.",
-  "updatedAt": "2026-10-22T20:31:02.677179-05:00",
+  "updatedAt": "2026-10-23T00:29:56.019015-05:00",
   "rows": [
+    {
+      "date": "2026-10-23",
+      "dailyHigh": "8192",
+      "dailyLow": "81055",
+      "dailyRange": "865",
+      "fullAchievement": "2465",
+      "historicVol": "38.6%",
+      "impliedVol": "",
+      "weeklyHigh": "8508",
+      "weeklyLow": "80845",
+      "weeklyRange": "4235",
+      "sectionBreak": false,
+      "dailyTarget": "237",
+      "nextDailyTarget": "197",
+      "dailyAchievement": "36.5%",
+      "weeklyTarget": "5455",
+      "nextWeeklyTarget": "5255",
+      "weeklyAchievement": "77.6%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
+    {
+      "date": "2026-10-22",
+      "dailyHigh": "8487",
+      "dailyLow": "80845",
+      "dailyRange": "4025",
+      "fullAchievement": "2965",
+      "historicVol": "46.6%",
+      "impliedVol": "31.6%",
+      "weeklyHigh": "8508",
+      "weeklyLow": "80845",
+      "weeklyRange": "4235",
+      "sectionBreak": false,
+      "dailyTarget": "184",
+      "nextDailyTarget": "237",
+      "dailyAchievement": "218.8%",
+      "weeklyTarget": "5455",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "77.6%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "down|1"
+    },
     {
       "date": "2026-10-21",
       "dailyHigh": "8508",
@@ -25,7 +71,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-10-20",
@@ -48,7 +94,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-10-19",
@@ -71,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-10-16",
