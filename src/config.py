@@ -162,8 +162,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Soybean Oil",      "symbol": "ZLN26.CBT",  "base_symbol": "ZLN26", "month": "Jul", "roll_date": "2026-02-26", "drop_date": "2026-08-23"},
     {"commodity": "Soybean Oil",      "symbol": "ZLH26.CBT",  "base_symbol": "ZLH26", "month": "Mar", "roll_date": None, "drop_date": "2026-08-23"},
 
-    # Soybeans — chronological: Nov26, Mar27, Nov27. Sep/Jul dropped 8/23.
-    {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None, "always_show": True},
+    # Soybeans — chronological: Nov26, Mar27, Nov27. Nov26 retired 10/25; Sep/Jul dropped 8/23.
+    {"commodity": "Soybeans",         "symbol": "ZSX26.CBT",  "base_symbol": "ZSX26", "month": "Nov", "roll_date": None, "always_show": True, "drop_date": "2026-10-25"},
     {"commodity": "Soybeans",         "symbol": "ZSH27.CBT",  "base_symbol": "ZSH27", "month": "Mar27", "roll_date": "2026-08-24"},
     {"commodity": "Soybeans",         "symbol": "ZSX27.CBT",  "base_symbol": "ZSX27", "month": "Nov27", "roll_date": "2026-06-17", "always_show": True},
     {"commodity": "Soybeans",         "symbol": "ZSU26.CBT",  "base_symbol": "ZSU26", "month": "Sep", "roll_date": "2026-06-27", "drop_date": "2026-08-23"},
