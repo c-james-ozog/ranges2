@@ -2,7 +2,7 @@
   "symbol": "HGZ26",
   "commodity": "Copper",
   "month": "Dec",
-  "updatedAt": "2026-10-26T21:04:06.698103-05:00",
+  "updatedAt": "2026-10-26T23:08:21.080221-05:00",
   "rows": [
     {
       "date": "2026-10-26",
@@ -11,7 +11,7 @@
       "dailyRange": "0.095",
       "fullAchievement": "0.1515",
       "historicVol": "29.7%",
-      "impliedVol": "21.1%",
+      "impliedVol": "21.2%",
       "weeklyHigh": "6.563",
       "weeklyLow": "6.468",
       "weeklyRange": "0.095",
@@ -22,7 +22,7 @@
       "weeklyTarget": "0.2645",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "35.9%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|3",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
