@@ -60,6 +60,10 @@
     "error": "Failed to fetch ZCH26.CBT after 3 attempts: HTTP Error 404: Not Found"
   },
   {
+    "symbol": "CTN26",
+    "error": "Failed to fetch CTN26.NYB after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
     "symbol": "CTK26",
     "error": "Failed to fetch CTK26.NYB after 3 attempts: HTTP Error 404: Not Found"
   },
@@ -74,6 +78,10 @@
   {
     "symbol": "CLJ26",
     "error": "Failed to fetch CLJ26.NYM after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "GFV26",
+    "error": "Failed to fetch GFV26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "GFQ26",
@@ -126,6 +134,10 @@
   {
     "symbol": "HEG26",
     "error": "Failed to fetch HEG26.CME after 3 attempts: HTTP Error 404: Not Found"
+  },
+  {
+    "symbol": "LEV26",
+    "error": "Failed to fetch LEV26.CME after 3 attempts: HTTP Error 404: Not Found"
   },
   {
     "symbol": "LEQ26",
