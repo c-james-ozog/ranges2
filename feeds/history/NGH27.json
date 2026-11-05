@@ -2,7 +2,7 @@
   "symbol": "NGH27",
   "commodity": "Natural Gas",
   "month": "Mar27",
-  "updatedAt": "2026-11-04T21:28:42.976230-06:00",
+  "updatedAt": "2026-11-04T22:46:38.142029-06:00",
   "rows": [
     {
       "date": "2026-11-04",
@@ -11,7 +11,7 @@
       "dailyRange": "0.067",
       "fullAchievement": "0.064",
       "historicVol": "33.5%",
-      "impliedVol": "",
+      "impliedVol": "59.7%",
       "weeklyHigh": "2.46",
       "weeklyLow": "2.383",
       "weeklyRange": "0.077",
@@ -22,7 +22,7 @@
       "weeklyTarget": "0.172",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "44.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
