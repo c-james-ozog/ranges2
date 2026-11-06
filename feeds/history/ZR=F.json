@@ -2,8 +2,31 @@
   "symbol": "ZR=F",
   "commodity": "Rice",
   "month": "Cont.",
-  "updatedAt": "2026-11-06T01:27:48.389215-06:00",
+  "updatedAt": "2026-11-06T10:50:47.141387-06:00",
   "rows": [
+    {
+      "date": "2026-11-06",
+      "dailyHigh": "1860.5",
+      "dailyLow": "1817",
+      "dailyRange": "68.5",
+      "fullAchievement": "35.5",
+      "historicVol": "24.9%",
+      "impliedVol": "",
+      "weeklyHigh": "1860.5",
+      "weeklyLow": "1743.5",
+      "weeklyRange": "117",
+      "sectionBreak": false,
+      "dailyTarget": "13.5",
+      "nextDailyTarget": "28.5",
+      "dailyAchievement": "507.4%",
+      "weeklyTarget": "77",
+      "nextWeeklyTarget": "88",
+      "weeklyAchievement": "151.9%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|1"
+    },
     {
       "date": "2026-11-05",
       "dailyHigh": "1792",
@@ -25,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-11-04",
@@ -48,7 +71,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-11-03",
@@ -71,7 +94,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-11-02",
@@ -94,7 +117,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-10-30",
