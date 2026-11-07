@@ -2,7 +2,7 @@
   "symbol": "NQZ26",
   "commodity": "Nasdaq 100 E-Mini",
   "month": "Dec",
-  "updatedAt": "2026-11-07T00:40:18.583185-06:00",
+  "updatedAt": "2026-11-07T10:59:45.529697-06:00",
   "rows": [
     {
       "date": "2026-11-06",
@@ -11,7 +11,7 @@
       "dailyRange": "1058.5",
       "fullAchievement": "1503.5",
       "historicVol": "71.0%",
-      "impliedVol": "",
+      "impliedVol": "28.3%",
       "weeklyHigh": "28969",
       "weeklyLow": "26366.5",
       "weeklyRange": "2602.5",
@@ -22,7 +22,7 @@
       "weeklyTarget": "1697.25",
       "nextWeeklyTarget": "1891.25",
       "weeklyAchievement": "153.3%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
