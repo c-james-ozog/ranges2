@@ -2,7 +2,7 @@
   "symbol": "ZCZ27",
   "commodity": "Corn",
   "month": "Dec27",
-  "updatedAt": "2026-11-10T01:50:06.354767-06:00",
+  "updatedAt": "2026-11-10T08:25:02.031507-06:00",
   "rows": [
     {
       "date": "2026-11-10",
@@ -34,7 +34,7 @@
       "dailyRange": "4.75",
       "fullAchievement": "4.75",
       "historicVol": "12.4%",
-      "impliedVol": "",
+      "impliedVol": "20.1%",
       "weeklyHigh": "486",
       "weeklyLow": "481.25",
       "weeklyRange": "4.75",
@@ -45,7 +45,7 @@
       "weeklyTarget": "10.5",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "45.2%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|4"
