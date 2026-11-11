@@ -2,7 +2,7 @@
   "symbol": "SBH27",
   "commodity": "Sugar",
   "month": "Mar27",
-  "updatedAt": "2026-11-10T20:45:48.412748-06:00",
+  "updatedAt": "2026-11-10T22:56:15.130614-06:00",
   "rows": [
     {
       "date": "2026-11-10",
@@ -11,7 +11,7 @@
       "dailyRange": "0.37",
       "fullAchievement": "0.37",
       "historicVol": "25.9%",
-      "impliedVol": "25.6%",
+      "impliedVol": "24.7%",
       "weeklyHigh": "18.44",
       "weeklyLow": "17.92",
       "weeklyRange": "0.52",
@@ -22,7 +22,7 @@
       "weeklyTarget": "1.22",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "42.6%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"

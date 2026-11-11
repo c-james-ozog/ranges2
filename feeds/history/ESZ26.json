@@ -2,7 +2,7 @@
   "symbol": "ESZ26",
   "commodity": "S&P 500 E-Mini",
   "month": "Dec",
-  "updatedAt": "2026-11-10T20:45:48.412748-06:00",
+  "updatedAt": "2026-11-10T22:56:15.130614-06:00",
   "rows": [
     {
       "date": "2026-11-10",
@@ -11,7 +11,7 @@
       "dailyRange": "105.75",
       "fullAchievement": "163",
       "historicVol": "27.7%",
-      "impliedVol": "15.6%",
+      "impliedVol": "15.2%",
       "weeklyHigh": "7600.5",
       "weeklyLow": "7363.75",
       "weeklyRange": "236.75",
@@ -22,7 +22,7 @@
       "weeklyTarget": "283",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "83.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|3",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|4"
