@@ -23,7 +23,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests openpyxl
+        run: pip install requests openpyxl curl_cffi yfinance scipy
 
       - name: Run build_feeds.py
         run: python build_feeds.py
