@@ -26,6 +26,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install dependencies
+        run: pip install requests openpyxl curl_cffi yfinance scipy
+
       - name: Show repo files
         run: |
           pwd
@@ -37,6 +40,7 @@ jobs:
           mkdir -p feeds
           mkdir -p feeds/history
           mkdir -p feeds/cache
+          mkdir -p feeds/oi_history
 
       - name: Run feed build
         env:
@@ -56,7 +60,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add feeds/
+          git add feeds/ src/
 
           if git diff --cached --quiet; then
             echo "No feed changes to commit"
