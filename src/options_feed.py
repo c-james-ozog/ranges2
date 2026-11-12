@@ -82,6 +82,21 @@ DISPLAY_ORDER: list[str] = [
     "Feeder Cattle", "Lean Hogs", "Live Cattle",
 ]
 
+# Commodities whose prices are quoted in cents (not dollars)
+CENTS_COMMODITIES: frozenset[str] = frozenset([
+    "Corn", "Hard Red Wheat", "Soybeans", "Soybean Oil", "Wheat",
+    "Copper", "Lean Hogs", "Live Cattle", "Feeder Cattle",
+])
+
+def _fmt_move(val: float, commodity: str) -> str:
+    """Format expected move in native commodity units."""
+    if commodity in CENTS_COMMODITIES:
+        return f"{val:.1f}¢"   # e.g. "25.3¢"
+    # dollars: no decimals if large, two if small
+    if val >= 10:
+        return f"${val:.0f}"
+    return f"${val:.2f}"
+
 # ETF proxies for IV estimation via yfinance options chains
 ETF_IV_PROXY: dict[str, str | None] = {
     "Gold":          "GLD",
@@ -628,6 +643,7 @@ def _build_contract(
         "atmIVPct":          f"{atm_iv * 100:.1f}%" if atm_iv else None,
         "ivSource":          iv_source,
         "expectedMovePrice": move_price,
+        "expectedMoveFmt":   _fmt_move(move_price, commodity) if move_price else None,
         "expectedMovePct":   f"{move_pct * 100:.2f}%" if move_pct else None,
         "expectedMoveRange": {
             "low":  round(spot - move_price, 4),
