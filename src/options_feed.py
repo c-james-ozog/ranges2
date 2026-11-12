@@ -26,6 +26,46 @@ from typing import Any
 
 log = logging.getLogger(__name__)
 
+RISK_FREE_RATE: float = 0.05
+
+
+# ---------------------------------------------------------------------------
+# Black-76 IV solver (bisection, no external dependency beyond math)
+# ---------------------------------------------------------------------------
+
+def _norm_cdf(x: float) -> float:
+    return 0.5 * math.erfc(-x / math.sqrt(2))
+
+
+def _black76_price(F: float, K: float, r: float, T: float, sigma: float, is_call: bool) -> float:
+    if T <= 0 or sigma <= 0:
+        intrinsic = max(0.0, (F - K) if is_call else (K - F))
+        return intrinsic * math.exp(-r * T)
+    sqrtT = math.sqrt(T)
+    d1 = (math.log(F / K) + 0.5 * sigma ** 2 * T) / (sigma * sqrtT)
+    d2 = d1 - sigma * sqrtT
+    df = math.exp(-r * T)
+    if is_call:
+        return df * (F * _norm_cdf(d1) - K * _norm_cdf(d2))
+    return df * (K * _norm_cdf(-d2) - F * _norm_cdf(-d1))
+
+
+def _black76_iv(price: float, F: float, K: float, r: float, T: float, is_call: bool) -> float | None:
+    if T <= 0 or price <= 0 or F <= 0 or K <= 0:
+        return None
+    lo, hi = 1e-5, 5.0
+    for _ in range(120):
+        mid = (lo + hi) / 2.0
+        p   = _black76_price(F, K, r, T, mid, is_call)
+        if abs(p - price) < 1e-7:
+            break
+        if p < price:
+            lo = mid
+        else:
+            hi = mid
+    result = (lo + hi) / 2.0
+    return result if 1e-4 < result < 4.99 else None
+
 # ---------------------------------------------------------------------------
 # Commodity config
 # ---------------------------------------------------------------------------
@@ -267,8 +307,12 @@ def fetch_cme_oi(commodity: str, del_month: int, del_year: int) -> tuple[list[di
             oi = 0
         if oi == 0:
             continue
+        try:
+            settle = float(str(row.get("settle", "0")).replace(",", ""))
+        except (ValueError, TypeError):
+            settle = 0.0
         t   = row.get("type", "").lower()
-        rec = {"strike": strike, "openInterest": oi}
+        rec = {"strike": strike, "openInterest": oi, "settle": settle}
         if t == "call":
             calls.append(rec)
         elif t == "put":
@@ -510,10 +554,6 @@ def _build_contract(
         exp_str = cme_exp
         dte = max((datetime.date.fromisoformat(cme_exp) - datetime.date.today()).days, 0)
 
-    # IV from ETF proxy
-    iv_data = fetch_iv_etf(commodity, dte)
-    atm_iv  = iv_data.get("atm_iv")
-
     # ATM strike
     atm_strike = None
     if spot and calls:
@@ -522,6 +562,33 @@ def _build_contract(
         magnitude  = 10 ** math.floor(math.log10(max(spot, 1)))
         tick       = magnitude / 10
         atm_strike = round(spot / tick) * tick
+
+    # IV — try Black-76 from CME settlement prices first, fall back to ETF proxy
+    atm_iv   = None
+    iv_source = None
+    if spot and atm_strike and dte > 0 and (calls or puts):
+        T  = dte / 365.0
+        F  = spot      # near-month futures price ≈ continuous spot
+        K  = atm_strike
+        atm_calls = [r for r in calls if r["strike"] == K]
+        atm_puts  = [r for r in puts  if r["strike"] == K]
+        ivs: list[float] = []
+        if atm_calls and atm_calls[0].get("settle", 0) > 0:
+            iv = _black76_iv(atm_calls[0]["settle"], F, K, RISK_FREE_RATE, T, is_call=True)
+            if iv:
+                ivs.append(iv)
+        if atm_puts and atm_puts[0].get("settle", 0) > 0:
+            iv = _black76_iv(atm_puts[0]["settle"], F, K, RISK_FREE_RATE, T, is_call=False)
+            if iv:
+                ivs.append(iv)
+        if ivs:
+            atm_iv    = sum(ivs) / len(ivs)
+            iv_source = "CME (Black-76)"
+
+    if not atm_iv:
+        iv_data   = fetch_iv_etf(commodity, dte)
+        atm_iv    = iv_data.get("atm_iv")
+        iv_source = f"ETF ({iv_data.get('proxy_ticker', '?')})" if atm_iv else None
 
     # Expected move
     move_price = move_pct = None
@@ -559,7 +626,7 @@ def _build_contract(
         "atmStrike":         atm_strike,
         "atmIV":             round(atm_iv, 6) if atm_iv else None,
         "atmIVPct":          f"{atm_iv * 100:.1f}%" if atm_iv else None,
-        "ivSource":          f"ETF ({iv_data.get('proxy_ticker', '?')})" if atm_iv else None,
+        "ivSource":          iv_source,
         "expectedMovePrice": move_price,
         "expectedMovePct":   f"{move_pct * 100:.2f}%" if move_pct else None,
         "expectedMoveRange": {
