@@ -2,7 +2,7 @@
   "symbol": "LEZ26",
   "commodity": "Live Cattle",
   "month": "Dec",
-  "updatedAt": "2026-11-11T11:17:19.971144-06:00",
+  "updatedAt": "2026-11-11T19:30:59.168034-06:00",
   "rows": [
     {
       "date": "2026-11-11",
@@ -10,8 +10,8 @@
       "dailyLow": "217.375",
       "dailyRange": "2.35",
       "fullAchievement": "3.8",
-      "historicVol": "22.3%",
-      "impliedVol": "",
+      "historicVol": "22.2%",
+      "impliedVol": "13.9%",
       "weeklyHigh": "219.725",
       "weeklyLow": "214.05",
       "weeklyRange": "5.675",
@@ -22,7 +22,7 @@
       "weeklyTarget": "9.525",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "59.6%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|3",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
