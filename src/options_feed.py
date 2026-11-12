@@ -33,6 +33,43 @@ RISK_FREE_RATE: float = 0.05
 # Black-76 IV solver (bisection, no external dependency beyond math)
 # ---------------------------------------------------------------------------
 
+def _count_trading_days(start: datetime.date, end: datetime.date) -> int:
+    """Count weekday trading days from start to end inclusive."""
+    if end < start:
+        return 0
+    count = 0
+    d = start
+    while d <= end:
+        if d.weekday() < 5:
+            count += 1
+        d += datetime.timedelta(days=1)
+    return count
+
+
+def _grain_options_expiry(del_month: int, del_year: int) -> datetime.date:
+    """
+    Grains: last Friday >= 5 business days before first notice day
+    (= last business day of month prior to delivery).
+    """
+    fnd_m, fnd_y = del_month - 1, del_year
+    if fnd_m == 0:
+        fnd_m, fnd_y = 12, del_year - 1
+    last_day = calendar.monthrange(fnd_y, fnd_m)[1]
+    fnd = datetime.date(fnd_y, fnd_m, last_day)
+    while fnd.weekday() >= 5:
+        fnd -= datetime.timedelta(days=1)
+
+    count, d = 0, fnd
+    while count < 5:
+        d -= datetime.timedelta(days=1)
+        if d.weekday() < 5:
+            count += 1
+
+    while d.weekday() != 4:
+        d -= datetime.timedelta(days=1)
+    return d
+
+
 def _norm_cdf(x: float) -> float:
     return 0.5 * math.erfc(-x / math.sqrt(2))
 
@@ -555,19 +592,21 @@ def _build_contract(
     while tgt_m <= 0:  tgt_m += 12; tgt_y -= 1
     while tgt_m > 12:  tgt_m -= 12; tgt_y += 1
 
-    # Approximate expiry (last Friday of target month)
-    last  = calendar.monthrange(tgt_y, tgt_m)[1]
-    exp_d = datetime.date(tgt_y, tgt_m, last)
-    while exp_d.weekday() != 4:
-        exp_d -= datetime.timedelta(days=1)
+    # Options expiration date
+    if offset == -1:
+        # Grains: last Friday >= 5 business days before first notice day
+        exp_d = _grain_options_expiry(del_month, del_year)
+    else:
+        # Metals/livestock: last Friday of delivery month
+        last  = calendar.monthrange(del_year, del_month)[1]
+        exp_d = datetime.date(del_year, del_month, last)
+        while exp_d.weekday() != 4:
+            exp_d -= datetime.timedelta(days=1)
     exp_str = exp_d.isoformat()
-    dte     = max((exp_d - datetime.date.today()).days, 0)
+    dte     = _count_trading_days(datetime.date.today(), exp_d)
 
-    # CME OI
-    calls, puts, cme_exp = fetch_cme_oi(commodity, tgt_m, tgt_y)
-    if cme_exp:
-        exp_str = cme_exp
-        dte = max((datetime.date.fromisoformat(cme_exp) - datetime.date.today()).days, 0)
+    # CME OI — pass delivery month so API matches correctly; ignore returned exp date
+    calls, puts, _cme_exp = fetch_cme_oi(commodity, del_month, del_year)
 
     # ATM strike
     atm_strike = None
