@@ -2,7 +2,7 @@
   "symbol": "ZLZ26",
   "commodity": "Soybean Oil",
   "month": "Dec",
-  "updatedAt": "2026-11-12T11:39:27.325148-06:00",
+  "updatedAt": "2026-11-12T13:52:19.921702-06:00",
   "rows": [
     {
       "date": "2026-11-12",
@@ -10,8 +10,8 @@
       "dailyLow": "63.16",
       "dailyRange": "0.93",
       "fullAchievement": "1.26",
-      "historicVol": "25.4%",
-      "impliedVol": "",
+      "historicVol": "25.5%",
+      "impliedVol": "18.0%",
       "weeklyHigh": "64.09",
       "weeklyLow": "61.5",
       "weeklyRange": "2.59",
@@ -22,7 +22,7 @@
       "weeklyTarget": "3.17",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "81.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
