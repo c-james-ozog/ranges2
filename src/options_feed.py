@@ -608,6 +608,11 @@ def _build_contract(
     # CME OI — pass delivery month so API matches correctly; ignore returned exp date
     calls, puts, _cme_exp = fetch_cme_oi(commodity, del_month, del_year)
 
+    # yfinance spot for CENTS_COMMODITIES is in cents; CME strikes are in dollars → ×100
+    if commodity in CENTS_COMMODITIES:
+        calls = [{"strike": round(r["strike"] * 100, 2), "openInterest": r["openInterest"]} for r in calls]
+        puts  = [{"strike": round(r["strike"] * 100, 2), "openInterest": r["openInterest"]} for r in puts]
+
     # ATM strike
     atm_strike = None
     if spot and calls:
