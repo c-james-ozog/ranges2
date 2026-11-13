@@ -223,3 +223,22 @@ def get_active_contracts(date_str: str) -> list[Contract]:
         seen.add(sym)
         result.append(c)
     return result
+
+
+def active_symbols_for_date(date_str: str) -> list[str]:
+    """Return base_symbols of contracts rolled to but not yet dropped as of date_str."""
+    result = []
+    seen: set[str] = set()
+    for c in CONTRACTS:
+        sym = c["base_symbol"]
+        if sym in seen:
+            continue
+        rd = c.get("roll_date")
+        if rd and rd > date_str:
+            continue
+        dd = c.get("drop_date")
+        if dd and dd <= date_str:
+            continue
+        seen.add(sym)
+        result.append(sym)
+    return result
