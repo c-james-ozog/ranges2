@@ -1,17 +1,53 @@
 """
-Contract configuration for ranges2 feed builder.
-
-roll_date: the first date this contract appears on the home page.
-           For dates before roll_date the prior contract for that commodity is shown.
-           None means always active from the beginning of history.
+ranges2 feed builder — SELF-CONTAINED (inline config + inline scraper + build logic).
+Rebuilt after the options refactor gutted the builder; no src/ imports so the
+options config.py cannot break it. Run: python build_feeds.py
 """
+from __future__ import annotations
 
+import json
+import logging
+import time
+from urllib.error import HTTPError, URLError
+from urllib.parse import quote
+from urllib.request import Request, urlopen
+from concurrent.futures import Future, ThreadPoolExecutor
+from datetime import date, datetime, timedelta
+from pathlib import Path
+from zoneinfo import ZoneInfo
 from typing import TypedDict
 
 
 # ---------------------------------------------------------------------------
-# Types
+# Logging
 # ---------------------------------------------------------------------------
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)-8s %(message)s",
+    datefmt="%H:%M:%S",
+)
+log = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Paths
+# ---------------------------------------------------------------------------
+
+FEEDS_DIR    = Path("feeds")
+HISTORY_DIR  = FEEDS_DIR / "history"
+
+IMPLIED_VOL_FILE    = Path("implied_vol.json")
+PRICE_OVERRIDE_FILE = Path("price_overrides.json")
+EXCEL_OVERRIDE_FILE = Path("implied_vol_input.xlsx")
+MANUAL_OHLC_FILE    = Path("manual_ohlc.json")
+
+# ---------------------------------------------------------------------------
+# Chicago timezone & date helpers
+# ---------------------------------------------------------------------------
+
+CT = ZoneInfo("America/Chicago")
+
+
 
 class Contract(TypedDict, total=False):
     commodity:   str           # Human-readable name (e.g. "Cocoa")
@@ -438,3 +474,1059 @@ CME_PRODUCT_MAP: dict[str, int] = {
 RISK_FREE_RATE: float = 0.05
 OI_HISTORY_WINDOW: int = 15
 OI_LOOKBACK: int = 10
+
+
+
+# ---------------------------------------------------------------------------
+# Types
+# ---------------------------------------------------------------------------
+
+RawRow = dict  # {timestamp: int, high: float, low: float, close: float}
+
+
+# ---------------------------------------------------------------------------
+# Tick helpers
+# ---------------------------------------------------------------------------
+
+def round_to_tick(value: float, tick: float) -> float:
+    """Round value to the nearest tick increment."""
+    return round(round(value / tick) * tick, 10)
+
+
+def format_tick(value: float, tick: float) -> str:
+    """
+    Format a price value using the correct number of decimal places for its tick.
+    Strips trailing zeros while preserving meaningful precision.
+
+    Examples:
+        format_tick(1175.00, 0.25) -> "1175"
+        format_tick(6.0955, 0.0005) -> "6.0955"
+        format_tick(25.10, 0.1) -> "25.1"
+    """
+    if "." in str(tick):
+        decimals = len(str(tick).rstrip("0").split(".")[1])
+        formatted = f"{round(value, decimals):.{decimals}f}"
+        return formatted.rstrip("0").rstrip(".")
+    return str(int(round(value)))
+
+
+# ---------------------------------------------------------------------------
+# Yahoo Finance fetcher
+# ---------------------------------------------------------------------------
+
+def fetch_yahoo_history(symbol: str) -> list[RawRow]:
+    """
+    Fetch daily OHLC history from Yahoo Finance for the given symbol.
+
+    For contracts where daily data returns flat H==L (bad data), automatically
+    falls back to hourly data aggregated into daily bars.
+
+    Returns rows sorted newest-first, with None values filtered out.
+    Retries on transient network errors with exponential backoff.
+
+    Raises:
+        RuntimeError: if all retry attempts fail.
+    """
+    url = (
+        f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol, safe='')}"
+        f"?range={YAHOO_RANGE}&interval={YAHOO_INTERVAL}"
+        f"&includePrePost=false&events=div%2Csplits"
+    )
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/120.0.0.0 Safari/537.36"
+        ),
+        "Accept": "application/json",
+    }
+
+    rows = _fetch_url(url, symbol, headers)
+
+    # Detect flat data: if >50% of rows have high == low, data is bad
+    # Fall back to hourly data aggregated to daily
+    if rows and sum(1 for r in rows if r["high"] == r["low"]) > len(rows) * 0.5:
+        log.warning("%s: flat OHLC detected — falling back to hourly aggregation", symbol)
+        hourly_url = (
+            f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol, safe='')}"
+            f"?range=2mo&interval=1h&includePrePost=false"
+        )
+        try:
+            hourly_rows = _fetch_url(hourly_url, symbol, headers)
+            aggregated = _aggregate_hourly_to_daily(hourly_rows)
+            if aggregated:
+                return aggregated
+        except Exception as e:
+            log.warning("%s: hourly fallback failed: %s", symbol, e)
+
+    return rows
+
+
+def _fetch_url(url: str, symbol: str, headers: dict) -> list[RawRow]:
+    """Internal fetch with retry logic."""
+    last_error: Exception | None = None
+    for attempt in range(FETCH_MAX_RETRIES):
+        if attempt > 0:
+            backoff = FETCH_DELAY * (2 ** attempt)
+            log.warning(
+                "Retrying %s (attempt %d/%d) after %.1fs backoff",
+                symbol, attempt + 1, FETCH_MAX_RETRIES, backoff,
+            )
+            time.sleep(backoff)
+        try:
+            req = Request(url, headers=headers)
+            with urlopen(req, timeout=30) as resp:
+                data = json.load(resp)
+            return _parse_yahoo_response(data)
+        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as e:
+            last_error = e
+            log.debug("Fetch attempt %d failed for %s: %s", attempt + 1, symbol, e)
+        except (KeyError, IndexError) as e:
+            # Structural parse error — not worth retrying
+            raise RuntimeError(f"Unexpected Yahoo response structure for {symbol}: {e}") from e
+
+    raise RuntimeError(
+        f"Failed to fetch {symbol} after {FETCH_MAX_RETRIES} attempts: {last_error}"
+    )
+
+
+def _aggregate_hourly_to_daily(rows: list[RawRow]) -> list[RawRow]:
+    """
+    Aggregate hourly bars into daily OHLC bars.
+
+    Stores timestamps as midnight UTC of the prior day — matching Yahoo's
+    daily bar convention — so ts_to_ct_date() computes the correct trade date.
+    """
+    from collections import defaultdict
+    from datetime import datetime, timezone, timedelta
+    from zoneinfo import ZoneInfo
+
+    CT = ZoneInfo("America/Chicago")
+    daily: dict[str, dict] = defaultdict(lambda: {"high": None, "low": None, "close": None})
+
+    for row in rows:
+        # Use Chicago time to assign hourly bar to its trade date
+        dt_ct = datetime.fromtimestamp(row["timestamp"], tz=CT)
+        date_str = dt_ct.strftime("%Y-%m-%d")
+        d = daily[date_str]
+        d["high"]  = row["high"] if d["high"] is None else max(d["high"], row["high"])
+        d["low"]   = row["low"]  if d["low"]  is None else min(d["low"],  row["low"])
+        d["close"] = row["close"]
+
+    result = []
+    for date_str, d in daily.items():
+        if d["high"] is None or d["high"] == d["low"]:
+            continue
+        # Build a midnight-UTC timestamp for the prior day so ts_to_ct_date
+        # adds 1 day and recovers the correct trade date
+        prior_midnight = datetime.fromisoformat(date_str) - timedelta(days=1)
+        fake_ts = int(prior_midnight.replace(tzinfo=timezone.utc).timestamp())
+        result.append({
+            "timestamp": fake_ts,
+            "high":      d["high"],
+            "low":       d["low"],
+            "close":     d["close"],
+        })
+
+    result.sort(key=lambda r: r["timestamp"], reverse=True)
+    return result
+
+
+def _parse_yahoo_response(data: dict) -> list[RawRow]:
+    """Extract and validate OHLC rows from a Yahoo Finance chart response."""
+    result = data["chart"]["result"][0]
+    quote = result["indicators"]["quote"][0]
+
+    rows: list[RawRow] = []
+    for ts, high, low, close in zip(
+        result.get("timestamp", []),
+        quote.get("high", []),
+        quote.get("low", []),
+        quote.get("close", []),
+    ):
+        # Yahoo sometimes returns None for missing bars
+        if None in (ts, high, low, close):
+            continue
+        rows.append({
+            "timestamp": int(ts),
+            "high": float(high),
+            "low": float(low),
+            "close": float(close),
+        })
+
+    rows.sort(key=lambda r: r["timestamp"], reverse=True)
+    return rows
+
+def ts_to_ct_date(ts: int) -> str:
+    """
+    Convert a Yahoo Finance Unix timestamp to a Chicago-time trade date.
+    Yahoo stores timestamps at midnight UTC for the *previous* calendar day,
+    so adding one day corrects to the actual trade date.
+    """
+    return (datetime.fromtimestamp(ts, tz=CT) + timedelta(days=1)).strftime("%Y-%m-%d")
+
+
+def is_trading_day(date_str: str) -> bool:
+    """Return True if date_str is a weekday that is not a CME holiday."""
+    try:
+        d = date.fromisoformat(date_str)
+    except ValueError:
+        return False
+    return d.weekday() < 5 and date_str not in CME_HOLIDAYS
+
+
+def week_monday(date_str: str) -> str:
+    """Return the ISO date of the Monday that starts the week containing date_str."""
+    d = date.fromisoformat(date_str)
+    return (d - timedelta(days=d.weekday())).isoformat()
+
+
+def is_last_trading_day_of_week(date_str: str) -> bool:
+    """True if date_str is the last trading day (Friday or earlier if holiday) of its week."""
+    d = date.fromisoformat(date_str)
+    friday = d + timedelta(days=4 - d.weekday())
+    candidate = friday
+    for _ in range(5):
+        iso = candidate.isoformat()
+        if candidate.weekday() < 5 and iso not in CME_HOLIDAYS:
+            return date_str == iso
+        candidate -= timedelta(days=1)
+    return False
+
+
+def is_first_trading_day_of_week(date_str: str) -> bool:
+    """True if date_str is the first trading day (Monday or later if holiday) of its week."""
+    d = date.fromisoformat(date_str)
+    monday = d - timedelta(days=d.weekday())
+    candidate = monday
+    for _ in range(5):
+        iso = candidate.isoformat()
+        if candidate.weekday() < 5 and iso not in CME_HOLIDAYS:
+            return date_str == iso
+        candidate += timedelta(days=1)
+    return False
+
+
+# ---------------------------------------------------------------------------
+# Override loaders
+# ---------------------------------------------------------------------------
+
+def load_json_file(path: Path) -> dict:
+    """Load a JSON file, returning an empty dict on missing file or parse error."""
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        log.warning("Could not load %s: %s", path, e)
+        return {}
+
+
+def load_implied_vol() -> dict[str, dict[str, float]]:
+    """
+    Load implied volatility data from implied_vol.json.
+    Format: { "YYYY-MM-DD": { "SYMBOL": float_percent } }
+    """
+    data = load_json_file(IMPLIED_VOL_FILE)
+    if data:
+        log.info("Loaded implied vol for %d dates", len(data))
+    return data
+
+
+def load_price_overrides() -> dict[str, dict[str, dict[str, float]]]:
+    """
+    Load manual price corrections from price_overrides.json.
+    Format: { "YYYY-MM-DD": { "SYMBOL": { "high": float, "low": float } } }
+    """
+    data = load_json_file(PRICE_OVERRIDE_FILE)
+    if data:
+        log.info("Loaded price overrides for %d dates", len(data))
+    return data
+
+
+def load_rice_overrides() -> dict[str, dict[str, float]]:
+    """
+    Load Rice manual OHLC data from the Excel workbook.
+    Yahoo Finance data for Rice is unreliable; this provides correct values.
+    Looks for sheets named "Rice Override (ZRN26)", "Rice Override (ZRU26)", etc.
+    All matching sheets are merged; later dates win on conflict.
+    Format: { "YYYY-MM-DD": { "high": float, "low": float, "close": float } }
+    """
+    if not EXCEL_OVERRIDE_FILE.exists():
+        return {}
+    try:
+        from openpyxl import load_workbook  # lazy import — only needed if file exists
+        wb = load_workbook(EXCEL_OVERRIDE_FILE, data_only=True)
+        # Find all Rice Override sheets (any symbol)
+        rice_sheets = [s for s in wb.sheetnames if s.startswith("Rice Override")]
+        if not rice_sheets:
+            return {}
+        result: dict[str, dict[str, float]] = {}
+        for sheet_name in rice_sheets:
+            ws = wb[sheet_name]
+            for date_val, high, low, close, *_ in ws.iter_rows(min_row=3, values_only=True):
+                if date_val is None or high is None or low is None:
+                    continue
+                s = str(date_val)
+                for fmt in ("%Y-%m-%d", "%m/%d/%y"):
+                    try:
+                        date_str = (
+                            date_val.strftime("%Y-%m-%d")
+                            if hasattr(date_val, "strftime")
+                            else __import__("datetime").datetime.strptime(s, fmt).strftime("%Y-%m-%d")
+                        )
+                        break
+                    except (ValueError, AttributeError):
+                        continue
+                else:
+                    continue
+                result[date_str] = {
+                    "high": float(high),
+                    "low": float(low),
+                    "close": float(close) if close is not None else 0.0,
+                }
+        if result:
+            log.info("Loaded Rice overrides for %d dates", len(result))
+        return result
+    except Exception as e:
+        log.warning("Could not load Rice overrides from Excel: %s", e)
+        return {}
+
+
+def load_manual_ohlc() -> dict[str, dict[str, dict[str, float]]]:
+    """
+    Load manually-entered OHLC for contracts that have no Yahoo source
+    (e.g. Canola / RS1, sourced from TradingView and pasted by hand).
+
+    Format: { "SYMBOL": { "YYYY-MM-DD": { "high": float, "low": float,
+                                          "close": float } } }
+    Keyed by base_symbol, then by trade date. `open` is not required —
+    the range/target formulas only use high, low and close.
+    """
+    data = load_json_file(MANUAL_OHLC_FILE)
+    if data:
+        total = sum(len(v) for v in data.values())
+        log.info("Loaded manual OHLC for %d symbol(s), %d rows", len(data), total)
+    return data
+
+
+def build_manual_rows(symbol: str, manual_data: dict) -> list[RawRow]:
+    """
+    Turn a manual per-date OHLC map into RawRows compatible with the rest of
+    the pipeline. Synthesises a timestamp for each trade date such that
+    ts_to_ct_date() recovers exactly that date (noon CT on the prior day, so
+    the +1-day convention lands on the intended trade date and DST edges are
+    avoided). Returns rows newest-first, matching fetch_yahoo_history().
+    """
+    per_symbol = manual_data.get(symbol, {})
+    rows: list[RawRow] = []
+    for date_str, ohlc in per_symbol.items():
+        try:
+            d = date.fromisoformat(date_str)
+        except ValueError:
+            log.warning("Manual OHLC %s: bad date %r — skipping", symbol, date_str)
+            continue
+        prior_noon_ct = datetime(d.year, d.month, d.day, 12, tzinfo=CT) - timedelta(days=1)
+        rows.append({
+            "timestamp": int(prior_noon_ct.timestamp()),
+            "high":      float(ohlc["high"]),
+            "low":       float(ohlc["low"]),
+            "close":     float(ohlc["close"]),
+        })
+    rows.sort(key=lambda r: r["timestamp"], reverse=True)
+    return rows
+
+
+# ---------------------------------------------------------------------------
+# Row pre-processing
+# ---------------------------------------------------------------------------
+
+def preprocess_rows(
+    raw_rows: list[RawRow],
+    symbol: str,
+    today: str,
+    price_overrides: dict,
+    rice_overrides: dict,
+) -> list[RawRow]:
+    """
+    Apply all corrections to raw Yahoo rows and filter to valid trading days <= today.
+
+    Processing order:
+        1. Apply price_overrides (corrects bad Yahoo highs/lows for any contract)
+        2. Apply rice_overrides (replaces all Yahoo data for ZRN26)
+        3. Filter: keep only valid trading days on or before today
+    """
+    result: list[RawRow] = []
+    for row in raw_rows:
+        trade_date = ts_to_ct_date(row["timestamp"])
+
+        # Skip future dates and non-trading days
+        if trade_date > today or not is_trading_day(trade_date):
+            continue
+
+        # Apply generic price overrides
+        if day := price_overrides.get(trade_date, {}).get(symbol):
+            row = dict(row)  # avoid mutating original
+            row["high"]  = float(day.get("high",  row["high"]))
+            row["low"]   = float(day.get("low",   row["low"]))
+            row["close"] = float(day.get("close", row["close"]))
+
+        # Apply Rice-specific overrides (works for any ZR* symbol: ZRN26, ZRU26, etc.)
+        if symbol.startswith("ZR") and (override := rice_overrides.get(trade_date)):
+            row = dict(row)
+            row["high"]  = override["high"]
+            row["low"]   = override["low"]
+            row["close"] = override["close"] or row["close"]
+
+        # Yahoo changed Rice pricing from cents/cwt to dollars/cwt
+        # If price is < 100, multiply by 100 to restore correct scale
+        if symbol.startswith("ZR") and row.get("high", 0) < 100:
+            row = dict(row)
+            row["high"]  = round(row["high"]  * 100, 4)
+            row["low"]   = round(row["low"]   * 100, 4)
+            row["close"] = round(row["close"] * 100, 4)
+
+        result.append(row)
+
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Tick-level computations
+# ---------------------------------------------------------------------------
+
+def daily_range(row: RawRow, tick: float, prev_close: float | None = None) -> float:
+    """
+    True Range = max(High - Low, |High - Prev Close|, |Low - Prev Close|)
+    Falls back to High - Low when no previous close is available.
+    """
+    high  = round_to_tick(row["high"], tick)
+    low   = round_to_tick(row["low"],  tick)
+    hl    = round_to_tick(high - low, tick)
+    if prev_close is None:
+        return hl
+    pc = round_to_tick(prev_close, tick)
+    return round_to_tick(max(hl, abs(high - pc), abs(low - pc)), tick)
+
+
+def pct(numerator: float | None, denominator: float | None) -> str:
+    """Format numerator/denominator as a percentage string, e.g. '95.5%'."""
+    if not numerator or not denominator:
+        return ""
+    return f"{round((numerator / denominator) * 100, 1)}%"
+
+
+def historic_vol(rows: list[RawRow], i: int, tick: float) -> str:
+    """
+    Historic Vol = (avg_3day_range * HV_TARGET_MULT) / (close / PRICE_DIVISOR) * HV_ANNUALIZATION
+
+    Uses a rolling window of DAILY_TARGET_LOOKBACK days starting at index i.
+    Returns '' if insufficient data.
+    """
+    window = rows[i : i + DAILY_TARGET_LOOKBACK]
+    if len(window) < DAILY_TARGET_LOOKBACK or not window[0].get("close"):
+        return ""
+    # Pass previous close for True Range (rows are newest-first, so next index = prior day)
+    avg_range = sum(
+        daily_range(window[j], tick, rows[i + j + 1].get("close") if i + j + 1 < len(rows) else None)
+        for j in range(DAILY_TARGET_LOOKBACK)
+    ) / DAILY_TARGET_LOOKBACK
+    close_one_pct = window[0]["close"] / PRICE_DIVISOR
+    hv = (avg_range * HV_TARGET_MULTIPLIER / close_one_pct) * HV_ANNUALIZATION_FACTOR
+    return f"{round(hv, 1)}%"
+
+
+def full_achievement_and_target(
+    rows: list[RawRow], i: int, tick: float
+) -> tuple[float | None, float | None]:
+    """
+    Return (avg_range, daily_target) for the window starting at index i.
+    avg_range is the average of DAILY_TARGET_LOOKBACK daily ranges.
+    daily_target is avg_range * HV_TARGET_MULTIPLIER.
+    Returns (None, None) if insufficient data.
+    """
+    window = rows[i : i + DAILY_TARGET_LOOKBACK]
+    if len(window) < DAILY_TARGET_LOOKBACK:
+        return None, None
+    # Pass previous close for True Range
+    avg = sum(
+        daily_range(window[j], tick, rows[i + j + 1].get("close") if i + j + 1 < len(rows) else None)
+        for j in range(DAILY_TARGET_LOOKBACK)
+    ) / DAILY_TARGET_LOOKBACK
+    avg_r  = round_to_tick(avg, tick)
+    target = round_to_tick(avg_r * HV_TARGET_MULTIPLIER, tick)
+    return avg_r, target
+
+
+# ---------------------------------------------------------------------------
+# Weekly computations
+# ---------------------------------------------------------------------------
+
+WeeklyData = dict  # date_str -> {weeklyHigh, weeklyLow, weeklyRange}
+WeeklyTargets = dict  # date_str -> {weeklyTarget, nextWeeklyTarget}
+
+
+def compute_weekly_ranges(dated_rows: list[dict], tick: float) -> WeeklyData:
+    """
+    Compute cumulative weekly high/low/range for each trading day.
+    Ranges expand Mon→Fri as new highs/lows are made during the week.
+    Accounts for gap opens: if Monday opens with a gap vs prior Friday's close,
+    the gap is included in the weekly range.
+    """
+    # Build a date -> close lookup for gap detection
+    close_by_date: dict[str, float] = {
+        r["date"]: r["close"] for r in dated_rows if r.get("close")
+    }
+
+    # Sort all rows by date to find prior Friday close easily
+    sorted_dates = sorted(close_by_date.keys())
+
+    def prior_close(date_str: str) -> float | None:
+        """Return the close of the most recent prior trading day."""
+        idx = sorted_dates.index(date_str) if date_str in sorted_dates else -1
+        if idx <= 0:
+            return None
+        return close_by_date.get(sorted_dates[idx - 1])
+
+    # Group rows by their week's Monday
+    weeks: dict[str, list[dict]] = {}
+    for row in dated_rows:
+        weeks.setdefault(week_monday(row["date"]), []).append(row)
+
+    result: WeeklyData = {}
+    for week_rows in weeks.values():
+        week_rows.sort(key=lambda r: r["date"])
+        cum_high = cum_low = None
+        for row in week_rows:
+            h = round_to_tick(row["high"], tick)
+            l = round_to_tick(row["low"], tick)
+            # On first day of week, check for gap vs prior close
+            if cum_high is None:
+                pc = prior_close(row["date"])
+                if pc is not None:
+                    pc = round_to_tick(pc, tick)
+                    # Gap up: prior close below today's low
+                    # Gap down: prior close above today's high
+                    h = max(h, pc)
+                    l = min(l, pc)
+            cum_high = h if cum_high is None else max(cum_high, h)
+            cum_low  = l if cum_low  is None else min(cum_low,  l)
+            result[row["date"]] = {
+                "weeklyHigh":  cum_high,
+                "weeklyLow":   cum_low,
+                "weeklyRange": round_to_tick(cum_high - cum_low, tick),
+            }
+    return result
+
+
+def compute_completed_weeks(dated_rows: list[dict], tick: float) -> list[dict]:
+    """
+    Return completed weeks (those ending on a valid last trading day), newest first.
+    Each entry: {monday, lastDay, high, low, range}
+    Accounts for gap opens on Monday vs prior Friday close.
+    """
+    # Build close lookup for gap detection
+    close_by_date: dict[str, float] = {
+        r["date"]: r["close"] for r in dated_rows if r.get("close")
+    }
+    sorted_dates = sorted(close_by_date.keys())
+
+    def prior_close(date_str: str) -> float | None:
+        idx = sorted_dates.index(date_str) if date_str in sorted_dates else -1
+        if idx <= 0:
+            return None
+        return close_by_date.get(sorted_dates[idx - 1])
+
+    weeks: dict[str, list[dict]] = {}
+    for row in dated_rows:
+        weeks.setdefault(week_monday(row["date"]), []).append(row)
+
+    completed = []
+    for monday, week_rows in sorted(weeks.items(), reverse=True):
+        week_rows.sort(key=lambda r: r["date"])
+        last_day = week_rows[-1]["date"]
+        if not is_last_trading_day_of_week(last_day):
+            continue
+        high = round_to_tick(max(r["high"] for r in week_rows), tick)
+        low  = round_to_tick(min(r["low"]  for r in week_rows), tick)
+        # Include gap on Monday
+        first_day = week_rows[0]["date"]
+        pc = prior_close(first_day)
+        if pc is not None:
+            pc = round_to_tick(pc, tick)
+            high = max(high, pc)
+            low  = min(low,  pc)
+        completed.append({
+            "monday":  monday,
+            "lastDay": last_day,
+            "high":    high,
+            "low":     low,
+            "range":   round_to_tick(high - low, tick),
+        })
+    return completed
+
+
+def compute_weekly_targets(dated_rows: list[dict], tick: float) -> WeeklyTargets:
+    """
+    For each trading day, determine the applicable weekly target and next weekly target.
+
+    Weekly target for week W = avg range of the 3 prior completed weeks.
+    nextWeeklyTarget is shown on the last trading day of the week (for Friday display).
+    """
+    completed = compute_completed_weeks(dated_rows, tick)
+
+    # Map each week's Monday to its target (derived from the 3 prior completed weeks)
+    target_by_monday: dict[str, float] = {}
+    for i in range(len(completed) - WEEKLY_TARGET_LOOKBACK + 1):
+        window = completed[i : i + WEEKLY_TARGET_LOOKBACK]
+        avg = sum(w["range"] for w in window) / WEEKLY_TARGET_LOOKBACK
+        next_mon = (date.fromisoformat(completed[i]["monday"]) + timedelta(weeks=1)).isoformat()
+        target_by_monday[next_mon] = round_to_tick(avg, tick)
+
+    # nextWeeklyTarget: available on the last trading day of a completed week
+    next_target_by_last_day: dict[str, float] = {}
+    for week in completed:
+        next_mon = (date.fromisoformat(week["monday"]) + timedelta(weeks=1)).isoformat()
+        if target := target_by_monday.get(next_mon):
+            next_target_by_last_day[week["lastDay"]] = target
+
+    return {
+        row["date"]: {
+            "weeklyTarget":     target_by_monday.get(week_monday(row["date"])),
+            "nextWeeklyTarget": next_target_by_last_day.get(row["date"]),
+        }
+        for row in dated_rows
+    }
+
+
+# ---------------------------------------------------------------------------
+# Implied vol trend
+# ---------------------------------------------------------------------------
+
+def compute_iv_trends(history_rows: list[dict]) -> list[str]:
+    """
+    For each row (newest-first) compute the implied vol trend string.
+
+    Format: "up|N" or "down|N" where N is the consecutive-day streak count.
+    Returns "" for the oldest data point or when no prior IV exists.
+
+    Processes oldest-to-newest internally for streak counting, then reverses.
+    """
+    reversed_rows = list(reversed(history_rows))
+    trends = [""] * len(reversed_rows)
+
+    for i, row in enumerate(reversed_rows):
+        raw = row.get("impliedVol", "")
+        if not raw:
+            continue
+        try:
+            iv = float(raw.replace("%", ""))
+        except ValueError:
+            continue
+
+        # Find the most recent prior row with an IV value
+        prev_iv: float | None = None
+        for j in range(i - 1, -1, -1):
+            prev_raw = reversed_rows[j].get("impliedVol", "")
+            if prev_raw:
+                try:
+                    prev_iv = float(prev_raw.replace("%", ""))
+                    break
+                except ValueError:
+                    continue
+
+        if prev_iv is None:
+            continue
+
+        if iv > prev_iv:
+            direction = "up"
+        elif iv < prev_iv:
+            direction = "down"
+        else:
+            continue  # unchanged — no trend marker
+
+        # Count consecutive days in this direction
+        count = 1
+        for j in range(i - 1, -1, -1):
+            prev_trend = trends[j]
+            if not prev_trend or prev_trend.split("|")[0] != direction:
+                break
+            count += 1
+
+        trends[i] = f"{direction}|{count}"
+
+    return list(reversed(trends))
+
+
+# ---------------------------------------------------------------------------
+# History builder
+# ---------------------------------------------------------------------------
+
+def build_history(rows: list[RawRow], contract: Contract, iv_data: dict) -> list[dict]:
+    """
+    Build the full history row list for a single contract.
+
+    Args:
+        rows:     Pre-processed (filtered, overridden) Yahoo rows, newest-first.
+        contract: Contract config dict.
+        iv_data:  Full implied vol data keyed by date → symbol → float.
+
+    Returns:
+        List of history row dicts, newest-first, ready for JSON serialisation.
+    """
+    tick = TICK_SIZES[contract["commodity"]]
+    symbol = contract["base_symbol"]
+
+    # Build lightweight dated rows for weekly computations
+    dated = [
+        {"date": ts_to_ct_date(r["timestamp"]), "high": r["high"], "low": r["low"], "close": r.get("close")}
+        for r in rows
+    ]
+
+    weekly_ranges  = compute_weekly_ranges(dated, tick)
+    weekly_targets = compute_weekly_targets(dated, tick)
+
+    # ---- First pass: build core row data ----
+    history: list[dict] = []
+    for i, row in enumerate(rows):
+        trade_date = ts_to_ct_date(row["timestamp"])
+        d_high = round_to_tick(row["high"], tick)
+        d_low  = round_to_tick(row["low"],  tick)
+        # True Range: include overnight gap vs previous close (rows newest-first, so i+1 = prior day)
+        prev_close = rows[i + 1].get("close") if i + 1 < len(rows) else None
+        d_range = daily_range(row, tick, prev_close)
+
+        full_ach, next_target = full_achievement_and_target(rows, i, tick)
+        hv = historic_vol(rows, i, tick)
+
+        iv_val = iv_data.get(trade_date, {}).get(symbol)
+        iv_str = f"{round(float(iv_val), 1)}%" if iv_val is not None and float(iv_val) > 0 else ""
+
+        wr = weekly_ranges.get(trade_date, {})
+        wt = weekly_targets.get(trade_date, {})
+
+        history.append({
+            "date":            trade_date,
+            "dailyHigh":       format_tick(d_high, tick),
+            "dailyLow":        format_tick(d_low,  tick),
+            "dailyRange":      format_tick(d_range, tick),
+            "fullAchievement": format_tick(full_ach, tick) if full_ach is not None else "",
+            "_fullAch":        full_ach,    # temp — used in second pass
+            "_nextTarget":     next_target, # temp — used in second pass
+            "historicVol":     hv,
+            "impliedVol":      iv_str,
+            "weeklyHigh":      format_tick(wr["weeklyHigh"],  tick) if wr else "",
+            "weeklyLow":       format_tick(wr["weeklyLow"],   tick) if wr else "",
+            "weeklyRange":     format_tick(wr["weeklyRange"],  tick) if wr else "",
+            "_weeklyTarget":   wt.get("weeklyTarget"),   # temp
+            "_nextWeeklyTarget": wt.get("nextWeeklyTarget"), # temp
+            "sectionBreak":    False,
+        })
+
+    # ---- Second pass: targets, achievements, section breaks ----
+    for i, row in enumerate(history):
+        prev = history[i + 1] if i + 1 < len(history) else None
+
+        daily_target = prev["_nextTarget"] if prev else None
+        d_range_num  = float(row["dailyRange"]) if row["dailyRange"] else None
+        w_range_num  = float(row["weeklyRange"]) if row["weeklyRange"] else None
+        weekly_target = row["_weeklyTarget"]
+        next_weekly   = row["_nextWeeklyTarget"]
+
+        row["dailyTarget"]      = format_tick(daily_target, tick) if daily_target else ""
+        row["nextDailyTarget"]  = format_tick(row["_nextTarget"], tick) if row["_nextTarget"] else ""
+        row["dailyAchievement"] = pct(d_range_num, daily_target)
+        row["weeklyTarget"]     = format_tick(weekly_target, tick) if weekly_target else ""
+        row["nextWeeklyTarget"] = format_tick(next_weekly, tick) if next_weekly else ""
+        row["weeklyAchievement"]= pct(w_range_num, weekly_target)
+        row["sectionBreak"]     = is_first_trading_day_of_week(row["date"])
+
+        # Remove temp keys
+        del row["_fullAch"], row["_nextTarget"], row["_weeklyTarget"], row["_nextWeeklyTarget"]
+
+    # ---- Third pass: implied vol trends ----
+    trends = compute_iv_trends(history)
+    for row, trend in zip(history, trends):
+        row["impliedVolTrend"] = trend
+
+    # ---- Fourth pass: under-target streak (oldest to newest) ----
+    # history is newest-first so iterate in reverse to build streak correctly
+    streak = 0
+    for row in reversed(history):
+        d_range  = float(row["dailyRange"])  if row["dailyRange"]  else None
+        d_target = float(row["dailyTarget"]) if row["dailyTarget"] else None
+        if d_range is not None and d_target and d_range < d_target:
+            streak += 1
+        else:
+            streak = 0
+        row["underTargetStreak"] = streak
+
+    # ---- Fifth pass: weekly trend arrows (per completed week, oldest to newest) ----
+    # Green arrow (up) when weekly range >= target, red arrow (down) when range < target
+    # Counter tracks consecutive weeks in same direction
+    from collections import defaultdict
+    weeks: dict = defaultdict(list)
+    for row in history:
+        weeks[week_monday(row["date"])].append(row)
+
+    weekly_streak = 0
+    weekly_direction = ""
+    for monday in sorted(weeks.keys()):
+        week_rows = weeks[monday]
+        last_day = max(r["date"] for r in week_rows)
+        trend_str = ""
+        if is_last_trading_day_of_week(last_day):
+            w_range  = float(week_rows[0]["weeklyRange"])  if week_rows[0].get("weeklyRange")  else None
+            w_target = float(week_rows[0]["weeklyTarget"]) if week_rows[0].get("weeklyTarget") else None
+            if w_range is not None and w_target:
+                direction = "up" if w_range >= w_target else "down"
+                if direction == weekly_direction:
+                    weekly_streak += 1
+                else:
+                    weekly_streak = 1
+                    weekly_direction = direction
+                trend_str = f"{direction}|{weekly_streak}"
+        # Apply trend to all rows in this week
+        # For incomplete weeks, carry forward last completed week's trend
+        applied_trend = trend_str if trend_str else weekly_direction and f"{weekly_direction}|{weekly_streak}" or ""
+        for row in week_rows:
+            row["weeklyUnderTargetStreak"] = 0  # kept for compatibility
+            row["weeklyTrend"] = applied_trend
+
+    # Filter history to history_start date if specified (e.g. continuous front-month
+    # tickers like BTC=F, RB=F, ZR=F should not show pre-roll history)
+    history_start = contract.get("history_start")
+    if history_start:
+        history = [row for row in history if row["date"] >= history_start]
+
+    return history
+
+
+# ---------------------------------------------------------------------------
+# Overview row builder
+# ---------------------------------------------------------------------------
+
+def to_overview_row(history_row: dict, contract: Contract) -> dict:
+    """Flatten a history row + contract metadata into an overview row."""
+    return {
+        "date":            history_row["date"],
+        "symbol":          contract["base_symbol"],
+        "commodity":       contract["commodity"],
+        "month":           contract["month"],
+        "dailyTarget":     history_row["dailyTarget"],
+        "dailyRange":      history_row["dailyRange"],
+        "dailyHigh":       history_row["dailyHigh"],
+        "dailyLow":        history_row["dailyLow"],
+        "dailyAchievement":history_row["dailyAchievement"],
+        "fullAchievement": history_row["fullAchievement"],
+        "nextDailyTarget": history_row["nextDailyTarget"],
+        "historicVol":     history_row["historicVol"],
+        "impliedVol":      history_row["impliedVol"],
+        "impliedVolTrend": history_row["impliedVolTrend"],
+        "weeklyRange":     history_row["weeklyRange"],
+        "weeklyHigh":      history_row["weeklyHigh"],
+        "weeklyLow":       history_row["weeklyLow"],
+        "weeklyAchievement":history_row["weeklyAchievement"],
+        "weeklyTarget":    history_row["weeklyTarget"],
+        "nextWeeklyTarget":history_row["nextWeeklyTarget"],
+        "underTargetStreak":history_row.get("underTargetStreak", 0),
+        "weeklyUnderTargetStreak":history_row.get("weeklyUnderTargetStreak", 0),
+        "weeklyTrend":history_row.get("weeklyTrend", ""),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Contract processor  (runs in thread pool)
+# ---------------------------------------------------------------------------
+
+def process_contract(
+    contract: Contract,
+    today: str,
+    price_overrides: dict,
+    rice_overrides: dict,
+    iv_data: dict,
+    manual_data: dict,
+) -> tuple[str, list[dict] | Exception]:
+    """
+    Fetch and process a single contract. Returns (base_symbol, history_rows | Exception).
+    Designed to run in a thread pool — all inputs are read-only.
+
+    Contracts marked "source": "manual" are built from manual_ohlc.json instead
+    of Yahoo (used for tickers with no Yahoo feed, e.g. Canola / RS1).
+    """
+    symbol = contract["base_symbol"]
+    try:
+        if contract.get("source") == "manual":
+            raw_rows = build_manual_rows(symbol, manual_data)
+        else:
+            time.sleep(FETCH_DELAY)
+            raw_rows = fetch_yahoo_history(contract["symbol"])
+        clean_rows = preprocess_rows(raw_rows, symbol, today, price_overrides, rice_overrides)
+        history = build_history(clean_rows, contract, iv_data)
+        log.info("OK  %s  (%d rows)", symbol, len(history))
+        return symbol, history
+    except Exception as exc:
+        log.error("ERR %s: %s", symbol, exc)
+        return symbol, exc
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main() -> None:
+    FEEDS_DIR.mkdir(exist_ok=True)
+    HISTORY_DIR.mkdir(exist_ok=True)
+
+    today    = datetime.now(CT).strftime("%Y-%m-%d")
+    now_ct   = datetime.now(CT).isoformat()
+
+    log.info("Building feeds for %s (today = %s)", now_ct[:10], today)
+
+    # Load all override/supplement data upfront
+    iv_data         = load_implied_vol()
+    price_overrides = load_price_overrides()
+    rice_overrides  = load_rice_overrides()
+    manual_data     = load_manual_ohlc()
+
+    # ---- Parallel fetch & process ----
+    results: dict[str, list[dict]] = {}
+    errors:  list[dict] = []
+
+    with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as pool:
+        future_map: dict[Future, Contract] = {
+            pool.submit(
+                process_contract,
+                contract, today, price_overrides, rice_overrides, iv_data, manual_data,
+            ): contract
+            for contract in CONTRACTS
+        }
+        # Collect results preserving HOME_ORDER by iterating in submission order
+        for future in future_map:
+            symbol, result = future.result()
+            if isinstance(result, Exception):
+                errors.append({"symbol": symbol, "error": str(result)})
+            else:
+                results[symbol] = result
+
+    # ---- Write per-contract history feeds ----
+    history_index: list[str] = []
+    all_overview_rows: list[dict] = []
+
+    for contract in CONTRACTS:
+        symbol = contract["base_symbol"]
+        if symbol not in results:
+            continue
+
+        history_rows = results[symbol]
+        payload = {
+            "symbol":    symbol,
+            "commodity": contract["commodity"],
+            "month":     contract["month"],
+            "updatedAt": now_ct,
+            "rows":      history_rows,
+        }
+        (HISTORY_DIR / f"{symbol}.json").write_text(
+            json.dumps(payload, indent=2), encoding="utf-8"
+        )
+
+        all_overview_rows.extend(
+            to_overview_row(row, contract) for row in history_rows
+        )
+        history_index.append(symbol)
+
+    # ---- Write overview-by-date feed (date-aware contract selection) ----
+    # For each date, include the preferred contract per commodity.
+    # Contracts with always_show=True (e.g. ZCZ26, ZSX26) are always included.
+    # If the preferred contract has no data (expired), fall back to any contract
+    # for that commodity that does have data.
+
+    # Symbols that always appear regardless of roll logic
+    always_show_syms = {c["base_symbol"] for c in CONTRACTS if c.get("always_show")}
+
+    # Index all rows by (date, symbol)
+    rows_by_date_sym: dict[str, dict[str, dict]] = {}
+    for row in all_overview_rows:
+        rows_by_date_sym.setdefault(row["date"], {})[row["symbol"]] = row
+
+    overview_by_date: dict[str, list[dict]] = {}
+    for date_str, sym_map in rows_by_date_sym.items():
+        preferred = active_symbols_for_date(date_str)
+        date_rows = []
+        added_syms: set[str] = set()
+        seen_commodities: list[str] = []
+
+        for sym in preferred:
+            contract = CONTRACT_BY_SYMBOL.get(sym)
+            if not contract:
+                continue
+            commodity = contract["commodity"]
+            is_always = sym in always_show_syms
+
+            # always_show contracts bypass the one-per-commodity rule
+            if not is_always and commodity in seen_commodities:
+                continue
+
+            if sym in sym_map:
+                date_rows.append(sym_map[sym])
+                added_syms.add(sym)
+                if not is_always:
+                    seen_commodities.append(commodity)
+            elif not is_always:
+                # Preferred contract has no data — fall back
+                for c in CONTRACTS:
+                    if c["commodity"] == commodity and c["base_symbol"] in sym_map:
+                        date_rows.append(sym_map[c["base_symbol"]])
+                        added_syms.add(c["base_symbol"])
+                        seen_commodities.append(commodity)
+                        break
+
+        # Ensure always_show contracts are included — but only those actually
+        # active for this date. `preferred` already honors roll_date + drop_date,
+        # so a dropped/expired always_show contract (e.g. KEU26 after its
+        # drop_date) stays out instead of reappearing just because Yahoo still
+        # returns data for it.
+        preferred_set = set(preferred)
+        for sym in always_show_syms:
+            if sym in preferred_set and sym not in added_syms and sym in sym_map:
+                date_rows.append(sym_map[sym])
+
+        # Sort by HOME_ORDER
+        order_map = {sym: i for i, sym in enumerate(HOME_ORDER)}
+        date_rows.sort(key=lambda r: order_map.get(r["symbol"], 9999))
+        if date_rows:
+            overview_by_date[date_str] = date_rows
+
+    (FEEDS_DIR / "overview-by-date.json").write_text(
+        json.dumps(overview_by_date, indent=2), encoding="utf-8"
+    )
+
+    # ---- Write ancillary feeds ----
+    (FEEDS_DIR / "errors.json").write_text(
+        json.dumps(errors, indent=2), encoding="utf-8"
+    )
+    (HISTORY_DIR / "index.json").write_text(
+        json.dumps({"contracts": history_index}, indent=2), encoding="utf-8"
+    )
+    (FEEDS_DIR / "meta.json").write_text(
+        json.dumps({
+            "builtAt":      now_ct,
+            "status":       "ok" if not errors else "partial",
+            "successCount": len(results),
+            "errorCount":   len(errors),
+            "version":      "v4.0",
+        }, indent=2),
+        encoding="utf-8",
+    )
+
+    log.info(
+        "Done — %d/%d contracts (%d errors)",
+        len(results), len(CONTRACTS), len(errors),
+    )
+    if errors:
+        for e in errors:
+            log.warning("  Failed: %s — %s", e["symbol"], e["error"])
+
+
+if __name__ == "__main__":
+    main()
