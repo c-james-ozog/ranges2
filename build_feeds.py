@@ -42,13 +42,15 @@ CONTRACTS: list[Contract] = [
     # No Yahoo feed; OHLC is entered by hand in manual_ohlc.json (source: manual).
     {"commodity": "Canola Oil",       "symbol": "RS1",        "base_symbol": "RS1", "month": "Cont.", "roll_date": "2026-07-14", "history_start": "2026-07-14", "source": "manual"},
 
-    # Cocoa — rolled to Dec on 6/12, was Jul from 4/20, May from 2/25, Mar fallback
+    # Cocoa — Mar27 active from 11/13, Dec from 6/12, Jul from 4/20, May from 2/25, Mar fallback
+    {"commodity": "Cocoa",            "symbol": "CCH27.NYB",  "base_symbol": "CCH27", "month": "Mar27", "roll_date": "2026-11-13"},
     {"commodity": "Cocoa",            "symbol": "CCZ26.NYB",  "base_symbol": "CCZ26", "month": "Dec", "roll_date": "2026-06-12"},
     {"commodity": "Cocoa",            "symbol": "CCN26.NYB",  "base_symbol": "CCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cocoa",            "symbol": "CCK26.NYB",  "base_symbol": "CCK26", "month": "May", "roll_date": "2026-02-25"},
     {"commodity": "Cocoa",            "symbol": "CCH26.NYB",  "base_symbol": "CCH26", "month": "Mar", "roll_date": None},
 
-    # Coffee — rolled to Dec on 6/12, was Jul from 4/20, May from 2/18, Mar fallback
+    # Coffee — Mar27 active from 11/13, Dec from 6/12, Jul from 4/20, May from 2/18, Mar fallback
+    {"commodity": "Coffee",           "symbol": "KCH27.NYB",  "base_symbol": "KCH27", "month": "Mar27", "roll_date": "2026-11-13"},
     {"commodity": "Coffee",           "symbol": "KCZ26.NYB",  "base_symbol": "KCZ26", "month": "Dec", "roll_date": "2026-06-12"},
     {"commodity": "Coffee",           "symbol": "KCN26.NYB",  "base_symbol": "KCN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Coffee",           "symbol": "KCK26.NYB",  "base_symbol": "KCK26", "month": "May", "roll_date": "2026-02-18"},
@@ -70,7 +72,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Corn",             "symbol": "ZCN26.CBT",  "base_symbol": "ZCN26", "month": "Jul", "roll_date": None, "drop_date": "2026-08-23"},
     {"commodity": "Corn",             "symbol": "ZCH26.CBT",  "base_symbol": "ZCH26", "month": "Mar", "roll_date": None, "drop_date": "2026-08-23"},
 
-    # Cotton — rolled to Dec on 6/12, was Jul from 4/20
+    # Cotton — Mar27 active from 11/13, Dec from 6/12, Jul from 4/20
+    {"commodity": "Cotton",           "symbol": "CTH27.NYB",  "base_symbol": "CTH27", "month": "Mar27", "roll_date": "2026-11-13"},
     {"commodity": "Cotton",           "symbol": "CTZ26.NYB",  "base_symbol": "CTZ26", "month": "Dec", "roll_date": "2026-06-12"},
     {"commodity": "Cotton",           "symbol": "CTN26.NYB",  "base_symbol": "CTN26", "month": "Jul", "roll_date": "2026-04-20"},
     {"commodity": "Cotton",           "symbol": "CTK26.NYB",  "base_symbol": "CTK26", "month": "May", "roll_date": None},
