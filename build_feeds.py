@@ -1519,6 +1519,17 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    # ---- Options feed (non-fatal; lives in src/options_feed.py + src/config.py) ----
+    try:
+        from src.options_feed import build_options_feed
+        options_data = build_options_feed(today, feeds_dir=FEEDS_DIR)
+        (FEEDS_DIR / "options-feed.json").write_text(
+            json.dumps(options_data, indent=2), encoding="utf-8"
+        )
+        log.info("Options feed written → feeds/options-feed.json")
+    except Exception as _opt_exc:
+        log.warning("Options feed build failed (non-fatal): %s", _opt_exc)
+
     log.info(
         "Done — %d/%d contracts (%d errors)",
         len(results), len(CONTRACTS), len(errors),
