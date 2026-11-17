@@ -2,8 +2,77 @@
   "symbol": "RS1",
   "commodity": "Canola Oil",
   "month": "Cont.",
-  "updatedAt": "2026-11-16T20:27:31.817889-06:00",
+  "updatedAt": "2026-11-16T22:00:19.741704-06:00",
   "rows": [
+    {
+      "date": "2026-11-16",
+      "dailyHigh": "783.2",
+      "dailyLow": "771.3",
+      "dailyRange": "11.9",
+      "fullAchievement": "12.5",
+      "historicVol": "20.7%",
+      "impliedVol": "18.1%",
+      "weeklyHigh": "783.2",
+      "weeklyLow": "771.3",
+      "weeklyRange": "11.9",
+      "sectionBreak": true,
+      "dailyTarget": "11.5",
+      "nextDailyTarget": "10",
+      "dailyAchievement": "103.5%",
+      "weeklyTarget": "33.3",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "35.7%",
+      "impliedVolTrend": "up|1",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|2"
+    },
+    {
+      "date": "2026-11-13",
+      "dailyHigh": "788",
+      "dailyLow": "777.7",
+      "dailyRange": "10.8",
+      "fullAchievement": "14.4",
+      "historicVol": "23.6%",
+      "impliedVol": "17.2%",
+      "weeklyHigh": "788",
+      "weeklyLow": "749.7",
+      "weeklyRange": "38.3",
+      "sectionBreak": false,
+      "dailyTarget": "13.4",
+      "nextDailyTarget": "11.5",
+      "dailyAchievement": "80.6%",
+      "weeklyTarget": "30.8",
+      "nextWeeklyTarget": "33.3",
+      "weeklyAchievement": "124.4%",
+      "impliedVolTrend": "",
+      "underTargetStreak": 1,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|2"
+    },
+    {
+      "date": "2026-11-12",
+      "dailyHigh": "784.4",
+      "dailyLow": "774.4",
+      "dailyRange": "14.8",
+      "fullAchievement": "16.7",
+      "historicVol": "27.6%",
+      "impliedVol": "17.2%",
+      "weeklyHigh": "784.4",
+      "weeklyLow": "749.7",
+      "weeklyRange": "34.7",
+      "sectionBreak": false,
+      "dailyTarget": "12.2",
+      "nextDailyTarget": "13.4",
+      "dailyAchievement": "121.3%",
+      "weeklyTarget": "30.8",
+      "nextWeeklyTarget": "",
+      "weeklyAchievement": "112.7%",
+      "impliedVolTrend": "up|1",
+      "underTargetStreak": 0,
+      "weeklyUnderTargetStreak": 0,
+      "weeklyTrend": "up|2"
+    },
     {
       "date": "2026-11-11",
       "dailyHigh": "771",
@@ -25,7 +94,7 @@
       "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-10",
@@ -48,7 +117,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-09",
@@ -71,7 +140,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "up|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-06",

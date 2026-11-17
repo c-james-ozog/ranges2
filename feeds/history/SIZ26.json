@@ -2,7 +2,7 @@
   "symbol": "SIZ26",
   "commodity": "Silver",
   "month": "Dec",
-  "updatedAt": "2026-11-16T20:27:31.817889-06:00",
+  "updatedAt": "2026-11-16T22:00:19.741704-06:00",
   "rows": [
     {
       "date": "2026-11-16",
@@ -11,7 +11,7 @@
       "dailyRange": "2.66",
       "fullAchievement": "2.44",
       "historicVol": "66.6%",
-      "impliedVol": "",
+      "impliedVol": "48.1%",
       "weeklyHigh": "49.12",
       "weeklyLow": "46.46",
       "weeklyRange": "2.66",
@@ -22,7 +22,7 @@
       "weeklyTarget": "5.345",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "49.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|2"
