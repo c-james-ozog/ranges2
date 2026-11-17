@@ -609,7 +609,10 @@ def _build_contract(
         while exp_d.weekday() != 4:
             exp_d -= datetime.timedelta(days=1)
     exp_str = exp_d.isoformat()
-    dte     = _count_trading_days(datetime.date.today(), exp_d)
+    # Count from the feed's Central trading date (passed in), NOT datetime.date.today()
+    # which is UTC on the CI runner — an evening-CT build would otherwise roll to the
+    # next day and show DTE off by one.
+    dte     = _count_trading_days(datetime.date.fromisoformat(today), exp_d)
 
     # CME OI — pass delivery month so API matches correctly; ignore returned exp date
     calls, puts, _cme_exp = fetch_cme_oi(commodity, del_month, del_year)
