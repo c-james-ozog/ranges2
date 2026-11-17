@@ -293,8 +293,18 @@ def _fetch_expirations(fetch_id: int) -> list[dict]:
             month  = info.get("month")
             year   = info.get("year")
             opt_id = exp.get("productId")
+            # Latest settled trade date CME actually has data for (settlements lag
+            # ~1 trading day; querying "today" over a weekend returns nothing).
+            trade_date = None
+            tdates = exp.get("tradeDates") or []
+            if tdates:
+                trade_date = tdates[0].get("formatedDate")
+            if not trade_date:
+                d12 = (exp.get("lastTradeDate") or {}).get("default12") or ""
+                trade_date = d12.split(",")[0].strip() or None
             if code and month and year and opt_id:
-                all_exp.append({"code": code, "month": month, "year": year, "productId": opt_id})
+                all_exp.append({"code": code, "month": month, "year": year,
+                                "productId": opt_id, "tradeDate": trade_date})
     if not all_exp:
         return []
 
@@ -344,11 +354,23 @@ def fetch_cme_oi(commodity: str, del_month: int, del_year: int) -> tuple[list[di
     opt_id     = matched["productId"]
     exp_code   = matched["code"]
     month_year = f"{exp_code[0]}{str(matched['year'])[-2:]}"
-    today_s    = datetime.date.today().strftime("%m/%d/%Y")
-    settlements = _fetch_settlements(opt_id, exp_code, month_year, today_s)
-    if not settlements:
-        yest = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%m/%d/%Y")
-        settlements = _fetch_settlements(opt_id, exp_code, month_year, yest)
+
+    # Try the trade date CME reports as latest-settled first (handles the ~1-day
+    # settlement lag and weekends), then walk back a few days as a safety net.
+    candidates: list[str] = []
+    if matched.get("tradeDate"):
+        candidates.append(matched["tradeDate"])
+    today_ = datetime.date.today()
+    for back in range(0, 6):
+        cand = (today_ - datetime.timedelta(days=back)).strftime("%m/%d/%Y")
+        if cand not in candidates:
+            candidates.append(cand)
+
+    settlements: list[dict] = []
+    for td in candidates:
+        settlements = _fetch_settlements(opt_id, exp_code, month_year, td)
+        if settlements:
+            break
     if not settlements:
         return [], [], None
 
