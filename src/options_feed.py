@@ -34,13 +34,19 @@ RISK_FREE_RATE: float = 0.05
 # ---------------------------------------------------------------------------
 
 def _count_trading_days(start: datetime.date, end: datetime.date) -> int:
-    """Count weekday trading days from start to end inclusive."""
-    if end < start:
+    """Trading days to expiration: CME sessions strictly after `start` through
+    `end` inclusive, excluding weekends AND CME holidays. `start` (today) is not
+    counted, so DTE = 0 on the expiry day and 1 on the last session before it."""
+    if end <= start:
         return 0
+    try:
+        from src.config import CME_HOLIDAYS
+    except Exception:
+        CME_HOLIDAYS = frozenset()
     count = 0
-    d = start
+    d = start + datetime.timedelta(days=1)
     while d <= end:
-        if d.weekday() < 5:
+        if d.weekday() < 5 and d.isoformat() not in CME_HOLIDAYS:
             count += 1
         d += datetime.timedelta(days=1)
     return count
