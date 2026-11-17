@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-17T04:28:21.155989Z",
+  "builtAt": "2026-11-17T04:31:24.872897Z",
   "commodities": {
     "Copper": {
       "contracts": [
@@ -992,7 +992,7 @@
           "month": "Oct",
           "optionsExpiration": "2026-10-30",
           "dte": 0,
-          "underlyingPrice": 3869.2,
+          "underlyingPrice": 3870.5,
           "atmStrike": 3870.0,
           "atmIV": 0.269905,
           "atmIVPct": "27.0%",
@@ -4561,17 +4561,17 @@
           "month": "Dec",
           "optionsExpiration": "2026-12-25",
           "dte": 27,
-          "underlyingPrice": 3869.2,
+          "underlyingPrice": 3870.5,
           "atmStrike": 3870.0,
-          "atmIV": 0.146428,
+          "atmIV": 0.146405,
           "atmIVPct": "14.6%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 154.0909,
+          "expectedMovePrice": 154.1194,
           "expectedMoveFmt": "$154",
           "expectedMovePct": "3.98%",
           "expectedMoveRange": {
-            "low": 3715.1091,
-            "high": 4023.2909
+            "low": 3716.3806,
+            "high": 4024.6194
           },
           "topOIStrikes": [
             {
@@ -8159,7 +8159,7 @@
           "month": "Oct",
           "optionsExpiration": "2026-10-30",
           "dte": 0,
-          "underlyingPrice": 47.265,
+          "underlyingPrice": 47.275,
           "atmStrike": 47.25,
           "atmIV": 0.527348,
           "atmIVPct": "52.7%",
@@ -9953,17 +9953,17 @@
           "month": "Dec",
           "optionsExpiration": "2026-12-25",
           "dte": 27,
-          "underlyingPrice": 47.265,
+          "underlyingPrice": 47.275,
           "atmStrike": 47.25,
-          "atmIV": 0.311125,
+          "atmIV": 0.311085,
           "atmIVPct": "31.1%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 3.9995,
+          "expectedMovePrice": 3.9999,
           "expectedMoveFmt": "$4.00",
           "expectedMovePct": "8.46%",
           "expectedMoveRange": {
-            "low": 43.2655,
-            "high": 51.2645
+            "low": 43.2751,
+            "high": 51.2749
           },
           "topOIStrikes": [
             {
@@ -15519,7 +15519,7 @@
           "month": "Dec",
           "optionsExpiration": "2026-11-20",
           "dte": 4,
-          "underlyingPrice": 61.94,
+          "underlyingPrice": 61.93,
           "atmStrike": 5000.0,
           "atmIV": null,
           "atmIVPct": null,
