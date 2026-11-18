@@ -563,10 +563,21 @@ def _oi_deltas(
 ) -> tuple[list[dict], list[dict], str | None, bool]:
     if not oi_history or not today_snap:
         return [], [], None, False
-    available    = sorted(oi_history.keys())
-    compare_date = next((d for d in available if d < today), None)
-    if not compare_date:
+    available = sorted(oi_history.keys())
+    priors    = [d for d in available if d < today]
+    if not priors:
         return [], [], None, False
+
+    # Friday → compare to the PREVIOUS Friday (weekly OI change). Mon–Thu →
+    # compare to the most recent prior trading day (1-day change).
+    if datetime.date.fromisoformat(today).weekday() == 4:
+        prev_fri = (datetime.date.fromisoformat(today)
+                    - datetime.timedelta(days=7)).isoformat()
+        # latest snapshot on/before the previous Friday; fall back to most recent
+        # prior day if that week isn't in the retained history yet.
+        compare_date = next((d for d in reversed(priors) if d <= prev_fri), priors[-1])
+    else:
+        compare_date = priors[-1]
 
     prior = {e["s"]: e for e in oi_history[compare_date]}
     cur   = {e["s"]: e for e in today_snap}
