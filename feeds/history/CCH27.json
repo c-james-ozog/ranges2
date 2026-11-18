@@ -2,7 +2,7 @@
   "symbol": "CCH27",
   "commodity": "Cocoa",
   "month": "Mar27",
-  "updatedAt": "2026-11-17T21:42:03.982419-06:00",
+  "updatedAt": "2026-11-17T22:12:31.736586-06:00",
   "rows": [
     {
       "date": "2026-11-17",
@@ -11,7 +11,7 @@
       "dailyRange": "137",
       "fullAchievement": "159",
       "historicVol": "39.3%",
-      "impliedVol": "43.9%",
+      "impliedVol": "42.7%",
       "weeklyHigh": "534",
       "weeklyLow": "5125",
       "weeklyRange": "215",
@@ -22,7 +22,7 @@
       "weeklyTarget": "452",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "47.6%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
