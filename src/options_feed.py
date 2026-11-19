@@ -34,19 +34,13 @@ RISK_FREE_RATE: float = 0.05
 # ---------------------------------------------------------------------------
 
 def _count_trading_days(start: datetime.date, end: datetime.date) -> int:
-    """Trading days to expiration: CME sessions strictly after `start` through
-    `end` inclusive, excluding weekends AND CME holidays. `start` (today) is not
-    counted, so DTE = 0 on the expiry day and 1 on the last session before it."""
-    if end <= start:
+    """Count weekday trading days from start to end inclusive."""
+    if end < start:
         return 0
-    try:
-        from src.config import CME_HOLIDAYS
-    except Exception:
-        CME_HOLIDAYS = frozenset()
     count = 0
-    d = start + datetime.timedelta(days=1)
+    d = start
     while d <= end:
-        if d.weekday() < 5 and d.isoformat() not in CME_HOLIDAYS:
+        if d.weekday() < 5:
             count += 1
         d += datetime.timedelta(days=1)
     return count
@@ -293,18 +287,8 @@ def _fetch_expirations(fetch_id: int) -> list[dict]:
             month  = info.get("month")
             year   = info.get("year")
             opt_id = exp.get("productId")
-            # Latest settled trade date CME actually has data for (settlements lag
-            # ~1 trading day; querying "today" over a weekend returns nothing).
-            trade_date = None
-            tdates = exp.get("tradeDates") or []
-            if tdates:
-                trade_date = tdates[0].get("formatedDate")
-            if not trade_date:
-                d12 = (exp.get("lastTradeDate") or {}).get("default12") or ""
-                trade_date = d12.split(",")[0].strip() or None
             if code and month and year and opt_id:
-                all_exp.append({"code": code, "month": month, "year": year,
-                                "productId": opt_id, "tradeDate": trade_date})
+                all_exp.append({"code": code, "month": month, "year": year, "productId": opt_id})
     if not all_exp:
         return []
 
@@ -354,23 +338,11 @@ def fetch_cme_oi(commodity: str, del_month: int, del_year: int) -> tuple[list[di
     opt_id     = matched["productId"]
     exp_code   = matched["code"]
     month_year = f"{exp_code[0]}{str(matched['year'])[-2:]}"
-
-    # Try the trade date CME reports as latest-settled first (handles the ~1-day
-    # settlement lag and weekends), then walk back a few days as a safety net.
-    candidates: list[str] = []
-    if matched.get("tradeDate"):
-        candidates.append(matched["tradeDate"])
-    today_ = datetime.date.today()
-    for back in range(0, 6):
-        cand = (today_ - datetime.timedelta(days=back)).strftime("%m/%d/%Y")
-        if cand not in candidates:
-            candidates.append(cand)
-
-    settlements: list[dict] = []
-    for td in candidates:
-        settlements = _fetch_settlements(opt_id, exp_code, month_year, td)
-        if settlements:
-            break
+    today_s    = datetime.date.today().strftime("%m/%d/%Y")
+    settlements = _fetch_settlements(opt_id, exp_code, month_year, today_s)
+    if not settlements:
+        yest = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%m/%d/%Y")
+        settlements = _fetch_settlements(opt_id, exp_code, month_year, yest)
     if not settlements:
         return [], [], None
 
@@ -563,21 +535,10 @@ def _oi_deltas(
 ) -> tuple[list[dict], list[dict], str | None, bool]:
     if not oi_history or not today_snap:
         return [], [], None, False
-    available = sorted(oi_history.keys())
-    priors    = [d for d in available if d < today]
-    if not priors:
+    available    = sorted(oi_history.keys())
+    compare_date = next((d for d in available if d < today), None)
+    if not compare_date:
         return [], [], None, False
-
-    # Friday → compare to the PREVIOUS Friday (weekly OI change). Mon–Thu →
-    # compare to the most recent prior trading day (1-day change).
-    if datetime.date.fromisoformat(today).weekday() == 4:
-        prev_fri = (datetime.date.fromisoformat(today)
-                    - datetime.timedelta(days=7)).isoformat()
-        # latest snapshot on/before the previous Friday; fall back to most recent
-        # prior day if that week isn't in the retained history yet.
-        compare_date = next((d for d in reversed(priors) if d <= prev_fri), priors[-1])
-    else:
-        compare_date = priors[-1]
 
     prior = {e["s"]: e for e in oi_history[compare_date]}
     cur   = {e["s"]: e for e in today_snap}
@@ -642,10 +603,7 @@ def _build_contract(
         while exp_d.weekday() != 4:
             exp_d -= datetime.timedelta(days=1)
     exp_str = exp_d.isoformat()
-    # Count from the feed's Central trading date (passed in), NOT datetime.date.today()
-    # which is UTC on the CI runner — an evening-CT build would otherwise roll to the
-    # next day and show DTE off by one.
-    dte     = _count_trading_days(datetime.date.fromisoformat(today), exp_d)
+    dte     = _count_trading_days(datetime.date.today(), exp_d)
 
     # CME OI — pass delivery month so API matches correctly; ignore returned exp date
     calls, puts, _cme_exp = fetch_cme_oi(commodity, del_month, del_year)
