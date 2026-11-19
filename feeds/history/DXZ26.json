@@ -2,7 +2,7 @@
   "symbol": "DXZ26",
   "commodity": "US Dollar",
   "month": "Dec",
-  "updatedAt": "2026-11-18T22:10:23.200260-06:00",
+  "updatedAt": "2026-11-18T22:22:33.219868-06:00",
   "rows": [
     {
       "date": "2026-11-18",
@@ -11,7 +11,7 @@
       "dailyRange": "0.425",
       "fullAchievement": "0.385",
       "historicVol": "4.7%",
-      "impliedVol": "5.4%",
+      "impliedVol": "5.1%",
       "weeklyHigh": "103.83",
       "weeklyLow": "103.245",
       "weeklyRange": "0.585",
@@ -22,7 +22,7 @@
       "weeklyTarget": "1.355",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "43.2%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|2"
