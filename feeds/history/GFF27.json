@@ -2,7 +2,7 @@
   "symbol": "GFF27",
   "commodity": "Feeder Cattle",
   "month": "Jan27",
-  "updatedAt": "2026-11-18T12:14:28.224982-06:00",
+  "updatedAt": "2026-11-18T19:11:21.330254-06:00",
   "rows": [
     {
       "date": "2026-11-18",
@@ -10,8 +10,8 @@
       "dailyLow": "325.85",
       "dailyRange": "6.1",
       "fullAchievement": "5.725",
-      "historicVol": "22.2%",
-      "impliedVol": "",
+      "historicVol": "22.1%",
+      "impliedVol": "16.8%",
       "weeklyHigh": "335.35",
       "weeklyLow": "325.85",
       "weeklyRange": "9.5",
@@ -22,7 +22,7 @@
       "weeklyTarget": "19.6",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "48.5%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|4"
