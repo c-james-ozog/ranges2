@@ -2,30 +2,30 @@
   "symbol": "ZNZ26",
   "commodity": "10-Year T-Note",
   "month": "Dec",
-  "updatedAt": "2026-11-20T01:51:17.351738-06:00",
+  "updatedAt": "2026-11-20T11:54:52.128216-06:00",
   "rows": [
     {
       "date": "2026-11-20",
-      "dailyHigh": "106.234375",
+      "dailyHigh": "106.71875",
       "dailyLow": "105.90625",
-      "dailyRange": "0.359375",
-      "fullAchievement": "0.453125",
-      "historicVol": "5.5%",
+      "dailyRange": "0.84375",
+      "fullAchievement": "0.609375",
+      "historicVol": "7.4%",
       "impliedVol": "",
-      "weeklyHigh": "106.234375",
+      "weeklyHigh": "106.71875",
       "weeklyLow": "105.140625",
-      "weeklyRange": "1.09375",
+      "weeklyRange": "1.578125",
       "sectionBreak": false,
       "dailyTarget": "0.390625",
-      "nextDailyTarget": "0.359375",
-      "dailyAchievement": "92.0%",
+      "nextDailyTarget": "0.484375",
+      "dailyAchievement": "216.0%",
       "weeklyTarget": "1.515625",
-      "nextWeeklyTarget": "1.484375",
-      "weeklyAchievement": "72.2%",
+      "nextWeeklyTarget": "1.640625",
+      "weeklyAchievement": "104.1%",
       "impliedVolTrend": "",
-      "underTargetStreak": 1,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-19",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-18",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-17",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|2",
       "underTargetStreak": 3,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-16",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 2,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|2"
     },
     {
       "date": "2026-11-13",

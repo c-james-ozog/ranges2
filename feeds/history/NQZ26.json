@@ -2,30 +2,30 @@
   "symbol": "NQZ26",
   "commodity": "Nasdaq 100 E-Mini",
   "month": "Dec",
-  "updatedAt": "2026-11-20T01:51:17.351738-06:00",
+  "updatedAt": "2026-11-20T11:54:52.128216-06:00",
   "rows": [
     {
       "date": "2026-11-20",
       "dailyHigh": "26603.5",
-      "dailyLow": "26230.5",
-      "dailyRange": "373",
-      "fullAchievement": "821",
-      "historicVol": "40.0%",
+      "dailyLow": "25511.75",
+      "dailyRange": "1091.75",
+      "fullAchievement": "1060.5",
+      "historicVol": "53.1%",
       "impliedVol": "",
       "weeklyHigh": "28279.25",
-      "weeklyLow": "26230.5",
-      "weeklyRange": "2048.75",
+      "weeklyLow": "25511.75",
+      "weeklyRange": "2767.5",
       "sectionBreak": false,
       "dailyTarget": "781.25",
-      "nextDailyTarget": "656.75",
-      "dailyAchievement": "47.7%",
+      "nextDailyTarget": "848.5",
+      "dailyAchievement": "139.7%",
       "weeklyTarget": "2164.5",
-      "nextWeeklyTarget": "2199",
-      "weeklyAchievement": "94.7%",
+      "nextWeeklyTarget": "2438.5",
+      "weeklyAchievement": "127.9%",
       "impliedVolTrend": "",
-      "underTargetStreak": 1,
+      "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|4"
     },
     {
       "date": "2026-11-19",
@@ -48,7 +48,7 @@
       "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|4"
     },
     {
       "date": "2026-11-18",
@@ -71,7 +71,7 @@
       "impliedVolTrend": "down|1",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|4"
     },
     {
       "date": "2026-11-17",
@@ -94,7 +94,7 @@
       "impliedVolTrend": "up|4",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|4"
     },
     {
       "date": "2026-11-16",
@@ -117,7 +117,7 @@
       "impliedVolTrend": "up|3",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|4"
     },
     {
       "date": "2026-11-13",
