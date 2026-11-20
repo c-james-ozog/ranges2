@@ -2,7 +2,7 @@
   "symbol": "CTH27",
   "commodity": "Cotton",
   "month": "Mar27",
-  "updatedAt": "2026-11-19T21:07:42.849758-06:00",
+  "updatedAt": "2026-11-19T21:25:47.211436-06:00",
   "rows": [
     {
       "date": "2026-11-19",
@@ -11,7 +11,7 @@
       "dailyRange": "1.6",
       "fullAchievement": "1.78",
       "historicVol": "28.7%",
-      "impliedVol": "21.6%",
+      "impliedVol": "21.2%",
       "weeklyHigh": "82.61",
       "weeklyLow": "78.83",
       "weeklyRange": "3.78",
@@ -22,7 +22,7 @@
       "weeklyTarget": "2.38",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "158.8%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|1"
