@@ -65,8 +65,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Copper",           "symbol": "HGK26.CMX",  "base_symbol": "HGK26", "month": "May", "roll_date": "2026-02-26"},
     {"commodity": "Copper",           "symbol": "HGH26.CMX",  "base_symbol": "HGH26", "month": "Mar", "roll_date": None},
 
-    # Corn — chronological: Dec26, Mar27, Dec27. Sep/Jul dropped 8/23.
-    {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None, "always_show": True},
+    # Corn — chronological: Dec26, Mar27, Dec27. Dec26 retired 11/20 (options expired); Sep/Jul dropped 8/23.
+    {"commodity": "Corn",             "symbol": "ZCZ26.CBT",  "base_symbol": "ZCZ26", "month": "Dec", "roll_date": None, "always_show": True, "drop_date": "2026-11-20"},
     {"commodity": "Corn",             "symbol": "ZCH27.CBT",  "base_symbol": "ZCH27", "month": "Mar27", "roll_date": "2026-08-24"},
     {"commodity": "Corn",             "symbol": "ZCZ27.CBT",  "base_symbol": "ZCZ27", "month": "Dec27", "roll_date": "2026-06-17", "always_show": True},
     {"commodity": "Corn",             "symbol": "ZCU26.CBT",  "base_symbol": "ZCU26", "month": "Sep", "roll_date": "2026-06-27", "drop_date": "2026-08-23"},
@@ -100,8 +100,9 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Gold",             "symbol": "GCJ26.CMX",  "base_symbol": "GCJ26", "month": "Apr", "roll_date": "2026-02-26"},
     {"commodity": "Gold",             "symbol": "GCH26.CMX",  "base_symbol": "GCH26", "month": "Mar", "roll_date": None},
 
-    # Hard Red Wheat — Dec added 8/20; Sep drops 8/23; Jul dropped 6/27
-    {"commodity": "Hard Red Wheat",   "symbol": "KEZ26.CBT",  "base_symbol": "KEZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True},
+    # Hard Red Wheat — Mar27 front from 11/20 (Dec retired 11/20 when its options expired); Sep drops 8/23; Jul dropped 6/27
+    {"commodity": "Hard Red Wheat",   "symbol": "KEZ26.CBT",  "base_symbol": "KEZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True, "drop_date": "2026-11-20"},
+    {"commodity": "Hard Red Wheat",   "symbol": "KEH27.CBT",  "base_symbol": "KEH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Hard Red Wheat",   "symbol": "KEU26.CBT",  "base_symbol": "KEU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True, "drop_date": "2026-08-23"},
 
@@ -155,14 +156,16 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Silver",           "symbol": "SIM26.CMX",  "base_symbol": "SIM26", "month": "Jun", "roll_date": "2026-02-26"},
     {"commodity": "Silver",           "symbol": "SIH26.CMX",  "base_symbol": "SIH26", "month": "Mar", "roll_date": None},
 
-    # Soybean Meal — Dec added 8/20 as always_show; Sep drops 8/23
-    {"commodity": "Soybean Meal",     "symbol": "ZMZ26.CBT",  "base_symbol": "ZMZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True},
+    # Soybean Meal — Mar27 front from 11/20 (Dec retired 11/20 when its options expired); Sep drops 8/23
+    {"commodity": "Soybean Meal",     "symbol": "ZMZ26.CBT",  "base_symbol": "ZMZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True, "drop_date": "2026-11-20"},
+    {"commodity": "Soybean Meal",     "symbol": "ZMH27.CBT",  "base_symbol": "ZMH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Soybean Meal",     "symbol": "ZMU26.CBT",  "base_symbol": "ZMU26", "month": "Sep", "roll_date": "2026-06-27", "drop_date": "2026-08-23"},
     {"commodity": "Soybean Meal",     "symbol": "ZMN26.CBT",  "base_symbol": "ZMN26", "month": "Jul", "roll_date": "2026-02-26", "drop_date": "2026-08-23"},
     {"commodity": "Soybean Meal",     "symbol": "ZMH26.CBT",  "base_symbol": "ZMH26", "month": "Mar", "roll_date": None, "drop_date": "2026-08-23"},
 
-    # Soybean Oil — Dec added 8/20 as always_show; Sep drops 8/23
-    {"commodity": "Soybean Oil",      "symbol": "ZLZ26.CBT",  "base_symbol": "ZLZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True},
+    # Soybean Oil — Mar27 front from 11/20 (Dec retired 11/20 when its options expired); Sep drops 8/23
+    {"commodity": "Soybean Oil",      "symbol": "ZLZ26.CBT",  "base_symbol": "ZLZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True, "drop_date": "2026-11-20"},
+    {"commodity": "Soybean Oil",      "symbol": "ZLH27.CBT",  "base_symbol": "ZLH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Soybean Oil",      "symbol": "ZLU26.CBT",  "base_symbol": "ZLU26", "month": "Sep", "roll_date": "2026-06-27", "drop_date": "2026-08-23"},
     {"commodity": "Soybean Oil",      "symbol": "ZLN26.CBT",  "base_symbol": "ZLN26", "month": "Jul", "roll_date": "2026-02-26", "drop_date": "2026-08-23"},
     {"commodity": "Soybean Oil",      "symbol": "ZLH26.CBT",  "base_symbol": "ZLH26", "month": "Mar", "roll_date": None, "drop_date": "2026-08-23"},
@@ -187,8 +190,9 @@ CONTRACTS: list[Contract] = [
     # Unleaded Gasoline (RBOB) — new from 6/30, using continuous front-month (RB=F)
     {"commodity": "Unleaded Gasoline","symbol": "RB=F",        "base_symbol": "RB=F", "month": "Cont.", "roll_date": "2026-06-30", "history_start": "2026-06-30"},
 
-    # Wheat — Dec added 8/20; Sep drops 8/23; Jul dropped 6/27
-    {"commodity": "Wheat",            "symbol": "ZWZ26.CBT",  "base_symbol": "ZWZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True},
+    # Wheat — Mar27 front from 11/20 (Dec retired 11/20 when its options expired); Sep drops 8/23; Jul dropped 6/27
+    {"commodity": "Wheat",            "symbol": "ZWZ26.CBT",  "base_symbol": "ZWZ26", "month": "Dec", "roll_date": "2026-08-20", "always_show": True, "drop_date": "2026-11-20"},
+    {"commodity": "Wheat",            "symbol": "ZWH27.CBT",  "base_symbol": "ZWH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Wheat",            "symbol": "ZWU26.CBT",  "base_symbol": "ZWU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True, "drop_date": "2026-08-23"},
 
