@@ -2,7 +2,7 @@
   "symbol": "SBH27",
   "commodity": "Sugar",
   "month": "Mar27",
-  "updatedAt": "2026-11-20T21:57:57.404506-06:00",
+  "updatedAt": "2026-11-21T01:47:14.354847-06:00",
   "rows": [
     {
       "date": "2026-11-20",
@@ -10,7 +10,7 @@
       "dailyLow": "16.82",
       "dailyRange": "0.49",
       "fullAchievement": "0.68",
-      "historicVol": "51.0%",
+      "historicVol": "51.1%",
       "impliedVol": "26.6%",
       "weeklyHigh": "18.43",
       "weeklyLow": "16.82",
@@ -2509,7 +2509,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-17",
@@ -2532,7 +2532,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-16",
@@ -2555,7 +2555,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-15",
@@ -2578,7 +2578,7 @@
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|2"
+      "weeklyTrend": "down|1"
     },
     {
       "date": "2026-06-12",
@@ -2595,13 +2595,13 @@
       "dailyTarget": "0.18",
       "nextDailyTarget": "0.19",
       "dailyAchievement": "150.0%",
-      "weeklyTarget": "0.66",
+      "weeklyTarget": "0.63",
       "nextWeeklyTarget": "0.7",
-      "weeklyAchievement": "95.5%",
+      "weeklyAchievement": "100.0%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-11",
@@ -2618,13 +2618,13 @@
       "dailyTarget": "0.18",
       "nextDailyTarget": "0.18",
       "dailyAchievement": "116.7%",
-      "weeklyTarget": "0.66",
+      "weeklyTarget": "0.63",
       "nextWeeklyTarget": "",
-      "weeklyAchievement": "84.8%",
+      "weeklyAchievement": "88.9%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-10",
@@ -2641,13 +2641,13 @@
       "dailyTarget": "0.21",
       "nextDailyTarget": "0.18",
       "dailyAchievement": "109.5%",
-      "weeklyTarget": "0.66",
+      "weeklyTarget": "0.63",
       "nextWeeklyTarget": "",
-      "weeklyAchievement": "77.3%",
+      "weeklyAchievement": "81.0%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-09",
@@ -2664,13 +2664,13 @@
       "dailyTarget": "0.22",
       "nextDailyTarget": "0.21",
       "dailyAchievement": "104.5%",
-      "weeklyTarget": "0.66",
+      "weeklyTarget": "0.63",
       "nextWeeklyTarget": "",
-      "weeklyAchievement": "59.1%",
+      "weeklyAchievement": "61.9%",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-08",
@@ -2687,13 +2687,13 @@
       "dailyTarget": "0.27",
       "nextDailyTarget": "0.22",
       "dailyAchievement": "85.2%",
-      "weeklyTarget": "0.66",
+      "weeklyTarget": "0.63",
       "nextWeeklyTarget": "",
-      "weeklyAchievement": "34.8%",
+      "weeklyAchievement": "36.5%",
       "impliedVolTrend": "",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": "down|1"
+      "weeklyTrend": "up|1"
     },
     {
       "date": "2026-06-05",
@@ -2711,7 +2711,7 @@
       "nextDailyTarget": "0.27",
       "dailyAchievement": "133.3%",
       "weeklyTarget": "",
-      "nextWeeklyTarget": "0.66",
+      "nextWeeklyTarget": "0.63",
       "weeklyAchievement": "",
       "impliedVolTrend": "",
       "underTargetStreak": 0,
@@ -2884,16 +2884,16 @@
       "dailyHigh": "15.98",
       "dailyLow": "15.77",
       "dailyRange": "0.27",
-      "fullAchievement": "0.28",
-      "historicVol": "22.8%",
+      "fullAchievement": "0.27",
+      "historicVol": "21.5%",
       "impliedVol": "",
       "weeklyHigh": "16.04",
       "weeklyLow": "15.77",
       "weeklyRange": "0.27",
       "sectionBreak": true,
-      "dailyTarget": "0.26",
+      "dailyTarget": "",
       "nextDailyTarget": "0.22",
-      "dailyAchievement": "103.8%",
+      "dailyAchievement": "",
       "weeklyTarget": "",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "",
@@ -2907,34 +2907,11 @@
       "dailyHigh": "16.22",
       "dailyLow": "15.93",
       "dailyRange": "0.3",
-      "fullAchievement": "0.33",
-      "historicVol": "26.3%",
-      "impliedVol": "",
-      "weeklyHigh": "16.43",
-      "weeklyLow": "15.93",
-      "weeklyRange": "0.5",
-      "sectionBreak": false,
-      "dailyTarget": "",
-      "nextDailyTarget": "0.26",
-      "dailyAchievement": "",
-      "weeklyTarget": "",
-      "nextWeeklyTarget": "",
-      "weeklyAchievement": "",
-      "impliedVolTrend": "",
-      "underTargetStreak": 0,
-      "weeklyUnderTargetStreak": 0,
-      "weeklyTrend": ""
-    },
-    {
-      "date": "2026-05-21",
-      "dailyHigh": "16.34",
-      "dailyLow": "16.11",
-      "dailyRange": "0.28",
       "fullAchievement": "",
       "historicVol": "",
       "impliedVol": "",
-      "weeklyHigh": "16.43",
-      "weeklyLow": "16.02",
+      "weeklyHigh": "16.34",
+      "weeklyLow": "15.93",
       "weeklyRange": "0.41",
       "sectionBreak": false,
       "dailyTarget": "",
@@ -2949,16 +2926,16 @@
       "weeklyTrend": ""
     },
     {
-      "date": "2026-05-20",
-      "dailyHigh": "16.43",
-      "dailyLow": "16.02",
-      "dailyRange": "0.41",
+      "date": "2026-05-21",
+      "dailyHigh": "16.34",
+      "dailyLow": "16.11",
+      "dailyRange": "0.23",
       "fullAchievement": "",
       "historicVol": "",
       "impliedVol": "",
-      "weeklyHigh": "16.43",
-      "weeklyLow": "16.02",
-      "weeklyRange": "0.41",
+      "weeklyHigh": "16.34",
+      "weeklyLow": "16.11",
+      "weeklyRange": "0.23",
       "sectionBreak": false,
       "dailyTarget": "",
       "nextDailyTarget": "",
