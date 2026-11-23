@@ -34,13 +34,19 @@ RISK_FREE_RATE: float = 0.05
 # ---------------------------------------------------------------------------
 
 def _count_trading_days(start: datetime.date, end: datetime.date) -> int:
-    """Count weekday trading days from start to end inclusive."""
-    if end < start:
+    """Trading days remaining until expiry: CME sessions strictly AFTER `start`
+    through `end` inclusive, excluding weekends and CME holidays. `start` (today)
+    is not counted, so DTE = 0 on the expiry day and 1 the session before it."""
+    if end <= start:
         return 0
+    try:
+        from src.config import CME_HOLIDAYS
+    except Exception:
+        CME_HOLIDAYS = frozenset()
     count = 0
-    d = start
+    d = start + datetime.timedelta(days=1)
     while d <= end:
-        if d.weekday() < 5:
+        if d.weekday() < 5 and d.isoformat() not in CME_HOLIDAYS:
             count += 1
         d += datetime.timedelta(days=1)
     return count
@@ -226,6 +232,8 @@ _SETTLE_URL = (
     "&tradeDate={trade_date}&pageSize=500"
 )
 _WARMUP_URL = "https://www.cmegroup.com/markets/agriculture/grains/corn.html"
+_CALENDAR_URL = "https://www.cmegroup.com/CmeWS/mvc/ProductCalendar/Options/{fetch_id}"
+_cal_cache: dict = {}
 
 
 # ---------------------------------------------------------------------------
@@ -288,7 +296,9 @@ def _fetch_expirations(fetch_id: int) -> list[dict]:
             year   = info.get("year")
             opt_id = exp.get("productId")
             if code and month and year and opt_id:
-                all_exp.append({"code": code, "month": month, "year": year, "productId": opt_id})
+                tdates = exp.get("tradeDates") or []
+                tdate = tdates[0].get("formatedDate") if tdates else None
+                all_exp.append({"code": code, "month": month, "year": year, "productId": opt_id, "tradeDate": tdate})
     if not all_exp:
         return []
 
@@ -338,11 +348,21 @@ def fetch_cme_oi(commodity: str, del_month: int, del_year: int) -> tuple[list[di
     opt_id     = matched["productId"]
     exp_code   = matched["code"]
     month_year = f"{exp_code[0]}{str(matched['year'])[-2:]}"
-    today_s    = datetime.date.today().strftime("%m/%d/%Y")
-    settlements = _fetch_settlements(opt_id, exp_code, month_year, today_s)
-    if not settlements:
-        yest = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%m/%d/%Y")
-        settlements = _fetch_settlements(opt_id, exp_code, month_year, yest)
+    # Query CME's reported latest-settled date first (settlements lag ~1 day;
+    # today/yesterday are empty over weekends), then walk back a few days.
+    candidates: list[str] = []
+    if matched.get("tradeDate"):
+        candidates.append(matched["tradeDate"])
+    _t = datetime.date.today()
+    for _b in range(0, 6):
+        _c = (_t - datetime.timedelta(days=_b)).strftime("%m/%d/%Y")
+        if _c not in candidates:
+            candidates.append(_c)
+    settlements: list[dict] = []
+    for _td in candidates:
+        settlements = _fetch_settlements(opt_id, exp_code, month_year, _td)
+        if settlements:
+            break
     if not settlements:
         return [], [], None
 
@@ -375,6 +395,39 @@ def fetch_cme_oi(commodity: str, del_month: int, del_year: int) -> tuple[list[di
     while exp_d.weekday() != 4:
         exp_d -= datetime.timedelta(days=1)
     return calls, puts, exp_d.isoformat()
+
+
+_CAL_MONS = {"Jan":1,"Feb":2,"Mar":3,"Apr":4,"May":5,"Jun":6,
+             "Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12}
+
+
+def fetch_cme_option_expiry(commodity: str, del_month: int, del_year: int):
+    """Real option last-trade (expiration) date from CME's ProductCalendar,
+    matched to the delivery month/year. Returns a datetime.date, or None if
+    unavailable (caller falls back to the per-family formula)."""
+    fetch_id = CME_PRODUCT_MAP.get(commodity)
+    if fetch_id is None:
+        return None
+    cal = _cal_cache.get(fetch_id)
+    if cal is None:
+        try:
+            r = _cme.get(_CALENDAR_URL.format(fetch_id=fetch_id), timeout=15)
+            cal = r.json() if r.status_code == 200 else []
+        except Exception:
+            cal = []
+        _cal_cache[fetch_id] = cal
+    target = f"{datetime.date(del_year, del_month, 1):%b %Y}"   # e.g. "Mar 2027"
+    for group in cal:
+        for c in group.get("calendarEntries", []):
+            if c.get("contractMonth") == target:
+                lt = c.get("lastTrade") or c.get("settlement")   # "24 Nov 2026"
+                if lt:
+                    try:
+                        dd, mm, yy = lt.split()
+                        return datetime.date(int(yy), _CAL_MONS[mm], int(dd))
+                    except Exception:
+                        return None
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -535,10 +588,17 @@ def _oi_deltas(
 ) -> tuple[list[dict], list[dict], str | None, bool]:
     if not oi_history or not today_snap:
         return [], [], None, False
-    available    = sorted(oi_history.keys())
-    compare_date = next((d for d in available if d < today), None)
-    if not compare_date:
+    available = sorted(oi_history.keys())
+    priors    = [d for d in available if d < today]
+    if not priors:
         return [], [], None, False
+    # Friday -> compare to the PREVIOUS Friday (weekly OI change); Mon-Thu ->
+    # the most recent prior trading day (1-day change).
+    if datetime.date.fromisoformat(today).weekday() == 4:
+        _pf = (datetime.date.fromisoformat(today) - datetime.timedelta(days=7)).isoformat()
+        compare_date = next((d for d in reversed(priors) if d <= _pf), priors[-1])
+    else:
+        compare_date = priors[-1]
 
     prior = {e["s"]: e for e in oi_history[compare_date]}
     cur   = {e["s"]: e for e in today_snap}
@@ -592,18 +652,24 @@ def _build_contract(
     while tgt_m <= 0:  tgt_m += 12; tgt_y -= 1
     while tgt_m > 12:  tgt_m -= 12; tgt_y += 1
 
-    # Options expiration date
-    if offset == -1:
-        # Grains: last Friday >= 5 business days before first notice day
-        exp_d = _grain_options_expiry(del_month, del_year)
-    else:
-        # Metals/livestock: last Friday of delivery month
-        last  = calendar.monthrange(del_year, del_month)[1]
-        exp_d = datetime.date(del_year, del_month, last)
-        while exp_d.weekday() != 4:
-            exp_d -= datetime.timedelta(days=1)
+    # Options expiration date — prefer CME's actual option last-trade date
+    # (correct for every product family: grains/metals/livestock); fall back
+    # to the per-family formula only if CME is unavailable.
+    exp_d = fetch_cme_option_expiry(commodity, del_month, del_year)
+    if exp_d is None:
+        if offset == -1:
+            exp_d = _grain_options_expiry(del_month, del_year)
+        else:
+            last  = calendar.monthrange(del_year, del_month)[1]
+            exp_d = datetime.date(del_year, del_month, last)
+            while exp_d.weekday() != 4:
+                exp_d -= datetime.timedelta(days=1)
     exp_str = exp_d.isoformat()
-    dte     = _count_trading_days(datetime.date.today(), exp_d)
+    try:
+        _today_d = datetime.date.fromisoformat(today)
+    except Exception:
+        _today_d = datetime.date.today()
+    dte     = _count_trading_days(_today_d, exp_d)
 
     # CME OI — pass delivery month so API matches correctly; ignore returned exp date
     calls, puts, _cme_exp = fetch_cme_oi(commodity, del_month, del_year)
