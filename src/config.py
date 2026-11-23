@@ -92,7 +92,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Feeder Cattle",    "symbol": "GFQ26.CME",  "base_symbol": "GFQ26", "month": "Aug", "roll_date": "2026-04-20"},
     {"commodity": "Feeder Cattle",    "symbol": "GFK26.CME",  "base_symbol": "GFK26", "month": "May", "roll_date": None},
 
-    # Gold — Dec active from 9/8, Oct active from 7/29, Aug from 5/27, Jun from 4/20, Apr from 2/26, Mar fallback
+    # Gold — Mar27 active from 11/20 (Dec options expired 11/20), Dec from 9/8, Oct from 7/29, Aug from 5/27, Jun from 4/20, Apr from 2/26, Mar fallback
+    {"commodity": "Gold",             "symbol": "GCH27.CMX",  "base_symbol": "GCH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Gold",             "symbol": "GCZ26.CMX",  "base_symbol": "GCZ26", "month": "Dec", "roll_date": "2026-09-08"},
     {"commodity": "Gold",             "symbol": "GCV26.CMX",  "base_symbol": "GCV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Gold",             "symbol": "GCQ26.CMX",  "base_symbol": "GCQ26", "month": "Aug", "roll_date": "2026-05-27"},
@@ -106,7 +107,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Hard Red Wheat",   "symbol": "KEN26.CBT",  "base_symbol": "KEN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Hard Red Wheat",   "symbol": "KEU26.CBT",  "base_symbol": "KEU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True, "drop_date": "2026-08-23"},
 
-    # Heating Oil — Dec 2026 (HOZ26) added 8/24
+    # Heating Oil — Mar27 active from 11/20 (Dec options expired 11/20); Dec added 8/24
+    {"commodity": "Heating Oil",      "symbol": "HOH27.NYM",   "base_symbol": "HOH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Heating Oil",      "symbol": "HOZ26.NYM",   "base_symbol": "HOZ26", "month": "Dec", "roll_date": "2026-08-24", "history_start": "2026-08-24"},
 
     # Lean Hogs — rolled Oct->Dec on 10/22 (Oct retired; Dec was the always_show slot, now the front); Aug/Jun/Feb expired
@@ -129,10 +131,10 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQU26.CME",  "base_symbol": "NQU26", "month": "Sep", "roll_date": "2026-06-22"},
     {"commodity": "Nasdaq 100 E-Mini","symbol": "NQM26.CME",  "base_symbol": "NQM26", "month": "Jun", "roll_date": None},
 
-    # Natural Gas — Dec active from 9/27, Oct from 7/29, Mar27 always_show (added 7/29), Aug from 6/29, Jul from 5/27, Jun from 2/26, Mar fallback
-    {"commodity": "Natural Gas",      "symbol": "NGZ26.NYM",  "base_symbol": "NGZ26", "month": "Dec", "roll_date": "2026-09-27"},
+    # Natural Gas — Mar27 front from 11/20 (Dec retired 11/20); Oct from 7/29, Aug from 6/29, Jul from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Natural Gas",      "symbol": "NGZ26.NYM",  "base_symbol": "NGZ26", "month": "Dec", "roll_date": "2026-09-27", "drop_date": "2026-11-20"},
     {"commodity": "Natural Gas",      "symbol": "NGV26.NYM",  "base_symbol": "NGV26", "month": "Oct", "roll_date": "2026-07-29"},
-    {"commodity": "Natural Gas",      "symbol": "NGH27.NYM",  "base_symbol": "NGH27", "month": "Mar27", "roll_date": "2026-07-29", "always_show": True},
+    {"commodity": "Natural Gas",      "symbol": "NGH27.NYM",  "base_symbol": "NGH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Natural Gas",      "symbol": "NGQ26.NYM",  "base_symbol": "NGQ26", "month": "Aug", "roll_date": "2026-06-29"},
     {"commodity": "Natural Gas",      "symbol": "NGN26.NYM",  "base_symbol": "NGN26", "month": "Jul", "roll_date": "2026-05-27"},
     {"commodity": "Natural Gas",      "symbol": "NGM26.NYM",  "base_symbol": "NGM26", "month": "Jun", "roll_date": "2026-02-26"},
@@ -149,6 +151,7 @@ CONTRACTS: list[Contract] = [
     {"commodity": "S&P 500 E-Mini",   "symbol": "ESM26.CME",  "base_symbol": "ESM26", "month": "Jun", "roll_date": None},
 
     # Silver — Dec active from 9/27, Oct from 7/29, Aug from 6/27, Jul from 5/27, Jun from 2/26, Mar fallback
+    {"commodity": "Silver",           "symbol": "SIH27.CMX",  "base_symbol": "SIH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "Silver",           "symbol": "SIZ26.CMX",  "base_symbol": "SIZ26", "month": "Dec", "roll_date": "2026-09-27"},
     {"commodity": "Silver",           "symbol": "SIV26.CMX",  "base_symbol": "SIV26", "month": "Oct", "roll_date": "2026-07-29"},
     {"commodity": "Silver",           "symbol": "SIQ26.CMX",  "base_symbol": "SIQ26", "month": "Aug", "roll_date": "2026-06-27"},
@@ -196,7 +199,8 @@ CONTRACTS: list[Contract] = [
     {"commodity": "Wheat",            "symbol": "ZWN26.CBT",  "base_symbol": "ZWN26", "month": "Jul", "roll_date": None, "drop_date": "2026-06-27"},
     {"commodity": "Wheat",            "symbol": "ZWU26.CBT",  "base_symbol": "ZWU26", "month": "Sep", "roll_date": "2026-06-18", "always_show": True, "drop_date": "2026-08-23"},
 
-    # 10-Year T-Note — Dec 2026 (ZNZ26) added 8/24, at bottom of home page
+    # 10-Year T-Note — Mar27 active from 11/20 (rolled from Dec); Dec added 8/24, at bottom of home page
+    {"commodity": "10-Year T-Note",   "symbol": "ZNH27.CBT",   "base_symbol": "ZNH27", "month": "Mar27", "roll_date": "2026-11-20"},
     {"commodity": "10-Year T-Note",   "symbol": "ZNZ26.CBT",   "base_symbol": "ZNZ26", "month": "Dec", "roll_date": "2026-08-24", "history_start": "2026-08-24"},
 ]
 
