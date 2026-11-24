@@ -271,7 +271,12 @@ _cme = _CMESession()
 # CME OI fetching
 # ---------------------------------------------------------------------------
 
+_exp_cache: dict = {}
+
+
 def _fetch_expirations(fetch_id: int) -> list[dict]:
+    if fetch_id in _exp_cache:
+        return _exp_cache[fetch_id]
     url = _EXP_URL.format(fetch_id=fetch_id)
     try:
         r = _cme.get(url, timeout=15)
@@ -306,7 +311,9 @@ def _fetch_expirations(fetch_id: int) -> list[dict]:
     id_counts  = Counter(e["productId"] for e in all_exp)
     max_cnt    = max(id_counts.values())
     primary_id = sorted(pid for pid, cnt in id_counts.items() if cnt == max_cnt)[0]
-    return [e for e in all_exp if e["productId"] == primary_id]
+    res = [e for e in all_exp if e["productId"] == primary_id]
+    _exp_cache[fetch_id] = res
+    return res
 
 
 def _match_exp(expirations: list[dict], target_month: int, target_year: int) -> dict | None:
@@ -333,7 +340,7 @@ def _fetch_settlements(opt_id: int, exp_code: str, month_year: str, trade_date: 
         return []
 
 
-def fetch_cme_oi(commodity: str, del_month: int, del_year: int) -> tuple[list[dict], list[dict], str | None]:
+def fetch_cme_oi(commodity: str, del_month: int, del_year: int, trade_date: str | None = None) -> tuple[list[dict], list[dict], str | None]:
     """Return (calls, puts, exp_date_str). Each record: {strike, openInterest}."""
     fetch_id = CME_PRODUCT_MAP.get(commodity)
     if fetch_id is None:
@@ -351,13 +358,16 @@ def fetch_cme_oi(commodity: str, del_month: int, del_year: int) -> tuple[list[di
     # Query CME's reported latest-settled date first (settlements lag ~1 day;
     # today/yesterday are empty over weekends), then walk back a few days.
     candidates: list[str] = []
-    if matched.get("tradeDate"):
-        candidates.append(matched["tradeDate"])
-    _t = datetime.date.today()
-    for _b in range(0, 6):
-        _c = (_t - datetime.timedelta(days=_b)).strftime("%m/%d/%Y")
-        if _c not in candidates:
-            candidates.append(_c)
+    if trade_date:
+        candidates = [trade_date]
+    else:
+        if matched.get("tradeDate"):
+            candidates.append(matched["tradeDate"])
+        _t = datetime.date.today()
+        for _b in range(0, 6):
+            _c = (_t - datetime.timedelta(days=_b)).strftime("%m/%d/%Y")
+            if _c not in candidates:
+                candidates.append(_c)
     settlements: list[dict] = []
     for _td in candidates:
         settlements = _fetch_settlements(opt_id, exp_code, month_year, _td)
@@ -625,6 +635,38 @@ def _oi_deltas(
 
 
 # ---------------------------------------------------------------------------
+# OI snapshot backfill (self-heals gaps in oi_history after an outage)
+# ---------------------------------------------------------------------------
+
+def _prev_trading_day(d: datetime.date) -> datetime.date:
+    try:
+        from src.config import CME_HOLIDAYS
+    except Exception:
+        CME_HOLIDAYS = frozenset()
+    d -= datetime.timedelta(days=1)
+    while d.weekday() >= 5 or d.isoformat() in CME_HOLIDAYS:
+        d -= datetime.timedelta(days=1)
+    return d
+
+
+def _oi_snapshot_for_date(commodity: str, del_month: int, del_year: int, trade_date: str):
+    """Build an oi_history snapshot [{s,c,p}] for one specific settlement date."""
+    calls, puts, _ = fetch_cme_oi(commodity, del_month, del_year, trade_date=trade_date)
+    if not calls and not puts:
+        return None
+    if commodity in CENTS_COMMODITIES:
+        calls = [{"strike": round(r["strike"] * 100, 2), "openInterest": r["openInterest"]} for r in calls]
+        puts  = [{"strike": round(r["strike"] * 100, 2), "openInterest": r["openInterest"]} for r in puts]
+    oi_map: dict[float, dict] = {}
+    for r in calls:
+        oi_map.setdefault(r["strike"], {"callOI": 0, "putOI": 0})["callOI"] = r["openInterest"]
+    for r in puts:
+        oi_map.setdefault(r["strike"], {"callOI": 0, "putOI": 0})["putOI"]  = r["openInterest"]
+    return [{"s": s, "c": e["callOI"], "p": e["putOI"]}
+            for s, e in oi_map.items() if e["callOI"] + e["putOI"] > 0]
+
+
+# ---------------------------------------------------------------------------
 # Per-contract data fetch
 # ---------------------------------------------------------------------------
 
@@ -739,6 +781,20 @@ def _build_contract(
         if e["callOI"] + e["putOI"] > 0
     ]
 
+    # Self-heal: backfill any missing recent trading-day snapshots (e.g. after an
+    # OI outage) so daily and Friday-vs-previous-Friday comparisons have their
+    # reference dates. Only dates not already in history are fetched.
+    backfill_snaps: dict = {}
+    _bd = _today_d
+    for _ in range(6):
+        _bd = _prev_trading_day(_bd)
+        _bs = _bd.isoformat()
+        if _bs >= today or _bs in oi_history:
+            continue
+        _snap = _oi_snapshot_for_date(commodity, del_month, del_year, _bd.strftime("%m/%d/%Y"))
+        if _snap:
+            backfill_snaps[_bs] = _snap
+
     # OI gainers / losers
     gainers, losers, compare_date, oi_hist_avail = _oi_deltas(snapshot, oi_history, today)
 
@@ -765,6 +821,7 @@ def _build_contract(
         "oiCompareDate":     compare_date,
         "oiHistoryAvailable":oi_hist_avail,
         "todaySnapshot":     snapshot,
+        "backfillSnapshots": backfill_snaps,
         "dataAvailable":     True,
     }
 
@@ -810,9 +867,13 @@ def build_options_feed(today: str, feeds_dir: Path, workers: int = 3) -> dict:
         sym        = contract["base_symbol"]
         oi_history = _load_oi_history(sym, oi_dir)
         data       = _build_contract(comm, sym, contract["month"], spot_map.get(comm), oi_history, today)
+        bf = data.get("backfillSnapshots") or {}
+        for _bd, _bs in bf.items():
+            oi_history.setdefault(_bd, _bs)
         snapshot   = data.get("todaySnapshot", [])
         if snapshot:
             oi_history[today] = snapshot
+        if snapshot or bf:
             _save_oi_history(sym, oi_history, oi_dir, today, CME_HOLIDAYS)
         log.info("  ✓ %s %s  DTE=%s  OI=%s", comm, sym, data.get("dte"), "ok" if data.get("topOIStrikes") else "—")
         return comm, data
