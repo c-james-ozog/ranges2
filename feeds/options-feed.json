@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-24T16:54:52.137924Z",
+  "builtAt": "2026-11-24T20:16:57.464964Z",
   "commodities": {
     "Copper": {
       "contracts": [
@@ -8,7 +8,7 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 63,
-          "underlyingPrice": 5.411,
+          "underlyingPrice": 5.472,
           "atmStrike": 565.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -476,17 +476,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 63,
-          "underlyingPrice": 3570.5,
-          "atmStrike": 3575.0,
-          "atmIV": 0.343271,
-          "atmIVPct": "34.3%",
+          "underlyingPrice": 3555.6001,
+          "atmStrike": 3560.0,
+          "atmIV": 0.347915,
+          "atmIVPct": "34.8%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 509.2033,
-          "expectedMoveFmt": "$509",
-          "expectedMovePct": "14.26%",
+          "expectedMovePrice": 513.9371,
+          "expectedMoveFmt": "$514",
+          "expectedMovePct": "14.45%",
           "expectedMoveRange": {
-            "low": 3061.2967,
-            "high": 4079.7033
+            "low": 3041.663,
+            "high": 4069.5372
           },
           "topOIStrikes": [
             {
@@ -2979,17 +2979,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 63,
-          "underlyingPrice": 40.78,
+          "underlyingPrice": 40.645,
           "atmStrike": 40.5,
-          "atmIV": 0.608086,
-          "atmIVPct": "60.8%",
+          "atmIV": 0.609354,
+          "atmIVPct": "60.9%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 10.3023,
+          "expectedMovePrice": 10.2896,
           "expectedMoveFmt": "$10",
-          "expectedMovePct": "25.26%",
+          "expectedMovePct": "25.32%",
           "expectedMoveRange": {
-            "low": 30.4777,
-            "high": 51.0823
+            "low": 30.3554,
+            "high": 50.9346
           },
           "topOIStrikes": [
             {
@@ -4428,17 +4428,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
           "dte": 61,
-          "underlyingPrice": 449.5,
+          "underlyingPrice": 450.25,
           "atmStrike": 450.0,
-          "atmIV": 0.457037,
-          "atmIVPct": "45.7%",
+          "atmIV": 0.433599,
+          "atmIVPct": "43.4%",
           "ivSource": "ETF (CORN)",
-          "expectedMovePrice": 83.9846,
-          "expectedMoveFmt": "84.0\u00a2",
-          "expectedMovePct": "18.68%",
+          "expectedMovePrice": 79.8109,
+          "expectedMoveFmt": "79.8\u00a2",
+          "expectedMovePct": "17.73%",
           "expectedMoveRange": {
-            "low": 365.5154,
-            "high": 533.4846
+            "low": 370.4391,
+            "high": 530.0609
           },
           "topOIStrikes": [
             {
@@ -4994,17 +4994,17 @@
           "month": "Dec27",
           "optionsExpiration": "2027-11-26",
           "dte": 261,
-          "underlyingPrice": 449.5,
+          "underlyingPrice": 450.25,
           "atmStrike": 450.0,
-          "atmIV": 0.22657,
-          "atmIVPct": "22.7%",
+          "atmIV": 0.231941,
+          "atmIVPct": "23.2%",
           "ivSource": "ETF (CORN)",
-          "expectedMovePrice": 86.1206,
-          "expectedMoveFmt": "86.1\u00a2",
-          "expectedMovePct": "19.16%",
+          "expectedMovePrice": 88.3093,
+          "expectedMoveFmt": "88.3\u00a2",
+          "expectedMovePct": "19.61%",
           "expectedMoveRange": {
-            "low": 363.3794,
-            "high": 535.6206
+            "low": 361.9407,
+            "high": 538.5593
           },
           "topOIStrikes": [
             {
@@ -5459,17 +5459,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
           "dte": 61,
-          "underlyingPrice": 635.5,
-          "atmStrike": 635.0,
-          "atmIV": 0.248787,
-          "atmIVPct": "24.9%",
+          "underlyingPrice": 631.75,
+          "atmStrike": 630.0,
+          "atmIV": 0.237556,
+          "atmIVPct": "23.8%",
           "ivSource": "ETF (WEAT)",
-          "expectedMovePrice": 64.6342,
-          "expectedMoveFmt": "64.6\u00a2",
-          "expectedMovePct": "10.17%",
+          "expectedMovePrice": 61.3524,
+          "expectedMoveFmt": "61.4\u00a2",
+          "expectedMovePct": "9.71%",
           "expectedMoveRange": {
-            "low": 570.8658,
-            "high": 700.1342
+            "low": 570.3976,
+            "high": 693.1024
           },
           "topOIStrikes": [
             {
@@ -6059,17 +6059,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
           "dte": 61,
-          "underlyingPrice": 1239.75,
-          "atmStrike": 1240.0,
-          "atmIV": 0.734378,
-          "atmIVPct": "73.4%",
+          "underlyingPrice": 1232.25,
+          "atmStrike": 1230.0,
+          "atmIV": 0.752444,
+          "atmIVPct": "75.2%",
           "ivSource": "ETF (SOYB)",
-          "expectedMovePrice": 372.1965,
-          "expectedMoveFmt": "372.2\u00a2",
-          "expectedMovePct": "30.02%",
+          "expectedMovePrice": 379.045,
+          "expectedMoveFmt": "379.0\u00a2",
+          "expectedMovePct": "30.76%",
           "expectedMoveRange": {
-            "low": 867.5535,
-            "high": 1611.9465
+            "low": 853.205,
+            "high": 1611.295
           },
           "topOIStrikes": [
             {
@@ -6622,17 +6622,17 @@
           "month": "Nov27",
           "optionsExpiration": "2027-10-22",
           "dte": 236,
-          "underlyingPrice": 1239.75,
-          "atmStrike": 1240.0,
-          "atmIV": 0.680179,
-          "atmIVPct": "68.0%",
+          "underlyingPrice": 1232.25,
+          "atmStrike": 1230.0,
+          "atmIV": 0.68848,
+          "atmIVPct": "68.8%",
           "ivSource": "ETF (SOYB)",
-          "expectedMovePrice": 678.0577,
-          "expectedMoveFmt": "678.1\u00a2",
-          "expectedMovePct": "54.69%",
+          "expectedMovePrice": 682.181,
+          "expectedMoveFmt": "682.2\u00a2",
+          "expectedMovePct": "55.36%",
           "expectedMoveRange": {
-            "low": 561.6923,
-            "high": 1917.8077
+            "low": 550.069,
+            "high": 1914.431
           },
           "topOIStrikes": [
             {
@@ -7015,17 +7015,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
           "dte": 61,
-          "underlyingPrice": 350.4,
+          "underlyingPrice": 350.6,
           "atmStrike": 350.0,
-          "atmIV": 0.237556,
-          "atmIVPct": "23.8%",
+          "atmIV": 0.237467,
+          "atmIVPct": "23.7%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 34.0287,
+          "expectedMovePrice": 34.0355,
           "expectedMoveFmt": "$34",
           "expectedMovePct": "9.71%",
           "expectedMoveRange": {
-            "low": 316.3713,
-            "high": 384.4287
+            "low": 316.5645,
+            "high": 384.6355
           },
           "topOIStrikes": [
             {
@@ -7395,7 +7395,7 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
           "dte": 61,
-          "underlyingPrice": 59.27,
+          "underlyingPrice": 58.11,
           "atmStrike": 5700.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -7957,17 +7957,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
           "dte": 61,
-          "underlyingPrice": 591.5,
+          "underlyingPrice": 588.75,
           "atmStrike": 590.0,
-          "atmIV": 0.248787,
-          "atmIVPct": "24.9%",
+          "atmIV": 0.237556,
+          "atmIVPct": "23.8%",
           "ivSource": "ETF (WEAT)",
-          "expectedMovePrice": 60.1591,
-          "expectedMoveFmt": "60.2\u00a2",
-          "expectedMovePct": "10.17%",
+          "expectedMovePrice": 57.1765,
+          "expectedMoveFmt": "57.2\u00a2",
+          "expectedMovePct": "9.71%",
           "expectedMoveRange": {
-            "low": 531.3409,
-            "high": 651.6591
+            "low": 531.5735,
+            "high": 645.9265
           },
           "topOIStrikes": [
             {
@@ -8642,7 +8642,7 @@
           "month": "Jan27",
           "optionsExpiration": "2027-01-28",
           "dte": 45,
-          "underlyingPrice": 332.05,
+          "underlyingPrice": 332.95,
           "atmStrike": 27000.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -9713,7 +9713,7 @@
           "month": "Dec",
           "optionsExpiration": "2026-12-14",
           "dte": 13,
-          "underlyingPrice": 56.85,
+          "underlyingPrice": 56.275,
           "atmStrike": 3600.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -10212,7 +10212,7 @@
           "month": "Dec",
           "optionsExpiration": "2026-12-04",
           "dte": 7,
-          "underlyingPrice": 228.875,
+          "underlyingPrice": 229.925,
           "atmStrike": 18300.0,
           "atmIV": null,
           "atmIVPct": null,
