@@ -940,7 +940,7 @@ def main() -> None:
         from src.options_feed import build_options_feed
         (FEEDS_DIR / "oi_history").mkdir(parents=True, exist_ok=True)
         log.info("Building options feed…")
-        options_data = build_options_feed(today.isoformat(), feeds_dir=FEEDS_DIR)
+        options_data = build_options_feed(today, feeds_dir=FEEDS_DIR)
         _opt_json = json.dumps(options_data, indent=2)
         (FEEDS_DIR / "options-feed.json").write_text(_opt_json, encoding="utf-8")
         (FEEDS_DIR / f"options-feed-{today}.json").write_text(_opt_json, encoding="utf-8")
