@@ -835,6 +835,8 @@ def build_options_feed(today: str, feeds_dir: Path, workers: int = 3) -> dict:
     Build the full options feed for all 12 CME commodities.
     Returns a dict suitable for JSON serialisation as options-feed.json.
     """
+    # Accept a date-only string, a full datetime ISO string, or a date object.
+    today = str(today)[:10]
     from src.config import CONTRACTS, CME_HOLIDAYS, active_symbols_for_date
 
     oi_dir = feeds_dir / "oi_history"
