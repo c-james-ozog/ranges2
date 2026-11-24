@@ -2,7 +2,7 @@
   "symbol": "ZNH27",
   "commodity": "10-Year T-Note",
   "month": "Mar27",
-  "updatedAt": "2026-11-23T22:16:49.827155-06:00",
+  "updatedAt": "2026-11-23T22:28:45.387346-06:00",
   "rows": [
     {
       "date": "2026-11-23",
@@ -11,7 +11,7 @@
       "dailyRange": "0.53125",
       "fullAchievement": "0.671875",
       "historicVol": "8.1%",
-      "impliedVol": "",
+      "impliedVol": "6.0%",
       "weeklyHigh": "106.71875",
       "weeklyLow": "106.1875",
       "weeklyRange": "0.53125",
@@ -34,7 +34,7 @@
       "dailyRange": "1.015625",
       "fullAchievement": "0.671875",
       "historicVol": "8.1%",
-      "impliedVol": "6.5%",
+      "impliedVol": "",
       "weeklyHigh": "106.75",
       "weeklyLow": "104.984375",
       "weeklyRange": "1.765625",
