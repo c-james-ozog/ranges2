@@ -602,6 +602,15 @@ def _oi_deltas(
     priors    = [d for d in available if d < today]
     if not priors:
         return [], [], None, False
+
+    def _sig(snap):
+        # Order-independent fingerprint of a snapshot's OI, so we can tell when
+        # two days hold the SAME settlement data (CME posts EOD settlement with
+        # a ~1-day lag, so today's pull often equals yesterday's).
+        return tuple(sorted((e["s"], e.get("c", 0) or 0, e.get("p", 0) or 0) for e in snap))
+
+    cur_sig = _sig(today_snap)
+
     # Friday -> compare to the PREVIOUS Friday (weekly OI change); Mon-Thu ->
     # the most recent prior trading day (1-day change).
     if datetime.date.fromisoformat(today).weekday() == 4:
@@ -609,6 +618,12 @@ def _oi_deltas(
         compare_date = next((d for d in reversed(priors) if d <= _pf), priors[-1])
     else:
         compare_date = priors[-1]
+        # Skip any prior day whose settlement is identical to today's (the lag
+        # duplicates the latest settled day), so the 1-day change is real.
+        for cand in reversed(priors):
+            if _sig(oi_history[cand]) != cur_sig:
+                compare_date = cand
+                break
 
     prior = {e["s"]: e for e in oi_history[compare_date]}
     cur   = {e["s"]: e for e in today_snap}
@@ -794,8 +809,9 @@ def _build_contract(
         _snap = _oi_snapshot_for_date(commodity, del_month, del_year, _bd.strftime("%m/%d/%Y"))
         if _snap:
             backfill_snaps[_bs] = _snap
+            oi_history.setdefault(_bs, _snap)   # make it available to THIS build's compare
 
-    # OI gainers / losers
+    # OI gainers / losers (oi_history now includes any just-backfilled dates)
     gainers, losers, compare_date, oi_hist_avail = _oi_deltas(snapshot, oi_history, today)
 
     return {
