@@ -2,7 +2,7 @@
   "symbol": "CLH27",
   "commodity": "Crude Oil WTI",
   "month": "Mar27",
-  "updatedAt": "2026-11-24T22:52:57.505412-06:00",
+  "updatedAt": "2026-11-24T23:12:51.945604-06:00",
   "rows": [
     {
       "date": "2026-11-24",
@@ -11,7 +11,7 @@
       "dailyRange": "2.94",
       "fullAchievement": "3.03",
       "historicVol": "48.5%",
-      "impliedVol": "43.8%",
+      "impliedVol": "43.7%",
       "weeklyHigh": "81.43",
       "weeklyLow": "77.1",
       "weeklyRange": "4.33",
@@ -22,7 +22,7 @@
       "weeklyTarget": "8.99",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "48.2%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|2"

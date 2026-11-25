@@ -2,7 +2,7 @@
   "symbol": "SIH27",
   "commodity": "Silver",
   "month": "Mar27",
-  "updatedAt": "2026-11-24T22:52:57.505412-06:00",
+  "updatedAt": "2026-11-24T23:12:51.945604-06:00",
   "rows": [
     {
       "date": "2026-11-24",
@@ -11,7 +11,7 @@
       "dailyRange": "3.39",
       "fullAchievement": "3.43",
       "historicVol": "106.4%",
-      "impliedVol": "44.6%",
+      "impliedVol": "47.6%",
       "weeklyHigh": "44.67",
       "weeklyLow": "40.965",
       "weeklyRange": "3.705",
@@ -22,7 +22,7 @@
       "weeklyTarget": "6.31",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "58.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"

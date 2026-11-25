@@ -2,7 +2,7 @@
   "symbol": "KCH27",
   "commodity": "Coffee",
   "month": "Mar27",
-  "updatedAt": "2026-11-24T22:52:57.505412-06:00",
+  "updatedAt": "2026-11-24T23:12:51.945604-06:00",
   "rows": [
     {
       "date": "2026-11-24",
@@ -10,8 +10,8 @@
       "dailyLow": "260.05",
       "dailyRange": "7.7",
       "fullAchievement": "8.55",
-      "historicVol": "41.9%",
-      "impliedVol": "36.7%",
+      "historicVol": "41.6%",
+      "impliedVol": "36.1%",
       "weeklyHigh": "275.45",
       "weeklyLow": "260.05",
       "weeklyRange": "15.4",
@@ -22,7 +22,7 @@
       "weeklyTarget": "16.55",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "93.1%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "down|2",
       "underTargetStreak": 1,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "down|3"

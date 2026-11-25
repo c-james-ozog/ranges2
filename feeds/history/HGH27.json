@@ -2,7 +2,7 @@
   "symbol": "HGH27",
   "commodity": "Copper",
   "month": "Mar27",
-  "updatedAt": "2026-11-24T22:52:57.505412-06:00",
+  "updatedAt": "2026-11-24T23:12:51.945604-06:00",
   "rows": [
     {
       "date": "2026-11-24",
@@ -11,7 +11,7 @@
       "dailyRange": "0.3305",
       "fullAchievement": "0.3035",
       "historicVol": "71.3%",
-      "impliedVol": "28.3%",
+      "impliedVol": "30.7%",
       "weeklyHigh": "5.8775",
       "weeklyLow": "5.398",
       "weeklyRange": "0.4795",
@@ -22,7 +22,7 @@
       "weeklyTarget": "0.469",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "102.2%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|6"

@@ -2,7 +2,7 @@
   "symbol": "GCH27",
   "commodity": "Gold",
   "month": "Mar27",
-  "updatedAt": "2026-11-24T22:52:57.505412-06:00",
+  "updatedAt": "2026-11-24T23:12:51.945604-06:00",
   "rows": [
     {
       "date": "2026-11-24",
@@ -11,7 +11,7 @@
       "dailyRange": "128",
       "fullAchievement": "159",
       "historicVol": "56.4%",
-      "impliedVol": "25.8%",
+      "impliedVol": "26.8%",
       "weeklyHigh": "3725.2",
       "weeklyLow": "3557.6",
       "weeklyRange": "167.6",
@@ -22,7 +22,7 @@
       "weeklyTarget": "312",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "53.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|6"
