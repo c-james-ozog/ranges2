@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-26T08:59:48.365786Z",
+  "builtAt": "2026-11-26T19:11:34.331186Z",
   "commodities": {
     "Copper": {
       "contracts": [
@@ -8,7 +8,7 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 5.4795,
+          "underlyingPrice": 5.436,
           "atmStrike": 560.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -500,17 +500,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 3601.8,
+          "underlyingPrice": 3595.3999,
           "atmStrike": 3600.0,
-          "atmIV": 0.346253,
-          "atmIVPct": "34.6%",
+          "atmIV": 0.34655,
+          "atmIVPct": "34.7%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 513.9985,
+          "expectedMovePrice": 513.5274,
           "expectedMoveFmt": "$514",
-          "expectedMovePct": "14.27%",
+          "expectedMovePct": "14.28%",
           "expectedMoveRange": {
-            "low": 3087.8015,
-            "high": 4115.7985
+            "low": 3081.8725,
+            "high": 4108.9273
           },
           "topOIStrikes": [
             {
@@ -3049,17 +3049,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 41.98,
+          "underlyingPrice": 41.78,
           "atmStrike": 42.0,
-          "atmIV": 0.606329,
-          "atmIVPct": "60.6%",
+          "atmIV": 0.607612,
+          "atmIVPct": "60.8%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 10.4906,
+          "expectedMovePrice": 10.4627,
           "expectedMoveFmt": "$10",
-          "expectedMovePct": "24.99%",
+          "expectedMovePct": "25.04%",
           "expectedMoveRange": {
-            "low": 31.4894,
-            "high": 52.4706
+            "low": 31.3173,
+            "high": 52.2427
           },
           "topOIStrikes": [
             {
