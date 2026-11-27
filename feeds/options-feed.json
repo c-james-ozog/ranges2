@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-27T05:02:38.349399Z",
+  "builtAt": "2026-11-27T09:12:44.683057Z",
   "commodities": {
     "Copper": {
       "contracts": [
@@ -7,8 +7,8 @@
           "symbol": "HGH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
-          "dte": 62,
-          "underlyingPrice": 5.639,
+          "dte": 61,
+          "underlyingPrice": 5.6995,
           "atmStrike": 560.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -51,63 +51,63 @@
           ],
           "oiGainers": [
             {
-              "strike": 475.0,
-              "type": "put",
-              "oiChange": 450,
-              "oiPctChange": 26.0,
-              "currentOI": 2178,
-              "priorOI": 1728,
-              "priorDate": "2026-11-25"
-            },
-            {
               "strike": 700.0,
               "type": "call",
-              "oiChange": 336,
-              "oiPctChange": 18.5,
+              "oiChange": 1337,
+              "oiPctChange": 163.0,
               "currentOI": 2157,
-              "priorOI": 1821,
-              "priorDate": "2026-11-25"
+              "priorOI": 820,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 600.0,
               "type": "call",
-              "oiChange": 313,
-              "oiPctChange": 29.9,
+              "oiChange": 862,
+              "oiPctChange": 172.7,
               "currentOI": 1361,
-              "priorOI": 1048,
-              "priorDate": "2026-11-25"
+              "priorOI": 499,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 475.0,
+              "type": "put",
+              "oiChange": 661,
+              "oiPctChange": 43.6,
+              "currentOI": 2178,
+              "priorOI": 1517,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 800.0,
               "type": "call",
-              "oiChange": 174,
-              "oiPctChange": 28.2,
+              "oiChange": 641,
+              "oiPctChange": 427.3,
               "currentOI": 791,
-              "priorOI": 617,
-              "priorDate": "2026-11-25"
+              "priorOI": 150,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 650.0,
-              "type": "call",
-              "oiChange": 153,
-              "oiPctChange": 54.6,
-              "currentOI": 433,
-              "priorOI": 280,
-              "priorDate": "2026-11-25"
+              "strike": 525.0,
+              "type": "put",
+              "oiChange": 309,
+              "oiPctChange": 19.6,
+              "currentOI": 1886,
+              "priorOI": 1577,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
               "strike": 500.0,
               "type": "put",
-              "oiChange": -322,
-              "oiPctChange": -34.1,
+              "oiChange": -441,
+              "oiPctChange": -41.5,
               "currentOI": 622,
-              "priorOI": 944,
-              "priorDate": "2026-11-25"
+              "priorOI": 1063,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -499,18 +499,18 @@
           "symbol": "GCH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
-          "dte": 62,
-          "underlyingPrice": 3663.6001,
-          "atmStrike": 3665.0,
-          "atmIV": 0.343131,
-          "atmIVPct": "34.3%",
+          "dte": 61,
+          "underlyingPrice": 3708.3,
+          "atmStrike": 3710.0,
+          "atmIV": 0.347167,
+          "atmIVPct": "34.7%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 518.1027,
-          "expectedMoveFmt": "$518",
-          "expectedMovePct": "14.14%",
+          "expectedMovePrice": 526.2968,
+          "expectedMoveFmt": "$526",
+          "expectedMovePct": "14.19%",
           "expectedMoveRange": {
-            "low": 3145.4974,
-            "high": 4181.7028
+            "low": 3182.0032,
+            "high": 4234.5968
           },
           "topOIStrikes": [
             {
@@ -546,72 +546,90 @@
           ],
           "oiGainers": [
             {
+              "strike": 3750.0,
+              "type": "call",
+              "oiChange": 1744,
+              "oiPctChange": 10900.0,
+              "currentOI": 1760,
+              "priorOI": 16,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 4100.0,
+              "type": "call",
+              "oiChange": 705,
+              "oiPctChange": 172.8,
+              "currentOI": 1113,
+              "priorOI": 408,
+              "priorDate": "2026-11-20"
+            },
+            {
               "strike": 3200.0,
               "type": "put",
-              "oiChange": 328,
-              "oiPctChange": 256.2,
+              "oiChange": 401,
+              "oiPctChange": 729.1,
               "currentOI": 456,
-              "priorOI": 128,
-              "priorDate": "2026-11-25"
+              "priorOI": 55,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 3050.0,
+              "strike": 3450.0,
               "type": "put",
-              "oiChange": 178,
-              "oiPctChange": 890.0,
-              "currentOI": 198,
-              "priorOI": 20,
-              "priorDate": "2026-11-25"
+              "oiChange": 384,
+              "oiPctChange": 441.4,
+              "currentOI": 471,
+              "priorOI": 87,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 3500.0,
-              "type": "put",
-              "oiChange": 108,
-              "oiPctChange": 14.9,
-              "currentOI": 832,
-              "priorOI": 724,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 4300.0,
+              "strike": 3800.0,
               "type": "call",
-              "oiChange": -100,
-              "oiPctChange": -8.2,
-              "currentOI": 1115,
-              "priorOI": 1215,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 3900.0,
-              "type": "put",
-              "oiChange": -200,
-              "oiPctChange": -11.7,
-              "currentOI": 1511,
-              "priorOI": 1711,
-              "priorDate": "2026-11-25"
+              "oiChange": 310,
+              "oiPctChange": 6200.0,
+              "currentOI": 315,
+              "priorOI": 5,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
-              "strike": 3900.0,
-              "type": "put",
-              "oiChange": -200,
-              "oiPctChange": -11.7,
-              "currentOI": 1511,
-              "priorOI": 1711,
-              "priorDate": "2026-11-25"
+              "strike": 4200.0,
+              "type": "call",
+              "oiChange": -1613,
+              "oiPctChange": -86.7,
+              "currentOI": 247,
+              "priorOI": 1860,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 4300.0,
+              "strike": 5000.0,
               "type": "call",
-              "oiChange": -100,
-              "oiPctChange": -8.2,
-              "currentOI": 1115,
-              "priorOI": 1215,
-              "priorDate": "2026-11-25"
+              "oiChange": -850,
+              "oiPctChange": -24.0,
+              "currentOI": 2694,
+              "priorOI": 3544,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 4000.0,
+              "type": "put",
+              "oiChange": -606,
+              "oiPctChange": -55.9,
+              "currentOI": 479,
+              "priorOI": 1085,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 3900.0,
+              "type": "put",
+              "oiChange": -199,
+              "oiPctChange": -11.6,
+              "currentOI": 1511,
+              "priorOI": 1710,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -3048,18 +3066,18 @@
           "symbol": "SIH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
-          "dte": 62,
-          "underlyingPrice": 43.76,
-          "atmStrike": 44.0,
-          "atmIV": 0.615308,
-          "atmIVPct": "61.5%",
+          "dte": 61,
+          "underlyingPrice": 44.805,
+          "atmStrike": 44.75,
+          "atmIV": 0.626897,
+          "atmIVPct": "62.7%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 11.0974,
+          "expectedMovePrice": 11.4826,
           "expectedMoveFmt": "$11",
-          "expectedMovePct": "25.36%",
+          "expectedMovePct": "25.63%",
           "expectedMoveRange": {
-            "low": 32.6626,
-            "high": 54.8574
+            "low": 33.3224,
+            "high": 56.2876
           },
           "topOIStrikes": [
             {
@@ -3093,9 +3111,74 @@
               "totalOI": 1687
             }
           ],
-          "oiGainers": [],
-          "oiLosers": [],
-          "oiCompareDate": "2026-11-25",
+          "oiGainers": [
+            {
+              "strike": 60.0,
+              "type": "call",
+              "oiChange": 1618,
+              "oiPctChange": 150.0,
+              "currentOI": 2697,
+              "priorOI": 1079,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 33.0,
+              "type": "put",
+              "oiChange": 828,
+              "oiPctChange": 82800.0,
+              "currentOI": 828,
+              "priorOI": 0,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 35.0,
+              "type": "put",
+              "oiChange": 719,
+              "oiPctChange": 1106.2,
+              "currentOI": 784,
+              "priorOI": 65,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 40.0,
+              "type": "put",
+              "oiChange": 596,
+              "oiPctChange": 273.4,
+              "currentOI": 814,
+              "priorOI": 218,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 55.0,
+              "type": "call",
+              "oiChange": 589,
+              "oiPctChange": 163.6,
+              "currentOI": 949,
+              "priorOI": 360,
+              "priorDate": "2026-11-20"
+            }
+          ],
+          "oiLosers": [
+            {
+              "strike": 50.0,
+              "type": "put",
+              "oiChange": -553,
+              "oiPctChange": -70.4,
+              "currentOI": 232,
+              "priorOI": 785,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 55.0,
+              "type": "put",
+              "oiChange": -276,
+              "oiPctChange": -30.5,
+              "currentOI": 628,
+              "priorOI": 904,
+              "priorDate": "2026-11-20"
+            }
+          ],
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -4467,18 +4550,18 @@
           "symbol": "ZCH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
-          "dte": 60,
+          "dte": 59,
           "underlyingPrice": 439.75,
           "atmStrike": 440.0,
-          "atmIV": 0.540044,
-          "atmIVPct": "54.0%",
+          "atmIV": 0.03126,
+          "atmIVPct": "3.1%",
           "ivSource": "ETF (CORN)",
-          "expectedMovePrice": 96.2863,
-          "expectedMoveFmt": "96.3\u00a2",
-          "expectedMovePct": "21.90%",
+          "expectedMovePrice": 5.5268,
+          "expectedMoveFmt": "5.5\u00a2",
+          "expectedMovePct": "1.26%",
           "expectedMoveRange": {
-            "low": 343.4637,
-            "high": 536.0363
+            "low": 434.2232,
+            "high": 445.2768
           },
           "topOIStrikes": [
             {
@@ -4514,78 +4597,87 @@
           ],
           "oiGainers": [
             {
-              "strike": 450.0,
+              "strike": 480.0,
               "type": "call",
-              "oiChange": 1008,
-              "oiPctChange": 26.8,
-              "currentOI": 4768,
-              "priorOI": 3760,
-              "priorDate": "2026-11-25"
+              "oiChange": 1828,
+              "oiPctChange": 9.3,
+              "currentOI": 21562,
+              "priorOI": 19734,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 435.0,
-              "type": "put",
-              "oiChange": 953,
-              "oiPctChange": 10.8,
-              "currentOI": 9739,
-              "priorOI": 8786,
-              "priorDate": "2026-11-25"
+              "strike": 450.0,
+              "type": "call",
+              "oiChange": 1559,
+              "oiPctChange": 48.6,
+              "currentOI": 4768,
+              "priorOI": 3209,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 460.0,
               "type": "call",
-              "oiChange": 815,
-              "oiPctChange": 7.3,
+              "oiChange": 1454,
+              "oiPctChange": 13.7,
               "currentOI": 12030,
-              "priorOI": 11215,
-              "priorDate": "2026-11-25"
+              "priorOI": 10576,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 455.0,
-              "type": "call",
-              "oiChange": 667,
-              "oiPctChange": 20.0,
-              "currentOI": 3997,
-              "priorOI": 3330,
-              "priorDate": "2026-11-25"
+              "strike": 435.0,
+              "type": "put",
+              "oiChange": 1084,
+              "oiPctChange": 12.5,
+              "currentOI": 9739,
+              "priorOI": 8655,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 450.0,
               "type": "put",
-              "oiChange": 626,
-              "oiPctChange": 4.3,
+              "oiChange": 989,
+              "oiPctChange": 6.9,
               "currentOI": 15283,
-              "priorOI": 14657,
-              "priorDate": "2026-11-25"
+              "priorOI": 14294,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
-              "strike": 500.0,
-              "type": "put",
-              "oiChange": -607,
-              "oiPctChange": -3.0,
-              "currentOI": 19857,
-              "priorOI": 20464,
-              "priorDate": "2026-11-25"
+              "strike": 600.0,
+              "type": "call",
+              "oiChange": -1367,
+              "oiPctChange": -6.7,
+              "currentOI": 19093,
+              "priorOI": 20460,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 470.0,
-              "type": "call",
-              "oiChange": -564,
-              "oiPctChange": -3.5,
-              "currentOI": 15341,
-              "priorOI": 15905,
-              "priorDate": "2026-11-25"
+              "strike": 500.0,
+              "type": "put",
+              "oiChange": -655,
+              "oiPctChange": -3.2,
+              "currentOI": 19857,
+              "priorOI": 20512,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 480.0,
               "type": "put",
-              "oiChange": -402,
-              "oiPctChange": -4.3,
+              "oiChange": -433,
+              "oiPctChange": -4.7,
               "currentOI": 8858,
-              "priorOI": 9260,
-              "priorDate": "2026-11-25"
+              "priorOI": 9291,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 570.0,
+              "type": "call",
+              "oiChange": -328,
+              "oiPctChange": -3.6,
+              "currentOI": 8768,
+              "priorOI": 9096,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 560.0,
@@ -4594,19 +4686,10 @@
               "oiPctChange": -26.0,
               "currentOI": 833,
               "priorOI": 1126,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 490.0,
-              "type": "put",
-              "oiChange": -204,
-              "oiPctChange": -3.6,
-              "currentOI": 5463,
-              "priorOI": 5667,
-              "priorDate": "2026-11-25"
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -5042,18 +5125,18 @@
           "symbol": "ZCZ27",
           "month": "Dec27",
           "optionsExpiration": "2027-11-26",
-          "dte": 260,
+          "dte": 259,
           "underlyingPrice": 439.75,
           "atmStrike": 440.0,
-          "atmIV": 0.300666,
-          "atmIVPct": "30.1%",
+          "atmIV": 0.003916,
+          "atmIVPct": "0.4%",
           "ivSource": "ETF (CORN)",
-          "expectedMovePrice": 111.5914,
-          "expectedMoveFmt": "111.6\u00a2",
-          "expectedMovePct": "25.38%",
+          "expectedMovePrice": 1.4507,
+          "expectedMoveFmt": "1.5\u00a2",
+          "expectedMovePct": "0.33%",
           "expectedMoveRange": {
-            "low": 328.1586,
-            "high": 551.3414
+            "low": 438.2993,
+            "high": 441.2007
           },
           "topOIStrikes": [
             {
@@ -5091,42 +5174,51 @@
             {
               "strike": 500.0,
               "type": "call",
-              "oiChange": 1929,
-              "oiPctChange": 19.5,
+              "oiChange": 1979,
+              "oiPctChange": 20.1,
               "currentOI": 11820,
-              "priorOI": 9891,
-              "priorDate": "2026-11-25"
+              "priorOI": 9841,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 500.0,
+              "strike": 480.0,
               "type": "put",
-              "oiChange": 300,
-              "oiPctChange": 9.0,
-              "currentOI": 3624,
-              "priorOI": 3324,
-              "priorDate": "2026-11-25"
+              "oiChange": 543,
+              "oiPctChange": 16.9,
+              "currentOI": 3749,
+              "priorOI": 3206,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 350.0,
+              "strike": 450.0,
               "type": "put",
-              "oiChange": 110,
-              "oiPctChange": 11000.0,
-              "currentOI": 110,
-              "priorOI": 0,
-              "priorDate": "2026-11-25"
+              "oiChange": 521,
+              "oiPctChange": 7.3,
+              "currentOI": 7661,
+              "priorOI": 7140,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 385.0,
+              "strike": 480.0,
+              "type": "call",
+              "oiChange": 463,
+              "oiPctChange": 48.4,
+              "currentOI": 1420,
+              "priorOI": 957,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 440.0,
               "type": "put",
-              "oiChange": 100,
-              "oiPctChange": 10000.0,
-              "currentOI": 101,
-              "priorOI": 1,
-              "priorDate": "2026-11-25"
+              "oiChange": 301,
+              "oiPctChange": 9.3,
+              "currentOI": 3534,
+              "priorOI": 3233,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -5503,18 +5595,18 @@
           "symbol": "KEH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
-          "dte": 60,
+          "dte": 59,
           "underlyingPrice": 604.0,
           "atmStrike": 625.0,
-          "atmIV": 0.245125,
-          "atmIVPct": "24.5%",
+          "atmIV": 0.007822,
+          "atmIVPct": "0.8%",
           "ivSource": "ETF (WEAT)",
-          "expectedMovePrice": 60.0279,
-          "expectedMoveFmt": "60.0\u00a2",
-          "expectedMovePct": "9.94%",
+          "expectedMovePrice": 1.8996,
+          "expectedMoveFmt": "1.9\u00a2",
+          "expectedMovePct": "0.31%",
           "expectedMoveRange": {
-            "low": 543.9721,
-            "high": 664.0279
+            "low": 602.1004,
+            "high": 605.8996
           },
           "topOIStrikes": [
             {
@@ -5548,9 +5640,55 @@
               "totalOI": 1531
             }
           ],
-          "oiGainers": [],
+          "oiGainers": [
+            {
+              "strike": 850.0,
+              "type": "call",
+              "oiChange": 1005,
+              "oiPctChange": 105.0,
+              "currentOI": 1962,
+              "priorOI": 957,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 750.0,
+              "type": "call",
+              "oiChange": 1000,
+              "oiPctChange": 170.1,
+              "currentOI": 1588,
+              "priorOI": 588,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 700.0,
+              "type": "call",
+              "oiChange": 874,
+              "oiPctChange": 85.9,
+              "currentOI": 1892,
+              "priorOI": 1018,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 685.0,
+              "type": "call",
+              "oiChange": 500,
+              "oiPctChange": 50.0,
+              "currentOI": 1501,
+              "priorOI": 1001,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 650.0,
+              "type": "call",
+              "oiChange": 270,
+              "oiPctChange": 75.6,
+              "currentOI": 627,
+              "priorOI": 357,
+              "priorDate": "2026-11-20"
+            }
+          ],
           "oiLosers": [],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -6062,18 +6200,18 @@
           "symbol": "ZSH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
-          "dte": 60,
+          "dte": 59,
           "underlyingPrice": 1244.0,
           "atmStrike": 1240.0,
-          "atmIV": 0.732913,
-          "atmIVPct": "73.3%",
+          "atmIV": 1e-05,
+          "atmIVPct": "0.0%",
           "ivSource": "ETF (SOYB)",
-          "expectedMovePrice": 369.6596,
-          "expectedMoveFmt": "369.7\u00a2",
-          "expectedMovePct": "29.72%",
+          "expectedMovePrice": 0.005,
+          "expectedMoveFmt": "0.0\u00a2",
+          "expectedMovePct": "0.00%",
           "expectedMoveRange": {
-            "low": 874.3404,
-            "high": 1613.6596
+            "low": 1243.995,
+            "high": 1244.005
           },
           "topOIStrikes": [
             {
@@ -6111,51 +6249,70 @@
             {
               "strike": 1150.0,
               "type": "put",
-              "oiChange": 1204,
-              "oiPctChange": 25.6,
+              "oiChange": 2463,
+              "oiPctChange": 71.7,
               "currentOI": 5898,
-              "priorOI": 4694,
-              "priorDate": "2026-11-25"
+              "priorOI": 3435,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 1320.0,
+              "type": "call",
+              "oiChange": 1134,
+              "oiPctChange": 31.4,
+              "currentOI": 4745,
+              "priorOI": 3611,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 1270.0,
+              "type": "call",
+              "oiChange": 1056,
+              "oiPctChange": 57.1,
+              "currentOI": 2906,
+              "priorOI": 1850,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 1250.0,
-              "type": "put",
-              "oiChange": 368,
-              "oiPctChange": 13.2,
-              "currentOI": 3158,
-              "priorOI": 2790,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 1340.0,
               "type": "call",
-              "oiChange": 325,
-              "oiPctChange": 11.2,
-              "currentOI": 3215,
-              "priorOI": 2890,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 1250.0,
-              "type": "call",
-              "oiChange": 303,
-              "oiPctChange": 4.8,
+              "oiChange": 746,
+              "oiPctChange": 12.8,
               "currentOI": 6571,
-              "priorOI": 6268,
-              "priorDate": "2026-11-25"
+              "priorOI": 5825,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 1300.0,
+              "strike": 1350.0,
               "type": "call",
-              "oiChange": 260,
-              "oiPctChange": 2.4,
-              "currentOI": 10874,
-              "priorOI": 10614,
-              "priorDate": "2026-11-25"
+              "oiChange": 563,
+              "oiPctChange": 13.1,
+              "currentOI": 4868,
+              "priorOI": 4305,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiLosers": [],
-          "oiCompareDate": "2026-11-25",
+          "oiLosers": [
+            {
+              "strike": 1100.0,
+              "type": "put",
+              "oiChange": -1562,
+              "oiPctChange": -52.2,
+              "currentOI": 1433,
+              "priorOI": 2995,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 1540.0,
+              "type": "call",
+              "oiChange": -133,
+              "oiPctChange": -26.5,
+              "currentOI": 369,
+              "priorOI": 502,
+              "priorDate": "2026-11-20"
+            }
+          ],
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -6606,18 +6763,18 @@
           "symbol": "ZSX27",
           "month": "Nov27",
           "optionsExpiration": "2027-10-22",
-          "dte": 235,
+          "dte": 234,
           "underlyingPrice": 1244.0,
           "atmStrike": 1240.0,
-          "atmIV": 0.258552,
-          "atmIVPct": "25.9%",
+          "atmIV": 0.000498,
+          "atmIVPct": "0.0%",
           "ivSource": "ETF (SOYB)",
-          "expectedMovePrice": 258.0815,
-          "expectedMoveFmt": "258.1\u00a2",
-          "expectedMovePct": "20.75%",
+          "expectedMovePrice": 0.4964,
+          "expectedMoveFmt": "0.5\u00a2",
+          "expectedMovePct": "0.04%",
           "expectedMoveRange": {
-            "low": 985.9185,
-            "high": 1502.0815
+            "low": 1243.5036,
+            "high": 1244.4964
           },
           "topOIStrikes": [
             {
@@ -6655,15 +6812,42 @@
             {
               "strike": 1260.0,
               "type": "call",
-              "oiChange": 400,
-              "oiPctChange": 21.1,
+              "oiChange": 674,
+              "oiPctChange": 41.5,
               "currentOI": 2297,
-              "priorOI": 1897,
-              "priorDate": "2026-11-25"
+              "priorOI": 1623,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 1180.0,
+              "type": "call",
+              "oiChange": 400,
+              "oiPctChange": 2352.9,
+              "currentOI": 417,
+              "priorOI": 17,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 1460.0,
+              "type": "call",
+              "oiChange": 274,
+              "oiPctChange": 39.0,
+              "currentOI": 976,
+              "priorOI": 702,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 1180.0,
+              "type": "put",
+              "oiChange": 173,
+              "oiPctChange": 47.5,
+              "currentOI": 537,
+              "priorOI": 364,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -6990,18 +7174,18 @@
           "symbol": "ZMH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
-          "dte": 60,
+          "dte": 59,
           "underlyingPrice": 361.6,
           "atmStrike": 360.0,
-          "atmIV": 0.246055,
-          "atmIVPct": "24.6%",
+          "atmIV": 0.248098,
+          "atmIVPct": "24.8%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 36.0736,
+          "expectedMovePrice": 36.0689,
           "expectedMoveFmt": "$36",
-          "expectedMovePct": "9.98%",
+          "expectedMovePct": "9.97%",
           "expectedMoveRange": {
-            "low": 325.5264,
-            "high": 397.6736
+            "low": 325.5311,
+            "high": 397.6689
           },
           "topOIStrikes": [
             {
@@ -7039,70 +7223,88 @@
             {
               "strike": 305.0,
               "type": "put",
-              "oiChange": 674,
-              "oiPctChange": 64.0,
+              "oiChange": 917,
+              "oiPctChange": 113.2,
               "currentOI": 1727,
-              "priorOI": 1053,
-              "priorDate": "2026-11-25"
+              "priorOI": 810,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 340.0,
+              "strike": 320.0,
               "type": "put",
-              "oiChange": 434,
-              "oiPctChange": 42.0,
-              "currentOI": 1468,
-              "priorOI": 1034,
-              "priorDate": "2026-11-25"
+              "oiChange": 850,
+              "oiPctChange": 41.2,
+              "currentOI": 2913,
+              "priorOI": 2063,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 330.0,
               "type": "put",
-              "oiChange": 424,
-              "oiPctChange": 19.2,
+              "oiChange": 593,
+              "oiPctChange": 29.0,
               "currentOI": 2636,
-              "priorOI": 2212,
-              "priorDate": "2026-11-25"
+              "priorOI": 2043,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 370.0,
+              "strike": 340.0,
               "type": "call",
-              "oiChange": 291,
-              "oiPctChange": 15.8,
-              "currentOI": 2130,
-              "priorOI": 1839,
-              "priorDate": "2026-11-25"
+              "oiChange": 512,
+              "oiPctChange": 51.7,
+              "currentOI": 1502,
+              "priorOI": 990,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 360.0,
-              "type": "call",
-              "oiChange": 156,
-              "oiPctChange": 6.2,
-              "currentOI": 2687,
-              "priorOI": 2531,
-              "priorDate": "2026-11-25"
+              "strike": 340.0,
+              "type": "put",
+              "oiChange": 426,
+              "oiPctChange": 40.9,
+              "currentOI": 1468,
+              "priorOI": 1042,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
-              "strike": 300.0,
-              "type": "put",
-              "oiChange": -432,
-              "oiPctChange": -8.8,
-              "currentOI": 4496,
-              "priorOI": 4928,
-              "priorDate": "2026-11-25"
+              "strike": 335.0,
+              "type": "call",
+              "oiChange": -663,
+              "oiPctChange": -21.6,
+              "currentOI": 2401,
+              "priorOI": 3064,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 365.0,
+              "strike": 300.0,
+              "type": "put",
+              "oiChange": -345,
+              "oiPctChange": -7.1,
+              "currentOI": 4496,
+              "priorOI": 4841,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 295.0,
+              "type": "put",
+              "oiChange": -176,
+              "oiPctChange": -6.1,
+              "currentOI": 2697,
+              "priorOI": 2873,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 380.0,
               "type": "call",
-              "oiChange": -119,
-              "oiPctChange": -14.4,
-              "currentOI": 707,
-              "priorOI": 826,
-              "priorDate": "2026-11-25"
+              "oiChange": -117,
+              "oiPctChange": -9.6,
+              "currentOI": 1102,
+              "priorOI": 1219,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -7379,7 +7581,7 @@
           "symbol": "ZLH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
-          "dte": 60,
+          "dte": 59,
           "underlyingPrice": 58.08,
           "atmStrike": 5700.0,
           "atmIV": null,
@@ -7423,63 +7625,63 @@
           ],
           "oiGainers": [
             {
+              "strike": 5600.0,
+              "type": "put",
+              "oiChange": 1364,
+              "oiPctChange": 509.0,
+              "currentOI": 1632,
+              "priorOI": 268,
+              "priorDate": "2026-11-20"
+            },
+            {
               "strike": 5550.0,
               "type": "put",
               "oiChange": 1160,
               "oiPctChange": 1318.2,
               "currentOI": 1248,
               "priorOI": 88,
-              "priorDate": "2026-11-25"
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 5600.0,
-              "type": "put",
-              "oiChange": 1134,
-              "oiPctChange": 227.7,
-              "currentOI": 1632,
-              "priorOI": 498,
-              "priorDate": "2026-11-25"
+              "strike": 6500.0,
+              "type": "call",
+              "oiChange": 725,
+              "oiPctChange": 12.1,
+              "currentOI": 6703,
+              "priorOI": 5978,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 5650.0,
+              "strike": 6050.0,
               "type": "put",
-              "oiChange": 300,
-              "oiPctChange": 566.0,
-              "currentOI": 353,
-              "priorOI": 53,
-              "priorDate": "2026-11-25"
+              "oiChange": 541,
+              "oiPctChange": 172.8,
+              "currentOI": 854,
+              "priorOI": 313,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 5500.0,
+              "strike": 6000.0,
               "type": "put",
-              "oiChange": 166,
-              "oiPctChange": 6.9,
-              "currentOI": 2576,
-              "priorOI": 2410,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 5000.0,
-              "type": "put",
-              "oiChange": 149,
-              "oiPctChange": 20.7,
-              "currentOI": 869,
-              "priorOI": 720,
-              "priorDate": "2026-11-25"
+              "oiChange": 518,
+              "oiPctChange": 36.4,
+              "currentOI": 1940,
+              "priorOI": 1422,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
               "strike": 5900.0,
               "type": "put",
-              "oiChange": -488,
-              "oiPctChange": -35.4,
+              "oiChange": -433,
+              "oiPctChange": -32.7,
               "currentOI": 891,
-              "priorOI": 1379,
-              "priorDate": "2026-11-25"
+              "priorOI": 1324,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -7961,18 +8163,18 @@
           "symbol": "ZWH27",
           "month": "Mar27",
           "optionsExpiration": "2027-02-19",
-          "dte": 60,
+          "dte": 59,
           "underlyingPrice": 565.5,
           "atmStrike": 560.0,
-          "atmIV": 0.245125,
-          "atmIVPct": "24.5%",
+          "atmIV": 0.007822,
+          "atmIVPct": "0.8%",
           "ivSource": "ETF (WEAT)",
-          "expectedMovePrice": 56.2017,
-          "expectedMoveFmt": "56.2\u00a2",
-          "expectedMovePct": "9.94%",
+          "expectedMovePrice": 1.7785,
+          "expectedMoveFmt": "1.8\u00a2",
+          "expectedMovePct": "0.31%",
           "expectedMoveRange": {
-            "low": 509.2983,
-            "high": 621.7017
+            "low": 563.7215,
+            "high": 567.2785
           },
           "topOIStrikes": [
             {
@@ -8008,72 +8210,72 @@
           ],
           "oiGainers": [
             {
-              "strike": 530.0,
-              "type": "put",
-              "oiChange": 100,
-              "oiPctChange": 62.5,
-              "currentOI": 260,
-              "priorOI": 160,
-              "priorDate": "2026-11-25"
+              "strike": 800.0,
+              "type": "call",
+              "oiChange": 677,
+              "oiPctChange": 16.4,
+              "currentOI": 4803,
+              "priorOI": 4126,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 600.0,
+              "type": "call",
+              "oiChange": 380,
+              "oiPctChange": 69.0,
+              "currentOI": 931,
+              "priorOI": 551,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 700.0,
+              "type": "call",
+              "oiChange": 347,
+              "oiPctChange": 9.2,
+              "currentOI": 4102,
+              "priorOI": 3755,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 550.0,
               "type": "put",
-              "oiChange": 100,
-              "oiPctChange": 4.3,
+              "oiChange": 273,
+              "oiPctChange": 12.6,
               "currentOI": 2442,
-              "priorOI": 2342,
-              "priorDate": "2026-11-25"
+              "priorOI": 2169,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 590.0,
+              "strike": 560.0,
               "type": "put",
-              "oiChange": 100,
-              "oiPctChange": 12.1,
-              "currentOI": 926,
-              "priorOI": 826,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 800.0,
-              "type": "call",
-              "oiChange": -288,
-              "oiPctChange": -5.7,
-              "currentOI": 4803,
-              "priorOI": 5091,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 630.0,
-              "type": "call",
-              "oiChange": -502,
-              "oiPctChange": -21.1,
-              "currentOI": 1878,
-              "priorOI": 2380,
-              "priorDate": "2026-11-25"
+              "oiChange": 238,
+              "oiPctChange": 18.1,
+              "currentOI": 1553,
+              "priorOI": 1315,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
-              "strike": 630.0,
+              "strike": 900.0,
               "type": "call",
-              "oiChange": -502,
-              "oiPctChange": -21.1,
-              "currentOI": 1878,
-              "priorOI": 2380,
-              "priorDate": "2026-11-25"
+              "oiChange": -472,
+              "oiPctChange": -14.0,
+              "currentOI": 2901,
+              "priorOI": 3373,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 800.0,
+              "strike": 630.0,
               "type": "call",
-              "oiChange": -288,
-              "oiPctChange": -5.7,
-              "currentOI": 4803,
-              "priorOI": 5091,
-              "priorDate": "2026-11-25"
+              "oiChange": -435,
+              "oiPctChange": -18.8,
+              "currentOI": 1878,
+              "priorOI": 2313,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -8670,7 +8872,7 @@
           "symbol": "GFF27",
           "month": "Jan27",
           "optionsExpiration": "2027-01-28",
-          "dte": 44,
+          "dte": 43,
           "underlyingPrice": 327.525,
           "atmStrike": 27000.0,
           "atmIV": null,
@@ -8714,31 +8916,31 @@
           ],
           "oiGainers": [
             {
+              "strike": 35000.0,
+              "type": "put",
+              "oiChange": 494,
+              "oiPctChange": 87.6,
+              "currentOI": 1058,
+              "priorOI": 564,
+              "priorDate": "2026-11-20"
+            },
+            {
               "strike": 30400.0,
               "type": "put",
-              "oiChange": 144,
-              "oiPctChange": 62.6,
+              "oiChange": 152,
+              "oiPctChange": 68.5,
               "currentOI": 374,
-              "priorOI": 230,
-              "priorDate": "2026-11-25"
+              "priorOI": 222,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 33000.0,
+              "strike": 33500.0,
               "type": "put",
-              "oiChange": -103,
-              "oiPctChange": -10.7,
-              "currentOI": 863,
-              "priorOI": 966,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 32000.0,
-              "type": "put",
-              "oiChange": -151,
-              "oiPctChange": -7.2,
-              "currentOI": 1934,
-              "priorOI": 2085,
-              "priorDate": "2026-11-25"
+              "oiChange": 138,
+              "oiPctChange": 71.9,
+              "currentOI": 330,
+              "priorOI": 192,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 34400.0,
@@ -8747,39 +8949,57 @@
               "oiPctChange": -40.3,
               "currentOI": 347,
               "priorOI": 581,
-              "priorDate": "2026-11-25"
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 30000.0,
+              "type": "put",
+              "oiChange": -489,
+              "oiPctChange": -19.2,
+              "currentOI": 2061,
+              "priorOI": 2550,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
+              "strike": 28000.0,
+              "type": "put",
+              "oiChange": -611,
+              "oiPctChange": -32.6,
+              "currentOI": 1264,
+              "priorOI": 1875,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 34000.0,
+              "type": "put",
+              "oiChange": -521,
+              "oiPctChange": -15.8,
+              "currentOI": 2777,
+              "priorOI": 3298,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 30000.0,
+              "type": "put",
+              "oiChange": -489,
+              "oiPctChange": -19.2,
+              "currentOI": 2061,
+              "priorOI": 2550,
+              "priorDate": "2026-11-20"
+            },
+            {
               "strike": 34400.0,
               "type": "put",
               "oiChange": -234,
               "oiPctChange": -40.3,
               "currentOI": 347,
               "priorOI": 581,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 32000.0,
-              "type": "put",
-              "oiChange": -151,
-              "oiPctChange": -7.2,
-              "currentOI": 1934,
-              "priorOI": 2085,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 33000.0,
-              "type": "put",
-              "oiChange": -103,
-              "oiPctChange": -10.7,
-              "currentOI": 863,
-              "priorOI": 966,
-              "priorDate": "2026-11-25"
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -9866,7 +10086,7 @@
           "symbol": "HEZ26",
           "month": "Dec",
           "optionsExpiration": "2026-12-14",
-          "dte": 12,
+          "dte": 11,
           "underlyingPrice": 49.925,
           "atmStrike": 3600.0,
           "atmIV": null,
@@ -9912,88 +10132,97 @@
             {
               "strike": 5600.0,
               "type": "call",
-              "oiChange": 235,
-              "oiPctChange": 16.7,
+              "oiChange": 528,
+              "oiPctChange": 47.4,
               "currentOI": 1643,
-              "priorOI": 1408,
-              "priorDate": "2026-11-25"
+              "priorOI": 1115,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 5500.0,
+              "type": "call",
+              "oiChange": 214,
+              "oiPctChange": 15.3,
+              "currentOI": 1613,
+              "priorOI": 1399,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 5300.0,
+              "type": "call",
+              "oiChange": 147,
+              "oiPctChange": 27.6,
+              "currentOI": 679,
+              "priorOI": 532,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 7000.0,
+              "type": "put",
+              "oiChange": -108,
+              "oiPctChange": -7.3,
+              "currentOI": 1380,
+              "priorOI": 1488,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 7800.0,
               "type": "put",
-              "oiChange": -119,
-              "oiPctChange": -13.9,
+              "oiChange": -139,
+              "oiPctChange": -15.9,
               "currentOI": 736,
-              "priorOI": 855,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 5200.0,
-              "type": "call",
-              "oiChange": -130,
-              "oiPctChange": -21.5,
-              "currentOI": 476,
-              "priorOI": 606,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 7700.0,
-              "type": "put",
-              "oiChange": -200,
-              "oiPctChange": -85.1,
-              "currentOI": 35,
-              "priorOI": 235,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 6500.0,
-              "type": "put",
-              "oiChange": -744,
-              "oiPctChange": -24.4,
-              "currentOI": 2304,
-              "priorOI": 3048,
-              "priorDate": "2026-11-25"
+              "priorOI": 875,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
               "strike": 6500.0,
               "type": "put",
-              "oiChange": -744,
-              "oiPctChange": -24.4,
+              "oiChange": -747,
+              "oiPctChange": -24.5,
               "currentOI": 2304,
-              "priorOI": 3048,
-              "priorDate": "2026-11-25"
+              "priorOI": 3051,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 7700.0,
+              "strike": 6600.0,
               "type": "put",
-              "oiChange": -200,
-              "oiPctChange": -85.1,
-              "currentOI": 35,
-              "priorOI": 235,
-              "priorDate": "2026-11-25"
+              "oiChange": -480,
+              "oiPctChange": -27.8,
+              "currentOI": 1249,
+              "priorOI": 1729,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 5200.0,
+              "strike": 6000.0,
               "type": "call",
-              "oiChange": -130,
-              "oiPctChange": -21.5,
-              "currentOI": 476,
-              "priorOI": 606,
-              "priorDate": "2026-11-25"
+              "oiChange": -444,
+              "oiPctChange": -10.4,
+              "currentOI": 3835,
+              "priorOI": 4279,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 7800.0,
+              "strike": 5800.0,
+              "type": "call",
+              "oiChange": -250,
+              "oiPctChange": -10.1,
+              "currentOI": 2226,
+              "priorOI": 2476,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 5000.0,
               "type": "put",
-              "oiChange": -119,
-              "oiPctChange": -13.9,
-              "currentOI": 736,
-              "priorOI": 855,
-              "priorDate": "2026-11-25"
+              "oiChange": -245,
+              "oiPctChange": -12.8,
+              "currentOI": 1666,
+              "priorOI": 1911,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
@@ -10365,7 +10594,7 @@
           "symbol": "LEZ26",
           "month": "Dec",
           "optionsExpiration": "2026-12-04",
-          "dte": 6,
+          "dte": 5,
           "underlyingPrice": 223.325,
           "atmStrike": 18300.0,
           "atmIV": null,
@@ -10411,97 +10640,97 @@
             {
               "strike": 22200.0,
               "type": "put",
-              "oiChange": 403,
-              "oiPctChange": 11.1,
+              "oiChange": 701,
+              "oiPctChange": 21.1,
               "currentOI": 4018,
-              "priorOI": 3615,
-              "priorDate": "2026-11-25"
+              "priorOI": 3317,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 22300.0,
+              "strike": 22500.0,
+              "type": "call",
+              "oiChange": 346,
+              "oiPctChange": 20.7,
+              "currentOI": 2014,
+              "priorOI": 1668,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 24000.0,
+              "type": "call",
+              "oiChange": 217,
+              "oiPctChange": 6.5,
+              "currentOI": 3548,
+              "priorOI": 3331,
+              "priorDate": "2026-11-20"
+            },
+            {
+              "strike": 22500.0,
               "type": "put",
-              "oiChange": -120,
-              "oiPctChange": -21.6,
-              "currentOI": 435,
-              "priorOI": 555,
-              "priorDate": "2026-11-25"
+              "oiChange": 194,
+              "oiPctChange": 23.7,
+              "currentOI": 1012,
+              "priorOI": 818,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 22400.0,
-              "type": "call",
-              "oiChange": -128,
-              "oiPctChange": -6.8,
-              "currentOI": 1764,
-              "priorOI": 1892,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 22000.0,
-              "type": "call",
-              "oiChange": -179,
-              "oiPctChange": -6.6,
-              "currentOI": 2528,
-              "priorOI": 2707,
-              "priorDate": "2026-11-25"
-            },
-            {
-              "strike": 23000.0,
-              "type": "call",
-              "oiChange": -210,
-              "oiPctChange": -5.4,
-              "currentOI": 3665,
-              "priorOI": 3875,
-              "priorDate": "2026-11-25"
+              "strike": 22600.0,
+              "type": "put",
+              "oiChange": 178,
+              "oiPctChange": 9.0,
+              "currentOI": 2153,
+              "priorOI": 1975,
+              "priorDate": "2026-11-20"
             }
           ],
           "oiLosers": [
             {
               "strike": 21800.0,
               "type": "put",
-              "oiChange": -348,
-              "oiPctChange": -8.2,
+              "oiChange": -1134,
+              "oiPctChange": -22.6,
               "currentOI": 3893,
-              "priorOI": 4241,
-              "priorDate": "2026-11-25"
+              "priorOI": 5027,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 22000.0,
               "type": "put",
-              "oiChange": -305,
-              "oiPctChange": -5.6,
+              "oiChange": -540,
+              "oiPctChange": -9.6,
               "currentOI": 5099,
-              "priorOI": 5404,
-              "priorDate": "2026-11-25"
+              "priorOI": 5639,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 22400.0,
+              "strike": 21900.0,
               "type": "put",
-              "oiChange": -229,
-              "oiPctChange": -8.5,
-              "currentOI": 2457,
-              "priorOI": 2686,
-              "priorDate": "2026-11-25"
+              "oiChange": -462,
+              "oiPctChange": -20.2,
+              "currentOI": 1823,
+              "priorOI": 2285,
+              "priorDate": "2026-11-20"
             },
             {
               "strike": 23000.0,
               "type": "call",
-              "oiChange": -210,
-              "oiPctChange": -5.4,
+              "oiChange": -323,
+              "oiPctChange": -8.1,
               "currentOI": 3665,
-              "priorOI": 3875,
-              "priorDate": "2026-11-25"
+              "priorOI": 3988,
+              "priorDate": "2026-11-20"
             },
             {
-              "strike": 22000.0,
+              "strike": 21800.0,
               "type": "call",
-              "oiChange": -179,
-              "oiPctChange": -6.6,
-              "currentOI": 2528,
-              "priorOI": 2707,
-              "priorDate": "2026-11-25"
+              "oiChange": -277,
+              "oiPctChange": -20.6,
+              "currentOI": 1065,
+              "priorOI": 1342,
+              "priorDate": "2026-11-20"
             }
           ],
-          "oiCompareDate": "2026-11-25",
+          "oiCompareDate": "2026-11-20",
           "oiHistoryAvailable": true,
           "todaySnapshot": [
             {
