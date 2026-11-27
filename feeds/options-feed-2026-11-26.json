@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-27T04:13:44.094671Z",
+  "builtAt": "2026-11-27T04:35:36.195914Z",
   "commodities": {
     "Copper": {
       "contracts": [
@@ -8,7 +8,7 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 5.637,
+          "underlyingPrice": 5.638,
           "atmStrike": 560.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -500,17 +500,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 3656.6001,
-          "atmStrike": 3655.0,
-          "atmIV": 0.343168,
+          "underlyingPrice": 3661.8,
+          "atmStrike": 3660.0,
+          "atmIV": 0.343028,
           "atmIVPct": "34.3%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 517.1712,
-          "expectedMoveFmt": "$517",
+          "expectedMovePrice": 517.6943,
+          "expectedMoveFmt": "$518",
           "expectedMovePct": "14.14%",
           "expectedMoveRange": {
-            "low": 3139.4289,
-            "high": 4173.7713
+            "low": 3144.1057,
+            "high": 4179.4943
           },
           "topOIStrikes": [
             {
@@ -3049,17 +3049,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 43.74,
-          "atmStrike": 43.5,
-          "atmIV": 0.608065,
-          "atmIVPct": "60.8%",
+          "underlyingPrice": 43.77,
+          "atmStrike": 44.0,
+          "atmIV": 0.615255,
+          "atmIVPct": "61.5%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 10.9617,
+          "expectedMovePrice": 11.0989,
           "expectedMoveFmt": "$11",
-          "expectedMovePct": "25.06%",
+          "expectedMovePct": "25.36%",
           "expectedMoveRange": {
-            "low": 32.7783,
-            "high": 54.7017
+            "low": 32.6711,
+            "high": 54.8689
           },
           "topOIStrikes": [
             {

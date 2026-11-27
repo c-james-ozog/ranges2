@@ -2,7 +2,7 @@
   "symbol": "KEH27",
   "commodity": "Hard Red Wheat",
   "month": "Mar27",
-  "updatedAt": "2026-11-26T22:12:36.814611-06:00",
+  "updatedAt": "2026-11-26T22:33:53.339545-06:00",
   "rows": [
     {
       "date": "2026-11-25",
@@ -11,7 +11,7 @@
       "dailyRange": "14.5",
       "fullAchievement": "12.25",
       "historicVol": "25.0%",
-      "impliedVol": "25.3%",
+      "impliedVol": "25.4%",
       "weeklyHigh": "646",
       "weeklyLow": "620",
       "weeklyRange": "26",
@@ -22,7 +22,7 @@
       "weeklyTarget": "29",
       "nextWeeklyTarget": "",
       "weeklyAchievement": "89.7%",
-      "impliedVolTrend": "",
+      "impliedVolTrend": "up|1",
       "underTargetStreak": 0,
       "weeklyUnderTargetStreak": 0,
       "weeklyTrend": "up|1"
