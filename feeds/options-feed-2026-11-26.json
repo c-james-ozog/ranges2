@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-26T19:11:34.331186Z",
+  "builtAt": "2026-11-27T02:10:33.925775Z",
   "commodities": {
     "Copper": {
       "contracts": [
@@ -8,7 +8,7 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 5.436,
+          "underlyingPrice": 5.555,
           "atmStrike": 560.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -500,17 +500,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 3595.3999,
-          "atmStrike": 3600.0,
-          "atmIV": 0.34655,
-          "atmIVPct": "34.7%",
+          "underlyingPrice": 3621.7,
+          "atmStrike": 3620.0,
+          "atmIV": 0.343667,
+          "atmIVPct": "34.4%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 513.5274,
-          "expectedMoveFmt": "$514",
-          "expectedMovePct": "14.28%",
+          "expectedMovePrice": 512.9776,
+          "expectedMoveFmt": "$513",
+          "expectedMovePct": "14.16%",
           "expectedMoveRange": {
-            "low": 3081.8725,
-            "high": 4108.9273
+            "low": 3108.7224,
+            "high": 4134.6776
           },
           "topOIStrikes": [
             {
@@ -3049,17 +3049,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 41.78,
-          "atmStrike": 42.0,
-          "atmIV": 0.607612,
+          "underlyingPrice": 42.86,
+          "atmStrike": 43.0,
+          "atmIV": 0.608049,
           "atmIVPct": "60.8%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 10.4627,
-          "expectedMoveFmt": "$10",
-          "expectedMovePct": "25.04%",
+          "expectedMovePrice": 10.7409,
+          "expectedMoveFmt": "$11",
+          "expectedMovePct": "25.06%",
           "expectedMoveRange": {
-            "low": 31.3173,
-            "high": 52.2427
+            "low": 32.1191,
+            "high": 53.6009
           },
           "topOIStrikes": [
             {
@@ -4470,15 +4470,15 @@
           "dte": 60,
           "underlyingPrice": 439.75,
           "atmStrike": 440.0,
-          "atmIV": 0.534673,
-          "atmIVPct": "53.5%",
+          "atmIV": 0.540044,
+          "atmIVPct": "54.0%",
           "ivSource": "ETF (CORN)",
-          "expectedMovePrice": 95.3286,
-          "expectedMoveFmt": "95.3\u00a2",
-          "expectedMovePct": "21.68%",
+          "expectedMovePrice": 96.2863,
+          "expectedMoveFmt": "96.3\u00a2",
+          "expectedMovePct": "21.90%",
           "expectedMoveRange": {
-            "low": 344.4214,
-            "high": 535.0786
+            "low": 343.4637,
+            "high": 536.0363
           },
           "topOIStrikes": [
             {
@@ -5045,15 +5045,15 @@
           "dte": 260,
           "underlyingPrice": 439.75,
           "atmStrike": 440.0,
-          "atmIV": 0.299812,
-          "atmIVPct": "30.0%",
+          "atmIV": 0.300666,
+          "atmIVPct": "30.1%",
           "ivSource": "ETF (CORN)",
-          "expectedMovePrice": 111.2743,
-          "expectedMoveFmt": "111.3\u00a2",
-          "expectedMovePct": "25.30%",
+          "expectedMovePrice": 111.5914,
+          "expectedMoveFmt": "111.6\u00a2",
+          "expectedMovePct": "25.38%",
           "expectedMoveRange": {
-            "low": 328.4757,
-            "high": 551.0243
+            "low": 328.1586,
+            "high": 551.3414
           },
           "topOIStrikes": [
             {
@@ -5506,15 +5506,15 @@
           "dte": 60,
           "underlyingPrice": 604.0,
           "atmStrike": 625.0,
-          "atmIV": 0.242683,
-          "atmIVPct": "24.3%",
+          "atmIV": 0.245125,
+          "atmIVPct": "24.5%",
           "ivSource": "ETF (WEAT)",
-          "expectedMovePrice": 59.43,
-          "expectedMoveFmt": "59.4\u00a2",
-          "expectedMovePct": "9.84%",
+          "expectedMovePrice": 60.0279,
+          "expectedMoveFmt": "60.0\u00a2",
+          "expectedMovePct": "9.94%",
           "expectedMoveRange": {
-            "low": 544.57,
-            "high": 663.43
+            "low": 543.9721,
+            "high": 664.0279
           },
           "topOIStrikes": [
             {
@@ -6065,15 +6065,15 @@
           "dte": 60,
           "underlyingPrice": 1244.0,
           "atmStrike": 1240.0,
-          "atmIV": 0.725589,
-          "atmIVPct": "72.6%",
+          "atmIV": 0.732913,
+          "atmIVPct": "73.3%",
           "ivSource": "ETF (SOYB)",
-          "expectedMovePrice": 365.9649,
-          "expectedMoveFmt": "366.0\u00a2",
-          "expectedMovePct": "29.42%",
+          "expectedMovePrice": 369.6596,
+          "expectedMoveFmt": "369.7\u00a2",
+          "expectedMovePct": "29.72%",
           "expectedMoveRange": {
-            "low": 878.0351,
-            "high": 1609.9649
+            "low": 874.3404,
+            "high": 1613.6596
           },
           "topOIStrikes": [
             {
@@ -6609,15 +6609,15 @@
           "dte": 235,
           "underlyingPrice": 1244.0,
           "atmStrike": 1240.0,
-          "atmIV": 0.25782,
-          "atmIVPct": "25.8%",
+          "atmIV": 0.258552,
+          "atmIVPct": "25.9%",
           "ivSource": "ETF (SOYB)",
-          "expectedMovePrice": 257.35,
-          "expectedMoveFmt": "257.4\u00a2",
-          "expectedMovePct": "20.69%",
+          "expectedMovePrice": 258.0815,
+          "expectedMoveFmt": "258.1\u00a2",
+          "expectedMovePct": "20.75%",
           "expectedMoveRange": {
-            "low": 986.65,
-            "high": 1501.35
+            "low": 985.9185,
+            "high": 1502.0815
           },
           "topOIStrikes": [
             {
@@ -7964,15 +7964,15 @@
           "dte": 60,
           "underlyingPrice": 565.5,
           "atmStrike": 560.0,
-          "atmIV": 0.242683,
-          "atmIVPct": "24.3%",
+          "atmIV": 0.245125,
+          "atmIVPct": "24.5%",
           "ivSource": "ETF (WEAT)",
-          "expectedMovePrice": 55.6418,
-          "expectedMoveFmt": "55.6\u00a2",
-          "expectedMovePct": "9.84%",
+          "expectedMovePrice": 56.2017,
+          "expectedMoveFmt": "56.2\u00a2",
+          "expectedMovePct": "9.94%",
           "expectedMoveRange": {
-            "low": 509.8582,
-            "high": 621.1418
+            "low": 509.2983,
+            "high": 621.7017
           },
           "topOIStrikes": [
             {
