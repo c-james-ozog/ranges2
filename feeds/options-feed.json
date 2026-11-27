@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-27T04:35:36.195914Z",
+  "builtAt": "2026-11-27T05:02:38.349399Z",
   "commodities": {
     "Copper": {
       "contracts": [
@@ -8,7 +8,7 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 5.638,
+          "underlyingPrice": 5.639,
           "atmStrike": 560.0,
           "atmIV": null,
           "atmIVPct": null,
@@ -500,17 +500,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 3661.8,
-          "atmStrike": 3660.0,
-          "atmIV": 0.343028,
+          "underlyingPrice": 3663.6001,
+          "atmStrike": 3665.0,
+          "atmIV": 0.343131,
           "atmIVPct": "34.3%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 517.6943,
+          "expectedMovePrice": 518.1027,
           "expectedMoveFmt": "$518",
           "expectedMovePct": "14.14%",
           "expectedMoveRange": {
-            "low": 3144.1057,
-            "high": 4179.4943
+            "low": 3145.4974,
+            "high": 4181.7028
           },
           "topOIStrikes": [
             {
@@ -3049,17 +3049,17 @@
           "month": "Mar27",
           "optionsExpiration": "2027-02-23",
           "dte": 62,
-          "underlyingPrice": 43.77,
+          "underlyingPrice": 43.76,
           "atmStrike": 44.0,
-          "atmIV": 0.615255,
+          "atmIV": 0.615308,
           "atmIVPct": "61.5%",
           "ivSource": "CME (Black-76)",
-          "expectedMovePrice": 11.0989,
+          "expectedMovePrice": 11.0974,
           "expectedMoveFmt": "$11",
           "expectedMovePct": "25.36%",
           "expectedMoveRange": {
-            "low": 32.6711,
-            "high": 54.8689
+            "low": 32.6626,
+            "high": 54.8574
           },
           "topOIStrikes": [
             {
